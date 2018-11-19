@@ -1,126 +1,128 @@
 .banner{
-    text-align:center;
-    height: 100px;
-    background-color:silver;
-    border-bottom:solid;
-    border-bottom-color:orange;
-  }
+  background-color:silver;
+  border-bottom:solid orange;
+  height: 100px;
+  text-align:center;
+}
 
-  .content{
-    height:100%;
-    width:100%;
-  }
+.content{
+  height:100%;
+  width:100%;
+}
 
-  .dynamicContent{
-    height:100%;
-    width:100%;
-    margin-left: 50px;
-    background-color:#fff;
+.dynamicContent{
+  background-color:#fff;
+  height:100%;
+  margin-left: 50px;
+  width:100%;
 }
 
 .navBar{
-    display: block;
-    margin: 0 auto;
-    color: white;
-    position: fixed;
-    top: 66%;
-    margin-top: -115px;
-    width: auto;
-    z-index: 99999;
-    text-align: center;
-    margin-left:-100px;
-    animation:blog-side-slidein 2s forwards;
-    animation-delay: 0.5s;
+  animation-delay: 0.5s;
+  animation:blog-side-slidein 2s forwards;
+  color: white;
+  display: block;
+  margin-left:-100px;
+  margin-top: -115px;
+  position: fixed;
+  text-align: center;
+  top: 66%;
+  width: auto;
+  z-index: 99999;
 }
 
 @keyframes blog-side-slidein {
-    100% {
-        margin-left: -16px;
-    }
+ 100% {
+   margin-left: -16px;
+ }
 }
 
 ul{
-  list-style:none;
-}
-
-.searchLink{
-  background-color: #60aade;
-}
-
-.uploadLink{
-  background-color: #e85441;
-}
-
-.configLink{
-  background-color: #506bb1;
-}
-
-a{
-  cursor:pointer;
-  color:white;
-  text-decoration: none;
+ list-style:none;
 }
 
 li{
-  margin-bottom: 7px;
-  cursor:pointer;
-  width: 65px;
-  height:45px;
-  border-radius:20%;
-  box-shadow: -10px 5px 5px silver;
-  border-top:solid;
-    border-right:solid;
-  border-top-color:white;
-    border-right-color:white;
+margin-bottom: 7px;
+cursor:pointer;
+width: 65px;
+height:45px;
+border-radius:20%;
+box-shadow: -10px 5px 5px silver;
+border-top:solid;
+border-right:solid;
+border-top-color:white;
+border-right-color:white;
 }
 
+a{
+cursor:pointer;
+color:white;
+text-decoration: none;
+}
+
+.searchLink{
+background-color: #60aade;
+}
+
+.uploadLink{
+background-color: #e85441;
+}
+
+.configLink{
+background-color: #506bb1;
+}
+
+
+
+
+
 .searchbtn {
-  background-color:#60aade;
-  width:30px;
-  height:30px;
+background-color:#60aade;
+width:30px;
+height:30px;
 }
 
 table{
-  width: 100%;
-  display: none;
+width: 100%;
+display: none;
 }
 
 table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
+border: 1px solid black;
+border-collapse: collapse;
 }
 
 
 .searchBox {
-  height:30px;
-  width:300px;
-  padding:0;
-  margin-left:200px;
-  display:none;
+height:30px;
+width:300px;
+padding:0;
+margin-left:200px;
+/* display:none; */
 }
 
 .uploadBox{
-  display:none;
-    margin-left:200px;
+/* display:none; */
+margin-left:200px;
 }
 
 .uploadBtn{
-  background-color:#e85441;
+background-color:#e85441;
 }
 
 form{
-  display:flex;
+display:flex;
 }
 
 .configBox{
-      margin-left:200px;
-      display:none;
+margin-left:200px;
+/* display:none; */
 }
 
 .configSubmitBtn{
-  background-color: #506bb1;
-  width: 100px;
-  border-radius:20px;
+background-color: #506bb1;
+width: 100px;
+border-radius:20px;
 }
 
 .configForm{
@@ -129,8 +131,8 @@ flex-direction:column;
 }
 
 input{
-  height:30px;
-  width:296px;
-  padding:5px 10px;
-  font-size:14px;
+height:30px;
+width:296px;
+padding:5px 10px;
+font-size:14px;
 }

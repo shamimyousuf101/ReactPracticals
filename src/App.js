@@ -10,56 +10,40 @@ import './App.css';
 class App extends Component {
 
   state = { 
-    view: "search"
+    view: "Search"
   };
   
   menuData = [
     {
       className: "searchLink",
-      text: "Search",
-      href: "/Search"
+      text: "Search"
     }, 
     {
       className: "uploadLink",
-      text: "Asset Manager",
-      href: "/Upload"
+      text: "Asset Manager"
     }, 
     {
       className: "configLink",
-      text: "Create / Edit",
-      href: "/Config"
+      text: "Create / Edit"
     }, 
   ]
 
   onclick = (event) => {
     const selectedLink = event.currentTarget.className;
     let view;
-    const searchBox = document.querySelector(".searchBox");
-    const uploadBox = document.querySelector(".uploadBox");
-    const configBox = document.querySelector(".configBox");
-
     switch(selectedLink){
 
       case "searchLink":
           view = "Search";          
-          searchBox.style.display="block";
-          uploadBox.style.display="none";
-          configBox.style.display="none";
           break;
       case "uploadLink":
-          view = "Asset Upload";
-          searchBox.style.display="none";
-          uploadBox.style.display="block";
-          configBox.style.display="none";
+          view = "Upload";
           break;
       case "configLink":
-          view = "Create or Edit";
-          searchBox.style.display="none";
-          uploadBox.style.display="none";
-          configBox.style.display="block";
+          view = "Config";
           break;
       default:
-          view = "Nothing is selected"
+          view = "Search";
 
     }
 
@@ -76,7 +60,7 @@ class App extends Component {
     return (
       <div className="App">
         <Banner subHeading={view}/>
-        <Content />
+        <Content view={view}/>
         <Menu menuData={this.menuData} clickHandler={this.onclick}/>       
       </div>
     );

@@ -2,20 +2,18 @@ import React from 'react';
 
 const Search = (props) => {
 
-
-    // searchBtnClick = (event) => {
-    //     const table = document.querySelector("table");
-    //     event.preventDefault();
-    //     table.style.display = "block";       
-
-    // }
+    const searchBtnClick = (event) => {
+        const table = document.querySelector("table");
+        event.preventDefault();
+        table.style.display = "block";       
+    }
 
     return(
         <div className="searchBox">
 
         <form class="searchForm">
             <input type="text" placeholder="Search"/>
-            <button class="searchbtn" type="submit"> 
+            <button className="searchbtn" type="submit" onClick={searchBtnClick}> 
               <img src="https://www.mockplus.com/images/search.png"/>
             </button>                    
           </form>
