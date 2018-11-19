@@ -21,12 +21,12 @@ class App extends Component {
     }, 
     {
       className: "uploadLink",
-      text: "Upload",
+      text: "Asset Manager",
       href: "/Upload"
     }, 
     {
       className: "configLink",
-      text: "Config",
+      text: "Create / Edit",
       href: "/Config"
     }, 
   ]
@@ -34,7 +34,41 @@ class App extends Component {
   onclick = (event) => {
     const selectedLink = event.currentTarget.className;
     let view;
+    const searchBox = document.querySelector(".searchBox");
+    const uploadBox = document.querySelector(".uploadBox");
+    const configBox = document.querySelector(".configBox");
+
+    switch(selectedLink){
+
+      case "searchLink":
+          view = "Search";          
+          searchBox.style.display="block";
+          uploadBox.style.display="none";
+          configBox.style.display="none";
+          break;
+      case "uploadLink":
+          view = "Asset Upload";
+          searchBox.style.display="none";
+          uploadBox.style.display="block";
+          configBox.style.display="none";
+          break;
+      case "configLink":
+          view = "Create or Edit";
+          searchBox.style.display="none";
+          uploadBox.style.display="none";
+          configBox.style.display="block";
+          break;
+      default:
+          view = "Nothing is selected"
+
+    }
+
+    this.setState({view});
+
   }
+
+
+
   
   render() {
 
