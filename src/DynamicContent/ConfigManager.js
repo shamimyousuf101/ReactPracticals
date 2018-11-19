@@ -5,7 +5,7 @@ const ConfigManager = (props) => {
     return(
         <div className="configBox">
         
-        <form class="configForm">
+        <form className="configForm">
             <label for="promotionname">Promotion Name:</label>
             <input name="promotionname" type="text"/>
             <br/>
@@ -15,7 +15,7 @@ const ConfigManager = (props) => {
             Tablet: <input type="checkbox" name="devices" value="Tablet"/><br/>      
             
             <br/>             
-            <input class="configSubmitBtn" type="submit"/>
+            <input className="configSubmitBtn" type="submit"/>
           </form>       
         
         </div>
