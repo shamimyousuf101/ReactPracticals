@@ -42,97 +42,77 @@ ul{
 }
 
 li{
-margin-bottom: 7px;
-cursor:pointer;
-width: 65px;
-height:45px;
-border-radius:20%;
-box-shadow: -10px 5px 5px silver;
-border-top:solid;
-border-right:solid;
-border-top-color:white;
-border-right-color:white;
+  border-radius:20%;
+  border-right:solid white;
+  border-top:solid white;
+  box-shadow: -10px 5px 5px silver;
+  cursor:pointer;
+  height:45px;
+  margin-bottom: 7px;
+  width: 65px;
 }
 
 a{
-cursor:pointer;
-color:white;
-text-decoration: none;
+  color:white;
+  cursor:pointer;
+  text-decoration: none;
 }
 
 .searchLink{
-background-color: #60aade;
+  background-color: #60aade;
 }
 
 .uploadLink{
-background-color: #e85441;
+  background-color: #e85441;
 }
 
 .configLink{
-background-color: #506bb1;
+  background-color: #506bb1;
 }
-
-
-
-
 
 .searchbtn {
-background-color:#60aade;
-width:30px;
-height:30px;
+  background-color:#60aade;
+  height:30px;
+  width:30px;
 }
-
-table{
-width: 100%;
-display: none;
-}
-
-table, th, td {
-border: 1px solid black;
-border-collapse: collapse;
-}
-
 
 .searchBox {
-height:30px;
-width:300px;
-padding:0;
-margin-left:200px;
-/* display:none; */
+  height:30px;
+  margin-left:200px;
+  padding:0;
+  width:300px;
 }
 
 .uploadBox{
-/* display:none; */
-margin-left:200px;
+  margin-left:200px;
 }
 
 .uploadBtn{
-background-color:#e85441;
+  background-color:#e85441;
 }
 
 form{
-display:flex;
+  display:flex;
 }
 
 .configBox{
-margin-left:200px;
-/* display:none; */
+  margin-left:200px;
 }
 
 .configSubmitBtn{
-background-color: #506bb1;
-width: 100px;
-border-radius:20px;
+  background-color: #506bb1;
+  border-radius:20px;
+  width: 100px;
 }
 
 .configForm{
-display:flex;
-flex-direction:column;
+  display:flex;
+  flex-direction:column;
 }
 
 input{
-height:30px;
-width:296px;
-padding:5px 10px;
-font-size:14px;
+  font-size:14px;
+  height:30px;
+  padding:5px 10px;
+  width:296px;
 }
