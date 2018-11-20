@@ -6,7 +6,7 @@ class Search extends Component {
 
     state = {
         searchTerm:"",
-        searchDisplay:"no matches found"
+        searchDisplay:[]
     };
 
     promotionData = {
@@ -19,46 +19,28 @@ class Search extends Component {
         ]
     }
 
-    handleInputChange=(event) => {
+    handleInputChange = (event) => {
         const searchTerm = event.target.value;
         this.setState({searchTerm});
-
     }
 
     searchBtnClick = (event) => {
-        let  resultArr = [];
         
-        const searchInput = event.target;
+        const searchInput = this.state.searchTerm ;
         event.preventDefault();  
-        console.log("search data is   " + searchInput.value);
+        console.log("search data is   " + this.state.searchTerm );
 
-        var arr = [];
+        const arr = this.promotionData.promotions.map( ({ name, startDate, endDate}) => ( {name, startDate, endDate} ));
+        console.log(arr);
 
-
-        for(let i in this.promotionData.promotions){
-            arr.push(this.promotionData.promotions[i].name);
-        }
-
-        function filterItems(query) {
-            return arr.filter(function(el) {
-                return el.toLowerCase().indexOf(query.toLowerCase()) > -1;
-            })
-        }
-
-        resultArr = filterItems(searchInput.value);
-
-        console.log("resultArr.length   is equal to " + resultArr.length);
-
-        if(resultArr.length === 0){
-            this.setState({searchDisplay: 'No Matches Found'});
-           
-        }else{
-            this.setState({searchDisplay: 'Found'});
-        }
+        this.setState({
+            searchDisplay: arr.filter((el) =>  el.name.toLowerCase().indexOf(searchInput.toLowerCase()) > -1)
+        });
     }
 
     render(){
 
+        const { searchDisplay} = this.state;
 
         return(
             <div className="searchBox">
@@ -73,7 +55,7 @@ class Search extends Component {
               <div className="searchResult">             
 
                 <div>
-                {this.state.searchDisplay}
+                {searchDisplay.length > 0 ? "searchDisplay" : "No Matches found"}
                 </div>
               
               </div>

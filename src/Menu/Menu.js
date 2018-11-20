@@ -12,7 +12,7 @@ const Menu = (props) => {
     <nav className="navBar"><ul>{
 
         menu.map( (link) => {
-            return <MenuLinks href={'#'} className={link.className} text={link.text} onclick={clickHandler}/>
+            return <MenuLinks href={'#'} className={link.className} key={link.text} text={link.text} onclick={clickHandler}/>
             }
         )
     }</ul></nav>
