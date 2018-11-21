@@ -41,7 +41,7 @@ ul{
  list-style:none;
 }
 
-li{
+#menuLinks{
   border-radius:20%;
   border-right:solid white;
   border-top:solid white;
