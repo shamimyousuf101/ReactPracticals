@@ -116,3 +116,7 @@ input{
   padding:5px 10px;
   width:296px;
 }
+
+table, th, td {
+  border: .5px solid;
+}

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-import Banner from './Home/Banner';
-import Content from './Home/Content';
-import Menu from './Menu/Menu';
+import Banner from './Components/Header/Banner';
+import Content from './Components/DynamicContent/Container';
+import Menu from './Components/Menu/Menu';
 
-import './Home/home.css';
+import './home.css';
 import './App.css';
 
 class App extends Component {

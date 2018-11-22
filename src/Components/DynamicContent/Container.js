@@ -1,8 +1,8 @@
 import React from 'react';
 
-import AssetManager from './../DynamicContent/AssetManager';
-import ConfigManager from './../DynamicContent/ConfigManager';
-import Search from './../DynamicContent/Search';
+import AssetManager from './../../Components/DynamicContent/Asset/AssetManager';
+import ConfigManager from './../../Components/DynamicContent/Config/ConfigManager';
+import Search from './../../Components/DynamicContent/Search/Search.js';
 
 const Content = ({view}) => {
 

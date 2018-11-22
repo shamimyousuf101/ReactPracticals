@@ -39,13 +39,23 @@ class Search extends Component {
 
     }
 
+    getTableHeaders(searchDisplay){
+        if (searchDisplay.length > 0){
+            return <tr><th>Name</th><th>Start Date</th><th>End Date</th></tr>
+        }
+    }
+
     getSearchItems( searchDisplay ){
         if (searchDisplay.length > 0){
-            return searchDisplay.map((item, index)=>{
+            return searchDisplay.map((item, index)=>{                
                 return <SearchResult key={index} result={item}/>
             })
-        } else {
-            return <li>No matches found</li>
+        } 
+    }
+
+    getNoMatchesString(searchDisplay){
+        if (searchDisplay.length == 0){
+            return  <p>No matches found</p>
         }
     }
 
@@ -63,10 +73,14 @@ class Search extends Component {
                 </button>                    
               </form>
     
-              <div className="searchResult">             
-                <ul>
-                    {  this.getSearchItems(searchDisplay)}
-                </ul>              
+                <br/>
+
+              <div className="searchResult">    
+              {this.getNoMatchesString(searchDisplay)}            
+                <table>        
+                    {this.getTableHeaders(searchDisplay)}            
+                    {this.getSearchItems(searchDisplay)}
+                </table>              
               </div>
                                 
             </div>
