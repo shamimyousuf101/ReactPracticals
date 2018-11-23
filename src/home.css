@@ -21,14 +21,12 @@
   animation-delay: 0.5s;
   animation:blog-side-slidein 2s forwards;
   color: white;
-  display: block;
   margin-left:-100px;
   margin-top: -115px;
   position: fixed;
   text-align: center;
   top: 66%;
-  width: auto;
-  z-index: 99999;
+  z-index: 1;
 }
 
 @keyframes blog-side-slidein {
@@ -117,6 +115,10 @@ input{
   width:296px;
 }
 
-table, th, td {
-  border: .5px solid;
+table {
+  border: 1px solid;
+}
+
+td{
+  border-top: 1px solid;
 }
