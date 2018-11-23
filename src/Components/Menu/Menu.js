@@ -1,20 +1,10 @@
 import React from 'react';
-
 import MenuLinks from './MenuLinks';
 
-const Menu = (props) => {
-    
-    const menu = props.menuData; //array
-
-    const clickHandler = props.clickHandler;
-  
+const Menu = ({menuData, clickHandler}) => {  
     return (
     <nav className="navBar"><ul>{
-
-        menu.map( (link) => {
-            return <MenuLinks href={'#'} className={link.className} key={link.text} text={link.text} onclick={clickHandler}/>
-            }
-        )
+        menuData.map( ({className, text}) => (<MenuLinks href={'#'} className={className} key={text} text={text} onclick={clickHandler}/>) )
     }</ul></nav>
     )
 }

@@ -2,9 +2,9 @@ import React from 'react';
 
 import AssetManager from './../../Components/DynamicContent/Asset/AssetManager';
 import ConfigManager from './../../Components/DynamicContent/Config/ConfigManager';
-import Search from './../../Components/DynamicContent/Search/Search.js';
+import Search from './../../Components/DynamicContent/Search/Search';
 
-const Content = ({view}) => {
+const Container = ({view}) => {
 
     const setContent = (view) => {
         switch (view) {
@@ -15,7 +15,7 @@ const Content = ({view}) => {
             case "Config":
                 return<ConfigManager/>                      
             default:
-                break;
+                throw new Error('Unexpected view supplied')                
         }    
     }
 
@@ -26,4 +26,4 @@ const Content = ({view}) => {
            </div>)
 }
 
-export default Content;
+export default Container;

@@ -2,6 +2,8 @@ import React from 'react';
 
 const ConfigManager = (props) => {
 
+    // TODO - Would break this component down into smaller components
+
     return(
         <div className="configBox">
         

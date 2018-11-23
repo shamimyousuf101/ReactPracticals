@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 
 import Banner from './Components/Header/Banner';
-import Content from './Components/DynamicContent/Container';
+import Container from './Components/DynamicContent/Container';
 import Menu from './Components/Menu/Menu';
+import {menuData} from './Components/Menu/config';
 
 import './home.css';
 import './App.css';
+
 
 class App extends Component {
 
@@ -13,21 +15,6 @@ class App extends Component {
     view: "Search"
   };
   
-  menuData = [
-    {
-      className: "searchLink",
-      text: "Search"
-    }, 
-    {
-      className: "uploadLink",
-      text: "Asset Manager"
-    }, 
-    {
-      className: "configLink",
-      text: "Create / Edit"
-    }, 
-  ]
-
   onclick = (event) => {
     const selectedLink = event.currentTarget.className;
     let view;
@@ -60,8 +47,8 @@ class App extends Component {
     return (
       <div className="App">
         <Banner subHeading={view}/>
-        <Content view={view}/>
-        <Menu menuData={this.menuData} clickHandler={this.onclick}/>       
+        <Container view={view}/>
+        <Menu menuData={menuData} clickHandler={this.onclick}/>       
       </div>
     );
   }
