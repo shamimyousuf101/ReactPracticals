@@ -1,14 +1,14 @@
 export const menuData = [
     {
-      className: "searchLink",
+      className: "search__link",
       text: "Search"
     }, 
     {
-      className: "uploadLink",
+      className: "upload__link",
       text: "Asset Manager"
     }, 
     {
-      className: "configLink",
+      className: "config__link",
       text: "Create / Edit"
     }, 
   ];

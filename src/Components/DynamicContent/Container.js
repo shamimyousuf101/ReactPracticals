@@ -20,7 +20,7 @@ const Container = ({view}) => {
     }
 
     return (<div className="content"> 
-                <div className="dynamicContent">    
+                <div className="dynamiccontent">    
                     {setContent(view)}
                 </div>
            </div>)

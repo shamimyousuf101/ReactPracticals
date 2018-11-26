@@ -3,9 +3,13 @@ import MenuLinks from './MenuLinks';
 
 const Menu = ({menuData, clickHandler}) => {  
     return (
-    <nav className="navBar"><ul>{
-        menuData.map( ({className, text}) => (<MenuLinks href={'#'} className={className} key={text} text={text} onclick={clickHandler}/>) )
-    }</ul></nav>
+    <nav className="menu">
+        <ul>
+            {
+            menuData.map( ({className, text}) => (<MenuLinks href={'#'} className={className} key={text} text={text} onclick={clickHandler}/>) )
+            }
+        </ul>
+    </nav>
     )
 }
 

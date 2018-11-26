@@ -1,9 +1,9 @@
 import React from 'react';
 
-const MenuLinks = (props) => {
+const MenuLinks = ({className, onclick, href, text}) => {
 
     return (
-        <li id="menuLinks" className={props.className} onClick={props.onclick} ><a href={props.href}  >{props.text}</a></li>
+        <li id="menu__links" className={className} onClick={onclick} ><a href={href}  >{text}</a></li>
     )
 }
 

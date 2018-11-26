@@ -3,9 +3,14 @@ import React, { Component } from 'react';
 import Banner from './Components/Header/Banner';
 import Container from './Components/DynamicContent/Container';
 import Menu from './Components/Menu/Menu';
-import {menuData} from './Components/Menu/config';
+import {menuData} from './Components/Menu/menuData';
 
-import './home.css';
+import './Components/Header/Banner.css';
+import './Components/Menu/Menu.css';
+import './Components/DynamicContent/Search/Search.css';
+import './Components/DynamicContent/Config/Config.css';
+import './Components/DynamicContent/Asset/AssetManager.css';
+import './Components/DynamicContent/Container.css';
 import './App.css';
 
 
@@ -20,13 +25,13 @@ class App extends Component {
     let view;
     switch(selectedLink){
 
-      case "searchLink":
+      case "search__link":
           view = "Search";          
           break;
-      case "uploadLink":
+      case "upload__link":
           view = "Upload";
           break;
-      case "configLink":
+      case "config__link":
           view = "Config";
           break;
       default:
@@ -37,9 +42,6 @@ class App extends Component {
     this.setState({view});
 
   }
-
-
-
   
   render() {
 
@@ -55,3 +57,4 @@ class App extends Component {
 }
 
 export default App;
+

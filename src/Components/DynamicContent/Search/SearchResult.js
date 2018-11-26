@@ -1,13 +1,13 @@
 
-import React, { Component } from 'react';
+import React from 'react';
 
-const SearchResult = ({key, result}) => {
+const SearchResult = ({key, result: {name, startDate, endDate}}) => {
 
     return(
         <tr key={key}>        
-            <td>{result.name}</td>
-            <td>{result.startDate}</td>
-            <td>{result.endDate}</td>
+            <td>{name}</td>
+            <td>{startDate}</td>
+            <td>{endDate}</td>
         </tr>
     )
 

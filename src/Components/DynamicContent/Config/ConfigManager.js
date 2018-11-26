@@ -5,10 +5,10 @@ const ConfigManager = (props) => {
     // TODO - Would break this component down into smaller components
 
     return(
-        <div className="configBox">
+        <div className="config__box">
         
-        <form className="configForm">
-            <label for="promotionname">Promotion Name:</label>
+        <form className="config__form">
+            <label htmlFor="promotionname">Promotion Name:</label>
             <input name="promotionname" type="text"/>
             <br/>
             
@@ -17,7 +17,7 @@ const ConfigManager = (props) => {
             Tablet: <input type="checkbox" name="devices" value="Tablet"/><br/>      
             
             <br/>             
-            <input className="configSubmitBtn" type="submit"/>
+            <input className="config__submitbutton" type="submit"/>
           </form>       
         
         </div>

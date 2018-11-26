@@ -12,7 +12,7 @@ class Search extends Component {
 
     handleInputChange = event =>  this.setState({searchTerm: event.target.value});
     
-    searchBtnClick = (event) => {        
+    searchBtnClick = event => {        
         const searchInput = this.state.searchTerm ;
         event.preventDefault();  
         this.setState({
@@ -35,7 +35,7 @@ class Search extends Component {
     }
 
     getNoMatchesString(searchDisplay){
-        if (searchDisplay.length == 0){
+        if (searchDisplay.length === 0){
             return  <p>No matches found</p>
         }
     }
@@ -43,15 +43,15 @@ class Search extends Component {
     render(){
         const { searchDisplay} = this.state;
         return(
-            <div className="searchBox">    
-            <form className="searchForm">
-                <input className="searchInput" type="text" placeholder="Search" value={this.state.searchTerm} onChange={this.handleInputChange}/>
-                <button className="searchbtn" type="submit" onClick={this.searchBtnClick}> 
+            <div className="search__box">    
+            <form className="search__form">
+                <input className="search__input" type="text" placeholder="Search" value={this.state.searchTerm} onChange={this.handleInputChange}/>
+                <button className="search__button" type="submit" onClick={this.searchBtnClick}> 
                   <img src="https://www.mockplus.com/images/search.png"/>
                 </button>                    
             </form>    
             <br/>
-            <div className="searchResult">    
+            <div className="search__result">    
               {this.getNoMatchesString(searchDisplay)}            
                 <table>        
                     {this.getTableHeaders(searchDisplay)}            
