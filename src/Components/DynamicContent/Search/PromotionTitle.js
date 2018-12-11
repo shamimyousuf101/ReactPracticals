@@ -1,9 +1,10 @@
 import React from 'react';
 
-const PromotionTitle = () => {
-
+const PromotionTitle = (props) => {
+    console.log(props);
     return(
-        <h1>single result</h1>
+        
+        <h2>{props.result}</h2>
     )
 }
 

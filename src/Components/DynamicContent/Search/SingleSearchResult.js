@@ -1,12 +1,17 @@
 import React from 'react';
+
 import PromotionTitle from './PromotionTitle';
+
 
 const SingleSearchResult = (props) => {
 
+    console.log(props.key);
     return(
-        <li>
-            <PromotionTitle result={props.result}/>
-        </li>
+        <div>
+       
+            <PromotionTitle />
+            
+        </div>
     )
 }
 

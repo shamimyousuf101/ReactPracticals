@@ -14,6 +14,7 @@ class Search extends Component {
     handleInputChange = event =>  this.setState({searchTerm: event.target.value});
 
     searchBtnClick = event => {        
+        console.log("i am clicked")
         const searchInput = this.state.searchTerm ;
         event.preventDefault();  
         this.setState({
@@ -21,9 +22,11 @@ class Search extends Component {
         });
     }
 
+
+
     render(){
         return(<div>
-            <SearchEntryContainer value={this.state.searchTerm} onChange={this.handleInputChange}/>
+            <SearchEntryContainer value={this.state.searchTerm} onChange={this.handleInputChange} onSearchClick={this.searchBtnClick}/>
             <SearchResultContainer result={this.state.searchDisplay}/>
         </div>)
     }

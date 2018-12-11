@@ -7,7 +7,7 @@ const SearchEntryContainer = (props) => {
     return(
         <form className="search__form">
             <SearchInput value={props.value} onChange={props.onChange}/>
-            <SearchButton onClick={props.onClick}/>
+            <SearchButton onSearchClick={props.onSearchClick}/>
         </form>
     )
 }

@@ -1,15 +1,22 @@
 
-import React from 'react';
-import SingleSearchResult from './SingleSearchResult';
+import React, {Component} from 'react';
+import SearchResult from './SearchResult';
 
-const SearchResultContainer = (props) => {
+class SearchResultContainer extends Component {
 
-    return(
-        <ul>
-            <SingleSearchResult result={props.result}/>
-        </ul>
-    )
+    getSearchItems( searchDisplay ){
+        if (searchDisplay.length > 0){
+            return searchDisplay.map((item, index)=>{                
+                return <SearchResult key={index} result={item}/>
+            })
+        } 
+    }
 
+    render(){
+        return(
+            <div> {this.getSearchItems(this.props.result)} </div>
+        )
+    }
 }
 
 export default SearchResultContainer;
