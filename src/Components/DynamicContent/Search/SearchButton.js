@@ -4,7 +4,7 @@ const SearchButton = (props) => {
 
     return(
         <button className="search__button" type="submit" onClick={props.onSearchClick}> 
-            <img src="https://www.mockplus.com/images/search.png"/>
+            <img src="/search.png"/>
         </button> 
     )
 }
