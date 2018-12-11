@@ -20,6 +20,8 @@ class Search extends Component {
         this.setState({
             searchDisplay: promotionData.promotions.filter((el) =>  el.name.toLowerCase().indexOf(searchInput.toLowerCase()) > -1)
         });
+
+        console.log(this.state.searchDisplay);
     }
 
 

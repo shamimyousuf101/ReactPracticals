@@ -5,11 +5,10 @@ import PromotionTitle from './PromotionTitle';
 
 const SingleSearchResult = (props) => {
 
-    console.log(props.key);
     return(
         <div>
        
-            <PromotionTitle />
+            <PromotionTitle result={props.result} />
             
         </div>
     )

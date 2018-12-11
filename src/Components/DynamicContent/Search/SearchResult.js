@@ -5,9 +5,7 @@ import SingleSearchResult from './SingleSearchResult';
 const SearchResult = (props) => {
 
     return(
-        <li>
-            <SingleSearchResult key={props.result.key} result={props.result.result}/>
-        </li>
+           <li><SingleSearchResult result={props.result}/></li> 
     )
 }
 
