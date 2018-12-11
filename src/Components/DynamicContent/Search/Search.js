@@ -16,11 +16,12 @@ class Search extends Component {
     searchBtnClick = event => {        
         console.log("i am clicked")
         const searchInput = this.state.searchTerm ;
+        console.log("searchInput "+ searchInput);
         event.preventDefault();  
         this.setState({
             searchDisplay: promotionData.promotions.filter((el) =>  el.name.toLowerCase().indexOf(searchInput.toLowerCase()) > -1)
         });
-
+        console.log("i am filtered in theory")
         console.log(this.state.searchDisplay);
     }
 
