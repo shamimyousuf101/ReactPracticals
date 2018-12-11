@@ -5,7 +5,7 @@ import SingleSearchResult from './SingleSearchResult';
 const SearchResult = (props) => {
 
     return(
-           <li><SingleSearchResult result={props.result}/></li> 
+           <div className="SearchResult"><SingleSearchResult result={props.result}/></div>
     )
 }
 
