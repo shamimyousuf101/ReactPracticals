@@ -1,8 +1,6 @@
 import React from 'react';
 
-import PromotionTitle from './PromotionTitle';
-import PromotionStartDate from './PromotionStartDate';
-import PromotionEndDate from './PromotionEndDate';
+import PromotionDetails from './PromotionDetails';
 import PromotionImage from './PromotionImage';
 
 
@@ -11,11 +9,7 @@ const SingleSearchResult = (props) => {
     return(
         <div className="SingleSearchResult">
             <PromotionImage result={props.result} />
-            <div className="promotionDetails">
-                <PromotionTitle result={props.result} />
-                <PromotionStartDate result={props.result} />
-                <PromotionEndDate result={props.result} /> 
-            </div>
+            <PromotionDetails result={props.result} />
         </div>
     )
 }
