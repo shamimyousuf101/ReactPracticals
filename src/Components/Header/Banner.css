@@ -1,0 +1,7 @@
+.banner {
+    background-image: linear-gradient(white, silver);
+    border-bottom:solid orange;
+    height: 100px;
+    text-align:center;
+  }
+  
