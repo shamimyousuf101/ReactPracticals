@@ -8,7 +8,6 @@ import {menuData} from './Components/Menu/menuData';
 import './Components/Header/Banner.css';
 import './Components/Menu/Menu.css';
 import './Components/DynamicContent/Search/Search.css';
-import './Components/DynamicContent/Config/Config.css';
 import './Components/DynamicContent/Asset/AssetManager.css';
 import './Components/DynamicContent/Container.css';
 import './App.css';
