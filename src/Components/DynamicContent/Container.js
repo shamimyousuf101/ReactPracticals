@@ -2,6 +2,7 @@ import React from 'react';
 
 import AssetManager from './../../Components/DynamicContent/Asset/AssetManager';
 import Search from './../../Components/DynamicContent/Search/Search';
+import PromotionBuilder from './../../Components/DynamicContent/PromotionBuilder/PromotionBuilder';
 
 const Container = ({view}) => {
 
@@ -10,7 +11,9 @@ const Container = ({view}) => {
             case "Search":
                 return <Search/>                
             case "Upload":
-                return <AssetManager/>                                   
+                return <AssetManager/>     
+            case "PromotionBuilder":
+                return <PromotionBuilder/>                              
             default:
                 throw new Error('Unexpected view supplied')                
         }    

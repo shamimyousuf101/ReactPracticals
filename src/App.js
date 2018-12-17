@@ -9,6 +9,7 @@ import './Components/Header/Banner.css';
 import './Components/Menu/Menu.css';
 import './Components/DynamicContent/Search/Search.css';
 import './Components/DynamicContent/Asset/AssetManager.css';
+import './Components/DynamicContent/PromotionBuilder/PromotionBuilder.css';
 import './Components/DynamicContent/Container.css';
 import './App.css';
 
@@ -31,7 +32,7 @@ class App extends Component {
           view = "Upload";
           break;
       case "config__link":
-          view = "Config";
+          view = "PromotionBuilder";
           break;
       default:
           view = "Search";

@@ -2,8 +2,6 @@ import React from 'react';
 import {shallow} from "enzyme";
 
 import PromotionBuilder from './PromotionBuilder';
-import PromotionBuilderHeader from './PromotionBuilderHeader';
-import PromotionBuilderBody from './PromotionBuilderBody';
 
 
 describe('Promotion Builder', () => {
@@ -17,11 +15,16 @@ describe('Promotion Builder', () => {
         expect(typeof PromotionBuilder).toBe("function");
     })
 
-    it('should have a header component for Promotion Builder as PromotionBuilderHeader', () => {
-        expect(promotionBuilder.find(<PromotionBuilderHeader/>)).toBeDefined();
+
+    it("should have New Promotion Title component", () => {
+        expect(promotionBuilder.find("NewPromotionTitle")).toHaveLength(1);
     })
 
-    it('should have a body component for Promotion Builder as PromotionBuilderBody', () => {
-        expect(promotionBuilder.find(<PromotionBuilderBody/>)).toBeDefined();
+    it("should have Promotion Details component", () => {
+        expect(promotionBuilder.find("PromotionDetails")).toHaveLength(1);
+    })
+
+    it("should have Promotion Toolbar component", () => {
+        expect(promotionBuilder.find("PromotionToolBar")).toHaveLength(1);
     })
 })

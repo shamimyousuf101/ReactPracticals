@@ -2,7 +2,7 @@
 import React, {Component} from 'react';
 import SearchResultContainer from './SearchResultContainer';
 import SearchEntryContainer from './SearchEntryContainer';
-import { promotionData } from './../Config/promotionData';
+import { promotionData } from './../PromotionBuilder/promotionData';
 
 class Search extends Component {
 
