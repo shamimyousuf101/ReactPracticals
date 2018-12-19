@@ -31,3 +31,25 @@ button{
 .reset{
     background-color: bisque;
 }
+
+
+.PromotionBuilder{
+    margin-left: 50px;
+}
+
+.promotionDetailsForm{
+    display: table;
+}
+
+.listBoxItem{
+    display: table-row;
+}
+
+label, input {
+    display: table-cell;
+    margin-bottom: 10px;
+}
+
+label {
+    padding-right: 10px;
+}

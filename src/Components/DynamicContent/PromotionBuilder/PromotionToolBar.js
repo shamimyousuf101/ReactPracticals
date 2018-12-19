@@ -1,11 +1,9 @@
 import React from 'react';
-import SaveButton from './SaveButton';
-import ResetButton from './ResetButton';
 
 const PromotionToolBar = () => {
     return (<div className="PromotionToolBar">
-    <SaveButton/>
-    <ResetButton/>
+    <button className="save" >Save</button>
+    <button className="reset" >Reset</button>
     </div>)
 }
 

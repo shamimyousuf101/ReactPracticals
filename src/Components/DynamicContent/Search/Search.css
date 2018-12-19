@@ -16,7 +16,7 @@
     display: flex;
 }
 
-input {
+.search__input {
     font-size:14px;
     height:30px;
     padding:5px 10px;
@@ -38,4 +38,9 @@ td{
     width: 85%;
     border-color:#60aade;
     display: flex;
+}
+
+.searchContainer{
+    margin-left: 50px;
+    padding-top:10px;
 }

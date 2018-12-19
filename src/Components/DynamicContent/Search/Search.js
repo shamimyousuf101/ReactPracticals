@@ -8,7 +8,7 @@ class Search extends Component {
 
     state = {
         searchTerm:"",
-        searchDisplay:[]
+        searchDisplay:promotionData.promotions
     };
 
     handleInputChange = event =>  this.setState({searchTerm: event.target.value});
@@ -22,7 +22,7 @@ class Search extends Component {
     }
 
     render(){
-        return(<div>
+        return(<div className="searchContainer">
             <SearchEntryContainer value={this.state.searchTerm} onChange={this.handleInputChange} onSearchClick={this.searchBtnClick}/>
             <SearchResultContainer result={this.state.searchDisplay}/>
         </div>)

@@ -1,18 +1,16 @@
 import React from 'react';
-import DeviceList from './DeviceList';
-import VentureList from './VentureList';
-import URL from './URL';
-import Name from './Name';
 import Asset from './Asset';
+import InputBox from './InputBox';
+import ListBox from './ListBox';
 
 const PromotionDetails = () => {
-    return(<div className="PromotionDetails">
-    <DeviceList/>
-    <VentureList/>
-    <URL/>
-    <Name/>
-    <Asset/>
-    </div>)
+    return(<form className="promotionDetailsForm">
+        <ListBox legendText="Choose devices:"/>
+        <ListBox legendText="Choose ventures:"/>
+        <InputBox>URL:</InputBox>
+        <InputBox>Name:</InputBox>
+        <Asset/> 
+    </form>)
 }
 
 export default PromotionDetails;
