@@ -1,15 +1,35 @@
-import React from 'react';
+import React, {Component} from 'react';
 
 import AssetManager from './../../Components/DynamicContent/Asset/AssetManager';
 import Search from './../../Components/DynamicContent/Search/Search';
 import PromotionBuilder from './../../Components/DynamicContent/PromotionBuilder/PromotionBuilder';
+import { promotionData } from './PromotionBuilder/promotionData';
 
-const Container = ({view}) => {
+class Container extends Component {
 
-    const setContent = (view) => {
+    state = {
+        searchTerm:"",
+        searchDisplay:promotionData.promotions,
+        selectedPromotion:""
+    };
+
+    handleInputChange = event =>  this.setState({searchTerm: event.target.value});
+
+    
+
+    searchBtnClick = event => {      
+        // will use searchInput for searching  
+        const searchInput = this.state.searchTerm;
+        event.preventDefault();  
+        this.setState({
+            searchDisplay: promotionData.promotions
+        });
+    }
+
+    setContent = (view) => {
         switch (view) {
             case "Search":
-                return <Search/>                
+                return <Search searchDisplay={this.state.searchDisplay} searchTerm={this.state.searchTerm} onInputChange={this.handleInputChange} onSearchClick={this.searchBtnClick} />                
             case "Upload":
                 return <AssetManager/>     
             case "PromotionBuilder":
@@ -19,11 +39,14 @@ const Container = ({view}) => {
         }    
     }
 
-    return (<div className="content"> 
+    render(){
+        return (<div className="content"> 
                 <div className="dynamiccontent">    
-                    {setContent(view)}
+                    {this.setContent(this.props.view)}
                 </div>
-           </div>)
+            </div>)
+    } 
+    
 }
 
 export default Container;

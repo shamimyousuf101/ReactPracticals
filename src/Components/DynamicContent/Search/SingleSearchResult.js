@@ -6,9 +6,11 @@ import PromotionImage from './PromotionImage';
 
 const SingleSearchResult = (props) => {
 
+    const goToPromotionBuilder = () => {
+        console.log("I am in promotion builder page")
+    }
     return(
-        <div className="SingleSearchResult">
-            <PromotionImage result={props.result} />
+        <div className="SingleSearchResult" onClick="goToPromotionBuilder()" >
             <PromotionDetails result={props.result} />
         </div>
     )

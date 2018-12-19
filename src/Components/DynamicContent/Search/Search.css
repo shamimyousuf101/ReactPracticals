@@ -38,6 +38,7 @@ td{
     width: 85%;
     border-color:#60aade;
     display: flex;
+    cursor: pointer;
 }
 
 .searchContainer{
