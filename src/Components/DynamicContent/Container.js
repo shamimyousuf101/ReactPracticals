@@ -15,14 +15,12 @@ class Container extends Component {
 
     handleInputChange = event =>  this.setState({searchTerm: event.target.value});
 
-    
-
     searchBtnClick = event => {      
-        // will use searchInput for searching  
         const searchInput = this.state.searchTerm;
+        var promotionArray = Object.keys(promotionData.promotions).map(key =>promotionData.promotions[key]); 
         event.preventDefault();  
         this.setState({
-            searchDisplay: promotionData.promotions
+            searchDisplay: promotionArray.filter((el) =>  el.promotion.name.toLowerCase().indexOf(searchInput.toLowerCase()) > -1)
         });
     }
 
