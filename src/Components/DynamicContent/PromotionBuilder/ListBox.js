@@ -2,12 +2,13 @@
 import React from 'react';
 import ListBoxItem from './ListBoxItem';
 
+import CheckboxContainer from './CheckboxContainer';
+
 const ListBox = (props) => {
+
     return(<fieldset>
         <legend>{props.legendText}</legend>
-        <ListBoxItem name="mobile">Mobile</ListBoxItem>
-        <ListBoxItem name="desktop">Desktop</ListBoxItem>
-        <ListBoxItem name="tablet">Tablet</ListBoxItem>
+        <CheckboxContainer displayItems={props.displayItems} promotionData={props.promotionData}/>
         </fieldset>)
 }
 

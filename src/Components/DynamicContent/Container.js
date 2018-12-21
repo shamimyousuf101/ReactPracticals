@@ -10,28 +10,35 @@ class Container extends Component {
     state = {
         searchTerm:"",
         searchDisplay:promotionData.promotions,
-        selectedPromotion:""
+        selectedPromotion:promotionData.promotions[0]
     };
 
     handleInputChange = event =>  this.setState({searchTerm: event.target.value});
 
     searchBtnClick = event => {      
         const searchInput = this.state.searchTerm;
-        var promotionArray = Object.keys(promotionData.promotions).map(key =>promotionData.promotions[key]); 
+        let promotionArray = Object.keys(promotionData.promotions).map(key =>promotionData.promotions[key]); 
         event.preventDefault();  
         this.setState({
             searchDisplay: promotionArray.filter((el) =>  el.promotion.name.toLowerCase().indexOf(searchInput.toLowerCase()) > -1)
         });
     }
 
+    editBtnClick = (id) => {      
+        this.setState({
+            selectedPromotion: promotionData.promotions.filter((item) =>  item.id === id)[0]
+        });
+    }
+
+
     setContent = (view) => {
         switch (view) {
             case "Search":
-                return <Search searchDisplay={this.state.searchDisplay} searchTerm={this.state.searchTerm} onInputChange={this.handleInputChange} onSearchClick={this.searchBtnClick} />                
+                return <Search searchDisplay={this.state.searchDisplay} searchTerm={this.state.searchTerm} onInputChange={this.handleInputChange} onSearchClick={this.searchBtnClick} editBtnClick={this.editBtnClick}/>                
             case "Upload":
                 return <AssetManager/>     
             case "PromotionBuilder":
-                return <PromotionBuilder/>                              
+                return <PromotionBuilder selectedPromotion={this.state.selectedPromotion}/>                              
             default:
                 throw new Error('Unexpected view supplied')                
         }    

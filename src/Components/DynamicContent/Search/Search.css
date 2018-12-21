@@ -38,10 +38,15 @@ td{
     width: 85%;
     border-color:#60aade;
     display: flex;
-    cursor: pointer;
 }
 
 .searchContainer{
     margin-left: 50px;
     padding-top:10px;
+}
+
+
+.edit__button{
+    cursor: pointer;
+    border-color:#60aade;
 }

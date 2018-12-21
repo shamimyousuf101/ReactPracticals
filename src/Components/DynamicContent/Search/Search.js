@@ -6,7 +6,7 @@ import SearchEntryContainer from './SearchEntryContainer';
 const Search = (props) => {
     return(<div className="searchContainer">
         <SearchEntryContainer value={props.searchTerm} onChange={props.onInputChange} onSearchClick={props.onSearchClick}/>
-        <SearchResultContainer result={props.searchDisplay}/>
+        <SearchResultContainer result={props.searchDisplay} editBtnClick={props.editBtnClick}/>
     </div>)
 }
 

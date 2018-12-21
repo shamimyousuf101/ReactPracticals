@@ -7,7 +7,7 @@ class SearchResultContainer extends Component {
     getSearchItems( searchDisplay ){
         if (searchDisplay.length > 0){
             return searchDisplay.map((item, index)=>{                
-                return <SingleSearchResult key={index} result={item}/>
+                return <SingleSearchResult key={index} id={item.id} result={item} editBtnClick={this.props.editBtnClick}/>
             })
         } 
     }

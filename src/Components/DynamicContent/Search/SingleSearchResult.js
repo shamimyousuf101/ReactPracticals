@@ -1,17 +1,15 @@
 import React from 'react';
 
 import PromotionDetails from './PromotionDetails';
-import PromotionImage from './PromotionImage';
+import EditButton from './EditButton';
 
 
 const SingleSearchResult = (props) => {
 
-    const goToPromotionBuilder = () => {
-        console.log("I am in promotion builder page")
-    }
     return(
-        <div className="SingleSearchResult" onClick="goToPromotionBuilder()" >
+        <div className="SingleSearchResult">
             <PromotionDetails result={props.result} />
+            <button className="edit__button" type="submit" onClick={() => props.editBtnClick(props.id)} >Edit</button> 
         </div>
     )
 }
