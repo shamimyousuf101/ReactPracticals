@@ -1,9 +1,16 @@
 import React from 'react';
 
-const PromotionToolBar = () => {
+const PromotionToolBar = (props) => {
 
-    const savePromotion = () => {
-        alert("I am an savePromotion box!");
+    const savePromotion = (selectedPromotion) => {
+
+        let data = " New Promotion Details: " + "\n" + 
+                    "Id: " + selectedPromotion.id + "\n" + 
+                    "Name: " + selectedPromotion.promotion.name + "\n" + 
+                    "Url: " + selectedPromotion.promotion.url + "\n" + 
+                    "Devices: " + selectedPromotion.promotion.devices + "\n" + 
+                    "Ventures: " + selectedPromotion.promotion.ventures;
+        alert(data);
     }
 
     const resetPromotion = () => {
@@ -11,7 +18,7 @@ const PromotionToolBar = () => {
     }
 
     return (<div className="PromotionToolBar">
-        <button className="save" onClick={savePromotion}>Save</button>
+        <button className="save" onClick={() => savePromotion(props.selectedPromotion)}>Save</button>
         <button className="reset" onClick={resetPromotion}>Reset</button>
     </div>)
 }

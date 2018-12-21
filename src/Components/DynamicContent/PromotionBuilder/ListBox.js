@@ -1,7 +1,5 @@
 
 import React from 'react';
-import ListBoxItem from './ListBoxItem';
-
 import CheckboxContainer from './CheckboxContainer';
 
 const ListBox = (props) => {
