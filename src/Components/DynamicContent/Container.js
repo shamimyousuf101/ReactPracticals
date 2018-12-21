@@ -30,6 +30,12 @@ class Container extends Component {
         });
     }
 
+    reset = () => {
+        this.setState({
+            selectedPromotion:[]
+        });
+    }
+
 
     setContent = (view) => {
         switch (view) {
@@ -38,7 +44,7 @@ class Container extends Component {
             case "Upload":
                 return <AssetManager/>     
             case "PromotionBuilder":
-                return <PromotionBuilder selectedPromotion={this.state.selectedPromotion}/>                              
+                return <PromotionBuilder selectedPromotion={this.state.selectedPromotion} reset={this.reset}/>                              
             default:
                 throw new Error('Unexpected view supplied')                
         }    

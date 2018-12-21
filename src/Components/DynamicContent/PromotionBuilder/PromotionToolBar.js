@@ -19,7 +19,7 @@ const PromotionToolBar = (props) => {
 
     return (<div className="PromotionToolBar">
         <button className="save" onClick={() => savePromotion(props.selectedPromotion)}>Save</button>
-        <button className="reset" onClick={resetPromotion}>Reset</button>
+        <button className="reset" onClick={props.reset}>Reset</button>
     </div>)
 }
 

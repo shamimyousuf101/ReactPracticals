@@ -10,7 +10,7 @@ const PromotionBuilder = (props) => {
     return(<div className="PromotionBuilder">
         <NewPromotionTitle/>
         <PromotionDetails selectedPromotion={props.selectedPromotion}/>
-        <PromotionToolBar selectedPromotion={props.selectedPromotion}/>
+        <PromotionToolBar selectedPromotion={props.selectedPromotion} reset={props.reset}/>
     </div>)
 }
 
