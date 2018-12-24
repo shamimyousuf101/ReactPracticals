@@ -10,7 +10,13 @@ class Container extends Component {
     state = {
         searchTerm:"",
         searchDisplay:promotionData.promotions,
-        selectedPromotion:promotionData.promotions[0]
+        selectedPromotion:null,
+        formData: {
+            deviceList: new Map(),
+            ventureList: new Map(),
+            url: "",
+            name: ""
+        }
     };
 
     handleInputChange = event =>  this.setState({searchTerm: event.target.value});
@@ -40,6 +46,15 @@ class Container extends Component {
     }
 
 
+    onFormChange = (value, formField) => {
+        this.setState( (prevState) =>{
+            return {
+                formData: { ...prevState.formData, [formField]: value }
+            }
+        }
+        )
+    }
+
     setContent = (view) => {
         switch (view) {
             case "Search":
@@ -47,7 +62,7 @@ class Container extends Component {
             case "Upload":
                 return <AssetManager/>     
             case "PromotionBuilder":
-                return <PromotionBuilder selectedPromotion={this.state.selectedPromotion} reset={this.reset}/>                              
+                return <PromotionBuilder selectedPromotion={this.state.selectedPromotion} reset={this.reset} formData={this.state.formData} onFormChange={this.onFormChange}/>                              
             default:
                 throw new Error('Unexpected view supplied')                
         }    

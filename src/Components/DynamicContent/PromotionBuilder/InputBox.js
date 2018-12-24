@@ -1,25 +1,23 @@
 
 import React from 'react';
+import PropsTypes from 'prop-types'
 
 const InputBox = (props) => {
 
-
-    const setValue = (promotionData) => {
-
-        if (promotionData) {
-
-            return promotionData;
-
-        } else {
-            return "";
-        }
-
+    const handleInputData = (event) => {
+        props.onFormChange(event.target.value, props.name)
     }
 
     return(<div>
         <label htmlFor={props.name}>{props.children}</label>
-        <input type="text" name={props.name} value={setValue(props.promotionData)}></input>
+        <input type="text" name={props.name} value={props.value} onChange={handleInputData}></input>
     </div>)
+}
+
+InputBox.propsTypes = {
+    name: PropsTypes.string.isRequired,
+    children: PropsTypes.string.isRequired,
+    value: PropsTypes.string
 }
 
 export default InputBox;
