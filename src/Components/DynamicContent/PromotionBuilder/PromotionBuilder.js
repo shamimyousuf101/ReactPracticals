@@ -4,8 +4,6 @@ import PromotionDetails from './PromotionDetails';
 import PromotionToolBar from './PromotionToolBar';
 
 const PromotionBuilder = (props) => {
-
-
     
     return(<div className="PromotionBuilder">
         <NewPromotionTitle/>

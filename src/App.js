@@ -44,21 +44,24 @@ class App extends Component {
 
 
   onFormChange = (value, formField) => {
-    this.setState((prevState) => {
-      return {
-        formData: { ...prevState.formData, [formField]: value }
-      }
-    }
-    )
+      this.setState((prevState) => {
+        return {  formData: { ...prevState.formData, [formField]: value }}
+      })
   }
 
 
   reset = () => {
-    alert("reset is called");
     this.setState({
-      selectedPromotionId: null
+      selectedPromotionId: null,
+      formData: {
+        devices: new Map(),
+        ventures: new Map(),
+        url: "",
+        name: ""
+      },
     });
   }
+
 
   editBtnClick = (id) => {
     this.setState({
@@ -66,10 +69,7 @@ class App extends Component {
       view: "PromotionBuilder",
       formData: this.setFormDataToSelectedPromotion(id)
     });
-
-
   }
-
 
 
   setFormDataToSelectedPromotion = (selectedPromotionId) => {
@@ -90,12 +90,8 @@ class App extends Component {
           newMap.set(element, true);
         });
       }
-
       return newMap;
     }
-
-
-
 
   }
 
@@ -112,6 +108,8 @@ class App extends Component {
         break;
       case "config__link":
         view = "PromotionBuilder";
+        this.reset();
+
         break;
       default:
         view = "Search";

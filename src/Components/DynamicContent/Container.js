@@ -3,15 +3,8 @@ import React, {Component} from 'react';
 import AssetManager from './../../Components/DynamicContent/Asset/AssetManager';
 import Search from './../../Components/DynamicContent/Search/Search';
 import PromotionBuilder from './../../Components/DynamicContent/PromotionBuilder/PromotionBuilder';
-import { promotionData } from './PromotionBuilder/promotionData';
 
 class Container extends Component {
-
-
-    
-
-
-
 
     setContent = (view) => {
         switch (view) {
