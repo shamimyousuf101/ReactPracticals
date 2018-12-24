@@ -1,4 +1,4 @@
-const deviceList = [
+const devices = [
     {
         name: 'mobile',
         key: 'mobile',
@@ -16,4 +16,4 @@ const deviceList = [
     }
 ]
 
-export default deviceList;
+export default devices;

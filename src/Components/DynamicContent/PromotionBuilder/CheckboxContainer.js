@@ -3,37 +3,31 @@ import React from 'react';
 import Checkbox from './Checkbox';
 
 class CheckboxContainer extends React.Component {
-    constructor(props){
-        super(props);
 
-        this.state = {
-            checkedItems: new Map(),
-        }
+    handleChange = (e) => {
 
-        this.handleChange = this.handleChange.bind(this);
-    }
+       let listMap = this.props.value;
 
-    handleChange(e) {
-        const item = e.target.name;
-        const isChecked = e.target.checked;
-        this.setState(preState => ({ checkedItems: preState.checkedItems.set(item, isChecked) }))
-    }
+       if(listMap.has(e.target.name)){
+        listMap.set(e.target.name, !listMap.get(e.target.name))
+       }else{
+        listMap.set(e.target.name, true)
+       }
 
+       this.props.onFormChange(listMap, this.props.name);
 
-    handleFieldSetChange = (event) => {
-        this.props.onFormChange( this.state.checkedItems, this.props.name)
     }
 
     render(){
         
         return (
-            <fieldset onChange={this.handleFieldSetChange}>
+            <fieldset >
             <legend>{this.props.legendText}</legend>
                     {
                         this.props.displayItems.map(item => (
                             <label key = {item.key}>
                                 {item.name}
-                                <Checkbox name={item.name} checked={this.state.checkedItems.get(item.name)} onChange={this.handleChange} />                           
+                                <Checkbox name={item.name} checked={this.props.value.get(item.name)} onChange={this.handleChange} />                           
                             </label>
                         ))
                     }

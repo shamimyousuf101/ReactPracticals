@@ -9,11 +9,11 @@ describe("PromotionDetails", ()=> {
         promotionDetails = shallow(<PromotionDetails/>);
     })
 
-    it("should have DeviceList component", () => {
-        expect(promotionDetails.find('DeviceList')).toHaveLength(1);
+    it("should have devices component", () => {
+        expect(promotionDetails.find('devices')).toHaveLength(1);
     })
-    it("should have VentureList component", () => {
-        expect(promotionDetails.find('VentureList')).toHaveLength(1);
+    it("should have ventures component", () => {
+        expect(promotionDetails.find('ventures')).toHaveLength(1);
     })
     it("should have URL component", () => {
         expect(promotionDetails.find('URL')).toHaveLength(1);

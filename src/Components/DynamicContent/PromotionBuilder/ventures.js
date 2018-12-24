@@ -1,4 +1,4 @@
-const ventureList = [
+const ventures = [
     {
         name: 'jackpotjoy',
         key: 'jackpotjoy',
@@ -16,4 +16,4 @@ const ventureList = [
     }
 ]
 
-export default ventureList;
+export default ventures;
