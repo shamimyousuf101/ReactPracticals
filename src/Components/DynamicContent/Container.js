@@ -25,12 +25,15 @@ class Container extends Component {
     }
 
     editBtnClick = (id) => {      
+        let promotionArray = Object.keys(promotionData.promotions).map(key =>promotionData.promotions[key]); 
+
         this.setState({
-            selectedPromotion: promotionData.promotions.filter((item) =>  item.id === id)[0]
+            selectedPromotion: promotionArray.filter((item) =>  item.id === id)[0]
         });
     }
 
     reset = () => {
+        alert("reset is called");
         this.setState({
             selectedPromotion:[]
         });

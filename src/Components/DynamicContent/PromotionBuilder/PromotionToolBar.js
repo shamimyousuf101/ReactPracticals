@@ -13,9 +13,6 @@ const PromotionToolBar = (props) => {
         alert(data);
     }
 
-    const resetPromotion = () => {
-        alert("I am an resetPromotion box!");
-    }
 
     return (<div className="PromotionToolBar">
         <button className="save" onClick={() => savePromotion(props.selectedPromotion)}>Save</button>
