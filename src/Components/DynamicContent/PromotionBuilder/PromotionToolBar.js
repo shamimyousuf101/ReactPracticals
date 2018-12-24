@@ -4,13 +4,15 @@ const PromotionToolBar = (props) => {
 
     const savePromotion = (selectedPromotion) => {
 
-        let data = " New Promotion Details: " + "\n" + 
-                    "Id: " + selectedPromotion.id + "\n" + 
-                    "Name: " + selectedPromotion.promotion.name + "\n" + 
-                    "Url: " + selectedPromotion.promotion.url + "\n" + 
-                    "Devices: " + selectedPromotion.promotion.devices + "\n" + 
-                    "Ventures: " + selectedPromotion.promotion.ventures;
-        alert(data);
+        if (selectedPromotion) {
+            let data = " New Promotion Details: " + "\n" + 
+                        "Id: " + selectedPromotion.id + "\n" + 
+                        "Name: " + selectedPromotion.promotion.name + "\n" + 
+                        "Url: " + selectedPromotion.promotion.url + "\n" + 
+                        "Devices: " + selectedPromotion.promotion.devices + "\n" + 
+                        "Ventures: " + selectedPromotion.promotion.ventures;
+            alert(data);
+        }
     }
 
 

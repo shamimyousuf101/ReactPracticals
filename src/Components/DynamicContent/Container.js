@@ -35,7 +35,7 @@ class Container extends Component {
     reset = () => {
         alert("reset is called");
         this.setState({
-            selectedPromotion:[]
+            selectedPromotion:null
         });
     }
 

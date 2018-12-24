@@ -32,7 +32,7 @@ class CheckboxContainer extends React.Component {
     arrayToMap(array){
         let newMap = new Map();
 
-        if(array.length > 0){
+        if(array){
             array.forEach(element => {
                 newMap.set(element, true);
             });

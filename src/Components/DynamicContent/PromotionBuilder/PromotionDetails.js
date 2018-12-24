@@ -11,7 +11,7 @@ const PromotionDetails = (props) => {
         if(selectedPromotion){
             return selectedPromotion.promotion.devices;
         }else {
-            return [];
+            return null;
         }
     }
 
@@ -19,34 +19,32 @@ const PromotionDetails = (props) => {
         if(selectedPromotion){
             return selectedPromotion.promotion.ventures;
         }else {
-            return [];
+            return null;
         }
     }
 
 
     const  getUrl = (selectedPromotion) =>{
-
-        console.log(selectedPromotion.length)
-        if(selectedPromotion.length >0){
+        if(selectedPromotion){
             return selectedPromotion.promotion.url;
         }else {
-            return [];
+            return null;
         }
     }
 
     const  getName = (selectedPromotion) =>{
-        if(selectedPromotion.length >0){
+        if(selectedPromotion){
             return selectedPromotion.promotion.name;
         }else {
-            return [];
+            return null;
         }
     }
 
     return(<form className="promotionDetailsForm">
-        <ListBox promotionData={() => getDevices(props.selectedPromotion)} displayItems={deviceList} legendText="Choose devices:"/>
-        <ListBox promotionData={() => getVentures(props.selectedPromotion)} displayItems={ventureList} legendText="Choose ventures:"/>
+        <ListBox promotionData={getDevices(props.selectedPromotion)} displayItems={deviceList} legendText="Choose devices:"/>
+        <ListBox promotionData={getVentures(props.selectedPromotion)} displayItems={ventureList} legendText="Choose ventures:"/>
         <InputBox promotionData={getUrl(props.selectedPromotion)} >URL:</InputBox>
-        <InputBox promotionData={() => getName(props.selectedPromotion)} >Name:</InputBox>        
+        <InputBox promotionData={getName(props.selectedPromotion)} >Name:</InputBox>        
         <Asset/> 
     </form>)
 }
