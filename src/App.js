@@ -55,19 +55,38 @@ class App extends Component {
 
   savePromotion = () => {
 
+
+    // BUG - new id getting created each time save is clicked
+
+    function MapToArray(map) {
+      
+      let arr1 = [...map.keys()]
+      return arr1;
+    }
+
     let uuid4 = require('uuid4');
     let id = null;
     let newPromotion = {
       id: 0,
       devices: [],
-      ventures: new Map(),
+      ventures: [],
       url: "",
       name: ""
     }
 
     if (this.state.formData) {
 
-        id = this.state.selectedPromotionId ? this.state.selectedPromotionId :  uuid4();
+        
+
+        if(this.state.selectedPromotionId){
+          id = this.state.selectedPromotionId
+        }
+
+        if(this.state.formData.id){
+            id = this.state.formData.id
+        } else {
+          id = uuid4();
+        }
 
         let data = " New Promotion Details: " + "\n" + 
         "Name: " + this.state.formData.name + "\n" + 
@@ -80,8 +99,9 @@ class App extends Component {
         newPromotion.id=id;
         newPromotion.name=this.state.formData.name;
         newPromotion.url=this.state.formData.url;
-        newPromotion.devices=this.state.formData.devices;
-        newPromotion.ventures=this.state.formData.ventures;
+        newPromotion.devices=MapToArray(this.state.formData.devices);
+        newPromotion.ventures=MapToArray(this.state.formData.ventures);
+
         this.setState((prevState) => {
           return {  formData: { ...prevState.formData, [id]: newPromotion }}
         })
@@ -89,7 +109,7 @@ class App extends Component {
       this.setState((prevState) => {
         return {  searchDisplay: { 
           ...prevState.searchDisplay, 
-          [id ]: this.state.formData
+          [id ]: newPromotion
         }}
       })
 
