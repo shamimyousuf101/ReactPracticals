@@ -4,28 +4,28 @@ import AssetManager from './../../Components/DynamicContent/Asset/AssetManager';
 import Search from './../../Components/DynamicContent/Search/Search';
 import PromotionBuilder from './../../Components/DynamicContent/PromotionBuilder/PromotionBuilder';
 
-class Container extends Component {
+const Container = (props) => {
 
-    setContent = (view) => {
+    const setContent = (view) => {
         switch (view) {
             case "Search":
-                return <Search searchDisplay={this.props.searchDisplay} searchTerm={this.props.searchTerm} onInputChange={this.props.handleInputChange} onSearchClick={this.props.searchBtnClick} editBtnClick={this.props.editBtnClick}/>                
+                return <Search searchDisplay={props.searchDisplay} searchTerm={props.searchTerm} onInputChange={props.handleInputChange} onSearchClick={props.searchBtnClick} editBtnClick={props.editBtnClick}/>                
             case "Upload":
                 return <AssetManager/>     
             case "PromotionBuilder":
-                return <PromotionBuilder reset={this.props.reset} formData={this.props.formData} onFormChange={this.props.onFormChange}/>                              
+                return <PromotionBuilder reset={props.reset} formData={props.formData} onFormChange={props.onFormChange}/>                              
             default:
                 throw new Error('Unexpected view supplied')                
         }    
     }
 
-    render(){
-        return (<div className="content"> 
-                <div className="dynamiccontent">    
-                    {this.setContent(this.props.view)}
-                </div>
-            </div>)
-    } 
+   
+    return (<div className="content"> 
+            <div className="dynamiccontent">    
+                {setContent(props.view)}
+            </div>
+        </div>)
+    
     
 }
 

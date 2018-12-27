@@ -9,7 +9,7 @@ const SingleSearchResult = (props) => {
     return(
         <div className="SingleSearchResult">
             <PromotionDetails result={props.result} />
-            <button className="edit__button" type="submit" onClick={() => props.editBtnClick(props.id)} >Edit</button> 
+            <EditButton id={props.id} editBtnClick={props.editBtnClick} />
         </div>
     )
 }
