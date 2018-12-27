@@ -13,6 +13,7 @@ import './Components/DynamicContent/PromotionBuilder/PromotionBuilder.css';
 import './Components/DynamicContent/Container.css';
 import './App.css';
 import { promotionData } from './Components/DynamicContent/PromotionBuilder/promotionData';
+import getTruthyList from './utils/utils'
 
 
 class App extends Component {
@@ -95,6 +96,24 @@ class App extends Component {
 
   }
 
+
+  savePromotion = () => {
+
+    let uuid4 = require('uuid4');
+    var id = uuid4();
+
+    if (this.state.formData) {
+        let data = " New Promotion Details: " + "\n" + 
+        "Name: " + this.state.formData.name + "\n" + 
+        "Id: " + id + "\n" + 
+        "Url: " + this.state.formData.url + "\n" + 
+        "Devices: " + getTruthyList(this.state.formData.devices ) + "\n" + 
+        "Ventures: " + getTruthyList(this.state.formData.ventures) ;
+        alert(data);
+    }
+}
+
+
   onclick = (event) => {
     const selectedLink = event.currentTarget.className;
     let view;
@@ -109,7 +128,6 @@ class App extends Component {
       case "config__link":
         view = "PromotionBuilder";
         this.reset();
-
         break;
       default:
         view = "Search";
@@ -127,7 +145,7 @@ class App extends Component {
     return (
       <div className="App">
         <Banner subHeading={view} />
-        <Container view={view} formData={formData} editBtnClick={this.editBtnClick} reset={this.reset} onFormChange={this.onFormChange} handleInputChange={this.handleInputChange} searchBtnClick={this.searchBtnClick} searchDisplay={searchDisplay} searchTerm={searchTerm} />
+        <Container view={view} formData={formData} editBtnClick={this.editBtnClick} reset={this.reset} savePromotion={this.savePromotion} onFormChange={this.onFormChange} handleInputChange={this.handleInputChange} searchBtnClick={this.searchBtnClick} searchDisplay={searchDisplay} searchTerm={searchTerm} />
         <Menu menuData={menuData} clickHandler={this.onclick} />
       </div>
     );

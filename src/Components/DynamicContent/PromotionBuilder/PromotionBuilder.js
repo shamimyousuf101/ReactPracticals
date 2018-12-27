@@ -8,7 +8,7 @@ const PromotionBuilder = (props) => {
     return(<div className="PromotionBuilder">
         <NewPromotionTitle/>
         <PromotionDetails  formData={props.formData} onFormChange={props.onFormChange}/>
-        <PromotionToolBar formData={props.formData} reset={props.reset}/>
+        <PromotionToolBar formData={props.formData} reset={props.reset} savePromotion={props.savePromotion}/>
     </div>)
 }
 
