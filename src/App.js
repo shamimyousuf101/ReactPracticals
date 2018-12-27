@@ -22,13 +22,14 @@ class App extends Component {
     view: "Search",
     selectedPromotionId: null,
     formData: {
+      id: 0,
       devices: new Map(),
       ventures: new Map(),
       url: "",
       name: ""
     },
     searchTerm: "",
-    searchDisplay: promotionData.promotions,
+    searchDisplay: promotionData,
   };
 
 
@@ -36,10 +37,10 @@ class App extends Component {
 
   searchBtnClick = event => {
     const searchInput = this.state.searchTerm;
-    let promotionArray = Object.keys(promotionData.promotions).map(key => promotionData.promotions[key]);
+    let promotionArray = Object.keys(promotionData).map(key => promotionData[key]);
     event.preventDefault();
     this.setState({
-      searchDisplay: promotionArray.filter((el) => el.promotion.name.toLowerCase().indexOf(searchInput.toLowerCase()) > -1)
+      searchDisplay: promotionArray.filter((el) => el.name.toLowerCase().indexOf(searchInput.toLowerCase()) > -1)
     });
   }
 
@@ -50,6 +51,51 @@ class App extends Component {
       })
   }
 
+
+
+  savePromotion = () => {
+
+    let uuid4 = require('uuid4');
+    let id = null;
+    let newPromotion = {
+      id: 0,
+      devices: [],
+      ventures: new Map(),
+      url: "",
+      name: ""
+    }
+
+    if (this.state.formData) {
+
+        id = this.state.selectedPromotionId ? this.state.selectedPromotionId :  uuid4();
+
+        let data = " New Promotion Details: " + "\n" + 
+        "Name: " + this.state.formData.name + "\n" + 
+        "Id: " + id + "\n" + 
+        "Url: " + this.state.formData.url + "\n" + 
+        "Devices: " + getTruthyList(this.state.formData.devices ) + "\n" + 
+        "Ventures: " + getTruthyList(this.state.formData.ventures) ;
+        alert(data);
+
+        newPromotion.id=id;
+        newPromotion.name=this.state.formData.name;
+        newPromotion.url=this.state.formData.url;
+        newPromotion.devices=this.state.formData.devices;
+        newPromotion.ventures=this.state.formData.ventures;
+        this.setState((prevState) => {
+          return {  formData: { ...prevState.formData, [id]: newPromotion }}
+        })
+
+      this.setState((prevState) => {
+        return {  searchDisplay: { 
+          ...prevState.searchDisplay, 
+          [id ]: this.state.formData
+        }}
+      })
+
+    }
+
+}
 
   reset = () => {
     this.setState({
@@ -77,10 +123,11 @@ class App extends Component {
 
     let selectedPromotion = this.state.searchDisplay.find(item => item.id === selectedPromotionId);
     let selectedPromotionFormData = {};
-    selectedPromotionFormData.devices = arrayToMap(selectedPromotion.promotion.devices)
-    selectedPromotionFormData.ventures = arrayToMap(selectedPromotion.promotion.ventures)
-    selectedPromotionFormData.url = selectedPromotion.promotion.url
-    selectedPromotionFormData.name = selectedPromotion.promotion.name
+    selectedPromotionFormData.devices = arrayToMap(selectedPromotion.devices)
+    selectedPromotionFormData.ventures = arrayToMap(selectedPromotion.ventures)
+    selectedPromotionFormData.url = selectedPromotion.url
+    selectedPromotionFormData.id = selectedPromotion.id
+    selectedPromotionFormData.name = selectedPromotion.name
     return selectedPromotionFormData;
 
     function arrayToMap(array) {
@@ -97,21 +144,6 @@ class App extends Component {
   }
 
 
-  savePromotion = () => {
-
-    let uuid4 = require('uuid4');
-    var id = uuid4();
-
-    if (this.state.formData) {
-        let data = " New Promotion Details: " + "\n" + 
-        "Name: " + this.state.formData.name + "\n" + 
-        "Id: " + id + "\n" + 
-        "Url: " + this.state.formData.url + "\n" + 
-        "Devices: " + getTruthyList(this.state.formData.devices ) + "\n" + 
-        "Ventures: " + getTruthyList(this.state.formData.ventures) ;
-        alert(data);
-    }
-}
 
 
   onclick = (event) => {
