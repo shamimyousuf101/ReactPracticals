@@ -65,6 +65,7 @@ class App extends Component {
         let id = this.getPromotionId();
         this.showAlertWithFormData(id);
         this.setState(prevState => {return {  promotionData: { ...prevState.promotionData, [id ]: this.getNewOrUpdatedPromotion(id)}}})
+        this.setState({view: "Search"})
     }
   }
 
@@ -151,7 +152,7 @@ class App extends Component {
     return selectedPromotionFormData;
   }
 
-  
+
   onMenuClick = (event) => {
     const selectedLink = event.currentTarget.className;
     let view;
