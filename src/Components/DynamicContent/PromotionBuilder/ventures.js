@@ -1,4 +1,4 @@
-const ventures = [
+export const ventures = [
     {
         name: 'jackpotjoy',
         key: 'jackpotjoy',
@@ -19,6 +19,4 @@ const ventures = [
         key: 'botemania',
         label: 'Botemania:'
     }
-]
-
-export default ventures;
+];

@@ -1,4 +1,4 @@
-const devices = [
+export const devices = [
     {
         name: 'mobile',
         key: 'mobile',
@@ -14,6 +14,4 @@ const devices = [
         key: 'desktop',
         label: 'Desktop:'
     }
-]
-
-export default devices;
+];

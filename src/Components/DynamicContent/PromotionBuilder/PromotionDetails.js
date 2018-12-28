@@ -1,9 +1,11 @@
 import React from 'react';
+import PropsTypes from 'prop-types'
+
 import Asset from './Asset';
 import InputBox from './InputBox';
 import CheckboxContainer from './CheckboxContainer';
-import devices from './devices';
-import ventures from './ventures';
+import {devices} from './devices';
+import {ventures} from './ventures';
 
 const PromotionDetails = (props) => {
 
@@ -14,6 +16,11 @@ const PromotionDetails = (props) => {
             <InputBox value={props.formData.name} name="name" onFormChange={props.onFormChange} >Name:</InputBox>        
             <Asset/> 
         </form>)
+}
+
+PromotionDetails.PropsTypes = {
+    formData: PropsTypes.object.isRequired,
+    onFormChange: PropsTypes.func.isRequired
 }
 
 export default PromotionDetails;

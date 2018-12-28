@@ -4,7 +4,7 @@ import PropsTypes from 'prop-types'
 
 const InputBox = (props) => {
 
-    const handleInputData = (event) => {
+    const handleInputData = event => {
         props.onFormChange(event.target.value, props.name)
     }
 

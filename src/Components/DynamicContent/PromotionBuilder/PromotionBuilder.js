@@ -1,4 +1,6 @@
 import React from 'react';
+import PropsTypes from 'prop-types'
+
 import NewPromotionTitle from './NewPromotionTitle';
 import PromotionDetails from './PromotionDetails';
 import PromotionToolBar from './PromotionToolBar';
@@ -10,6 +12,13 @@ const PromotionBuilder = (props) => {
         <PromotionDetails  formData={props.formData} onFormChange={props.onFormChange}/>
         <PromotionToolBar formData={props.formData} reset={props.reset} savePromotion={props.savePromotion}/>
     </div>)
+}
+
+PromotionBuilder.PropsTypes = {
+    formData: PropsTypes.object.isRequired, 
+    onFormChange: PropsTypes.func.isRequired,
+    reset: PropsTypes.func.isRequired,
+    savePromotion: PropsTypes.func.isRequired
 }
 
 export default PromotionBuilder;

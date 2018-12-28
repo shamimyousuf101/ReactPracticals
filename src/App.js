@@ -63,7 +63,7 @@ class App extends Component {
   savePromotion = () => {
     if (this.state.formData) {
         let id = this.getPromotionId();
-        this.showAlertWithFormData(id);
+        this.showAlertWithFormData();
         this.setState(prevState => {return {  promotionData: { ...prevState.promotionData, [id ]: this.getNewOrUpdatedPromotion(id)}}})
         this.setState({view: "Search"})
     }
@@ -108,14 +108,13 @@ class App extends Component {
   }
 
 
-  showAlertWithFormData = (id) => {
-    let data = " New Promotion Details: " + "\n" + 
-    "Name: " + this.state.formData.name + "\n" + 
-    "Id: " + id + "\n" + 
-    "Url: " + this.state.formData.url + "\n" + 
-    "Devices: " + getTruthyList(this.state.formData.devices ) + "\n" + 
-    "Ventures: " + getTruthyList(this.state.formData.ventures) ;
-    alert(data);
+  showAlertWithFormData = () => {
+    let savedData = `New Promotion Details:
+                    Name:\t ${this.state.formData.name} 
+                    Url:\t ${this.state.formData.url}
+                    Devices:\t ${getTruthyList(this.state.formData.devices )}
+                    Ventures:\t ${getTruthyList(this.state.formData.ventures)}`;
+    alert(savedData);
   }
 
 

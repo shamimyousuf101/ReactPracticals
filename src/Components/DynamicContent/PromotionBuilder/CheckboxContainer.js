@@ -1,4 +1,5 @@
 import React from 'react';
+import PropsTypes from 'prop-types'
 
 import Checkbox from './Checkbox';
 
@@ -33,6 +34,13 @@ class CheckboxContainer extends React.Component {
             </fieldset>
         )
     }
+}
+
+CheckboxContainer.PropsTypes = {
+    value: PropsTypes.object.isRequired,
+    legendText: PropsTypes.string.isRequired,
+    displayItems:PropsTypes.array.isRequired,
+    onFormChange:PropsTypes.func.isRequired
 }
 
 export default CheckboxContainer;
