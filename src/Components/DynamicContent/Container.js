@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 import AssetManager from './../../Components/DynamicContent/Asset/AssetManager';
 import Search from './../../Components/DynamicContent/Search/Search';
