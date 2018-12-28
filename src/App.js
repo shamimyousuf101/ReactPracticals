@@ -13,7 +13,7 @@ import './Components/DynamicContent/PromotionBuilder/PromotionBuilder.css';
 import './Components/DynamicContent/Container.css';
 import './App.css';
 import { promotionData } from './Components/DynamicContent/PromotionBuilder/promotionData';
-import getTruthyList from './utils/utils'
+import { getTruthyList , arrayToMap } from './utils/utils'
 
 
 class App extends Component {
@@ -30,94 +30,95 @@ class App extends Component {
     },
     searchTerm: "",
     searchDisplay: promotionData,
+    promotionData: promotionData
   };
+
+
+  componentDidMount(){
+    this.searchPromotions();
+  }
 
 
   handleInputChange = event => this.setState({ searchTerm: event.target.value });
 
+
   searchBtnClick = event => {
-    const searchInput = this.state.searchTerm;
-    let promotionArray = Object.keys(promotionData).map(key => promotionData[key]);
     event.preventDefault();
-    this.setState({
-      searchDisplay: promotionArray.filter((el) => el.name.toLowerCase().indexOf(searchInput.toLowerCase()) > -1)
-    });
+    this.searchPromotions();
+  }
+
+
+  searchPromotions = () => {
+    const searchInput = this.state.searchTerm;
+    const promotionArray = Object.keys(this.state.promotionData).map(key => this.state.promotionData[key]);
+    this.setState({searchDisplay: promotionArray.filter((el) => el.name.toLowerCase().indexOf(searchInput.toLowerCase()) > -1)});
   }
 
 
   onFormChange = (value, formField) => {
-      this.setState((prevState) => {
-        return {  formData: { ...prevState.formData, [formField]: value }}
-      })
+      this.setState(prevState => {return {  formData: { ...prevState.formData, [formField]: value }}})
   }
 
 
-
   savePromotion = () => {
-
-
-    // BUG - new id getting created each time save is clicked
-
-    function MapToArray(map) {
-      
-      let arr1 = [...map.keys()]
-      return arr1;
+    if (this.state.formData) {
+        let id = this.getPromotionId();
+        this.showAlertWithFormData(id);
+        this.setState(prevState => {return {  promotionData: { ...prevState.promotionData, [id ]: this.getNewOrUpdatedPromotion(id)}}})
     }
+  }
 
-    let uuid4 = require('uuid4');
-    let id = null;
+
+  getNewOrUpdatedPromotion = (id) => {
+
     let newPromotion = {
-      id: 0,
+      id: null,
       devices: [],
       ventures: [],
       url: "",
       name: ""
     }
 
-    if (this.state.formData) {
+    newPromotion.id=id;
+    newPromotion.name=this.state.formData.name;
+    newPromotion.url=this.state.formData.url;
+    newPromotion.devices=[...this.state.formData.devices.keys()]
+    newPromotion.ventures=[...this.state.formData.ventures.keys()]
 
-        
+    return newPromotion;
+  }
 
-        if(this.state.selectedPromotionId){
-          id = this.state.selectedPromotionId
-        }
 
-        if(this.state.formData.id){
-            id = this.state.formData.id
-        } else {
-          id = uuid4();
-        }
+  getPromotionId = () => {
 
-        let data = " New Promotion Details: " + "\n" + 
-        "Name: " + this.state.formData.name + "\n" + 
-        "Id: " + id + "\n" + 
-        "Url: " + this.state.formData.url + "\n" + 
-        "Devices: " + getTruthyList(this.state.formData.devices ) + "\n" + 
-        "Ventures: " + getTruthyList(this.state.formData.ventures) ;
-        alert(data);
-
-        newPromotion.id=id;
-        newPromotion.name=this.state.formData.name;
-        newPromotion.url=this.state.formData.url;
-        newPromotion.devices=MapToArray(this.state.formData.devices);
-        newPromotion.ventures=MapToArray(this.state.formData.ventures);
-
-        this.setState((prevState) => {
-          return {  formData: { ...prevState.formData, [id]: newPromotion }}
-        })
-
-      this.setState((prevState) => {
-        return {  searchDisplay: { 
-          ...prevState.searchDisplay, 
-          [id ]: newPromotion
-        }}
-      })
-
+    let uuid4 = require('uuid4');
+    let id = null;
+    if(this.state.selectedPromotionId){
+      id = this.state.selectedPromotionId
     }
 
-}
+    if(this.state.formData.id){
+        id = this.state.formData.id
+    } else {
+      id = uuid4();
+    }
 
-  reset = () => {
+    return id;
+  }
+
+
+  showAlertWithFormData = (id) => {
+    let data = " New Promotion Details: " + "\n" + 
+    "Name: " + this.state.formData.name + "\n" + 
+    "Id: " + id + "\n" + 
+    "Url: " + this.state.formData.url + "\n" + 
+    "Devices: " + getTruthyList(this.state.formData.devices ) + "\n" + 
+    "Ventures: " + getTruthyList(this.state.formData.ventures) ;
+    alert(data);
+  }
+
+
+  resetFormData = () => {
     this.setState({
       selectedPromotionId: null,
       formData: {
@@ -140,7 +141,6 @@ class App extends Component {
 
 
   setFormDataToSelectedPromotion = (selectedPromotionId) => {
-
     let selectedPromotion = this.state.searchDisplay.find(item => item.id === selectedPromotionId);
     let selectedPromotionFormData = {};
     selectedPromotionFormData.devices = arrayToMap(selectedPromotion.devices)
@@ -149,41 +149,27 @@ class App extends Component {
     selectedPromotionFormData.id = selectedPromotion.id
     selectedPromotionFormData.name = selectedPromotion.name
     return selectedPromotionFormData;
-
-    function arrayToMap(array) {
-      let newMap = new Map();
-
-      if (array.length > 0) {
-        array.forEach(element => {
-          newMap.set(element, true);
-        });
-      }
-      return newMap;
-    }
-
   }
 
-
-
-
-  onclick = (event) => {
+  
+  onMenuClick = (event) => {
     const selectedLink = event.currentTarget.className;
     let view;
     switch (selectedLink) {
 
       case "search__link":
         view = "Search";
+        this.searchPromotions();
         break;
       case "upload__link":
         view = "Upload";
         break;
       case "config__link":
         view = "PromotionBuilder";
-        this.reset();
+        this.resetFormData();
         break;
       default:
         view = "Search";
-
     }
 
     this.setState({ view });
@@ -197,8 +183,8 @@ class App extends Component {
     return (
       <div className="App">
         <Banner subHeading={view} />
-        <Container view={view} formData={formData} editBtnClick={this.editBtnClick} reset={this.reset} savePromotion={this.savePromotion} onFormChange={this.onFormChange} handleInputChange={this.handleInputChange} searchBtnClick={this.searchBtnClick} searchDisplay={searchDisplay} searchTerm={searchTerm} />
-        <Menu menuData={menuData} clickHandler={this.onclick} />
+        <Container view={view} formData={formData} editBtnClick={this.editBtnClick} reset={this.resetFormData} savePromotion={this.savePromotion} onFormChange={this.onFormChange} handleInputChange={this.handleInputChange} searchBtnClick={this.searchBtnClick} searchDisplay={searchDisplay} searchTerm={searchTerm} />
+        <Menu menuData={menuData} clickHandler={this.onMenuClick} />
       </div>
     );
   }
