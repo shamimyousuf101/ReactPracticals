@@ -1,4 +1,6 @@
 import React from 'react';
+import PropsTypes from 'prop-types';
+
 import MenuLinks from './MenuLinks';
 
 const Menu = ({menuData, clickHandler}) => {  
@@ -11,6 +13,11 @@ const Menu = ({menuData, clickHandler}) => {
         </ul>
     </nav>
     )
+}
+
+Menu.propTypes = {
+    menuData: PropsTypes.array.isRequired,
+    clickHandler: PropsTypes.func.isRequired
 }
 
 export default Menu;

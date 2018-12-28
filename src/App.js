@@ -39,6 +39,14 @@ class App extends Component {
   }
 
 
+  componentDidUpdate(prevProps, prevState){
+    if(Object.keys(prevState.promotionData).length!==Object.keys(this.state.promotionData).length){
+      this.searchPromotions();
+    }
+    
+  }
+
+
   handleInputChange = event => this.setState({ searchTerm: event.target.value });
 
 
