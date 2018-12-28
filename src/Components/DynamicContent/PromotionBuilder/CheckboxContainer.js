@@ -36,8 +36,8 @@ class CheckboxContainer extends React.Component {
     }
 }
 
-CheckboxContainer.PropsTypes = {
-    value: PropsTypes.object.isRequired,
+CheckboxContainer.propTypes = {
+    value: PropsTypes.object,
     legendText: PropsTypes.string.isRequired,
     displayItems:PropsTypes.array.isRequired,
     onFormChange:PropsTypes.func.isRequired

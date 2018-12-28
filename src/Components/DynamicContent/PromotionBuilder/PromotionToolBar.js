@@ -13,7 +13,7 @@ const PromotionToolBar = (props) => {
         </div>)
 }
 
-PromotionToolBar.PropsTypes ={
+PromotionToolBar.propTypes ={
     formData: PropsTypes.object.isRequired, 
     savePromotion: PropsTypes.func.isRequired,
     reset: PropsTypes.func.isRequired

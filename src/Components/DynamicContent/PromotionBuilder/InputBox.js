@@ -14,7 +14,7 @@ const InputBox = (props) => {
     </div>)
 }
 
-InputBox.propsTypes = {
+InputBox.propTypes = {
     name: PropsTypes.string.isRequired,
     children: PropsTypes.string.isRequired,
     value: PropsTypes.string

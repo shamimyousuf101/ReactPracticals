@@ -18,7 +18,7 @@ const PromotionDetails = (props) => {
         </form>)
 }
 
-PromotionDetails.PropsTypes = {
+PromotionDetails.propTypes = {
     formData: PropsTypes.object.isRequired,
     onFormChange: PropsTypes.func.isRequired
 }

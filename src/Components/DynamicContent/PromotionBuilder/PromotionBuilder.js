@@ -14,7 +14,7 @@ const PromotionBuilder = (props) => {
     </div>)
 }
 
-PromotionBuilder.PropsTypes = {
+PromotionBuilder.propTypes = {
     formData: PropsTypes.object.isRequired, 
     onFormChange: PropsTypes.func.isRequired,
     reset: PropsTypes.func.isRequired,

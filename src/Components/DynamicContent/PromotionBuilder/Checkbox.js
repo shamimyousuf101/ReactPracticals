@@ -2,15 +2,14 @@ import React from 'react';
 import PropsTypes from 'prop-types'
 
 
-const Checkbox = ({type = 'checkbox', name, checked = false, onChange }) => (
-    <input type={type} name={name} checked={checked} onChange={onChange}/>
+const Checkbox = ({name, checked = false, onChange }) => (
+    <input type='checkbox' name={name} checked={checked} onChange={onChange}/>
 )
 
 
-Checkbox.propsTypes = {
-    type: PropsTypes.string.isRequired,
+Checkbox.propTypes = {
     name: PropsTypes.string.isRequired,
-    checked: PropsTypes.bool.isRequired,
+    checked: PropsTypes.bool,
     onChange: PropsTypes.func.isRequired,
 }
 
