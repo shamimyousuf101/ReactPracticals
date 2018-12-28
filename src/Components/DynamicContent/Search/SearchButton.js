@@ -1,4 +1,5 @@
 import React from 'react';
+import PropsTypes from 'prop-types';
 
 const SearchButton = (props) => {
 
@@ -7,6 +8,10 @@ const SearchButton = (props) => {
             <img src="/search.png" alt="search"/>
         </button> 
     )
+}
+
+SearchButton.propTypes = {
+    onSearchClick: PropsTypes.func.isRequired
 }
 
 export default SearchButton;

@@ -1,5 +1,6 @@
 
 import React, {Component} from 'react';
+
 import SingleSearchResult from './SingleSearchResult';
 
 class SearchResultContainer extends Component {
@@ -18,5 +19,7 @@ class SearchResultContainer extends Component {
         )
     }
 }
+
+
 
 export default SearchResultContainer;
