@@ -7,7 +7,8 @@ export const promotionData = {
         "name":"welcome", 
         "url":"welcome url", 
         "devices": ["mobile", "tablet"], 
-        "ventures": ["jackpotjoy", "starspins"]
+        "ventures": ["jackpotjoy", "starspins"],
+        "lastUpdatedTime": "1546274549206"
     },
 
 
@@ -18,7 +19,8 @@ export const promotionData = {
         "name":"welcome back", 
         "url":"welcome back url", 
         "devices": ["mobile", "tablet", "desktop"], 
-        "ventures": ["jackpotjoy", "botemania"]
+        "ventures": ["jackpotjoy", "botemania"],
+        "lastUpdatedTime": "1576274549206"
     },
 
 
@@ -28,7 +30,8 @@ export const promotionData = {
         "name":"lapse", 
         "url":"lapse url", 
         "devices": ["mobile"], 
-        "ventures": [ "starspins", "heartbingo"]
+        "ventures": [ "starspins", "heartbingo"],
+        "lastUpdatedTime": "1556274549206"
     }
 
 

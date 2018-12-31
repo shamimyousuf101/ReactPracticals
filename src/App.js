@@ -27,7 +27,8 @@ class App extends Component {
       devices: new Map(),
       ventures: new Map(),
       url: "",
-      name: ""
+      name: "",
+      lastUpdatedTime: ""
     },
     searchTerm: "",
     searchDisplay: [],

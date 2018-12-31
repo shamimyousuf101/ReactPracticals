@@ -25,13 +25,17 @@ const PromotionToolBar = (props) => {
           const promotionArray = Object.keys(searchDisplay).map(key => searchDisplay[key]);
           initialFormData = promotionArray.filter(el => el.id=== id)[0];
 
-            if(initialFormData){
-                initialFormData = Object.assign({}, 
-                    initialFormData, 
-                    {devices: arrayToMap(initialFormData.devices),
-                        ventures: arrayToMap(initialFormData.ventures)}
+     
+          let cloneOfInitialFormData = Object.assign({}, initialFormData);
+          delete cloneOfInitialFormData.lastUpdatedTime;
+
+            if(cloneOfInitialFormData){
+                cloneOfInitialFormData = Object.assign({}, 
+                    cloneOfInitialFormData, 
+                    {devices: arrayToMap(cloneOfInitialFormData.devices),
+                        ventures: arrayToMap(cloneOfInitialFormData.ventures)}
                 );
-                sameData = isEqual(initialFormData, formData);
+                sameData = isEqual(cloneOfInitialFormData, formData);
             }else{
                 sameData=false;
             }
