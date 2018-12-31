@@ -1,5 +1,6 @@
 
 import React from 'react';
+import PropsTypes from 'prop-types'
 
 import SingleSearchResult from './SingleSearchResult';
 
@@ -17,6 +18,11 @@ const SearchResultContainer = (props) => {
         <div>{getSearchItems(props.result)}</div>
     )
     
+}
+
+SearchResultContainer.propTypes = {
+    // result: PropsTypes.object, TODO array/object error
+    editBtnClick: PropsTypes.func.isRequired
 }
 
 export default SearchResultContainer;
