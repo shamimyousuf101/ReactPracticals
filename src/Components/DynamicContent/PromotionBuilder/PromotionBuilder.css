@@ -34,7 +34,9 @@ button{
 
 
 .PromotionBuilder{
-    margin-left: 50px;
+    margin: 16px;
+    margin-left: 60px;
+    width: 85%;
 }
 
 .promotionDetailsForm{
