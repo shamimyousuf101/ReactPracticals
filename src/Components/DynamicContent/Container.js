@@ -1,5 +1,6 @@
 import React from 'react';
 import PropsTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import AssetManager from './../../Components/DynamicContent/Asset/AssetManager';
 import Search from './../../Components/DynamicContent/Search/Search';
@@ -32,7 +33,13 @@ const Container = (props) => {
 
 Container.propTypes = {
     view: PropsTypes.string.isRequired,
-    // searchDisplay: PropsTypes.array.isRequired, //TODO - Check all data we pass to this component and prefer use shape
+    searchDisplay: PropTypes.arrayOf(PropTypes.shape({
+        devices: PropTypes.arrayOf(PropTypes.string),
+        id: PropTypes.string,
+        name: PropTypes.string,
+        url: PropTypes.string,
+        ventures: PropTypes.arrayOf(PropTypes.string)
+      })),
     searchTerm: PropsTypes.string,
     handleInputChange: PropsTypes.func.isRequired,
     formData: PropsTypes.object,

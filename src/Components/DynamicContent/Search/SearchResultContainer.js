@@ -1,6 +1,8 @@
 
 import React from 'react';
+import PropTypes from 'prop-types'
 import PropsTypes from 'prop-types'
+
 
 import SingleSearchResult from './SingleSearchResult';
 
@@ -15,13 +17,19 @@ const SearchResultContainer = (props) => {
     }
 
     return(
-        <div>{getSearchItems(props.result)}</div>
+        <div>{getSearchItems(props.searchDisplay)}</div>
     )
     
 }
 
 SearchResultContainer.propTypes = {
-    // result: PropsTypes.object, TODO array/object error
+    searchDisplay: PropTypes.arrayOf(PropTypes.shape({
+        devices: PropTypes.arrayOf(PropTypes.string),
+        id: PropTypes.string,
+        name: PropTypes.string,
+        url: PropTypes.string,
+        ventures: PropTypes.arrayOf(PropTypes.string)
+      })),
     editBtnClick: PropsTypes.func.isRequired
 }
 

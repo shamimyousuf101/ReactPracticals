@@ -29,7 +29,7 @@ class App extends Component {
       name: ""
     },
     searchTerm: "",
-    searchDisplay: promotionData,
+    searchDisplay: [],
     promotionData: promotionData
   };
 

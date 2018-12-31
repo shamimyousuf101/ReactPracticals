@@ -16,7 +16,7 @@ const SingleSearchResult = (props) => {
 }
 
 SingleSearchResult.propTypes = {
-    result: PropsTypes.object, //TODO - no error why
+    result: PropsTypes.object, 
     id: PropsTypes.string,
     editBtnClick: PropsTypes.func.isRequired
 }
