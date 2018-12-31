@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import isEqual from 'lodash.isequal'
 
 import Banner from './Components/Header/Banner';
 import Container from './Components/DynamicContent/Container';
@@ -40,12 +41,11 @@ class App extends Component {
 
 
   componentDidUpdate(prevProps, prevState){
-    if(Object.keys(prevState.promotionData).length!==Object.keys(this.state.promotionData).length){
+    if(!isEqual(prevState.promotionData,this.state.promotionData)){
       this.searchPromotions();
     }
     
   }
-
 
   handleInputChange = event => this.setState({ searchTerm: event.target.value });
 
@@ -186,12 +186,12 @@ class App extends Component {
 
   render() {
 
-    const { view, formData, searchDisplay, searchTerm } = this.state;
+    const { view, formData, searchDisplay, searchTerm , selectedPromotionId} = this.state;
 
     return (
       <div className="App">
         <Banner subHeading={view} />
-        <Container view={view} formData={formData} editBtnClick={this.editBtnClick} reset={this.resetFormData} savePromotion={this.savePromotion} onFormChange={this.onFormChange} handleInputChange={this.handleInputChange} searchBtnClick={this.searchBtnClick} searchDisplay={searchDisplay} searchTerm={searchTerm} />
+        <Container view={view} formData={formData} selectedPromotionId={selectedPromotionId} editBtnClick={this.editBtnClick} reset={this.resetFormData} savePromotion={this.savePromotion} onFormChange={this.onFormChange} handleInputChange={this.handleInputChange} searchBtnClick={this.searchBtnClick} searchDisplay={searchDisplay} searchTerm={searchTerm} />
         <Menu menuData={menuData} clickHandler={this.onMenuClick} />
       </div>
     );

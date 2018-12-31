@@ -15,7 +15,7 @@ const Container = (props) => {
             case "Upload":
                 return <AssetManager/>     
             case "PromotionBuilder":
-                return <PromotionBuilder reset={props.reset} savePromotion={props.savePromotion} formData={props.formData} onFormChange={props.onFormChange}/>                              
+                return <PromotionBuilder reset={props.reset} savePromotion={props.savePromotion} formData={props.formData} searchDisplay={props.searchDisplay} onFormChange={props.onFormChange} selectedPromotionId={props.selectedPromotionId}/>                              
             default:
                 throw new Error('Unexpected view supplied')                
         }    
