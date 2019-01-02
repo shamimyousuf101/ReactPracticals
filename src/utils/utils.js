@@ -19,11 +19,15 @@
        export const arrayToMap = (array) => {
             
             let newMap = new Map();
-      
-            if (array.length > 0) {
-              array.forEach(element => {
-                newMap.set(element, true);
-              });
+
+            if(array)
+            {
+              if (array.length > 0) {
+                array.forEach(element => {
+                  newMap.set(element, true);
+                });
+              }
             }
+    
             return newMap;
           }

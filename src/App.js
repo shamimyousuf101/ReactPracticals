@@ -60,7 +60,8 @@ class App extends Component {
   searchPromotions = () => {
     const searchInput = this.state.searchTerm;
     const promotionArray = Object.keys(this.state.promotionData).map(key => this.state.promotionData[key]);
-    this.setState({searchDisplay: promotionArray.filter((el) => el.name.toLowerCase().indexOf(searchInput.toLowerCase()) > -1)});
+    const filteredPromotionArray = promotionArray.filter((el) => el.name.toLowerCase().indexOf(searchInput.toLowerCase()) > -1);
+    this.setState({searchDisplay: filteredPromotionArray.sort((a,b) => b.lastUpdatedTime - a.lastUpdatedTime) });
   }
 
 
@@ -86,7 +87,8 @@ class App extends Component {
       devices: [],
       ventures: [],
       url: "",
-      name: ""
+      name: "",
+      lastUpdatedTime: ""
     }
 
     newPromotion.id=id;
@@ -94,6 +96,7 @@ class App extends Component {
     newPromotion.url=this.state.formData.url;
     newPromotion.devices=[...this.state.formData.devices.keys()]
     newPromotion.ventures=[...this.state.formData.ventures.keys()]
+    newPromotion.lastUpdatedTime=Date.now()
 
     return newPromotion;
   }
