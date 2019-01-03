@@ -9,6 +9,6 @@ describe('Name of the group', () => {
     const search = shallow(<Search/>);
 
     it('should exists', () => {
-        // expect(search.find(SearchEntryContainer))
+        expect(search.find(SearchEntryContainer)).toHaveLength(1)
     });
 });

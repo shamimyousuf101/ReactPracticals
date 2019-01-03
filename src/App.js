@@ -171,8 +171,10 @@ class App extends Component {
 
       case "search__link":
         view = "Search";
-        this.setState({searchTerm: ""})
-        this.searchPromotions();
+        this.setState({searchTerm: ""}, () => {
+          this.searchPromotions();
+        })
+        
         break;
       case "upload__link":
         view = "Upload";
