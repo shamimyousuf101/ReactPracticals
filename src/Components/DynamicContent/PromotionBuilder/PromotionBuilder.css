@@ -55,3 +55,7 @@ label, input {
 label {
     padding-right: 10px;
 }
+
+.NewPromotionTitle{
+    text-transform: capitalize;
+}

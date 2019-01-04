@@ -198,7 +198,18 @@ class App extends Component {
     return (
       <div className="App">
         <Banner subHeading={view} />
-        <Container view={view} formData={formData} selectedPromotionId={selectedPromotionId} editBtnClick={this.editBtnClick} reset={this.resetFormData} savePromotion={this.savePromotion} onFormChange={this.onFormChange} handleInputChange={this.handleInputChange} searchBtnClick={this.searchBtnClick} searchDisplay={searchDisplay} searchTerm={searchTerm} />
+        <Container 
+        view={view} 
+        formData={formData} 
+        selectedPromotionId={selectedPromotionId} 
+        editBtnClick={this.editBtnClick} 
+        reset={this.resetFormData} 
+        savePromotion={this.savePromotion} 
+        onFormChange={this.onFormChange} 
+        handleInputChange={this.handleInputChange} 
+        searchBtnClick={this.searchBtnClick} 
+        searchDisplay={searchDisplay} 
+        searchTerm={searchTerm} />
         <Menu menuData={menuData} clickHandler={this.onMenuClick} />
       </div>
     );

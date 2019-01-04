@@ -8,7 +8,7 @@ import PromotionToolBar from './PromotionToolBar/PromotionToolBar';
 const PromotionBuilder = (props) => {
     
     return(<div className="PromotionBuilder">
-        <FormTitle/>
+        <FormTitle>{props.formData.name?props.formData.name:'new promotion'}</FormTitle>
         <PromotionForm  formData={props.formData} onFormChange={props.onFormChange}/>
         <PromotionToolBar formData={props.formData} selectedPromotionId={props.selectedPromotionId} searchDisplay={props.searchDisplay} reset={props.reset} savePromotion={props.savePromotion}/>
     </div>)

@@ -11,11 +11,22 @@ const Container = (props) => {
     const setContent = (view) => {
         switch (view) {
             case "Search":
-                return <Search searchDisplay={props.searchDisplay} searchTerm={props.searchTerm} onInputChange={props.handleInputChange} onSearchClick={props.searchBtnClick} editBtnClick={props.editBtnClick}/>                
+                return <Search 
+                searchDisplay={props.searchDisplay} 
+                searchTerm={props.searchTerm} 
+                onInputChange={props.handleInputChange} 
+                onSearchClick={props.searchBtnClick} 
+                editBtnClick={props.editBtnClick}/>                
             case "Upload":
                 return <AssetManager/>     
             case "PromotionBuilder":
-                return <PromotionBuilder reset={props.reset} savePromotion={props.savePromotion} formData={props.formData} searchDisplay={props.searchDisplay} onFormChange={props.onFormChange} selectedPromotionId={props.selectedPromotionId}/>                              
+                return <PromotionBuilder 
+                reset={props.reset} 
+                savePromotion={props.savePromotion} 
+                formData={props.formData} 
+                searchDisplay={props.searchDisplay} 
+                onFormChange={props.onFormChange} 
+                selectedPromotionId={props.selectedPromotionId}/>                              
             default:
                 throw new Error('Unexpected view supplied')                
         }    
