@@ -4,6 +4,7 @@ import PropsTypes from 'prop-types'
 import FormTitle from './PromotionForm/FormTitle';
 import PromotionForm from './PromotionForm/PromotionForm';
 import PromotionToolBar from './PromotionToolBar/PromotionToolBar';
+import './PromotionBuilder.css';
 
 const PromotionBuilder = (props) => {
     

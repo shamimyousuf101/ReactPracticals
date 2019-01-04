@@ -10,7 +10,6 @@ import './Components/Header/Banner.css';
 import './Components/Menu/Menu.css';
 import './Components/DynamicContent/Search/Search.css';
 import './Components/DynamicContent/Asset/AssetManager.css';
-import './Components/DynamicContent/PromotionBuilder/PromotionBuilder.css';
 import './Components/DynamicContent/Container.css';
 import './App.css';
 import { promotionData } from './domain/promotionData';
