@@ -1,12 +1,12 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import PromotionDetails from './PromotionDetails';
+import PromotionForm from './PromotionForm';
 
-describe("PromotionDetails", ()=> {
+describe("PromotionForm", ()=> {
     let promotionDetails;
 
     beforeEach(()=>{
-        promotionDetails = shallow(<PromotionDetails/>);
+        promotionDetails = shallow(<PromotionForm/>);
     })
 
     it("should have devices component", () => {

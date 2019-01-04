@@ -1,15 +1,15 @@
 import React from 'react';
 import PropsTypes from 'prop-types'
 
-import NewPromotionTitle from './NewPromotionTitle';
-import PromotionDetails from './PromotionDetails';
-import PromotionToolBar from './PromotionToolBar';
+import FormTitle from './PromotionForm/FormTitle';
+import PromotionForm from './PromotionForm/PromotionForm';
+import PromotionToolBar from './PromotionToolBar/PromotionToolBar';
 
 const PromotionBuilder = (props) => {
     
     return(<div className="PromotionBuilder">
-        <NewPromotionTitle/>
-        <PromotionDetails  formData={props.formData} onFormChange={props.onFormChange}/>
+        <FormTitle/>
+        <PromotionForm  formData={props.formData} onFormChange={props.onFormChange}/>
         <PromotionToolBar formData={props.formData} selectedPromotionId={props.selectedPromotionId} searchDisplay={props.searchDisplay} reset={props.reset} savePromotion={props.savePromotion}/>
     </div>)
 }

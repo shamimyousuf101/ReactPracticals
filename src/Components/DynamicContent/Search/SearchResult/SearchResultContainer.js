@@ -3,7 +3,6 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import PropsTypes from 'prop-types'
 
-
 import SingleSearchResult from './SingleSearchResult';
 
 const SearchResultContainer = (props) => {

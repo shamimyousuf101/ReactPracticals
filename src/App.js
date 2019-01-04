@@ -13,7 +13,7 @@ import './Components/DynamicContent/Asset/AssetManager.css';
 import './Components/DynamicContent/PromotionBuilder/PromotionBuilder.css';
 import './Components/DynamicContent/Container.css';
 import './App.css';
-import { promotionData } from './Components/DynamicContent/PromotionBuilder/promotionData';
+import { promotionData } from './domain/promotionData';
 import { getTruthyList , arrayToMap } from './utils/utils'
 
 

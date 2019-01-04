@@ -3,8 +3,8 @@ import React from 'react';
 import PropsTypes from 'prop-types';
 import PropTypes from 'prop-types';
 
-import SearchResultContainer from './SearchResultContainer';
-import SearchEntryContainer from './SearchEntryContainer';
+import SearchResultContainer from './SearchResult/SearchResultContainer';
+import SearchEntryContainer from './SearchEntry/SearchEntryContainer';
 
 const Search = (props) => {
     return(<div className="searchContainer">

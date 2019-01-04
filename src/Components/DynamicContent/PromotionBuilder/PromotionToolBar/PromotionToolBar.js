@@ -2,7 +2,7 @@ import React from 'react';
 import PropsTypes from 'prop-types'
 import isEqual from 'lodash.isequal'
 
-import { arrayToMap } from '../../../utils/utils'
+import { arrayToMap } from '../../../../utils/utils'
 
 
 const PromotionToolBar = (props) => {
