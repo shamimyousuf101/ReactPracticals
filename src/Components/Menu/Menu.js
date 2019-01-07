@@ -3,6 +3,8 @@ import PropsTypes from 'prop-types';
 
 import MenuLinks from './MenuLinks';
 
+import './Menu.css';
+
 const Menu = ({menuData, clickHandler}) => {  
     return (
     <nav className="menu">

@@ -4,16 +4,13 @@ import isEqual from 'lodash.isequal'
 import Banner from './Components/Header/Banner';
 import Container from './Components/DynamicContent/Container';
 import Menu from './Components/Menu/Menu';
+
 import { menuData } from './Components/Menu/menuData';
 
-import './Components/Header/Banner.css';
-import './Components/Menu/Menu.css';
-import './Components/DynamicContent/Search/Search.css';
-import './Components/DynamicContent/Asset/AssetManager.css';
-import './Components/DynamicContent/Container.css';
-import './App.css';
 import { promotionData } from './domain/promotionData';
 import { getTruthyList , arrayToMap } from './utils/utils'
+
+import './App.css';
 
 
 class App extends Component {

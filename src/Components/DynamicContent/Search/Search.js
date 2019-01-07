@@ -6,6 +6,8 @@ import PropTypes from 'prop-types';
 import SearchResultContainer from './SearchResult/SearchResultContainer';
 import SearchEntryContainer from './SearchEntry/SearchEntryContainer';
 
+import './Search.css';
+
 const Search = (props) => {
     return(<div className="searchContainer">
         <SearchEntryContainer value={props.searchTerm} onChange={props.onInputChange} onSearchClick={props.onSearchClick}/>

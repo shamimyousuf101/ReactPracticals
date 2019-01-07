@@ -6,6 +6,8 @@ import AssetManager from './../../Components/DynamicContent/Asset/AssetManager';
 import Search from './../../Components/DynamicContent/Search/Search';
 import PromotionBuilder from './../../Components/DynamicContent/PromotionBuilder/PromotionBuilder';
 
+import './Container.css'
+
 const Container = (props) => {
 
     const setContent = (view) => {

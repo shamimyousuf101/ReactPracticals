@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './AssetManager.css';
+
 const AssetManager = (props) => {
 
         // TODO - Would break this component down into smaller components
