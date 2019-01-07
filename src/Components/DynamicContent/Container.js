@@ -8,38 +8,37 @@ import PromotionBuilder from './../../Components/DynamicContent/PromotionBuilder
 
 import './Container.css'
 
-const Container = (props) => {
+const Container = ({view, searchDisplay, searchTerm, handleInputChange, formData, savePromotion, reset, onFormChange, selectedPromotionId, searchBtnClick, editBtnClick }) => {
 
     const setContent = (view) => {
         switch (view) {
             case "Search":
                 return <Search 
-                searchDisplay={props.searchDisplay} 
-                searchTerm={props.searchTerm} 
-                onInputChange={props.handleInputChange} 
-                onSearchClick={props.searchBtnClick} 
-                editBtnClick={props.editBtnClick}/>                
+                searchDisplay={searchDisplay} 
+                searchTerm={searchTerm} 
+                onInputChange={handleInputChange} 
+                onSearchClick={searchBtnClick} 
+                editBtnClick={editBtnClick}/>                
             case "Upload":
                 return <AssetManager/>     
             case "PromotionBuilder":
                 return <PromotionBuilder 
-                reset={props.reset} 
-                savePromotion={props.savePromotion} 
-                formData={props.formData} 
-                searchDisplay={props.searchDisplay} 
-                onFormChange={props.onFormChange} 
-                selectedPromotionId={props.selectedPromotionId}/>                              
+                reset={reset} 
+                savePromotion={savePromotion} 
+                formData={formData} 
+                searchDisplay={searchDisplay} 
+                onFormChange={onFormChange} 
+                selectedPromotionId={selectedPromotionId}/>                              
             default:
                 throw new Error('Unexpected view supplied')                
         }    
     }
 
-   
     return (<div className="content"> 
-            <div className="dynamiccontent">    
-                {setContent(props.view)}
-            </div>
-        </div>)
+                <div className="dynamiccontent">    
+                    {setContent(view)}
+                </div>
+            </div>)
     
     
 }
