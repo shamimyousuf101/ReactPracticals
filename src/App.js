@@ -12,6 +12,7 @@ import { getTruthyList , arrayToMap } from './utils/utils'
 
 import './App.css';
 
+let uuid4 = require('uuid4');
 
 class App extends Component {
 
@@ -31,6 +32,7 @@ class App extends Component {
     promotionData: promotionData
   };
 
+  
 
   componentDidMount(){
     this.searchPromotions();
@@ -77,42 +79,35 @@ class App extends Component {
 
 
   getNewOrUpdatedPromotion = (id) => {
+    const {
+      formData: {
+        name = '',
+        url = '',
+        devices = new Map(),
+        ventures = new Map()
+      }
+    } = this.state;
 
-    let newPromotion = {
-      id: null,
-      devices: [],
-      ventures: [],
-      url: "",
-      name: "",
-      lastUpdatedTime: ""
-    }
-
-    newPromotion.id=id;
-    newPromotion.name=this.state.formData.name;
-    newPromotion.url=this.state.formData.url;
-    newPromotion.devices=[...this.state.formData.devices.keys()]
-    newPromotion.ventures=[...this.state.formData.ventures.keys()]
-    newPromotion.lastUpdatedTime=Date.now()
-
-    return newPromotion;
-  }
+    return {
+      id,
+      name,
+      url,
+      devices: [...devices.keys()],
+      ventures: [...ventures.keys()],
+      lastUpdatedTime: Date.now()
+    };
+  };
 
 
   getPromotionId = () => {
+    const {
+      selectedPromotionId,
+      formData: {
+        id: formDataId
+      }
+    } = this.state;
 
-    let uuid4 = require('uuid4');
-    let id = null;
-    if(this.state.selectedPromotionId){
-      id = this.state.selectedPromotionId
-    }
-
-    if(this.state.formData.id){
-        id = this.state.formData.id
-    } else {
-      id = uuid4();
-    }
-
-    return id;
+    return formDataId || selectedPromotionId || uuid4();
   }
 
 
@@ -149,7 +144,7 @@ class App extends Component {
 
 
   setFormDataToSelectedPromotion = (selectedPromotionId) => {
-    let selectedPromotion = this.state.searchDisplay.find(item => item.id === selectedPromotionId);
+    const selectedPromotion = this.state.searchDisplay.find(item => item.id === selectedPromotionId);
     let selectedPromotionFormData = {};
     selectedPromotionFormData.devices = arrayToMap(selectedPromotion.devices)
     selectedPromotionFormData.ventures = arrayToMap(selectedPromotion.ventures)
