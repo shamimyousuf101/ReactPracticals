@@ -2,6 +2,8 @@ import React from 'react';
 import PropsTypes from 'prop-types'
 import isEqual from 'lodash.isequal'
 
+import './PromotionToolBar.css'
+
 import { arrayToMap } from '../../../../utils/utils'
 
 

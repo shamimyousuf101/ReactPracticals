@@ -1,0 +1,15 @@
+.PromotionToolBar{
+    border-top:solid;
+    border-color:#506bb1;
+    max-width: 85%;
+    display: flex;
+    justify-content: space-around
+}
+
+.save{
+    background-color: rgb(129, 206, 129);
+}
+
+.reset{
+    background-color: bisque;
+}

@@ -1,9 +1,9 @@
 import React from 'react';
 import PropsTypes from 'prop-types'
 
-import FormTitle from './PromotionForm/FormTitle/FormTitle';
-import Form from './PromotionForm/Form/Form';
-import PromotionToolBar from './PromotionToolBar/PromotionToolBar';
+import FormTitle from '../PromotionForm/FormTitle/FormTitle';
+import Form from '../PromotionForm/Form/Form';
+import PromotionToolBar from '../PromotionToolBar/PromotionToolBar';
 import './PromotionBuilder.css';
 
 const PromotionBuilder = (props) => {
