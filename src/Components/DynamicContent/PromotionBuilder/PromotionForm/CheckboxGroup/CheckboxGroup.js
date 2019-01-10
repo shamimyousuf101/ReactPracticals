@@ -1,9 +1,11 @@
 import React from 'react';
 import PropsTypes from 'prop-types'
 
-import Checkbox from './Checkbox';
+import Checkbox from '../Checkbox/Checkbox';
 
-class CheckboxContainer extends React.Component {
+import './CheckboxGroup.css'
+
+class CheckboxGroup extends React.Component {
 
     handleChange = (e) => {
 
@@ -36,11 +38,11 @@ class CheckboxContainer extends React.Component {
     }
 }
 
-CheckboxContainer.propTypes = {
-    value: PropsTypes.object,
+CheckboxGroup.propTypes = {
+    value: PropsTypes.object.isRequired,
     legendText: PropsTypes.string.isRequired,
     displayItems:PropsTypes.array.isRequired,
     onFormChange:PropsTypes.func.isRequired
 }
 
-export default CheckboxContainer;
+export default CheckboxGroup;

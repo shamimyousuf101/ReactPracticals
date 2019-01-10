@@ -39,13 +39,11 @@ button{
     width: 85%;
 }
 
-.promotionDetailsForm{
-    display: table;
-}
 
-.listBoxItem{
+
+/* .listBoxItem{
     display: table-row;
-}
+} */
 
 label, input {
     display: table-cell;
@@ -56,6 +54,3 @@ label {
     padding-right: 10px;
 }
 
-.NewPromotionTitle{
-    text-transform: capitalize;
-}
