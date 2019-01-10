@@ -2,14 +2,13 @@ import React from 'react';
 import PropsTypes from 'prop-types'
 import isEqual from 'lodash.isequal'
 
-import './PromotionToolBar.css'
+import './ToolBar.css'
 
 import { arrayToMap } from '../../../../utils/utils'
 
 
-const PromotionToolBar = (props) => {
+const ToolBar = ({formData, savePromotion, reset, selectedPromotionId, searchDisplay}) => {
 
-    const promotionData = promotionData;
     const checkAllFieldHasData = formData => { return !(formData.devices.size===0 || formData.ventures.size===0 || formData.url==="" || formData.name==="")}
     const checkAnyFieldHasData = formData => { return (formData.devices.size===0 && formData.ventures.size===0 && formData.url==="" && formData.name==="")}
 
@@ -60,16 +59,19 @@ const PromotionToolBar = (props) => {
     }
 
     return (<div className="PromotionToolBar">
-            <button className="save" disabled={isSaveButtonDisabled(props.selectedPromotionId, props.formData, props.searchDisplay)} onClick={props.savePromotion}>Save</button>
-            <button className="reset" disabled={checkAnyFieldHasData(props.formData)} onClick={props.reset}>Reset</button>
+            <button className="save" disabled={isSaveButtonDisabled(selectedPromotionId, formData, searchDisplay)} onClick={savePromotion}>Save</button>
+            <button className="reset" disabled={checkAnyFieldHasData(formData)} onClick={reset}>Reset</button>
         </div>)
 }
 
-PromotionToolBar.propTypes ={
+
+ToolBar.propTypes ={
+    selectedPromotionId: PropsTypes.string,
+    searchDisplay: PropsTypes.array.isRequired,
     formData: PropsTypes.object.isRequired, 
     savePromotion: PropsTypes.func.isRequired,
     reset: PropsTypes.func.isRequired
 }
 
-export default PromotionToolBar;
 
+export default ToolBar;

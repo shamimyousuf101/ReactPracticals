@@ -1,5 +1,5 @@
 import React from 'react';
-import PropsTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 import Checkbox from '../Checkbox/Checkbox';
 
@@ -8,7 +8,7 @@ import './CheckboxGroup.css'
 class CheckboxGroup extends React.Component {
 
     handleChange = (e) => {
-
+        const {legendText, displayItems, value, onFormChange} = this.props;
         let listMap = this.props.value;
 
         if(listMap.has(e.target.name)){
@@ -16,20 +16,20 @@ class CheckboxGroup extends React.Component {
         }else{
             listMap.set(e.target.name, true)
         }
-
-        this.props.onFormChange(listMap, this.props.name);
+        onFormChange(listMap, this.props.name);
     }
 
     render(){
+        const {legendText, displayItems, value, onFormChange} = this.props;
 
         return (
             <fieldset >
-            <legend>{this.props.legendText}</legend>
+            <legend>{legendText}</legend>
                 {
-                    this.props.displayItems.map(item => (
+                    displayItems.map(item => (
                         <label key = {item.key}>
                         {item.name}
-                        <Checkbox name={item.name} checked={this.props.value.get(item.name)} onChange={this.handleChange} />                           
+                        <Checkbox name={item.name} checked={value.get(item.name)} onChange={this.handleChange} />                           
                         </label>
                     ))
                 }
@@ -38,11 +38,13 @@ class CheckboxGroup extends React.Component {
     }
 }
 
+
 CheckboxGroup.propTypes = {
-    value: PropsTypes.object.isRequired,
-    legendText: PropsTypes.string.isRequired,
-    displayItems:PropsTypes.array.isRequired,
-    onFormChange:PropsTypes.func.isRequired
+    value: PropTypes.instanceOf(Map).isRequired,
+    legendText: PropTypes.string.isRequired,
+    displayItems:PropTypes.array.isRequired,
+    onFormChange:PropTypes.func.isRequired
 }
+
 
 export default CheckboxGroup;

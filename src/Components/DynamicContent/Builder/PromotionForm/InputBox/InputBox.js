@@ -1,23 +1,23 @@
 
 import React from 'react';
-import PropsTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
-const InputBox = (props) => {
+const InputBox = ({name, children, value, onFormChange}) => {
 
     const handleInputData = event => {
-        props.onFormChange(event.target.value, props.name)
+        onFormChange(event.target.value, name)
     }
 
     return(<div>
-        <label htmlFor={props.name}>{props.children}</label>
-        <input type="text" name={props.name} value={props.value} onChange={handleInputData}></input>
+        <label htmlFor={name}>{children}</label>
+        <input type="text" name={name} value={value} onChange={handleInputData}></input>
     </div>)
 }
 
 InputBox.propTypes = {
-    name: PropsTypes.string.isRequired,
-    children: PropsTypes.string.isRequired,
-    value: PropsTypes.string
+    name: PropTypes.string.isRequired,
+    children: PropTypes.string.isRequired,
+    value: PropTypes.string
 }
 
 export default InputBox;

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import AssetManager from './../../Components/DynamicContent/Asset/AssetManager';
 import Search from './../../Components/DynamicContent/Search/Search';
-import PromotionBuilder from './../../Components/DynamicContent/PromotionBuilder/PromotionBuilder';
+import PromotionBuilder from './../../Components/DynamicContent/Builder/PromotionBuilder/PromotionBuilder';
 
 import './Container.css'
 

@@ -1,9 +1,15 @@
 import React from 'react'
-
+import PropTypes from 'prop-types'
 import './FormTitle.css'
 
-const FormTitle = (props) => {
-    return(<h2 className="NewPromotionTitle">{props.children}</h2>)
+const FormTitle = ({children}) => {
+    return(<h2 className="NewPromotionTitle">{children}</h2>)
 }
+
+
+FormTitle.propTypes = {
+    children: PropTypes.string
+}
+
 
 export default FormTitle;

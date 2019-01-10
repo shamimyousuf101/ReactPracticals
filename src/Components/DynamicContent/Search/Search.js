@@ -8,10 +8,10 @@ import SearchEntryContainer from './SearchEntry/SearchEntryContainer';
 
 import './Search.css';
 
-const Search = (props) => {
+const Search = ({searchTerm, onInputChange, onSearchClick, searchDisplay, editBtnClick}) => {
     return(<div className="searchContainer">
-        <SearchEntryContainer value={props.searchTerm} onChange={props.onInputChange} onSearchClick={props.onSearchClick}/>
-        <SearchResultContainer searchDisplay={props.searchDisplay} editBtnClick={props.editBtnClick}/>
+        <SearchEntryContainer value={searchTerm} onChange={onInputChange} onSearchClick={onSearchClick}/>
+        <SearchResultContainer searchDisplay={searchDisplay} editBtnClick={editBtnClick}/>
     </div>)
 }
 

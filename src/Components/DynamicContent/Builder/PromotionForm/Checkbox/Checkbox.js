@@ -1,5 +1,5 @@
 import React from 'react';
-import PropsTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 
 const Checkbox = ({name, checked = false, onChange }) => (
@@ -8,9 +8,10 @@ const Checkbox = ({name, checked = false, onChange }) => (
 
 
 Checkbox.propTypes = {
-    name: PropsTypes.string.isRequired,
-    checked: PropsTypes.bool,
-    onChange: PropsTypes.func.isRequired,
+    name: PropTypes.string.isRequired,
+    checked: PropTypes.bool,
+    onChange: PropTypes.func.isRequired,
 }
+
 
 export default Checkbox;
