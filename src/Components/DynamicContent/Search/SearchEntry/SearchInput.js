@@ -1,10 +1,10 @@
 import React from 'react';
 import PropsTypes from 'prop-types';
 
-const SearchInput = (props) => {
+const SearchInput = ({value, onChange}) => {
 
     return(
-        <input className="search__input" type="text" placeholder="Search" value={props.value} onChange={props.onChange}/>
+        <input className="search__input" type="text" placeholder="Search" value={value} onChange={onChange}/>
     )
 }
 
