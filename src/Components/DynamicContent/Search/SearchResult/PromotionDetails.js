@@ -1,14 +1,16 @@
 import React from 'react';
 import PropsTypes from 'prop-types';
 
-const PromotionDetails = (props) => {
+const PromotionDetails = ({result}) => {
+
+    const {name, url, devices, ventures} = result;
 
     return(   
         <div className="promotionDetails">
-            <h4>Name: {props.result.name}</h4>
-            <p>Url: {props.result.url}</p>
-            <p>Devices: {props.result.devices.toString()}</p>
-            <p>Ventures: {props.result.ventures.toString()}</p>
+            <h4>Name: {name}</h4>
+            <p>Url: {url}</p>
+            <p>Devices: {devices.toString()}</p>
+            <p>Ventures: {ventures.toString()}</p>
         </div>
     )
 }

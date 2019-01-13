@@ -5,18 +5,18 @@ import PropsTypes from 'prop-types'
 
 import SingleSearchResult from './SingleSearchResult';
 
-const SearchResultContainer = (props) => {
+const SearchResultContainer = ({editBtnClick, searchDisplay}) => {
 
     const getSearchItems = ( searchDisplay ) => {
         if (searchDisplay.length > 0){
             return searchDisplay.map((item, index)=>{                
-                return <SingleSearchResult key={index} id={item.id} result={item} editBtnClick={props.editBtnClick}/>
+                return <SingleSearchResult key={index} id={item.id} result={item} editBtnClick={editBtnClick}/>
             })
         } 
     }
 
     return(
-        <div>{getSearchItems(props.searchDisplay)}</div>
+        <div>{getSearchItems(searchDisplay)}</div>
     )
     
 }

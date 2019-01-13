@@ -5,12 +5,12 @@ import PromotionDetails from './PromotionDetails';
 import EditButton from './EditButton';
 
 
-const SingleSearchResult = (props) => {
+const SingleSearchResult = ({result, id, editBtnClick}) => {
 
     return(
         <div className="SingleSearchResult">
-            <PromotionDetails result={props.result} />
-            <EditButton id={props.id} editBtnClick={props.editBtnClick} />
+            <PromotionDetails result={result} />
+            <EditButton id={id} editBtnClick={editBtnClick} />
         </div>
     )
 }
