@@ -3,7 +3,7 @@ import PropsTypes from 'prop-types';
 import PropTypes from 'prop-types';
 
 import AssetManager from './../../Components/DynamicContent/Asset/AssetManager';
-import Search from './../../Components/DynamicContent/Search/Search';
+import Search from './Search/SearchPage/Search';
 import PromotionBuilder from './../../Components/DynamicContent/Builder/PromotionBuilder/Builder';
 
 import './Container.css'

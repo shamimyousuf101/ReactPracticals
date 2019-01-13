@@ -1,11 +1,11 @@
 import React from 'react'; 
 import PropsTypes from 'prop-types'
 
-import PromotionDetails from './PromotionDetails';
-import EditButton from './EditButton';
+import PromotionDetails from './PromotionDetails/PromotionDetails';
+import EditButton from './Button/EditButton';
 
 
-const SingleSearchResult = ({result, id, editBtnClick}) => {
+const SingleResult = ({result, id, editBtnClick}) => {
 
     return(
         <div className="SingleSearchResult">
@@ -15,10 +15,10 @@ const SingleSearchResult = ({result, id, editBtnClick}) => {
     )
 }
 
-SingleSearchResult.propTypes = {
+SingleResult.propTypes = {
     result: PropsTypes.object, 
     id: PropsTypes.string,
     editBtnClick: PropsTypes.func.isRequired
 }
 
-export default SingleSearchResult;
+export default SingleResult;

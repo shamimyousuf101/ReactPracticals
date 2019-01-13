@@ -1,11 +1,11 @@
 import React from 'react';
 import PropsTypes from 'prop-types';
 
-import SearchInput from './SearchInput';
-import SearchButton from './SearchButton';
+import SearchInput from './Input/SearchInput';
+import SearchButton from './Button/SearchButton';
 
 
-const SearchEntryContainer = ({value, onChange, onSearchClick}) => {
+const SearchForm = ({value, onChange, onSearchClick}) => {
 
     return(
         <form className="search__form">
@@ -16,11 +16,11 @@ const SearchEntryContainer = ({value, onChange, onSearchClick}) => {
 }
 
 
-SearchEntryContainer.propTypes = {
+SearchForm.propTypes = {
     value: PropsTypes.string,
     onChange: PropsTypes.func.isRequired,
     onSearchClick: PropsTypes.func.isRequired
 }
 
 
-export default SearchEntryContainer;
+export default SearchForm;

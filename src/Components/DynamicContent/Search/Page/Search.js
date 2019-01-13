@@ -3,15 +3,15 @@ import React from 'react';
 import PropsTypes from 'prop-types';
 import PropTypes from 'prop-types';
 
-import SearchResultContainer from './SearchResult/SearchResultContainer';
-import SearchEntryContainer from './SearchEntry/SearchEntryContainer';
+import SearchForm from '../Layout/Form/SearchForm';
+import SearchResult from '../Layout/Result/SearchResult';
 
 import './Search.css';
 
 const Search = ({searchTerm, onInputChange, onSearchClick, searchDisplay, editBtnClick}) => {
     return(<div className="searchContainer">
-        <SearchEntryContainer value={searchTerm} onChange={onInputChange} onSearchClick={onSearchClick}/>
-        <SearchResultContainer searchDisplay={searchDisplay} editBtnClick={editBtnClick}/>
+        <SearchForm value={searchTerm} onChange={onInputChange} onSearchClick={onSearchClick}/>
+        <SearchResult searchDisplay={searchDisplay} editBtnClick={editBtnClick}/>
     </div>)
 }
 

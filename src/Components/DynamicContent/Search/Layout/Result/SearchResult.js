@@ -3,14 +3,14 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import PropsTypes from 'prop-types'
 
-import SingleSearchResult from './SingleSearchResult';
+import SingleResult from './SingleResult/SingleResult';
 
 const SearchResultContainer = ({editBtnClick, searchDisplay}) => {
 
     const getSearchItems = ( searchDisplay ) => {
         if (searchDisplay.length > 0){
             return searchDisplay.map((item, index)=>{                
-                return <SingleSearchResult key={index} id={item.id} result={item} editBtnClick={editBtnClick}/>
+                return <SingleResult key={index} id={item.id} result={item} editBtnClick={editBtnClick}/>
             })
         } 
     }
