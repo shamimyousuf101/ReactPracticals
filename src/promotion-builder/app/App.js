@@ -137,7 +137,7 @@ class App extends Component {
   editBtnClick = (id) => {
     this.setState({
       selectedPromotionId: id,
-      view: "PromotionBuilder",
+      view: "SavePromotion",
       formData: this.setFormDataToSelectedPromotion(id)
     });
   }
@@ -171,7 +171,7 @@ class App extends Component {
         view = "Upload";
         break;
       case "config__link":
-        view = "PromotionBuilder";
+        view = "SavePromotion";
         this.resetFormData();
         break;
       default:

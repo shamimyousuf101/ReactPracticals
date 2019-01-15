@@ -1,9 +1,9 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
-import Builder from './Builder';
+import SavePromotion from './SavePromotion';
 
-describe('<Builder/>', () => {
+describe('<SavePromotion/>', () => {
     let wrapper;
     let onFormChangeMock = jest.fn();
     let formData={};
@@ -14,15 +14,15 @@ describe('<Builder/>', () => {
 
 
     beforeEach(() => {
-        wrapper = shallow(<Builder formData={formData} searchDisplay={testSearchDisplay} selectedPromotionId={selectedPromotionId} savePromotion={savePromotionMock} reset={resetMock} onFormChange={onFormChangeMock} />);
+        wrapper = shallow(<SavePromotion formData={formData} searchDisplay={testSearchDisplay} selectedPromotionId={selectedPromotionId} savePromotion={savePromotionMock} reset={resetMock} onFormChange={onFormChangeMock} />);
     })
 
     it('should render FormTitle component one time', () => { 
         expect(wrapper.find('FormTitle')).toHaveLength(1);
     })
 
-    it('should render Form component one time', () => {
-        expect(wrapper.find('Form')).toHaveLength(1);
+    it('should render PromotionForm component one time', () => {
+        expect(wrapper.find('PromotionForm')).toHaveLength(1);
     })
 
     it('should render ToolBar component one time', () => {

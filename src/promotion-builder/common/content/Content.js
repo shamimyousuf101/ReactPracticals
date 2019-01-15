@@ -21,7 +21,7 @@ const Content = ({view, searchDisplay, searchTerm, handleInputChange, formData, 
                 editBtnClick={editBtnClick}/>                
             case "Upload":
                 return <AssetManager/>     
-            case "PromotionBuilder":
+            case "SavePromotion":
                 return <SavePromotion 
                 reset={reset} 
                 savePromotion={savePromotion} 

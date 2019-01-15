@@ -67,7 +67,7 @@ const ToolBar = ({formData, savePromotion, reset, selectedPromotionId, searchDis
 
 ToolBar.propTypes ={
     selectedPromotionId: PropsTypes.string,
-    searchDisplay: PropsTypes.array.isRequired,
+    searchDisplay: PropsTypes.object.isRequired,
     formData: PropsTypes.object.isRequired, 
     savePromotion: PropsTypes.func.isRequired,
     reset: PropsTypes.func.isRequired
