@@ -19,7 +19,7 @@ const Content = ({view, searchDisplay, searchTerm, handleInputChange, formData, 
                 onInputChange={handleInputChange} 
                 onSearchClick={searchBtnClick} 
                 editBtnClick={editBtnClick}/>                
-            case "Upload":
+            case "AssetManager":
                 return <AssetManager/>     
             case "SavePromotion":
                 return <SavePromotion 

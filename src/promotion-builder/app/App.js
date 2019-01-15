@@ -168,7 +168,7 @@ class App extends Component {
         
         break;
       case "upload__link":
-        view = "Upload";
+        view = "AssetManager";
         break;
       case "config__link":
         view = "SavePromotion";
