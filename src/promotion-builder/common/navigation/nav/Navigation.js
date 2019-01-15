@@ -1,7 +1,7 @@
 import React from 'react';
 import PropsTypes from 'prop-types';
 
-import Links from './Links';
+import Links from '../links/Links';
 
 import './navigation.css';
 

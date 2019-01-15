@@ -3,7 +3,7 @@ import isEqual from 'lodash.isequal'
 
 import Banner from '../common/banner/Banner';
 import Content from '../common/content/Content';
-import Navigation from '../common/navigation/Navigation';
+import Navigation from '../common/navigation/nav/Navigation';
 
 import { navigationData } from '../common/navigation/navigationData';
 
