@@ -1,10 +1,23 @@
 import React from 'react';
 
-const Links = ({className, onclick, href, text}) => {
+import PropTypes from 'prop-types';
+
+import './Links.css'
+
+const Links = ({className, clickHandler, href, text}) => {
 
     return (
-        <li id="menu__links" className={className} onClick={onclick} ><a href={href}  >{text}</a></li>
+        <li id="menu__links" className={className} onClick={clickHandler}>
+            <a href={href} >{text}</a>
+        </li>
     )
+}
+
+Links.propTypes = {
+    className : PropTypes.string,
+    clickHandler : PropTypes.func,
+    href : PropTypes.string,
+    text : PropTypes.string
 }
 
 export default Links;

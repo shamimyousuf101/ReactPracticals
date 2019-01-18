@@ -1,0 +1,9 @@
+
+.SingleSearchResult{
+    border: solid;
+    margin: 16px;
+    margin-left: 60px;
+    width: 85%;
+    border-color:#60aade;
+    display: flex;
+}

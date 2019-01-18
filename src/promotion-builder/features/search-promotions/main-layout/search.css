@@ -16,12 +16,6 @@
     display: flex;
 }
 
-.search__input {
-    font-size:14px;
-    height:30px;
-    padding:5px 10px;
-    width:296px;
-}
 
 table {
     border: 1px solid;
@@ -29,15 +23,6 @@ table {
 
 td{
     border-top: 1px solid;
-}
-
-.SingleSearchResult{
-    border: solid;
-    margin: 16px;
-    margin-left: 60px;
-    width: 85%;
-    border-color:#60aade;
-    display: flex;
 }
 
 .searchContainer{

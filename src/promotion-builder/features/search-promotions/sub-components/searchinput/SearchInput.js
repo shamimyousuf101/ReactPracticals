@@ -1,6 +1,8 @@
 import React from 'react';
 import PropsTypes from 'prop-types';
 
+import './searchinput.css'
+
 const SearchInput = ({value, onChange}) => {
 
     return(

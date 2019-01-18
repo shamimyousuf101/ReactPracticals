@@ -4,6 +4,7 @@ import PropsTypes from 'prop-types'
 import PromotionDetails from '../promotion-details/PromotionDetails';
 import EditButton from '../editbutton/EditButton';
 
+import './singleresult.css'
 
 const SingleResult = ({result, id, editBtnClick}) => {
 

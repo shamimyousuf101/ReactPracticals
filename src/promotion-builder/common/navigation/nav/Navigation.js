@@ -10,7 +10,7 @@ const Navigation = ({menuData, clickHandler}) => {
     <nav className="menu">
         <ul>
             {
-            menuData.map( ({className, text}) => (<Links href={'#'} className={className} key={text} text={text} onclick={clickHandler}/>) )
+            menuData.map( ({className, text}) => (<Links href={'#'} className={className} key={text} text={text} clickHandler={clickHandler}/>) )
             }
         </ul>
     </nav>
