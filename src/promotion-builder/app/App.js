@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import isEqual from 'lodash.isequal'
+import { connect } from 'react-redux';
+import isEqual from 'lodash.isequal';
 
 import Banner from '../common/banner/Banner';
 import Content from '../common/content/Content';
-import Navigation from '../common/navigation/nav/Navigation';
+import Navigation from '../common/navigation/nav/component/Navigation';
 
 import { navigationData } from '../common/navigation/navigationData';
 
@@ -16,21 +17,21 @@ let uuid4 = require('uuid4');
 
 class App extends Component {
 
-  state = {
-    view: "Search",
-    selectedPromotionId: null,
-    formData: {
-      id: 0,
-      devices: new Map(),
-      ventures: new Map(),
-      url: "",
-      name: "",
-      lastUpdatedTime: ""
-    },
-    searchTerm: "",
-    searchDisplay: [],
-    promotionData: promotionData
-  };
+  // state = {
+  //   view: "Search",
+  //   selectedPromotionId: null,
+  //   formData: {
+  //     id: 0,
+  //     devices: new Map(),
+  //     ventures: new Map(),
+  //     url: "",
+  //     name: "",
+  //     lastUpdatedTime: ""
+  //   },
+  //   searchTerm: "",
+  //   searchDisplay: [],
+  //   promotionData: promotionData
+  // };
 
   
 
@@ -40,13 +41,16 @@ class App extends Component {
 
 
   componentDidUpdate(prevProps, prevState){
-    if(!isEqual(prevState.promotionData,this.state.promotionData)){
+    if(!isEqual(prevState.promotionData,this.props.promotionData)){
       this.searchPromotions();
     }
     
   }
 
-  handleInputChange = event => this.setState({ searchTerm: event.target.value });
+  handleInputChange = event => 
+  {
+    // this.setState({ searchTerm: event.target.value });
+  }
 
 
   searchBtnClick = event => {
@@ -56,24 +60,24 @@ class App extends Component {
 
 
   searchPromotions = () => {
-    const searchInput = this.state.searchTerm;
-    const promotionArray = Object.keys(this.state.promotionData).map(key => this.state.promotionData[key]);
-    const filteredPromotionArray = promotionArray.filter((el) => el.name.toLowerCase().indexOf(searchInput.toLowerCase()) > -1);
-    this.setState({searchDisplay: filteredPromotionArray.sort((a,b) => b.lastUpdatedTime - a.lastUpdatedTime) });
+    // const searchInput = this.state.searchTerm;
+    // const promotionArray = Object.keys(this.props.promotionData).map(key => this.props.promotionData[key]);
+    // const filteredPromotionArray = promotionArray.filter((el) => el.name.toLowerCase().indexOf(searchInput.toLowerCase()) > -1);
+    // this.setState({searchDisplay: filteredPromotionArray.sort((a,b) => b.lastUpdatedTime - a.lastUpdatedTime) });
   }
 
 
   onFormChange = (value, formField) => {
-      this.setState(prevState => {return {  formData: { ...prevState.formData, [formField]: value }}})
+      // this.setState(prevState => {return {  formData: { ...prevState.formData, [formField]: value }}})
   }
 
 
   savePromotion = () => {
-    if (this.state.formData) {
+    if (this.props.formData) {
         let id = this.getPromotionId();
         this.showAlertWithFormData();
-        this.setState(prevState => {return {  promotionData: { ...prevState.promotionData, [id ]: this.getNewOrUpdatedPromotion(id)}}})
-        this.setState({view: "Search"})
+        // this.setState(prevState => {return {  promotionData: { ...prevState.promotionData, [id ]: this.getNewOrUpdatedPromotion(id)}}})
+        // this.setState({view: "Search"})
     }
   }
 
@@ -86,7 +90,7 @@ class App extends Component {
         devices = new Map(),
         ventures = new Map()
       }
-    } = this.state;
+    } = this.props;
 
     return {
       id,
@@ -105,7 +109,7 @@ class App extends Component {
       formData: {
         id: formDataId
       }
-    } = this.state;
+    } = this.props;
 
     return formDataId || selectedPromotionId || uuid4();
   }
@@ -113,38 +117,38 @@ class App extends Component {
 
   showAlertWithFormData = () => {
     let savedData = `New Promotion Details:
-                    Name:\t ${this.state.formData.name} 
-                    Url:\t ${this.state.formData.url}
-                    Devices:\t ${getTruthyList(this.state.formData.devices )}
-                    Ventures:\t ${getTruthyList(this.state.formData.ventures)}`;
+                    Name:\t ${this.props.formData.name} 
+                    Url:\t ${this.props.formData.url}
+                    Devices:\t ${getTruthyList(this.props.formData.devices )}
+                    Ventures:\t ${getTruthyList(this.props.formData.ventures)}`;
     alert(savedData);
   }
 
 
   resetFormData = () => {
-    this.setState({
-      selectedPromotionId: null,
-      formData: {
-        devices: new Map(),
-        ventures: new Map(),
-        url: "",
-        name: ""
-      },
-    });
+    // this.setState({
+    //   selectedPromotionId: null,
+    //   formData: {
+    //     devices: new Map(),
+    //     ventures: new Map(),
+    //     url: "",
+    //     name: ""
+    //   },
+    // });
   }
 
 
   editBtnClick = (id) => {
-    this.setState({
-      selectedPromotionId: id,
-      view: "SavePromotion",
-      formData: this.setFormDataToSelectedPromotion(id)
-    });
+    // this.setState({
+    //   selectedPromotionId: id,
+    //   view: "SavePromotion",
+    //   formData: this.setFormDataToSelectedPromotion(id)
+    // });
   }
 
 
   setFormDataToSelectedPromotion = (selectedPromotionId) => {
-    const selectedPromotion = this.state.searchDisplay.find(item => item.id === selectedPromotionId);
+    const selectedPromotion = this.props.searchDisplay.find(item => item.id === selectedPromotionId);
     let selectedPromotionFormData = {};
     selectedPromotionFormData.devices = arrayToMap(selectedPromotion.devices)
     selectedPromotionFormData.ventures = arrayToMap(selectedPromotion.ventures)
@@ -155,41 +159,41 @@ class App extends Component {
   }
 
 
-  onMenuClick = (event) => {
-    const selectedLink = event.currentTarget.className;
-    let view;
-    switch (selectedLink) {
+  // onMenuClick = (event) => {
+  //   const selectedLink = event.currentTarget.className;
+  //   let view;
+  //   switch (selectedLink) {
 
-      case "search__link":
-        view = "Search";
-        this.setState({searchTerm: ""}, () => {
-          this.searchPromotions();
-        })
+  //     case "search__link":
+  //       view = "Search";
+  //       // this.setState({searchTerm: ""}, () => {
+  //       //   this.searchPromotions();
+  //       // })
         
-        break;
-      case "upload__link":
-        view = "AssetManager";
-        break;
-      case "config__link":
-        view = "SavePromotion";
-        this.resetFormData();
-        break;
-      default:
-        view = "Search";
-    }
+  //       break;
+  //     case "upload__link":
+  //       view = "AssetManager";
+  //       break;
+  //     case "config__link":
+  //       view = "SavePromotion";
+  //       this.resetFormData();
+  //       break;
+  //     default:
+  //       view = "Search";
+  //   }
 
-    this.setState({ view });
+  //   // this.setState({ view });
 
-  }
+  // }
 
   render() {
 
-    const { view, formData, searchDisplay, searchTerm , selectedPromotionId} = this.state;
+    const { view, formData, searchDisplay, searchTerm , selectedPromotionId} = this.props;
 
     return (
       <div className="App">
         <Banner subHeading={view} />
-        <Content 
+        {/* <Content 
         view={view} 
         formData={formData} 
         selectedPromotionId={selectedPromotionId} 
@@ -200,8 +204,8 @@ class App extends Component {
         handleInputChange={this.handleInputChange} 
         searchBtnClick={this.searchBtnClick} 
         searchDisplay={searchDisplay} 
-        searchTerm={searchTerm} />
-        <Navigation menuData={navigationData} clickHandler={this.onMenuClick} />
+        searchTerm={searchTerm} /> */}
+        <Navigation />
       </div>
     );
   }
