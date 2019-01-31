@@ -15,9 +15,9 @@ class App extends Component {
   }
 
   componentDidUpdate(prevProps, prevState){
-    if(!isEqual(prevState.promotionData,this.props.promotionData)){
-      this.searchPromotions();
-    }
+    // if(!isEqual(prevState.promotionData,this.props.promotionData)){
+    //   this.searchPromotions();
+    // }
     
   }
 

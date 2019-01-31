@@ -8,10 +8,11 @@ let initialState = "Search";
 export default (state = initialState, action) => {
     switch (action.type) {
         case SELECTED_VIEW:
-            return { ...state, [SELECTED_VIEW]: action.payload };
+            return action.payload;
         default:
             return state;
     }
 };
+
 
 

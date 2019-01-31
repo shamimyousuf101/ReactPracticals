@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import isEqual from 'lodash.isequal';
+// import isEqual from 'lodash.isequal';
 
-import Banner from '../common/banner/Banner';
-import Content from '../common/content/Content';
-import Navigation from '../common/navigation/nav/component/Navigation';
+// import Banner from '../common/banner/Banner';
+// import Content from '../common/content/Content';
+// import Navigation from '../common/navigation/nav/component/Navigation';
 
-import { navigationData } from '../common/navigation/navigationData';
+// import { navigationData } from '../common/navigation/navigationData';
 
-import { promotionData } from '../../domain/promotionData';
-import { getTruthyList , arrayToMap } from '../../utils/utils'
+// import { promotionData } from '../../domain/promotionData';
+// import { getTruthyList , arrayToMap } from '../../utils/utils'
 
 
 import AppComponent from './component'
