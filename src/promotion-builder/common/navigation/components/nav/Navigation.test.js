@@ -2,7 +2,7 @@ import React from 'react';
 import {shallow} from 'enzyme';
 
 import Navigation from './Navigation'
-import Links from '../../links/Links'
+import Links from '../links/Links'
 
 describe('<Navigation>', () => {
 

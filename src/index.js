@@ -1,13 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import reduxLogger from 'redux-logger';
+import { createStore, applyMiddleware } from 'redux';
 
 
 import './index.css';
-import App from './promotion-builder/app/App';
-import allReducers from './promotion-builder/reducers/allReducers'
+import AppContainer from './promotion-builder/app/container';
+import rootReducer from './promotion-builder/reducers/rootReducer'
 
-const store = createStore(allReducers);
+const createStoreWithMiddleware = applyMiddleware(
+	reduxLogger
+)(createStore);
 
-ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
+const store = createStoreWithMiddleware(
+	rootReducer,
+	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+
+ReactDOM.render(<Provider store={store}><AppContainer /></Provider>, document.getElementById('root'));

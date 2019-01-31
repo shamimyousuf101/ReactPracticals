@@ -2,7 +2,7 @@ import {connect} from 'react-redux';
 import { VIEW } from '../actions/actionTypes'
 import { selectNavLink } from '../actions/actionCreators'
 
-import Links from '../Links';
+import Nav from '../components/nav/Navigation'
 
 //dispatch actions based on type
 
@@ -41,6 +41,6 @@ const mapDispatchToProps = {
 const NavLinkContainer =  connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(Links);
+)(Nav);
 
 export default NavLinkContainer;
