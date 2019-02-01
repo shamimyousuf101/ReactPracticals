@@ -1,11 +1,11 @@
 import React from 'react';
 import PropsTypes from 'prop-types';
 
-const SearchButton = ({searchPromotions, searchTerm, searchDisplay}) => {
+const SearchButton = ({searchPromotions}) => {
 
     const searchBtnClick = event => {
         event.preventDefault();
-        searchPromotions(searchTerm, searchDisplay);
+        searchPromotions();
       }
 
     return(

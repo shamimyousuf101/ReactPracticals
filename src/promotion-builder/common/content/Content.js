@@ -8,7 +8,7 @@ import SavePromotion from '../../features/save-promotions/main-layout/SavePromot
 
 import './content.css'
 
-const Content = ({view, searchDisplay, searchTerm, handleInputChange, formData, savePromotion, reset, onFormChange, selectedPromotionId, searchBtnClick, editBtnClick }) => {
+const Content = ({view, searchDisplay, formData, savePromotion, reset, onFormChange, selectedPromotionId, editBtnClick }) => {
 
     const setContent = (view) => {
         switch (view) {
@@ -52,10 +52,10 @@ Content.propTypes = {
         url: PropTypes.string,
         ventures: PropTypes.arrayOf(PropTypes.string)
       })),
-    searchTerm: PropsTypes.string,
-    handleInputChange: PropsTypes.func.isRequired,
+    // searchTerm: PropsTypes.string,
+    // handleInputChange: PropsTypes.func.isRequired,
     formData: PropsTypes.object,
-    savePromotion: PropsTypes.func.isRequired,
+    // savePromotion: PropsTypes.func.isRequired,
     reset: PropsTypes.func.isRequired,
     onFormChange: PropsTypes.func.isRequired
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import PropsTypes from 'prop-types';
 
 import SearchInputContainer from '../searchinput/SearchInputContainer'
 import SearchButtonContainer from '../searchbutton/SearchButtonContainer';

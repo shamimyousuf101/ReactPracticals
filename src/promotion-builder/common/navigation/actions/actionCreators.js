@@ -1,5 +1,5 @@
 
-import { SELECTED_VIEW } from './actionTypes'
+export const SELECTED_VIEW = 'SELECTED_VIEW';
 
 // action creators - returns an action that contains type and a payload
 

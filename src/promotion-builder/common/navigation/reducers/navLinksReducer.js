@@ -1,7 +1,5 @@
 
-import { SELECTED_VIEW } from '../actions/actionTypes'
-
-//reducer 
+import { SELECTED_VIEW } from '../actions/actionCreators'
 
 let initialState = "Search";
 

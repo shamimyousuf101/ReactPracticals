@@ -2,8 +2,6 @@ import { connect } from "react-redux";
 import SearchButton from "./SearchButton";
 import { searchPromotions } from "./SearchButtonAction";
 
-//dispatch actions based on type
-
 function mapStateToProps(state) {
   return {
 

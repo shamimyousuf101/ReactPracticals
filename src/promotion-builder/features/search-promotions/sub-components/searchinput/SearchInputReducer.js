@@ -1,9 +1,7 @@
 import { SEARCH_INPUT_CHANGE } from "./SearchInputAction";
 
 
-const initailState = {
-  searchTerm: "",
-};
+const initailState = '';
 
 export default function searchReducer(state = initailState, action) {
   switch (action.type) {

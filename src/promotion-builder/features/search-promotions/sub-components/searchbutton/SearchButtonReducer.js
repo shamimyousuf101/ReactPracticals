@@ -1,23 +1,21 @@
 import { SEARCH_BUTTON_CLICK } from "./SearchButtonAction";
 import { promotionData } from "../../../../../domain/promotionData";
 
-const initailState = {
-  searchTerm: "",
-  searchDisplay: [],
-  promotionData: promotionData
-};
+const initailState = [];
 
 export default function searchButtonReducer(state = initailState, action) {
   switch (action.type) {
     case SEARCH_BUTTON_CLICK: {
       const { searchTerm }= action.payload.searchTerm;
-      const {searchDisplay } = action.payload.searchDisplay;
+      let {searchDisplay } = action.payload.searchDisplay;
  
-      const promotionArray = Object.keys(state.promotionData).map(
-        key => state.promotionData[key]
+      console.log(searchTerm)
+
+      const promotionArray = Object.keys(promotionData).map(
+        key => promotionData[key]
       );
 
-      console.log(promotionArray, searchTerm)
+      
       const filteredPromotionArray = promotionArray.filter(
         el => el.name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1
       );
