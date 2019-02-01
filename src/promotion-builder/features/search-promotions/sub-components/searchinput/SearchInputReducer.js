@@ -1,4 +1,4 @@
-import { SEARCH_INPUT_CHANGE } from "./";
+import { SEARCH_INPUT_CHANGE } from "./SearchInputAction";
 
 
 const initailState = {

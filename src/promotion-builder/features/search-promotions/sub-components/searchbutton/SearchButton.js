@@ -1,17 +1,22 @@
 import React from 'react';
 import PropsTypes from 'prop-types';
 
-const SearchButton = ({onSearchClick}) => {
+const SearchButton = ({searchPromotions, searchTerm, searchDisplay}) => {
+
+    const searchBtnClick = event => {
+        event.preventDefault();
+        searchPromotions(searchTerm, searchDisplay);
+      }
 
     return(
-        <button className="search__button" type="submit" onClick={onSearchClick}> 
+        <button className="search__button" type="submit" onClick={searchBtnClick}> 
             <img src="/search.png" alt="search"/>
         </button> 
     )
 }
 
 SearchButton.propTypes = {
-    onSearchClick: PropsTypes.func.isRequired
+    searchPromotions: PropsTypes.func.isRequired
 }
 
 export default SearchButton;

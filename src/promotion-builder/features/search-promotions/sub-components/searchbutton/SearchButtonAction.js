@@ -1,23 +1,9 @@
-export const SEARCH = "SEARCH";
+export const SEARCH_BUTTON_CLICK = "SEARCH_BUTTON_CLICK";
 
 
-export const searchPromotions = () => {
+export const searchPromotions = (searchTerm, searchDisplay) => {
     return {
-        type: SEARCH
+        type: SEARCH_BUTTON_CLICK,
+        payload: {searchTerm, searchDisplay}
     }
 }
-
-
-
-//   searchBtnClick = event => {
-//     event.preventDefault();
-//     this.searchPromotions();
-//   }
-
-
-//   searchPromotions = () => {
-//     // const searchInput = this.state.searchTerm;
-//     // const promotionArray = Object.keys(this.props.promotionData).map(key => this.props.promotionData[key]);
-//     // const filteredPromotionArray = promotionArray.filter((el) => el.name.toLowerCase().indexOf(searchInput.toLowerCase()) > -1);
-//     // this.setState({searchDisplay: filteredPromotionArray.sort((a,b) => b.lastUpdatedTime - a.lastUpdatedTime) });
-//   }

@@ -14,10 +14,10 @@ const Content = ({view, searchDisplay, searchTerm, handleInputChange, formData, 
         switch (view) {
             case "Search":
                 return <Search 
-                searchDisplay={searchDisplay} 
-                searchTerm={searchTerm} 
-                onInputChange={handleInputChange} 
-                onSearchClick={searchBtnClick} 
+                // searchDisplay={searchDisplay} 
+                // searchTerm={searchTerm} 
+                // onInputChange={handleInputChange} 
+                // onSearchClick={searchBtnClick} 
                 editBtnClick={editBtnClick}/>                
             case "AssetManager":
                 return <AssetManager/>     

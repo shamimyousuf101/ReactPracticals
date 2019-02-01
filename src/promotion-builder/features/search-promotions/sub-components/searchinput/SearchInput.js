@@ -1,6 +1,5 @@
 import React from 'react';
 import PropsTypes from 'prop-types';
-import { search } from '../../actions/actions';
 
 import './searchinput.css'
 

@@ -1,15 +1,12 @@
 import { connect } from "react-redux";
 import SearchInput from "./SearchInput";
-import { handleInputChange } from "../../actions/actions";
+import { handleInputChange } from "./SearchInputAction";
 
 //dispatch actions based on type
 
 function mapStateToProps(state) {
   return {
-    searchTerm: state.searchTerm,
-    searchDisplay: state.searchDisplay,
-    promotionData: state.promotionData
-   
+    searchTerm: state.searchTerm   
   };
 }
 

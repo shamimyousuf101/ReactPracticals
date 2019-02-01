@@ -23,7 +23,7 @@ class App extends Component {
 
   render() {
 
-    const { view, formData, searchDisplay, searchTerm , selectedPromotionId} = this.props;
+    const { view, formData,  searchTerm , selectedPromotionId} = this.props;
 
     return (
       <div className="App">
@@ -34,12 +34,13 @@ class App extends Component {
         selectedPromotionId={selectedPromotionId} 
         // editBtnClick={this.editBtnClick} 
         // reset={this.resetFormData} 
-        savePromotion={this.savePromotion} 
+        // savePromotion={this.savePromotion} 
         // onFormChange={this.onFormChange} 
-        handleInputChange={this.handleInputChange} 
-        searchBtnClick={this.searchBtnClick} 
-        searchDisplay={searchDisplay} 
-        searchTerm={searchTerm} />
+        // handleInputChange={this.handleInputChange} 
+        // searchBtnClick={this.searchBtnClick} 
+        // searchDisplay={searchDisplay} 
+        // searchTerm={searchTerm}
+         />
         <NavLinkContainer/>
       </div>
     );
