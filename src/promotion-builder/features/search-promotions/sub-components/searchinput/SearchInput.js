@@ -1,12 +1,13 @@
 import React from 'react';
 import PropsTypes from 'prop-types';
+import { search } from '../../actions/actions';
 
 import './searchinput.css'
 
-const SearchInput = ({value, onChange}) => {
+const SearchInput = ({handleInputChange, value}) => {
 
     return(
-        <input className="search__input" type="text" placeholder="Search" value={value} onChange={onChange}/>
+        <input className="search__input" type="text" placeholder="Search" value={value} onChange={(e) => handleInputChange(e.target.value)}/>
     )
 }
 

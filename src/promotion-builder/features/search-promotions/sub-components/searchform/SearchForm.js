@@ -1,15 +1,15 @@
 import React from 'react';
 import PropsTypes from 'prop-types';
 
-import SearchInput from '../searchinput/SearchInput'
+import SearchInputContainer from '../searchinput/SearchInputContainer'
 import SearchButton from '../searchbutton/SearchButton';
 
 
-const SearchForm = ({value, onChange, onSearchClick}) => {
+const SearchForm = ({onSearchClick}) => {
 
     return(
         <form className="search__form">
-            <SearchInput value={value} onChange={onChange}/>
+            <SearchInputContainer/>
             <SearchButton onSearchClick={onSearchClick}/>
         </form>
     )

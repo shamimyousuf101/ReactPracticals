@@ -11,7 +11,7 @@ import './search.css';
 const Search = ({searchTerm, onInputChange, onSearchClick, searchDisplay, editBtnClick}) => {
     return(<div className="searchContainer">
         <SearchForm value={searchTerm} onChange={onInputChange} onSearchClick={onSearchClick}/>
-        <SearchResult searchDisplay={searchDisplay} editBtnClick={editBtnClick}/>
+        {/* <SearchResult searchDisplay={searchDisplay} editBtnClick={editBtnClick}/> */}
     </div>)
 }
 

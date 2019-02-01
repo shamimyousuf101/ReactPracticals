@@ -23,23 +23,23 @@ class App extends Component {
 
   render() {
 
-    const { view, formData, searchDisplay, searchTerm , selectedPromotionId, menuClickHandler} = this.props;
+    const { view, formData, searchDisplay, searchTerm , selectedPromotionId} = this.props;
 
     return (
       <div className="App">
         <Banner subHeading={view} />
-        {/* <Content 
+        <Content 
         view={view} 
-        formData={formData} 
+        // formData={formData} 
         selectedPromotionId={selectedPromotionId} 
-        editBtnClick={this.editBtnClick} 
-        reset={this.resetFormData} 
+        // editBtnClick={this.editBtnClick} 
+        // reset={this.resetFormData} 
         savePromotion={this.savePromotion} 
-        onFormChange={this.onFormChange} 
+        // onFormChange={this.onFormChange} 
         handleInputChange={this.handleInputChange} 
         searchBtnClick={this.searchBtnClick} 
         searchDisplay={searchDisplay} 
-        searchTerm={searchTerm} /> */}
+        searchTerm={searchTerm} />
         <NavLinkContainer/>
       </div>
     );

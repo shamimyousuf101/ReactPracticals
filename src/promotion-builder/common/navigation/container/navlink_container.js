@@ -6,8 +6,6 @@ import Nav from '../components/nav/Navigation'
 
 //dispatch actions based on type
 
-
-
 function mapStateToProps(state) {
     return {
         view : state.view
