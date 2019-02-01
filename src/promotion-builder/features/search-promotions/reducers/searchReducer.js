@@ -1,4 +1,4 @@
-import { HANDLE_INPUT_CHANGE } from "../actions/actions";
+import { SEARCH_INPUT_CHANGE } from "../actions/actions";
 import { promotionData } from "../../../../domain/promotionData";
 
 const initailState = {
@@ -9,7 +9,7 @@ const initailState = {
 
 export default function searchReducer(state = initailState, action) {
   switch (action.type) {
-    case HANDLE_INPUT_CHANGE: {
+    case SEARCH_INPUT_CHANGE: {
       // const searchDisplay = state.promotionData.filter((val) => val.includes(searchTerm));
 
     //   const promotionArray = Object.keys(state.promotionData).map(
