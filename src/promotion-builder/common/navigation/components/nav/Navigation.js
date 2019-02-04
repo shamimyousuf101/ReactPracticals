@@ -5,14 +5,14 @@ import { navigationData } from '../../navigationData'
 
 import './navigation.css';
 
-const Navigation = ({selectNavLink}) => {  
+const Navigation = ({changeView}) => {  
 
 
     return (
     <nav className="menu">
         <ul>
             {
-            navigationData.map( ({className, view, text}) => (<Links href={'#'} className={className} key={text} text={text} menuClickHandler={() => selectNavLink(view)}/>) )
+            navigationData.map( ({className, view, text}) => (<Links href={'#'} className={className} key={text} text={text} menuClickHandler={() => changeView(view)}/>) )
             }
         </ul>
     </nav>

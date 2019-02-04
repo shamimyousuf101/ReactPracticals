@@ -3,10 +3,10 @@ import PropsTypes from 'prop-types';
 
 import './searchinput.css'
 
-const SearchInput = ({handleInputChange, value}) => {
+const SearchInput = ({setSearchTerm, value}) => {
 
     return(
-        <input className="search__input" type="text" placeholder="Search" value={value} onChange={(e) => handleInputChange(e.target.value)}/>
+        <input className="search__input" type="text" placeholder="Search" value={value} onChange={(e) => setSearchTerm(e.target.value)}/>
     )
 }
 

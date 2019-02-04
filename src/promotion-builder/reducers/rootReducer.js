@@ -1,13 +1,13 @@
 import {combineReducers} from 'redux';
 
-import navLinksReducer from '../common/navigation/reducers/navLinksReducer';
-import searchReducer from '../features/search-promotions/sub-components/searchinput/SearchInputReducer';
-import searchButtonReducer from '../features/search-promotions/sub-components/searchbutton/SearchButtonReducer'
+import viewReducer from '../common/navigation/reducers/view_reducer';
+import searchTermReducer from '../features/search-promotions/reducers/search_term_reducer';
+import searchPromotionsReducer from '../features/search-promotions/reducers/search_promotions_reducer'
 
 const rootReducer = combineReducers({
-    view: navLinksReducer,
-    searchTerm: searchReducer,
-    searchDisplay: searchButtonReducer
+    view: viewReducer,
+    searchTerm: searchTermReducer,
+    searchDisplay: searchPromotionsReducer
 })
 
 export default rootReducer;

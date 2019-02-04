@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import { selectNavLink } from '../actions/actionCreators'
+import { changeView } from '../actions/navigation_actions'
 
 import Nav from '../components/nav/Navigation'
 
@@ -10,7 +10,7 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = {
-    selectNavLink
+    changeView
 }
 
 const NavLinkContainer =  connect(

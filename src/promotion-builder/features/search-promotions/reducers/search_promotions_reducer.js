@@ -1,13 +1,15 @@
-import { SEARCH_BUTTON_CLICK } from "./SearchButtonAction";
-import { promotionData } from "../../../../../domain/promotionData";
+import { SEARCH_PROMOTIONS } from '../actions/search_actions';
+import { promotionData } from "../../../../domain/promotionData";
 
 const initailState = [];
 
-export default function searchButtonReducer(state = initailState, action) {
+export default function searchPromotionsReducer(state = initailState, action) {
   switch (action.type) {
-    case SEARCH_BUTTON_CLICK: {
-      const { searchTerm }= action.payload.searchTerm;
-      let {searchDisplay } = action.payload.searchDisplay;
+    case SEARCH_PROMOTIONS: {
+
+      console.log(state);
+      const { searchTerm }= state.searchTerm;
+      let {searchDisplay } = state.searchDisplay;
  
       console.log(searchTerm)
 

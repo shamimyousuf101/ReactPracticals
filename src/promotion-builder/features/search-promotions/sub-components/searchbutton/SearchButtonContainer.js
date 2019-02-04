@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import SearchButton from "./SearchButton";
-import { searchPromotions } from "./SearchButtonAction";
+import { searchPromotions } from "../../actions/search_actions";
 
 function mapStateToProps(state) {
   return {
@@ -12,7 +12,7 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = {
-    searchPromotions
+  searchPromotions
 };
 
 const SearchButtonContainer = connect(
