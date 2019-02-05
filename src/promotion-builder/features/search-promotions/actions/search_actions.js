@@ -9,9 +9,10 @@ export const SET_SEARCH_TERM = 'SET_SEARCH_TERM';
 /*
 * action creators
 */
-export const searchPromotions = () => {
+export const searchPromotions = (searchTerm) => {
     return {
-        type: SEARCH_PROMOTIONS
+        type: SEARCH_PROMOTIONS,
+        payload: searchTerm
     }
 }
 

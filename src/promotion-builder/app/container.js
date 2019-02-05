@@ -20,24 +20,24 @@ let uuid4 = require('uuid4');
 
 
 
-export const handleInputChange = event => 
-  {
-    // this.setState({ searchTerm: event.target.value });
-  }
+// export const handleInputChange = event => 
+//   {
+//     // this.setState({ searchTerm: event.target.value });
+//   }
 
 
-  export const searchBtnClick = event => {
-    // event.preventDefault();
-    // this.searchPromotions();
-  }
+  // export const searchBtnClick = event => {
+  //   // event.preventDefault();
+  //   // this.searchPromotions();
+  // }
 
 
-  export const searchPromotions = () => {
+  // export const searchPromotions = () => {
     // const searchInput = this.state.searchTerm;
     // const promotionArray = Object.keys(this.props.promotionData).map(key => this.props.promotionData[key]);
     // const filteredPromotionArray = promotionArray.filter((el) => el.name.toLowerCase().indexOf(searchInput.toLowerCase()) > -1);
     // this.setState({searchDisplay: filteredPromotionArray.sort((a,b) => b.lastUpdatedTime - a.lastUpdatedTime) });
-  }
+  // }
 
 
   export const onFormChange = (value, formField) => {

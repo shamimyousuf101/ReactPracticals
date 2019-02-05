@@ -4,14 +4,12 @@ import { promotionData } from "../../../../domain/promotionData";
 const initailState = [];
 
 export default function searchPromotionsReducer(state = initailState, action) {
+
   switch (action.type) {
     case SEARCH_PROMOTIONS: {
 
-      console.log(state);
-      const { searchTerm }= state.searchTerm;
-      let {searchDisplay } = state.searchDisplay;
- 
-      console.log(searchTerm)
+      let searchTerm = action.payload;
+      let searchDisplay = state;
 
       const promotionArray = Object.keys(promotionData).map(
         key => promotionData[key]
@@ -26,7 +24,7 @@ export default function searchPromotionsReducer(state = initailState, action) {
         (a, b) => b.lastUpdatedTime - a.lastUpdatedTime
       );
 
-      return searchDisplay
+      return searchDisplay ;
     }
     default:
       return state;

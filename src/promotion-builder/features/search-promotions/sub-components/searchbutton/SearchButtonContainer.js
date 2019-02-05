@@ -4,9 +4,8 @@ import { searchPromotions } from "../../actions/search_actions";
 
 function mapStateToProps(state) {
   return {
-
-    searchTerm: state.searchTerm,
-    searchDisplay: state.searchDisplay
+    searchTerm: state.searchTerm
+    // searchDisplay: state.searchDisplay
    
   };
 }
