@@ -6,6 +6,9 @@ import './toolbar.css'
 
 import { arrayToMap } from '../../../../../utils/utils'
 
+import block from 'bem-cn';
+const b = block('promotion-toolbar');
+
 
 const ToolBar = ({formData, savePromotion, reset, selectedPromotionId, searchDisplay}) => {
 
@@ -58,9 +61,9 @@ const ToolBar = ({formData, savePromotion, reset, selectedPromotionId, searchDis
         return disabled;
     }
 
-    return (<div className="PromotionToolBar">
-            <button className="save" disabled={isSaveButtonDisabled(selectedPromotionId, formData, searchDisplay)} onClick={savePromotion}>Save</button>
-            <button className="reset" disabled={checkAnyFieldHasData(formData)} onClick={reset}>Reset</button>
+    return (<div className={b()}>
+            <button className={b('button-save')} disabled={isSaveButtonDisabled(selectedPromotionId, formData, searchDisplay)} onClick={savePromotion}>Save</button>
+            <button className={b('button-reset')} disabled={checkAnyFieldHasData(formData)} onClick={reset}>Reset</button>
         </div>)
 }
 

@@ -7,6 +7,8 @@ import Search from '../../features/search-promotions/main-layout/Search';
 import SavePromotion from '../../features/save-promotions/main-layout/SavePromotion';
 
 import './content.css'
+import bem from 'bem-cn';
+const b = bem('content');
 
 const Content = ({view, searchDisplay, searchTerm, handleInputChange, formData, savePromotion, reset, onFormChange, selectedPromotionId, searchBtnClick, editBtnClick }) => {
 
@@ -34,8 +36,8 @@ const Content = ({view, searchDisplay, searchTerm, handleInputChange, formData, 
         }    
     }
 
-    return (<div className="content"> 
-                <div className="dynamiccontent">    
+    return (<div className={b()}> 
+                <div className={b('dynamic')}>    
                     {setContent(view)}
                 </div>
             </div>)

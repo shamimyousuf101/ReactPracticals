@@ -1,25 +1,33 @@
+export const getTruthyList = list => {
+  let listArray = Array.from(list.entries());
+  let truthyList = listArray.filter(item => item[1] === true);
+  return truthyList.join(",");
+};
 
+export const arrayToMap = array => {
+  let newMap = new Map();
 
-        export const getTruthyList = (list) => {
-          
-            let listArray = Array.from(list.entries());
-            let truthyList = listArray.filter( item => item[1] === true )
-            return truthyList.join(',');
-        }
+  if (array) {
+    if (array.length > 0) {
+      array.forEach(element => {
+        newMap.set(element, true);
+      });
+    }
+  }
 
+  return newMap;
+};
 
-       export const arrayToMap = (array) => {
-            
-            let newMap = new Map();
+export const search = (searchInput, itemArray = []) => {
+  return itemArray.filter(
+    item => item.name.toLowerCase().indexOf(searchInput.toLowerCase()) > -1
+  );
+};
 
-            if(array)
-            {
-              if (array.length > 0) {
-                array.forEach(element => {
-                  newMap.set(element, true);
-                });
-              }
-            }
-    
-            return newMap;
-          }
+export const sort = itemArray => {
+  return itemArray.sort((a, b) => b.lastUpdatedTime - a.lastUpdatedTime);
+};
+
+export const mapToArray = itemMap => {
+  return Object.keys(itemMap).map(key => itemMap[key]);
+};

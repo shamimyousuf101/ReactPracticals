@@ -1,10 +1,13 @@
 import React from 'react';
 import PropsTypes from 'prop-types';
 
+import block from 'bem-cn';
+const b = block('button');
+
 const SearchButton = ({onSearchClick}) => {
 
     return(
-        <button className="search__button" type="submit" onClick={onSearchClick}> 
+        <button className={b('search')} type="submit" onClick={onSearchClick}> 
             <img src="/search.png" alt="search"/>
         </button> 
     )

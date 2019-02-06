@@ -6,10 +6,13 @@ import EditButton from '../editbutton/EditButton';
 
 import './singleresult.css'
 
+import bem from 'bem-cn';
+const b = bem('singlesearchresult');
+
 const SingleResult = ({result, id, editBtnClick}) => {
 
     return(
-        <div className="SingleSearchResult">
+        <div className={b()}>
             <PromotionDetails result={result} />
             <EditButton id={id} editBtnClick={editBtnClick} />
         </div>
