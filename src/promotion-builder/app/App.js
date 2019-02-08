@@ -112,7 +112,11 @@ class App extends Component {
     this.setState({
       selectedPromotionId: id,
       view: VIEW.SAVE_PROMOTION,
-      formData: {...result, devices: arrayToMap(result.devices), ventures: arrayToMap(result.ventures)}
+      formData: {
+        ...result,
+        devices: arrayToMap(result.devices),
+        ventures: arrayToMap(result.ventures)
+      }
     });
   };
 

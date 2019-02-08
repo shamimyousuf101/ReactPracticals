@@ -8,7 +8,7 @@ import './checkboxgroup.css'
 class CheckboxGroup extends React.Component {
 
     handleChange = (e) => {
-        const {legendText, displayItems, value, onFormChange} = this.props;
+        const {onFormChange} = this.props;
         let listMap = this.props.value;
 
         if(listMap.has(e.target.name)){
@@ -20,7 +20,7 @@ class CheckboxGroup extends React.Component {
     }
 
     render(){
-        const {legendText, displayItems, value, onFormChange} = this.props;
+        const {legendText, displayItems, value} = this.props;
 
         return (
             <fieldset >

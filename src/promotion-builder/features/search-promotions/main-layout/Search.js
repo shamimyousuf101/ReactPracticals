@@ -1,7 +1,6 @@
 
 import React from 'react';
 import PropsTypes from 'prop-types';
-import PropTypes from 'prop-types';
 
 import SearchForm from '../../search-promotions/sub-components/searchform/SearchForm';
 import SearchResult from '../../search-promotions/sub-components/searchresult/SearchResult';
