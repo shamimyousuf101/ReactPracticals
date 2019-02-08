@@ -8,7 +8,7 @@ import Navigation from "../common/navigation/nav/Navigation";
 import { navigationData } from "../common/navigation/navigationData";
 
 import { promotionData } from "../../domain/promotionData";
-import { getTruthyList, arrayToMap } from "../../utils/utils";
+import { getTruthyList, arrayToMap , mapToArray} from "../../utils/utils";
 
 import { searchPromotions } from "../../utils/search";
 
@@ -33,12 +33,11 @@ class App extends Component {
       lastUpdatedTime: ""
     },
     searchTerm: "",
-    searchDisplay: [],
     promotionData: promotionData
   };
 
   componentDidMount() {
-    this.searchPromotions();
+    // this.searchPromotions();
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -53,15 +52,6 @@ class App extends Component {
   searchBtnClick = event => {
     event.preventDefault();
     this.searchPromotions();
-  };
-
-  searchPromotions = () => {
-    this.setState({
-      searchDisplay: searchPromotions(
-        this.state.searchTerm,
-        this.state.promotionData
-      )
-    });
   };
 
   onFormChange = (value, formField) => {
@@ -145,7 +135,7 @@ class App extends Component {
   };
 
   setFormDataToSelectedPromotion = selectedPromotionId => {
-    const selectedPromotion = this.state.searchDisplay.find(
+    const selectedPromotion = mapToArray(this.state.promotionData).find(
       item => item.id === selectedPromotionId
     );
     let selectedPromotionFormData = {};
@@ -163,10 +153,7 @@ class App extends Component {
     switch (selectedLink) {
       case "search__link":
         view = VIEW.SEARCH;
-        this.setState({ searchTerm: "" }, () => {
-          this.searchPromotions();
-        });
-
+        this.setState({ searchTerm: "" });
         break;
       case "upload__link":
         view = VIEW.ASSET_MANAGER;
@@ -186,7 +173,7 @@ class App extends Component {
     const {
       view,
       formData,
-      searchDisplay,
+      promotionData,
       searchTerm,
       selectedPromotionId
     } = this.state;
@@ -196,6 +183,7 @@ class App extends Component {
         <Banner subHeading={view} />
         <Content
           view={view}
+          promotionData = {promotionData}
           formData={formData}
           selectedPromotionId={selectedPromotionId}
           editBtnClick={this.editBtnClick}
@@ -203,8 +191,6 @@ class App extends Component {
           savePromotion={this.savePromotion}
           onFormChange={this.onFormChange}
           handleInputChange={this.handleInputChange}
-          searchBtnClick={this.searchBtnClick}
-          searchDisplay={searchDisplay}
           searchTerm={searchTerm}
         />
         <Navigation menuData={navigationData} clickHandler={this.onMenuClick} />

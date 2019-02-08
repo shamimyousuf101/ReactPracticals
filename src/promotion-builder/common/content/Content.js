@@ -10,13 +10,13 @@ import './content.css'
 import bem from 'bem-cn';
 const b = bem('content');
 
-const Content = ({view, searchDisplay, searchTerm, handleInputChange, formData, savePromotion, reset, onFormChange, selectedPromotionId, searchBtnClick, editBtnClick }) => {
+const Content = ({view, promotionData, searchTerm, handleInputChange, formData, savePromotion, reset, onFormChange, selectedPromotionId, searchBtnClick, editBtnClick }) => {
 
     const setContent = (view) => {
         switch (view) {
             case "Search":
                 return <Search 
-                searchDisplay={searchDisplay} 
+                promotionData = {promotionData}
                 searchTerm={searchTerm} 
                 onInputChange={handleInputChange} 
                 onSearchClick={searchBtnClick} 
@@ -28,7 +28,7 @@ const Content = ({view, searchDisplay, searchTerm, handleInputChange, formData, 
                 reset={reset} 
                 savePromotion={savePromotion} 
                 formData={formData} 
-                searchDisplay={searchDisplay} 
+                // searchDisplay={searchDisplay} 
                 onFormChange={onFormChange} 
                 selectedPromotionId={selectedPromotionId}/>                              
             default:

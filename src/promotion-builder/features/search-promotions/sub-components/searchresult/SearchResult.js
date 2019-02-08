@@ -1,35 +1,34 @@
+import React from "react";
+import PropTypes from "prop-types";
+import PropsTypes from "prop-types";
 
-import React from 'react';
-import PropTypes from 'prop-types'
-import PropsTypes from 'prop-types'
+import SingleResult from "../singleresult/SingleResult";
+import { searchPromotions } from "../../../../../utils/search";
 
-import SingleResult from '../singleresult/SingleResult';
+const SearchResultContainer = ({ editBtnClick, searchTerm, promotionData }) => {
+  const getSearchItems = (searchTerm, promotionData) => {
+    let searchDisplay = searchPromotions(searchTerm, promotionData);
 
-const SearchResultContainer = ({editBtnClick, searchDisplay}) => {
-
-    const getSearchItems = ( searchDisplay ) => {
-        if (searchDisplay.length > 0){
-            return searchDisplay.map((item, index)=>{                
-                return <SingleResult key={index} id={item.id} result={item} editBtnClick={editBtnClick}/>
-            })
-        } 
+    if (searchDisplay.length > 0) {
+      return searchDisplay.map((item, index) => {
+        return (
+          <SingleResult
+            key={index}
+            id={item.id}
+            result={item}
+            editBtnClick={editBtnClick}
+          />
+        );
+      });
     }
+  };
 
-    return(
-        <div>{getSearchItems(searchDisplay)}</div>
-    )
-    
-}
+  return <div>{getSearchItems(searchTerm, promotionData)}</div>;
+};
 
 SearchResultContainer.propTypes = {
-    searchDisplay: PropTypes.arrayOf(PropTypes.shape({
-        devices: PropTypes.arrayOf(PropTypes.string),
-        id: PropTypes.string,
-        name: PropTypes.string,
-        url: PropTypes.string,
-        ventures: PropTypes.arrayOf(PropTypes.string)
-      })),
-    editBtnClick: PropsTypes.func.isRequired
-}
+  editBtnClick: PropsTypes.func.isRequired,
+  searchTerm: PropTypes.string
+};
 
 export default SearchResultContainer;

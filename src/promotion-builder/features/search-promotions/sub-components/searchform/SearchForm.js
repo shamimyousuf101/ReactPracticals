@@ -2,15 +2,14 @@ import React from 'react';
 import PropsTypes from 'prop-types';
 
 import SearchInput from '../searchinput/SearchInput'
-import SearchButton from '../searchbutton/SearchButton';
 
 
-const SearchForm = ({value, onChange, onSearchClick}) => {
+const SearchForm = ({value, onChange}) => {
 
     return(
         <form className="search__form">
+            <img className='button__search' src="/search.png" alt="search"/>
             <SearchInput value={value} onChange={onChange}/>
-            <SearchButton onSearchClick={onSearchClick}/>
         </form>
     )
 }
@@ -18,8 +17,7 @@ const SearchForm = ({value, onChange, onSearchClick}) => {
 
 SearchForm.propTypes = {
     value: PropsTypes.string,
-    onChange: PropsTypes.func.isRequired,
-    onSearchClick: PropsTypes.func.isRequired
+    onChange: PropsTypes.func.isRequired
 }
 
 

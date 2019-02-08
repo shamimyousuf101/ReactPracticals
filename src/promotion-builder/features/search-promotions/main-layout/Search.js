@@ -8,10 +8,10 @@ import SearchResult from '../../search-promotions/sub-components/searchresult/Se
 
 import './search.css';
 
-const Search = ({searchTerm, onInputChange, onSearchClick, searchDisplay, editBtnClick}) => {
+const Search = ({searchTerm, promotionData, onInputChange, onSearchClick, editBtnClick}) => {
     return(<div className="searchContainer">
         <SearchForm value={searchTerm} onChange={onInputChange} onSearchClick={onSearchClick}/>
-        <SearchResult searchDisplay={searchDisplay} editBtnClick={editBtnClick}/>
+        <SearchResult searchTerm={searchTerm} promotionData={promotionData}  editBtnClick={editBtnClick}/>
     </div>)
 }
 
