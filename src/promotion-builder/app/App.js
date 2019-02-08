@@ -4,6 +4,12 @@ import Banner from "../common/banner/Banner";
 import Content from "../common/content/Content";
 import Navigation from "../common/navigation/nav/Navigation";
 
+
+import AssetManager from '../features/upload-assets/main-layout/AssetManager';
+import Search from '../features/search-promotions/main-layout/Search';
+import SavePromotion from '../features/save-promotions/main-layout/SavePromotion';
+
+
 import { navigationData } from "../common/navigation/navigationData";
 
 import { promotionData } from "../../domain/promotionData";
@@ -154,19 +160,26 @@ class App extends Component {
     return (
       <div className={b()}>
         <Banner subHeading={view} />
-        <Content
-          view={view}
-          promotionData={promotionData}
-          formData={formData}
-          selectedPromotionId={selectedPromotionId}
-          editBtnClick={this.editBtnClick}
-          reset={this.resetFormData}
-          savePromotion={this.savePromotion}
-          onFormChange={this.onFormChange}
-          handleInputChange={this.handleInputChange}
-          searchTerm={searchTerm}
-        />
         <Navigation menuData={navigationData} clickHandler={this.onMenuClick} />
+        <div className={b('content')}> 
+            <div className={b('dynamic__content')}>    
+              <Search 
+                promotionData = {promotionData}
+                searchTerm={searchTerm} 
+                onInputChange={this.handleInputChange} 
+                editBtnClick={this.editBtnClick}
+                view={view}/>
+              <AssetManager view={view}/>
+              <SavePromotion
+                reset={this.reset} 
+                savePromotion={this.savePromotion} 
+                formData={formData} 
+                promotionData={promotionData} 
+                onFormChange={this.onFormChange} 
+                selectedPromotionId={selectedPromotionId}
+                view={view}/>
+            </div>
+        </div>
       </div>
     );
   }

@@ -7,11 +7,15 @@ import SearchResult from '../../search-promotions/sub-components/searchresult/Se
 
 import './search.css';
 
-const Search = ({searchTerm, promotionData, onInputChange, editBtnClick}) => {
-    return(<div className="searchContainer">
+const Search = ({searchTerm, promotionData, onInputChange, editBtnClick, view }) => {
+    if(view==='Search'){
+        return(<div className="searchContainer">
         <SearchForm value={searchTerm} onChange={onInputChange}/>
         <SearchResult searchTerm={searchTerm} promotionData={promotionData}  editBtnClick={editBtnClick}/>
     </div>)
+    }
+    return null;
+   
 }
 
 Search.propType = {
