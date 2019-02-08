@@ -36,16 +36,6 @@ class App extends Component {
     promotionData: promotionData
   };
 
-  componentDidMount() {
-    // this.searchPromotions();
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    if (!isEqual(prevState.promotionData, this.state.promotionData)) {
-      this.searchPromotions();
-    }
-  }
-
   handleInputChange = event =>
     this.setState({ searchTerm: event.target.value });
 

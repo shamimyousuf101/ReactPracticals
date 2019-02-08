@@ -28,7 +28,7 @@ const Content = ({view, promotionData, searchTerm, handleInputChange, formData, 
                 reset={reset} 
                 savePromotion={savePromotion} 
                 formData={formData} 
-                // searchDisplay={searchDisplay} 
+                promotionData={promotionData} 
                 onFormChange={onFormChange} 
                 selectedPromotionId={selectedPromotionId}/>                              
             default:

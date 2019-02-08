@@ -6,12 +6,12 @@ import PromotionForm from '../sub-components/promotion-form/PromotionForm';
 import ToolBar from '../sub-components/tool-bar/ToolBar';
 import './savepromotion.css';
 
-const SavePromotion = ({formData, onFormChange, reset, savePromotion, selectedPromotionId, searchDisplay}) => {
+const SavePromotion = ({formData, onFormChange, reset, savePromotion, selectedPromotionId, promotionData}) => {
     
     return(<div className="PromotionBuilder">
         <FormTitle>{formData.name?formData.name:'new promotion'}</FormTitle>
         <PromotionForm formData={formData} onFormChange={onFormChange}/>
-        <ToolBar formData={formData} selectedPromotionId={selectedPromotionId} searchDisplay={searchDisplay} reset={reset} savePromotion={savePromotion}/>
+        <ToolBar formData={formData} selectedPromotionId={selectedPromotionId} promotionData={promotionData} reset={reset} savePromotion={savePromotion}/>
     </div>)
 }
 
