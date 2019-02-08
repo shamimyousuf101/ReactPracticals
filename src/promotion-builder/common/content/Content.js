@@ -10,7 +10,7 @@ import './content.css'
 import bem from 'bem-cn';
 const b = bem('content');
 
-const Content = ({view, promotionData, searchTerm, handleInputChange, formData, savePromotion, reset, onFormChange, selectedPromotionId, searchBtnClick, editBtnClick }) => {
+const Content = ({view, promotionData, searchTerm, handleInputChange, formData, savePromotion, reset, onFormChange, selectedPromotionId, editBtnClick }) => {
 
     const setContent = (view) => {
         switch (view) {
@@ -19,7 +19,6 @@ const Content = ({view, promotionData, searchTerm, handleInputChange, formData, 
                 promotionData = {promotionData}
                 searchTerm={searchTerm} 
                 onInputChange={handleInputChange} 
-                onSearchClick={searchBtnClick} 
                 editBtnClick={editBtnClick}/>                
             case "AssetManager":
                 return <AssetManager/>     

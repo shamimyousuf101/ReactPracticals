@@ -8,9 +8,9 @@ import SearchResult from '../../search-promotions/sub-components/searchresult/Se
 
 import './search.css';
 
-const Search = ({searchTerm, promotionData, onInputChange, onSearchClick, editBtnClick}) => {
+const Search = ({searchTerm, promotionData, onInputChange, editBtnClick}) => {
     return(<div className="searchContainer">
-        <SearchForm value={searchTerm} onChange={onInputChange} onSearchClick={onSearchClick}/>
+        <SearchForm value={searchTerm} onChange={onInputChange}/>
         <SearchResult searchTerm={searchTerm} promotionData={promotionData}  editBtnClick={editBtnClick}/>
     </div>)
 }
@@ -18,15 +18,7 @@ const Search = ({searchTerm, promotionData, onInputChange, onSearchClick, editBt
 Search.propType = {
     searchTerm: PropsTypes.string,
     onInputChange: PropsTypes.func.isRequired,
-    onSearchClick: PropsTypes.func.isRequired,
     editBtnClick: PropsTypes.func.isRequired,
-    searchDisplay: PropTypes.arrayOf(PropTypes.shape({
-        devices: PropTypes.arrayOf(PropTypes.string),
-        id: PropTypes.string,
-        name: PropTypes.string,
-        url: PropTypes.string,
-        ventures: PropTypes.arrayOf(PropTypes.string)
-      }))
 }
 
 export default Search;

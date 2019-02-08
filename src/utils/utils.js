@@ -5,14 +5,14 @@ export const getTruthyList = list => {
 };
 
 export const arrayToMap = array => {
+  //TODO : Refactor this to use a normal object
   let newMap = new Map();
 
-  if (array) {
-    if (array.length > 0) {
+  if (array && array.length) {
+  
       array.forEach(element => {
         newMap.set(element, true);
       });
-    }
   }
 
   return newMap;

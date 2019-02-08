@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import isEqual from "lodash.isequal";
 
 import Banner from "../common/banner/Banner";
 import Content from "../common/content/Content";
@@ -8,9 +7,7 @@ import Navigation from "../common/navigation/nav/Navigation";
 import { navigationData } from "../common/navigation/navigationData";
 
 import { promotionData } from "../../domain/promotionData";
-import { getTruthyList, arrayToMap , mapToArray} from "../../utils/utils";
-
-import { searchPromotions } from "../../utils/search";
+import { getTruthyList, arrayToMap } from "../../utils/utils";
 
 import "./app.css";
 import { VIEW } from "../../constants/constants";
@@ -38,11 +35,6 @@ class App extends Component {
 
   handleInputChange = event =>
     this.setState({ searchTerm: event.target.value });
-
-  searchBtnClick = event => {
-    event.preventDefault();
-    this.searchPromotions();
-  };
 
   onFormChange = (value, formField) => {
     this.setState(prevState => {
@@ -116,25 +108,12 @@ class App extends Component {
     });
   };
 
-  editBtnClick = id => {
+  editBtnClick = (id, result) => {
     this.setState({
       selectedPromotionId: id,
       view: VIEW.SAVE_PROMOTION,
-      formData: this.setFormDataToSelectedPromotion(id)
+      formData: {...result, devices: arrayToMap(result.devices), ventures: arrayToMap(result.ventures)}
     });
-  };
-
-  setFormDataToSelectedPromotion = selectedPromotionId => {
-    const selectedPromotion = mapToArray(this.state.promotionData).find(
-      item => item.id === selectedPromotionId
-    );
-    let selectedPromotionFormData = {};
-    selectedPromotionFormData.devices = arrayToMap(selectedPromotion.devices);
-    selectedPromotionFormData.ventures = arrayToMap(selectedPromotion.ventures);
-    selectedPromotionFormData.url = selectedPromotion.url;
-    selectedPromotionFormData.id = selectedPromotion.id;
-    selectedPromotionFormData.name = selectedPromotion.name;
-    return selectedPromotionFormData;
   };
 
   onMenuClick = event => {
@@ -173,7 +152,7 @@ class App extends Component {
         <Banner subHeading={view} />
         <Content
           view={view}
-          promotionData = {promotionData}
+          promotionData={promotionData}
           formData={formData}
           selectedPromotionId={selectedPromotionId}
           editBtnClick={this.editBtnClick}

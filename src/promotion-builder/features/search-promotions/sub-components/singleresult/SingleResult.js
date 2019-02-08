@@ -14,7 +14,7 @@ const SingleResult = ({result, id, editBtnClick}) => {
     return(
         <div className={b()}>
             <PromotionDetails result={result} />
-            <EditButton id={id} editBtnClick={editBtnClick} />
+            <EditButton id={id} editBtnClick={editBtnClick} result={result} />
         </div>
     )
 }
