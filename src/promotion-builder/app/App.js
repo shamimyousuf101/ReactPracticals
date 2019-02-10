@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 import Banner from "../common/banner/Banner";
-import Content from "../common/content/Content";
 import Navigation from "../common/navigation/nav/Navigation";
 
 
@@ -29,8 +28,8 @@ class App extends Component {
     selectedPromotionId: null,
     formData: {
       id: 0,
-      devices: new Map(),
-      ventures: new Map(),
+      devices: [],
+      ventures: [],
       url: "",
       name: "",
       lastUpdatedTime: ""
@@ -69,8 +68,8 @@ class App extends Component {
       formData: {
         name = "",
         url = "",
-        devices = new Map(),
-        ventures = new Map()
+        devices = [],
+        ventures = []
       }
     } = this.state;
 
@@ -78,8 +77,8 @@ class App extends Component {
       id,
       name,
       url,
-      devices: [...devices.keys()],
-      ventures: [...ventures.keys()],
+      devices,
+      ventures,
       lastUpdatedTime: Date.now()
     };
   };
@@ -97,8 +96,8 @@ class App extends Component {
     let savedData = `New Promotion Details:
                     Name:\t ${this.state.formData.name} 
                     Url:\t ${this.state.formData.url}
-                    Devices:\t ${getTruthyList(this.state.formData.devices)}
-                    Ventures:\t ${getTruthyList(this.state.formData.ventures)}`;
+                    Devices:\t ${this.state.formData.devices}
+                    Ventures:\t ${this.state.formData.ventures}`;
     alert(savedData);
   };
 
@@ -106,8 +105,8 @@ class App extends Component {
     this.setState({
       selectedPromotionId: null,
       formData: {
-        devices: new Map(),
-        ventures: new Map(),
+        devices: {},
+        ventures: {},
         url: "",
         name: ""
       }
@@ -120,8 +119,8 @@ class App extends Component {
       view: VIEW.SAVE_PROMOTION,
       formData: {
         ...result,
-        devices: arrayToMap(result.devices),
-        ventures: arrayToMap(result.ventures)
+        devices: result.devices,
+        ventures: result.ventures
       }
     });
   };

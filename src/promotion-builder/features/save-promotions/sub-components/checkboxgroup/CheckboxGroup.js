@@ -1,39 +1,42 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 
-import Checkbox from '../checkbox/Checkbox';
-
 import './checkboxgroup.css'
 
 class CheckboxGroup extends React.Component {
 
-    handleChange = (e) => {
-        const {onFormChange} = this.props;
-        let listMap = this.props.value;
-
-        if(listMap.has(e.target.name)){
-            listMap.delete(e.target.name)
-        }else{
-            listMap.set(e.target.name, true)
-        }
-        onFormChange(listMap, this.props.name);
-    }
-
     render(){
-        const {legendText, displayItems, value} = this.props;
+        const { legendText, displayItems, name , onFormChange, value } = this.props;
+        
+        const selectedDevices = [];
+        const selectedVentures = [];
 
+        const handleInputData = event => {
+            // debugger;
+
+            if(name==='devices'){
+                selectedDevices.push(event.target.value);
+                // selectedDevices = selectedDevices + ',' + event.target.value;
+            } else {
+                selectedVentures.push(event.target.value);
+            }
+            onFormChange(selectedDevices, name)
+        }
+
+        const displayItem = Array.from(displayItems);
         return (
-            <fieldset >
-            <legend>{legendText}</legend>
-                {
-                    displayItems.map(item => (
-                        <label key = {item.key}>
-                        {item.name}
-                        <Checkbox name={item.name} checked={value.get(item.name)} onChange={this.handleChange} />                           
-                        </label>
-                    ))
-                }
-            </fieldset>
+            
+            <fieldset>
+                <legend>{legendText}</legend>
+                <p>
+                { displayItem.map(item => (
+                                    <label key = {item.key}>
+                                    <input type="checkbox" name={name} value={item.name} onChange={handleInputData}/> {item.name} </label>
+                                ))
+                                
+                                }
+                </p>
+                </fieldset>
         )
     }
 }

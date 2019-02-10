@@ -15,10 +15,12 @@ const ToolBar = ({formData, savePromotion, reset, selectedPromotionId, promotion
     const checkAnyFieldHasData = formData => { return (formData.devices.size===0 && formData.ventures.size===0 && formData.url==="" && formData.name==="")}
 
     const isFormDataSame = (id, formData, promotionData) => {
+        // debugger;
+
         let initialFormData = {
             id: 0,
-            devices: new Map(),
-            ventures: new Map(),
+            devices: [],
+            ventures: [],
             url: "",
             name: ""
           };
@@ -36,8 +38,8 @@ const ToolBar = ({formData, savePromotion, reset, selectedPromotionId, promotion
             if(cloneOfInitialFormData){
                 cloneOfInitialFormData = Object.assign({}, 
                     cloneOfInitialFormData, 
-                    {devices: arrayToMap(cloneOfInitialFormData.devices),
-                        ventures: arrayToMap(cloneOfInitialFormData.ventures)}
+                    {devices: cloneOfInitialFormData.devices,
+                        ventures: cloneOfInitialFormData.ventures}
                 );
                 sameData = isEqual(cloneOfInitialFormData, formData);
             }else{

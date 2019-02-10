@@ -10,11 +10,14 @@ import './promotionform.css'
 
 const PromotionForm = ({formData, onFormChange}) => {
 
-    const {devices : deviceLabels, ventures : ventureLabels, url, name} = formData;
+    // debugger;
+
+    const {devices: selectedDevices, ventures: selectedVentures, url, name} = formData;
 
     return(<form className="promotionDetailsForm" >
-        <CheckboxGroup value={deviceLabels} name="devices" displayItems={devices} legendText="Choose devices:" onFormChange={onFormChange}/>
-        <CheckboxGroup value={ventureLabels} name="ventures" displayItems={ventures} legendText="Choose ventures:" onFormChange={onFormChange}/>
+        <h2 className="NewPromotionTitle">{formData.name?formData.name:'new promotion'}</h2>
+        <CheckboxGroup value={selectedDevices} name="devices" displayItems={devices} legendText="Devices:" onFormChange={onFormChange}/>
+        <CheckboxGroup value={selectedVentures} name="ventures" displayItems={ventures} legendText="Ventures:" onFormChange={onFormChange}/>
         <InputBox value={url} name="url" onFormChange={onFormChange} >URL:</InputBox>
         <InputBox value={name} name="name" onFormChange={onFormChange} >Name:</InputBox>        
     </form>)
