@@ -1,11 +1,9 @@
-.promotionDetailsForm{
-    display: table;
+.promotionDetailsForm {
+  display: table;
 }
 
-
-
 .NewPromotionTitle {
-    color:#506bb1;
-    max-width: 85%;
-    text-transform: capitalize;
+  color: #506bb1;
+  max-width: 85%;
+  text-transform: capitalize;
 }

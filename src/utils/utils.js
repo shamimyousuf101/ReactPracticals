@@ -9,10 +9,9 @@ export const arrayToMap = array => {
   let newMap = new Map();
 
   if (array && array.length) {
-  
-      array.forEach(element => {
-        newMap.set(element, true);
-      });
+    array.forEach(element => {
+      newMap.set(element, true);
+    });
   }
 
   return newMap;

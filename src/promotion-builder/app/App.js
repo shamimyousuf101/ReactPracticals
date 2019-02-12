@@ -3,16 +3,13 @@ import React, { Component } from "react";
 import Banner from "../common/banner/Banner";
 import Navigation from "../common/navigation/nav/Navigation";
 
-
-import AssetManager from '../features/upload-assets/main-layout/AssetManager';
-import Search from '../features/search-promotions/main-layout/Search';
-import SavePromotion from '../features/save-promotions/main-layout/SavePromotion';
-
+import AssetManager from "../features/upload-assets/main-layout/AssetManager";
+import Search from "../features/search-promotions/main-layout/Search";
+import SavePromotion from "../features/save-promotions/main-layout/SavePromotion";
 
 import { navigationData } from "../common/navigation/navigationData";
 
 import { promotionData } from "../../domain/promotionData";
-import { getTruthyList, arrayToMap } from "../../utils/utils";
 
 import "./app.css";
 import { VIEW } from "../../constants/constants";
@@ -65,12 +62,7 @@ class App extends Component {
 
   getNewOrUpdatedPromotion = id => {
     const {
-      formData: {
-        name = "",
-        url = "",
-        devices = [],
-        ventures = []
-      }
+      formData: { name = "", url = "", devices = [], ventures = [] }
     } = this.state;
 
     return {
@@ -160,24 +152,26 @@ class App extends Component {
       <div className={b()}>
         <Banner subHeading={view} />
         <Navigation menuData={navigationData} clickHandler={this.onMenuClick} />
-        <div className={b('content')}> 
-            <div className={b('dynamic__content')}>    
-              <Search 
-                promotionData = {promotionData}
-                searchTerm={searchTerm} 
-                onInputChange={this.handleInputChange} 
-                editBtnClick={this.editBtnClick}
-                view={view}/>
-              <AssetManager view={view}/>
-              <SavePromotion
-                reset={this.reset} 
-                savePromotion={this.savePromotion} 
-                formData={formData} 
-                promotionData={promotionData} 
-                onFormChange={this.onFormChange} 
-                selectedPromotionId={selectedPromotionId}
-                view={view}/>
-            </div>
+        <div className={b("content")}>
+          <div className={b("dynamic__content")}>
+            <Search
+              promotionData={promotionData}
+              searchTerm={searchTerm}
+              onInputChange={this.handleInputChange}
+              editBtnClick={this.editBtnClick}
+              view={view}
+            />
+            <AssetManager view={view} />
+            <SavePromotion
+              reset={this.reset}
+              savePromotion={this.savePromotion}
+              formData={formData}
+              promotionData={promotionData}
+              onFormChange={this.onFormChange}
+              selectedPromotionId={selectedPromotionId}
+              view={view}
+            />
+          </div>
         </div>
       </div>
     );

@@ -1,22 +1,19 @@
-import React from 'react';
+import React from "react";
 
-import './assetmanager.css';
+import "./assetmanager.css";
 
-const AssetManager = ({view}) => {
+const AssetManager = ({ view }) => {
+  // TODO - Would break this component down into smaller components
 
-        // TODO - Would break this component down into smaller components
+  if (view === "AssetManager") {
+    return (
+      <div className="upload__box">
+        <input className="upload__button" type="file" />
+      </div>
+    );
+  }
 
-        if(view==='AssetManager') {
-            return(
-                <div className="upload__box">
-                    <input className="upload__button" type="file"></input>
-                </div>
-            )
-        } 
-
-        return null;
-
-    
-}
+  return null;
+};
 
 export default AssetManager;

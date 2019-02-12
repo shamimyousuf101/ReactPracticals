@@ -1,24 +1,27 @@
-import React from 'react';
-import {shallow} from 'enzyme';
+import React from "react";
+import { shallow } from "enzyme";
 
-import Banner from './Banner'
+import Banner from "./Banner";
 
-describe('<Banner>', () => {
+describe("<Banner>", () => {
+  let wrapper;
 
-    let wrapper;
+  beforeEach(() => {
+    wrapper = shallow(<Banner subHeading={"Test"} />);
+  });
 
-    beforeEach(() => {
-        wrapper = shallow(<Banner subHeading={'Test'}/>);
-    })
+  it("renders with correct class name", () => {
+    expect(wrapper.hasClass("banner")).toBe(true);
+  });
 
-    it('renders with correct class name', () => {
-        expect(wrapper.hasClass('banner')).toBe(true);
-    })
-
-    describe('Props', () => {
-        
-        it('renders with correct prop value', () => {
-            expect(wrapper.children().find('h3').props().children).toBe('Test');
-        })
-    })
-})
+  describe("Props", () => {
+    it("renders with correct prop value", () => {
+      expect(
+        wrapper
+          .children()
+          .find("h3")
+          .props().children
+      ).toBe("Test");
+    });
+  });
+});

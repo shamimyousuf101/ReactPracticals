@@ -1,17 +1,17 @@
 .navigation {
-    animation-delay: 0.5s;
-    animation:menu-slidein 2s forwards;
-    color: white;
-    margin-left:-100px;
-    margin-top: -115px;
-    position: fixed;
-    text-align: center;
-    top: 66%;
-    z-index: 1;
+  animation-delay: 0.5s;
+  animation: menu-slidein 2s forwards;
+  color: white;
+  margin-left: -100px;
+  margin-top: -115px;
+  position: fixed;
+  text-align: center;
+  top: 66%;
+  z-index: 1;
+}
+
+@keyframes menu-slidein {
+  100% {
+    margin-left: -16px;
   }
-  
-  @keyframes menu-slidein {
-   100% {
-     margin-left: -16px;
-   }
-  }
+}

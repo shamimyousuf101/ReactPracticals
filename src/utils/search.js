@@ -1,4 +1,4 @@
-import { mapToArray, search, sort } from './utils';
+import { mapToArray, search, sort } from "./utils";
 
 export const searchPromotions = (searchInput, promotionData) => {
   const promotionArray = mapToArray(promotionData);
