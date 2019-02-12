@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import Banner from "../common/banner/Banner";
-import Navigation from "../common/navigation/nav/Navigation";
+import Navigation from "../common/navigation/Navigation";
 
 import AssetManager from "../features/upload-assets/main-layout/AssetManager";
 import Search from "../features/search-promotions/main-layout/Search";
@@ -34,6 +34,10 @@ class App extends Component {
     searchTerm: "",
     promotionData: promotionData
   };
+
+  updateView = view => this.setState({ view });
+
+  clearSearchTerm = () => this.setState({ searchTerm: "" });
 
   handleInputChange = event =>
     this.setState({ searchTerm: event.target.value });
@@ -117,28 +121,6 @@ class App extends Component {
     });
   };
 
-  onMenuClick = event => {
-    const selectedLink = event.currentTarget.className;
-    let view;
-    switch (selectedLink) {
-      case "search__link":
-        view = VIEW.SEARCH;
-        this.setState({ searchTerm: "" });
-        break;
-      case "upload__link":
-        view = VIEW.ASSET_MANAGER;
-        break;
-      case "config__link":
-        view = VIEW.SAVE_PROMOTION;
-        this.resetFormData();
-        break;
-      default:
-        view = VIEW.SEARCH;
-    }
-
-    this.setState({ view });
-  };
-
   render() {
     const {
       view,
@@ -151,7 +133,11 @@ class App extends Component {
     return (
       <div className={b()}>
         <Banner subHeading={view} />
-        <Navigation menuData={navigationData} clickHandler={this.onMenuClick} />
+        <Navigation
+          menuData={navigationData}
+          updateView={this.updateView}
+          clearSearchTerm={this.clearSearchTerm}
+        />
         <div className={b("content")}>
           <div className={b("dynamic__content")}>
             <Search
