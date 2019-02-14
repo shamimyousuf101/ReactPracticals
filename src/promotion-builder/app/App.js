@@ -36,11 +36,11 @@ class App extends Component {
 
   updateView = view => this.setState({ view });
 
-  onFormChange = (value, formField) => {
-    this.setState(prevState => {
-      return { formData: { ...prevState.formData, [formField]: value } };
-    });
-  };
+  // onFormChange = (value, formField) => {
+  //   this.setState(prevState => {
+  //     return { formData: { ...prevState.formData, [formField]: value } };
+  //   });
+  // };
 
   savePromotion = () => {
     if (this.state.formData) {

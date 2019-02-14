@@ -1,14 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const InputBox = ({ name, children, value, onFormChange }) => {
+const InputBox = ({ name, value, label, onFormChange }) => {
   const handleInputData = event => {
     onFormChange(event.target.value, name);
   };
 
   return (
     <div>
-      <label htmlFor={name}>{children}</label>
+      <label htmlFor={name}>{label}</label>
       <input type="text" name={name} value={value} onChange={handleInputData} />
     </div>
   );
@@ -16,7 +16,7 @@ const InputBox = ({ name, children, value, onFormChange }) => {
 
 InputBox.propTypes = {
   name: PropTypes.string.isRequired,
-  children: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
   value: PropTypes.string
 };
 

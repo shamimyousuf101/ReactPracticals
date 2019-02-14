@@ -1,15 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import InputBox from "../inputbox/InputBox";
-import CheckboxGroup from "../checkboxgroup/CheckboxGroup";
+import InputBox from "../InputBox";
+import CheckboxGroup from "../CheckboxGroup";
 import { devices } from "../../../../../domain/devices";
 import { ventures } from "../../../../../domain/ventures";
 
 import "./promotionform.css";
 
 const PromotionForm = ({ formData, onFormChange }) => {
-
   const {
     devices: selectedDevices,
     ventures: selectedVentures,
@@ -42,6 +41,8 @@ const PromotionForm = ({ formData, onFormChange }) => {
       <InputBox value={name} name="name" onFormChange={onFormChange}>
         Name:
       </InputBox>
+      <button> Save </button>
+      <button> Reset </button>
     </form>
   );
 };

@@ -6,10 +6,3 @@
   justify-content: space-around;
 }
 
-.promotion-toolbar__button-save {
-  background-color: rgb(129, 206, 129);
-}
-
-.promotion-toolbar__button-reset {
-  background-color: bisque;
-}
