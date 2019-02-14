@@ -6,27 +6,33 @@ import SearchResult from "../../search-promotions/sub-components/searchresult/Se
 
 import "./search.css";
 
-const Search = ({
-  searchTerm,
-  promotionData,
-  onInputChange,
-  editBtnClick,
-  view
-}) => {
-  if (view === "Search") {
-    return (
-      <div className="searchContainer">
-        <SearchForm value={searchTerm} onChange={onInputChange} />
-        <SearchResult
-          searchTerm={searchTerm}
-          promotionData={promotionData}
-          editBtnClick={editBtnClick}
-        />
-      </div>
-    );
+class Search extends React.Component {
+  state = {
+    searchTerm: ""
+  };
+
+  handleInputChange = event =>
+    this.setState({ searchTerm: event.target.value });
+
+  render() {
+    if (this.props.view === "Search") {
+      return (
+        <div className="searchContainer">
+          <SearchForm
+            value={this.state.searchTerm}
+            onChange={this.handleInputChange}
+          />
+          <SearchResult
+            searchTerm={this.state.searchTerm}
+            promotionData={this.props.promotionData}
+            editBtnClick={this.props.editBtnClick}
+          />
+        </div>
+      );
+    }
+    return null;
   }
-  return null;
-};
+}
 
 Search.propType = {
   searchTerm: PropsTypes.string,

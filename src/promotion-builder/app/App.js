@@ -31,16 +31,10 @@ class App extends Component {
       name: "",
       lastUpdatedTime: ""
     },
-    searchTerm: "",
     promotionData: promotionData
   };
 
   updateView = view => this.setState({ view });
-
-  clearSearchTerm = () => this.setState({ searchTerm: "" });
-
-  handleInputChange = event =>
-    this.setState({ searchTerm: event.target.value });
 
   onFormChange = (value, formField) => {
     this.setState(prevState => {
@@ -126,7 +120,6 @@ class App extends Component {
       view,
       formData,
       promotionData,
-      searchTerm,
       selectedPromotionId
     } = this.state;
 
@@ -142,8 +135,6 @@ class App extends Component {
           <div className={b("dynamic__content")}>
             <Search
               promotionData={promotionData}
-              searchTerm={searchTerm}
-              onInputChange={this.handleInputChange}
               editBtnClick={this.editBtnClick}
               view={view}
             />

@@ -11,8 +11,7 @@ const b = bem("navigation");
 
 const Navigation = ({
   menuData,
-  updateView,
-  clearSearchTerm
+  updateView
 }) => {
   const onMenuClick = event => {
     const selectedLink = event.currentTarget.className;
@@ -20,7 +19,6 @@ const Navigation = ({
     switch (selectedLink) {
       case "search__link":
         updateView(VIEW.SEARCH);
-        clearSearchTerm();
         return;
       case "upload__link":
         return updateView(VIEW.ASSET_MANAGER);
