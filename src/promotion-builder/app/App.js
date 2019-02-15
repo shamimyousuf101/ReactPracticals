@@ -23,105 +23,50 @@ class App extends Component {
   state = {
     view: VIEW.SEARCH,
     selectedPromotionId: null,
-    formData: {
-      id: 0,
-      devices: [],
-      ventures: [],
-      url: "",
-      name: "",
-      lastUpdatedTime: ""
-    },
+
     promotionData: promotionData
   };
 
   updateView = view => this.setState({ view });
+  resetPrommotionId = () => this.setState({ selectedPromotionId: null });
 
-  // onFormChange = (value, formField) => {
-  //   this.setState(prevState => {
-  //     return { formData: { ...prevState.formData, [formField]: value } };
-  //   });
-  // };
-
-  savePromotion = () => {
-    if (this.state.formData) {
-      let id = this.getPromotionId();
-      this.showAlertWithFormData();
-      this.setState(prevState => {
-        return {
-          promotionData: {
-            ...prevState.promotionData,
-            [id]: this.getNewOrUpdatedPromotion(id)
-          }
-        };
-      });
-      this.setState({ view: VIEW.SEARCH });
-    }
+  savePromotion = formData => {
+    let id = this.getPromotionId();
+    this.setState(prevState => {
+      return {
+        promotionData: {
+          ...prevState.promotionData,
+          [id]: this.getNewOrUpdatedPromotion(id, formData)
+        }
+      };
+    });
   };
 
-  getNewOrUpdatedPromotion = id => {
-    const {
-      formData: { name = "", url = "", devices = [], ventures = [] }
-    } = this.state;
-
+  getNewOrUpdatedPromotion = (id, formData) => {
     return {
       id,
-      name,
-      url,
-      devices,
-      ventures,
+      name: formData.name,
+      url: formData.url,
+      devices: formData.devices,
+      ventures: formData.ventures,
       lastUpdatedTime: Date.now()
     };
   };
 
   getPromotionId = () => {
-    const {
-      selectedPromotionId,
-      formData: { id: formDataId }
-    } = this.state;
-
-    return formDataId || selectedPromotionId || uuid4();
+    const { selectedPromotionId } = this.state;
+    return selectedPromotionId || uuid4();
   };
 
-  showAlertWithFormData = () => {
-    let savedData = `New Promotion Details:
-                    Name:\t ${this.state.formData.name} 
-                    Url:\t ${this.state.formData.url}
-                    Devices:\t ${this.state.formData.devices}
-                    Ventures:\t ${this.state.formData.ventures}`;
-    alert(savedData);
-  };
-
-  resetFormData = () => {
-    this.setState({
-      selectedPromotionId: null,
-      formData: {
-        devices: {},
-        ventures: {},
-        url: "",
-        name: ""
-      }
-    });
-  };
-
-  editBtnClick = (id, result) => {
+  editBtnClick = id => {
     this.setState({
       selectedPromotionId: id,
-      view: VIEW.SAVE_PROMOTION,
-      formData: {
-        ...result,
-        devices: result.devices,
-        ventures: result.ventures
-      }
+      view: VIEW.SAVE_PROMOTION
     });
   };
 
   render() {
-    const {
-      view,
-      formData,
-      promotionData,
-      selectedPromotionId
-    } = this.state;
+    const { view, promotionData, selectedPromotionId } = this.state;
 
     return (
       <div className={b()}>
@@ -130,6 +75,7 @@ class App extends Component {
           menuData={navigationData}
           updateView={this.updateView}
           clearSearchTerm={this.clearSearchTerm}
+          resetPrommotionId={this.resetPrommotionId}
         />
         <div className={b("content")}>
           <div className={b("dynamic__content")}>
@@ -142,11 +88,10 @@ class App extends Component {
             <SavePromotion
               reset={this.reset}
               savePromotion={this.savePromotion}
-              formData={formData}
               promotionData={promotionData}
-              onFormChange={this.onFormChange}
               selectedPromotionId={selectedPromotionId}
               view={view}
+              updateView={this.updateView}
             />
           </div>
         </div>

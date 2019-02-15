@@ -3,6 +3,7 @@ import PropsTypes from "prop-types";
 
 import SearchForm from "../../search-promotions/sub-components/searchform/SearchForm";
 import SearchResult from "../../search-promotions/sub-components/searchresult/SearchResult";
+import { VIEW } from "../../../../constants/constants";
 
 import "./search.css";
 
@@ -15,7 +16,7 @@ class Search extends React.Component {
     this.setState({ searchTerm: event.target.value });
 
   render() {
-    if (this.props.view === "Search") {
+    if (this.props.view === VIEW.SEARCH) {
       return (
         <div className="searchContainer">
           <SearchForm

@@ -23,6 +23,12 @@ export const search = (searchInput, itemArray = []) => {
   );
 };
 
+export const searchById = (searchInput, itemArray = []) => {
+  return itemArray.filter(
+    item => item.id.toLowerCase().indexOf(searchInput.toLowerCase()) > -1
+  );
+};
+
 export const sort = itemArray => {
   return itemArray.sort((a, b) => b.lastUpdatedTime - a.lastUpdatedTime);
 };

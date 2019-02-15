@@ -5,20 +5,49 @@ import InputBox from "../sub-components/InputBox";
 import CheckboxGroup from "../sub-components/CheckboxGroup";
 import { devices } from "../../../../domain/devices";
 import { ventures } from "../../../../domain/ventures";
+import { VIEW } from "../../../../constants/constants";
+import { searchPromotionsById } from "../../../../utils/search";
 
 import "./savepromotion.css";
 
 class SavePromotion extends React.Component {
-  state = {
-    formData: {
-      id: 0,
-      devices: [],
-      ventures: [],
-      url: "",
-      name: "",
-      lastUpdatedTime: ""
-    }
+  initialFormData = {
+    devices: [],
+    ventures: [],
+    url: "",
+    name: "",
+    lastUpdatedTime: ""
   };
+
+  state = {
+    formData: this.initialFormData
+  };
+
+  componentDidUpdate(prevProps) {
+    if (this.props.selectedPromotionId !== prevProps.selectedPromotionId) {
+      if (this.props.selectedPromotionId !== null) {
+        let searchDisplay = searchPromotionsById(
+          this.props.selectedPromotionId,
+          this.props.promotionData
+        );
+
+        let foundArray = searchDisplay[0];
+
+        this.setState({
+          formData: {
+            name: foundArray.name,
+            url: foundArray.url,
+            devices: foundArray.devices,
+            ventures: foundArray.ventures
+          }
+        });
+      } else {
+        this.setState({
+          formData: this.initialFormData
+        });
+      }
+    }
+  }
 
   onFormChange = (value, formField) => {
     this.setState(prevState => {
@@ -26,8 +55,29 @@ class SavePromotion extends React.Component {
     });
   };
 
+  resetFormData = () => {
+    this.setState({
+      formData: this.initialFormData
+    });
+  };
+
+  showAlertWithFormData = () => {
+    let savedData = `New Promotion Details:
+                    Name:\t ${this.state.formData.name} 
+                    Url:\t ${this.state.formData.url}
+                    Devices:\t ${this.state.formData.devices}
+                    Ventures:\t ${this.state.formData.ventures}`;
+    alert(savedData);
+    this.props.updateView(VIEW.SEARCH);
+  };
+
+  Save = () => {
+    this.props.savePromotion(this.state.formData);
+    this.showAlertWithFormData();
+  };
+
   render() {
-    if (this.props.view === "SavePromotion") {
+    if (this.props.view === VIEW.SAVE_PROMOTION) {
       return (
         <div className="PromotionBuilder">
           <form className="promotionDetailsForm">
@@ -66,11 +116,13 @@ class SavePromotion extends React.Component {
               className="promotion-toolbar__button-save"
               type="button"
               value="Submit"
+              onClick={this.Save}
             />
             <input
               className="promotion-toolbar__button-reset"
               type="button"
               value="Reset"
+              onClick={this.resetFormData}
             />
           </form>
         </div>

@@ -11,7 +11,8 @@ const b = bem("navigation");
 
 const Navigation = ({
   menuData,
-  updateView
+  updateView,
+  resetPrommotionId
 }) => {
   const onMenuClick = event => {
     const selectedLink = event.currentTarget.className;
@@ -23,6 +24,7 @@ const Navigation = ({
       case "upload__link":
         return updateView(VIEW.ASSET_MANAGER);
       case "config__link":
+        resetPrommotionId();
         return updateView(VIEW.SAVE_PROMOTION);
       default:
         updateView(VIEW.SEARCH);
