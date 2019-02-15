@@ -61,6 +61,7 @@ class SavePromotion extends React.Component {
     });
   };
 
+  //TODO: Later stage this will move to a separate react component
   showAlertWithFormData = () => {
     let savedData = `New Promotion Details:
                     Name:\t ${this.state.formData.name} 

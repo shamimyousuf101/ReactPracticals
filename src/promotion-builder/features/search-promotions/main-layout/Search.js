@@ -12,6 +12,12 @@ class Search extends React.Component {
     searchTerm: ""
   };
 
+  componentDidUpdate({ view }) {
+    if (view !== this.props.view) {
+      this.setState({ searchTerm: "" });
+    }
+  }
+  
   handleInputChange = event =>
     this.setState({ searchTerm: event.target.value });
 
