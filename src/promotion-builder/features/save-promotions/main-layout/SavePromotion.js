@@ -80,7 +80,7 @@ class SavePromotion extends React.Component {
   render() {
     if (this.props.view === VIEW.SAVE_PROMOTION) {
       return (
-        <div className="PromotionBuilder">
+        <section className="PromotionBuilder">
           <form className="promotionDetailsForm">
             <h2 className="NewPromotionTitle">
               {this.state.formData.name
@@ -126,7 +126,7 @@ class SavePromotion extends React.Component {
               onClick={this.resetFormData}
             />
           </form>
-        </div>
+        </section>
       );
     }
     return null;

@@ -5,12 +5,14 @@ const PromotionDetails = ({ result }) => {
   const { name, url, devices, ventures } = result;
 
   return (
-    <div className="promotionDetails">
-      <h4>Name: {name}</h4>
-      <p>Url: {url}</p>
-      <p>Devices: {devices.toString()}</p>
-      <p>Ventures: {ventures.toString()}</p>
-    </div>
+    <details className="promotionDetails">
+      <summary>{name}</summary>
+        <dl>
+          <dt> <b>Url: </b> {url}</dt>
+          <dt><b>Devices: </b>{devices.toString()}</dt>
+          <dt><b>Ventures: </b> {ventures.toString()}</dt>
+        </dl>
+    </details>
   );
 };
 

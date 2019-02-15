@@ -1,8 +1,8 @@
 import React from "react";
 import PropsTypes from "prop-types";
 
-import SearchForm from "../../search-promotions/sub-components/searchform/SearchForm";
-import SearchResult from "../../search-promotions/sub-components/searchresult/SearchResult";
+import SearchForm from "../sub-components/SearchForm";
+import SearchResult from "../sub-components/SearchResult";
 import { VIEW } from "../../../../constants/constants";
 
 import "./search.css";
@@ -24,7 +24,7 @@ class Search extends React.Component {
   render() {
     if (this.props.view === VIEW.SEARCH) {
       return (
-        <div className="searchContainer">
+        <article className="searchContainer">
           <SearchForm
             value={this.state.searchTerm}
             onChange={this.handleInputChange}
@@ -34,7 +34,7 @@ class Search extends React.Component {
             promotionData={this.props.promotionData}
             editBtnClick={this.props.editBtnClick}
           />
-        </div>
+        </article>
       );
     }
     return null;

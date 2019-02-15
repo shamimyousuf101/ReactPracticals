@@ -1,8 +1,8 @@
 import React from "react";
 import PropsTypes from "prop-types";
 
-import PromotionDetails from "../promotion-details/PromotionDetails";
-import EditButton from "../editbutton/EditButton";
+import PromotionDetails from "./PromotionDetails";
+import EditButton from "./EditButton";
 
 import "./singleresult.css";
 
@@ -11,10 +11,10 @@ const b = bem("singlesearchresult");
 
 const SingleResult = ({ result, id, editBtnClick }) => {
   return (
-    <div className={b()}>
+    <section className={b()}>
       <PromotionDetails result={result} />
       <EditButton id={id} editBtnClick={editBtnClick} result={result} />
-    </div>
+    </section>
   );
 };
 

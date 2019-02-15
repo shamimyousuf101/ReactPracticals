@@ -1,8 +1,9 @@
 .singlesearchresult {
-  border: solid;
+  border-bottom: double;
   margin: 16px;
   margin-left: 60px;
   width: 85%;
   border-color: #60aade;
   display: flex;
+  justify-content: space-between;
 }

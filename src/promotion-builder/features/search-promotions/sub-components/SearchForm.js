@@ -1,13 +1,18 @@
 import React from "react";
 import PropsTypes from "prop-types";
-
-import SearchInput from "../searchinput/SearchInput";
+import "./SearchForm.css"
 
 const SearchForm = ({ value, onChange }) => {
   return (
     <form className="search__form">
       <img className="button__search" src="/search.png" alt="search" />
-      <SearchInput value={value} onChange={onChange} />
+      <input
+      className="search__input"
+      type="text"
+      placeholder="Search"
+      value={value}
+      onChange={onChange}
+    />
     </form>
   );
 };

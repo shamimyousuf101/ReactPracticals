@@ -7,9 +7,9 @@ const AssetManager = ({ view }) => {
 
   if (view === VIEW.ASSET_MANAGER) {
     return (
-      <div className="upload__box">
+      <section className="upload__box">
         <input className="upload__button" type="file" />
-      </div>
+      </section>
     );
   }
 

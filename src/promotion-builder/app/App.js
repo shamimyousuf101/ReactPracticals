@@ -64,25 +64,23 @@ class App extends Component {
           updateView={this.updateView}
           clearSearchTerm={this.clearSearchTerm}
           resetPrommotionId={this.resetPrommotionId}
-        />
-        <div className={b("content")}>
-          <div className={b("dynamic__content")}>
-            <Search
-              promotionData={promotionData}
-              editBtnClick={this.editBtnClick}
-              view={view}
-            />
-            <AssetManager view={view} />
-            <SavePromotion
-              reset={this.reset}
-              savePromotion={this.savePromotion}
-              promotionData={promotionData}
-              selectedPromotionId={selectedPromotionId}
-              view={view}
-              updateView={this.updateView}
-            />
-          </div>
-        </div>
+        />   
+        <main className={b("dynamic__content")}>
+          <Search
+            promotionData={promotionData}
+            editBtnClick={this.editBtnClick}
+            view={view}
+          />
+          <AssetManager view={view} />
+          <SavePromotion
+            reset={this.reset}
+            savePromotion={this.savePromotion}
+            promotionData={promotionData}
+            selectedPromotionId={selectedPromotionId}
+            view={view}
+            updateView={this.updateView}
+          />
+        </main>
       </div>
     );
   }

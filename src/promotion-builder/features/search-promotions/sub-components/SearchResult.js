@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import PropsTypes from "prop-types";
 
-import SingleResult from "../singleresult/SingleResult";
-import { searchPromotions } from "../../../../../utils/search";
+import SingleResult from "./SingleResult";
+import { searchPromotions } from "../../../../utils/search";
 
 const SearchResultContainer = ({ editBtnClick, searchTerm, promotionData }) => {
   const getSearchItems = (searchTerm, promotionData) => {

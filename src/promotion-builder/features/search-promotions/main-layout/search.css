@@ -31,4 +31,6 @@ td {
 .edit__button {
   cursor: pointer;
   border-color: #60aade;
+  text-decoration: underline;
+  border: none;
 }
