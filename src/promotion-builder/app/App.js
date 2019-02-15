@@ -2,17 +2,14 @@ import React, { Component } from "react";
 
 import Banner from "../common/banner/Banner";
 import Navigation from "../common/navigation/Navigation";
-
 import AssetManager from "../features/upload-assets/main-layout/AssetManager";
 import Search from "../features/search-promotions/main-layout/Search";
 import SavePromotion from "../features/save-promotions/main-layout/SavePromotion";
-
 import { navigationData } from "../common/navigation/navigationData";
-
 import { promotionData } from "../../domain/promotionData";
+import { VIEW } from "../../constants/constants";
 
 import "./app.css";
-import { VIEW } from "../../constants/constants";
 
 import bem from "bem-cn";
 const b = bem("promotion");
@@ -23,7 +20,6 @@ class App extends Component {
   state = {
     view: VIEW.SEARCH,
     selectedPromotionId: null,
-
     promotionData: promotionData
   };
 
@@ -31,7 +27,8 @@ class App extends Component {
   resetPrommotionId = () => this.setState({ selectedPromotionId: null });
 
   savePromotion = formData => {
-    let id = this.getPromotionId();
+    const { selectedPromotionId } = this.state;
+    let id = selectedPromotionId || uuid4();
     this.setState(prevState => {
       return {
         promotionData: {
@@ -47,11 +44,6 @@ class App extends Component {
         }
       };
     });
-  };
-
-  getPromotionId = () => {
-    const { selectedPromotionId } = this.state;
-    return selectedPromotionId || uuid4();
   };
 
   editBtnClick = id => {

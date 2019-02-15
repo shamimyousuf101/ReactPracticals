@@ -2,18 +2,13 @@ import React from "react";
 import PropsTypes from "prop-types";
 
 import Links from "./Links";
-
 import "./navigation.css";
 import { VIEW } from "../../../constants/constants";
 
 import bem from "bem-cn";
 const b = bem("navigation");
 
-const Navigation = ({
-  menuData,
-  updateView,
-  resetPrommotionId
-}) => {
+const Navigation = ({ menuData, updateView, resetPrommotionId }) => {
   const onMenuClick = event => {
     const selectedLink = event.currentTarget.className;
 
