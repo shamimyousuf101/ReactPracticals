@@ -36,21 +36,17 @@ class App extends Component {
       return {
         promotionData: {
           ...prevState.promotionData,
-          [id]: this.getNewOrUpdatedPromotion(id, formData)
+          [id]: {
+            id,
+            name: formData.name,
+            url: formData.url,
+            devices: formData.devices,
+            ventures: formData.ventures,
+            lastUpdatedTime: Date.now()
+          }
         }
       };
     });
-  };
-
-  getNewOrUpdatedPromotion = (id, formData) => {
-    return {
-      id,
-      name: formData.name,
-      url: formData.url,
-      devices: formData.devices,
-      ventures: formData.ventures,
-      lastUpdatedTime: Date.now()
-    };
   };
 
   getPromotionId = () => {
