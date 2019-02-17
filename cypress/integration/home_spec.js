@@ -20,4 +20,21 @@ describe('Home Page', () => {
             cy.get('.banner > h3').should('contain', 'Search')
         })
     })
+
+    describe('Navigation', () => {
+        it('should contain Search Navigation', () => {
+            cy.get('.search__link > a').should('be.visible');
+            cy.get('.search__link > a').should('have.text', "Search");
+        })
+
+        it('should contain Asset Manager Navigation', () => {
+            cy.get('.upload__link > a').should('be.visible');
+            cy.get('.upload__link > a').should('have.text', "Asset Manager");
+        })
+
+        it('should contain Creat / Edit Navigation', () => {
+            cy.get('.config__link > a').should('be.visible');
+            cy.get('.config__link > a').should('have.text', "Create / Edit");
+        })
+    })
 })
