@@ -4,13 +4,11 @@ import PropTypes from "prop-types";
 
 import "./Links.css";
 
-const Links = ({ className, clickHandler, href, text }) => {
-  return (
-    <li id="menu__links" className={className} onClick={clickHandler}>
-      <a href={href}>{text}</a>
-    </li>
-  );
-};
+const Links = ({ className, clickHandler, href, text }) => (
+  <li id="menu__links" className={className} onClick={clickHandler}>
+    <a href={href}>{text}</a>
+  </li>
+);
 
 Links.propTypes = {
   className: PropTypes.string,

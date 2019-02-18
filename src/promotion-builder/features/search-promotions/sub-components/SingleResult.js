@@ -9,14 +9,12 @@ import "./singleresult.css";
 import bem from "bem-cn";
 const b = bem("singlesearchresult");
 
-const SingleResult = ({ result, id, editBtnClick }) => {
-  return (
-    <li className={b()}>
-      <PromotionDetails result={result} />
-      <EditButton id={id} editBtnClick={editBtnClick} result={result} />
-    </li>
-  );
-};
+const SingleResult = ({ result, id, editBtnClick }) => (
+  <li className={b()}>
+    <PromotionDetails result={result} />
+    <EditButton id={id} editBtnClick={editBtnClick} result={result} />
+  </li>
+);
 
 SingleResult.propTypes = {
   result: PropsTypes.object,

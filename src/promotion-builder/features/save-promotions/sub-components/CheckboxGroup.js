@@ -23,19 +23,18 @@ class CheckboxGroup extends React.Component {
     return (
       <fieldset>
         <legend>{legendText}</legend>
-        <p>
-          {displayItem.map(item => (
-            <label key={item.key}>
-              <input
-                type="checkbox"
-                name={name}
-                value={item.name}
-                onChange={handleInputData}
-              />{" "}
-              {item.name}{" "}
-            </label>
-          ))}
-        </p>
+
+        {displayItem.map(item => (
+          <label key={item.key}>
+            <input
+              type="checkbox"
+              name={name}
+              value={item.name}
+              onChange={handleInputData}
+            />
+            {item.name}
+          </label>
+        ))}
       </fieldset>
     );
   }
