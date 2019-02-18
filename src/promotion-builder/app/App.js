@@ -29,16 +29,17 @@ class App extends Component {
   savePromotion = formData => {
     const { selectedPromotionId } = this.state;
     const id = selectedPromotionId || uuid4();
+    const { name, url, devices, ventures } = formData;
     this.setState(prevState => {
       return {
         promotionData: {
           ...prevState.promotionData,
           [id]: {
             id,
-            name: formData.name,
-            url: formData.url,
-            devices: formData.devices,
-            ventures: formData.ventures,
+            name,
+            url,
+            devices,
+            ventures,
             lastUpdatedTime: Date.now()
           }
         }
@@ -64,7 +65,7 @@ class App extends Component {
           updateView={this.updateView}
           clearSearchTerm={this.clearSearchTerm}
           resetPrommotionId={this.resetPrommotionId}
-        />   
+        />
         <main className={b("dynamic__content")}>
           <Search
             promotionData={promotionData}

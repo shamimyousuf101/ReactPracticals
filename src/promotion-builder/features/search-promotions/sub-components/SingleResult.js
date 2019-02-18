@@ -11,10 +11,10 @@ const b = bem("singlesearchresult");
 
 const SingleResult = ({ result, id, editBtnClick }) => {
   return (
-    <section className={b()}>
+    <li className={b()}>
       <PromotionDetails result={result} />
       <EditButton id={id} editBtnClick={editBtnClick} result={result} />
-    </section>
+    </li>
   );
 };
 

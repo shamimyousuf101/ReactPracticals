@@ -7,11 +7,14 @@ const PromotionDetails = ({ result }) => {
   return (
     <details className="promotionDetails">
       <summary>{name}</summary>
-        <dl>
-          <dt> <b>Url: </b> {url}</dt>
-          <dt><b>Devices: </b>{devices.toString()}</dt>
-          <dt><b>Ventures: </b> {ventures.toString()}</dt>
-        </dl>
+      <dl>
+        <dt>Url:</dt>
+        <dd>{url}</dd>
+        <dt>Devices:</dt>
+        <dd>{devices.toString()}</dd>
+        <dt>Ventures:</dt>
+        <dd>{ventures.toString()}</dd>
+      </dl>
     </details>
   );
 };

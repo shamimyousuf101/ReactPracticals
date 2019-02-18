@@ -27,14 +27,14 @@ class Search extends React.Component {
 
     if (this.props.view === VIEW.SEARCH) {
       return (
-        <article className="searchContainer">
+        <section className="searchContainer">
           <SearchForm value={searchTerm} onChange={this.handleInputChange} />
           <SearchResult
             searchTerm={searchTerm}
             promotionData={promotionData}
             editBtnClick={editBtnClick}
           />
-        </article>
+        </section>
       );
     }
     return null;

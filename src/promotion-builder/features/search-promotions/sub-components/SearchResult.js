@@ -23,7 +23,7 @@ const SearchResultContainer = ({ editBtnClick, searchTerm, promotionData }) => {
     }
   };
 
-  return <div>{getSearchItems(searchTerm, promotionData)}</div>;
+  return <ul>{getSearchItems(searchTerm, promotionData)}</ul>;
 };
 
 SearchResultContainer.propTypes = {
