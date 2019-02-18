@@ -17,10 +17,12 @@ const Navigation = ({ menuData, updateView, resetPrommotionId }) => {
         updateView(VIEW.SEARCH);
         return;
       case "upload__link":
-        return updateView(VIEW.ASSET_MANAGER);
+        updateView(VIEW.ASSET_MANAGER);
+        return;
       case "config__link":
         resetPrommotionId();
-        return updateView(VIEW.SAVE_PROMOTION);
+        updateView(VIEW.SAVE_PROMOTION);
+        return;
       default:
         updateView(VIEW.SEARCH);
     }
