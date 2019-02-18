@@ -17,22 +17,22 @@ class Search extends React.Component {
       this.setState({ searchTerm: "" });
     }
   }
-  
+
   handleInputChange = event =>
     this.setState({ searchTerm: event.target.value });
 
   render() {
+    const { promotionData, editBtnClick } = this.props;
+    const { searchTerm } = this.state;
+
     if (this.props.view === VIEW.SEARCH) {
       return (
         <article className="searchContainer">
-          <SearchForm
-            value={this.state.searchTerm}
-            onChange={this.handleInputChange}
-          />
+          <SearchForm value={searchTerm} onChange={this.handleInputChange} />
           <SearchResult
-            searchTerm={this.state.searchTerm}
-            promotionData={this.props.promotionData}
-            editBtnClick={this.props.editBtnClick}
+            searchTerm={searchTerm}
+            promotionData={promotionData}
+            editBtnClick={editBtnClick}
           />
         </article>
       );

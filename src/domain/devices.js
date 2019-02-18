@@ -1,4 +1,4 @@
-export const devices = [
+export const deviceLabels = [
   {
     name: "mobile",
     key: "mobile",

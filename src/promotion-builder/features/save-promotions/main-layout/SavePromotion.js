@@ -3,8 +3,8 @@ import PropsTypes from "prop-types";
 
 import InputBox from "../sub-components/InputBox";
 import CheckboxGroup from "../sub-components/CheckboxGroup";
-import { devices } from "../../../../domain/devices";
-import { ventures } from "../../../../domain/ventures";
+import { deviceLabels } from "../../../../domain/devices";
+import { ventureLabels } from "../../../../domain/ventures";
 import { VIEW } from "../../../../constants/constants";
 import { searchPromotionsById } from "../../../../utils/search";
 
@@ -23,12 +23,14 @@ class SavePromotion extends React.Component {
     formData: this.initialFormData
   };
 
-  componentDidUpdate(prevProps) {
-    if (this.props.selectedPromotionId !== prevProps.selectedPromotionId) {
-      if (this.props.selectedPromotionId !== null) {
+  componentDidUpdate({ selectedPromotionId: prevSelectedPromotionId }) {
+    const { selectedPromotionId, promotionData } = this.props;
+
+    if (selectedPromotionId !== prevSelectedPromotionId) {
+      if (selectedPromotionId !== null) {
         const searchDisplay = searchPromotionsById(
-          this.props.selectedPromotionId,
-          this.props.promotionData
+          selectedPromotionId,
+          promotionData
         );
 
         const foundArray = searchDisplay[0];
@@ -63,11 +65,12 @@ class SavePromotion extends React.Component {
 
   //TODO: Later stage this will move to a separate react component
   showAlertWithFormData = () => {
+    const { name, url, devices, ventures } = this.state.formData;
     const savedData = `New Promotion Details:
-                    Name:\t ${this.state.formData.name} 
-                    Url:\t ${this.state.formData.url}
-                    Devices:\t ${this.state.formData.devices}
-                    Ventures:\t ${this.state.formData.ventures}`;
+                    Name:\t ${name} 
+                    Url:\t ${url}
+                    Devices:\t ${devices}
+                    Ventures:\t ${ventures}`;
     alert(savedData);
     this.props.updateView(VIEW.SEARCH);
   };
@@ -78,37 +81,37 @@ class SavePromotion extends React.Component {
   };
 
   render() {
+    const { name, url, devices, ventures } = this.state.formData;
+
     if (this.props.view === VIEW.SAVE_PROMOTION) {
       return (
         <section className="PromotionBuilder">
           <form className="promotionDetailsForm">
             <h2 className="NewPromotionTitle">
-              {this.state.formData.name
-                ? this.state.formData.name
-                : "new promotion"}
+              {name ? name : "new promotion"}
             </h2>
             <CheckboxGroup
-              value={this.state.formData.devices}
+              value={devices}
               name="devices"
-              displayItems={devices}
+              displayItems={deviceLabels}
               legendText="Devices:"
               onFormChange={this.onFormChange}
             />
             <CheckboxGroup
-              value={this.state.formData.ventures}
+              value={ventures}
               name="ventures"
-              displayItems={ventures}
+              displayItems={ventureLabels}
               legendText="Ventures:"
               onFormChange={this.onFormChange}
             />
             <InputBox
-              value={this.state.formData.url}
+              value={url}
               name="url"
               onFormChange={this.onFormChange}
               label={"URL:"}
             />
             <InputBox
-              value={this.state.formData.name}
+              value={name}
               name="name"
               onFormChange={this.onFormChange}
               label={"Name:"}

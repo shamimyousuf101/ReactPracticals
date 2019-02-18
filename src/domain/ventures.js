@@ -1,4 +1,4 @@
-export const ventures = [
+export const ventureLabels = [
   {
     name: "jackpotjoy",
     key: "jackpotjoy",
