@@ -30,21 +30,19 @@ class App extends Component {
     const { selectedPromotionId } = this.state;
     const id = selectedPromotionId || uuid4();
     const { name, url, devices, ventures } = formData;
-    this.setState(prevState => {
-      return {
-        promotionData: {
-          ...prevState.promotionData,
-          [id]: {
-            id,
-            name,
-            url,
-            devices,
-            ventures,
-            lastUpdatedTime: Date.now()
-          }
+    this.setState(prevState => ({
+      promotionData: {
+        ...prevState.promotionData,
+        [id]: {
+          id,
+          name,
+          url,
+          devices,
+          ventures,
+          lastUpdatedTime: Date.now()
         }
-      };
-    });
+      }
+    }));
   };
 
   editBtnClick = id => {

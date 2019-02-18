@@ -52,9 +52,9 @@ class SavePromotion extends React.Component {
   }
 
   onFormChange = (value, formField) => {
-    this.setState(prevState => {
-      return { formData: { ...prevState.formData, [formField]: value } };
-    });
+    this.setState(prevState => ({
+      formData: { ...prevState.formData, [formField]: value }
+    }));
   };
 
   resetFormData = () => {
