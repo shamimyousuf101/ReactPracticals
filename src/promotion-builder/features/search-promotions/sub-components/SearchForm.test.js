@@ -5,8 +5,8 @@ import SearchForm from "./SearchForm";
 
 describe("<SearchForm/>", () => {
   let wrapper;
-  let onChangeMock = jest.fn("I am changed");
-  let onSearchClickMock = jest.fn("I am clicked");
+  const onChangeMock = jest.fn("I am changed");
+  const onSearchClickMock = jest.fn("I am clicked");
 
   beforeEach(() => {
     wrapper = shallow(

@@ -7,7 +7,7 @@ import { searchPromotions } from "../../../../utils/search";
 
 const SearchResultContainer = ({ editBtnClick, searchTerm, promotionData }) => {
   const getSearchItems = (searchTerm, promotionData) => {
-    let searchDisplay = searchPromotions(searchTerm, promotionData);
+    const searchDisplay = searchPromotions(searchTerm, promotionData);
 
     if (searchDisplay.length > 0) {
       return searchDisplay.map((item, index) => {

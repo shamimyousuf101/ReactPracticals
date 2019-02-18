@@ -26,12 +26,12 @@ class SavePromotion extends React.Component {
   componentDidUpdate(prevProps) {
     if (this.props.selectedPromotionId !== prevProps.selectedPromotionId) {
       if (this.props.selectedPromotionId !== null) {
-        let searchDisplay = searchPromotionsById(
+        const searchDisplay = searchPromotionsById(
           this.props.selectedPromotionId,
           this.props.promotionData
         );
 
-        let foundArray = searchDisplay[0];
+        const foundArray = searchDisplay[0];
 
         this.setState({
           formData: {
@@ -63,7 +63,7 @@ class SavePromotion extends React.Component {
 
   //TODO: Later stage this will move to a separate react component
   showAlertWithFormData = () => {
-    let savedData = `New Promotion Details:
+    const savedData = `New Promotion Details:
                     Name:\t ${this.state.formData.name} 
                     Url:\t ${this.state.formData.url}
                     Devices:\t ${this.state.formData.devices}

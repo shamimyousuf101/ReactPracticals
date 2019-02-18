@@ -5,8 +5,8 @@ import SingleResult from "./SingleResult";
 
 describe("<SingleResult/>", () => {
   let wrapper;
-  let editBtnClickMock = jest.fn();
-  let testResult = {};
+  const editBtnClickMock = jest.fn();
+  const testResult = {};
 
   beforeEach(() => {
     wrapper = shallow(

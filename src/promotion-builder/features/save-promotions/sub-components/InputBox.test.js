@@ -5,7 +5,7 @@ import InputBox from "./InputBox";
 
 describe("<InputBox>", () => {
   let wrapper;
-  let onFormChangeMock = jest.fn();
+  const onFormChangeMock = jest.fn();
 
   beforeEach(() => {
     wrapper = shallow(

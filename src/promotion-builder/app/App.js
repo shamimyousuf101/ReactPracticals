@@ -14,7 +14,7 @@ import "./app.css";
 import bem from "bem-cn";
 const b = bem("promotion");
 
-let uuid4 = require("uuid4");
+const uuid4 = require("uuid4");
 
 class App extends Component {
   state = {
@@ -28,7 +28,7 @@ class App extends Component {
 
   savePromotion = formData => {
     const { selectedPromotionId } = this.state;
-    let id = selectedPromotionId || uuid4();
+    const id = selectedPromotionId || uuid4();
     this.setState(prevState => {
       return {
         promotionData: {

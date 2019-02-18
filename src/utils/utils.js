@@ -1,12 +1,12 @@
 export const getTruthyList = list => {
-  let listArray = Array.from(list.entries());
-  let truthyList = listArray.filter(item => item[1] === true);
+  const listArray = Array.from(list.entries());
+  const truthyList = listArray.filter(item => item[1] === true);
   return truthyList.join(",");
 };
 
 export const arrayToMap = array => {
   //TODO : Refactor this to use a normal object
-  let newMap = new Map();
+  const newMap = new Map();
 
   if (array && array.length) {
     array.forEach(element => {

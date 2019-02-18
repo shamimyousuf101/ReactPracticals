@@ -5,12 +5,12 @@ import SavePromotion from "./SavePromotion";
 
 describe("<SavePromotion/>", () => {
   let wrapper;
-  let onFormChangeMock = jest.fn();
-  let formData = {};
-  let resetMock = jest.fn();
-  let savePromotionMock = jest.fn();
-  let selectedPromotionId = "123";
-  let testSearchDisplay = {};
+  const onFormChangeMock = jest.fn();
+  const formData = {};
+  const resetMock = jest.fn();
+  const savePromotionMock = jest.fn();
+  const selectedPromotionId = "123";
+  const testSearchDisplay = {};
 
   beforeEach(() => {
     wrapper = shallow(
