@@ -1,17 +1,1 @@
-export const deviceLabels = [
-  {
-    name: "mobile",
-    key: "mobile",
-    label: "Mobile:"
-  },
-  {
-    name: "tablet",
-    key: "tablet",
-    label: "Tablet:"
-  },
-  {
-    name: "desktop",
-    key: "desktop",
-    label: "Desktop:"
-  }
-];
+export const deviceLabels = ["mobile", "tablet", "desktop"];

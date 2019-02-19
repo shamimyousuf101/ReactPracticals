@@ -13,26 +13,26 @@ class CheckboxGroup extends React.Component {
     const handleInputData = event => {
       if (name === "devices") {
         selectedDevices.push(event.target.value);
+        onFormChange(selectedDevices, name);
       } else {
         selectedVentures.push(event.target.value);
+        onFormChange(selectedVentures, name);
       }
-      onFormChange(selectedDevices, name);
     };
 
-    const displayItem = Array.from(displayItems);
     return (
       <fieldset>
         <legend>{legendText}</legend>
 
-        {displayItem.map(item => (
-          <label key={item.key}>
+        {displayItems.map(item => (
+          <label key={item}>
             <input
               type="checkbox"
               name={name}
-              value={item.name}
+              value={item}
               onChange={handleInputData}
             />
-            {item.name}
+            {item}
           </label>
         ))}
       </fieldset>
@@ -41,7 +41,6 @@ class CheckboxGroup extends React.Component {
 }
 
 CheckboxGroup.propTypes = {
-  value: PropTypes.instanceOf(Map).isRequired,
   legendText: PropTypes.string.isRequired,
   displayItems: PropTypes.array.isRequired,
   onFormChange: PropTypes.func.isRequired
