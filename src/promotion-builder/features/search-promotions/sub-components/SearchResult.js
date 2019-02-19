@@ -10,16 +10,14 @@ const SearchResultContainer = ({ editBtnClick, searchTerm, promotionData }) => {
     const searchDisplay = searchPromotions(searchTerm, promotionData);
 
     if (searchDisplay.length > 0) {
-      return searchDisplay.map((item, index) => {
-        return (
-          <SingleResult
-            key={index}
-            id={item.id}
-            result={item}
-            editBtnClick={editBtnClick}
-          />
-        );
-      });
+      return searchDisplay.map((item, index) => (
+        <SingleResult
+          key={index}
+          id={item.id}
+          result={item}
+          editBtnClick={editBtnClick}
+        />
+      ));
     }
   };
 

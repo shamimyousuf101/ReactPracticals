@@ -1,9 +1,7 @@
 import React from "react";
 import PropsTypes from "prop-types";
 
-const PromotionDetails = ({ result : { name, url, devices, ventures } }) => {
-
-
+const PromotionDetails = ({ result: { name, url, devices, ventures } }) => {
   return (
     <details className="promotionDetails">
       <summary>{name}</summary>
