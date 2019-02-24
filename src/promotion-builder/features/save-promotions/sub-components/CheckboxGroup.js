@@ -5,14 +5,17 @@ import "./checkboxgroup.css";
 
 class CheckboxGroup extends React.Component {
   render() {
-    const { legendText, displayItems, name, onFormChange } = this.props;
+    const { legendText, displayItems, name, onFormChange, value } = this.props;
 
-    const selectedDevices = [];
-    const selectedVentures = [];
+    const selectedDevices = value;
+    const selectedVentures = value;
 
     const handleInputData = event => {
       if (name === "devices") {
-        selectedDevices.push(event.target.value);
+        if(event.target.checked){
+          selectedDevices.push(event.target.value);
+        }
+        
         onFormChange(selectedDevices, name);
       } else {
         selectedVentures.push(event.target.value);
@@ -25,15 +28,29 @@ class CheckboxGroup extends React.Component {
         <legend>{legendText}</legend>
 
         {displayItems.map(item => (
+          
+          value.indexOf(item.toLowerCase()) > -1 ? 
           <label key={item}>
             <input
               type="checkbox"
               name={name}
+              checked
               value={item}
               onChange={handleInputData}
             />
             {item}
+          </label> :
+
+          <label key={item}>
+          <input
+            type="checkbox"
+            name={name}
+            value={item}
+            onChange={handleInputData}
+          />
+          {item}
           </label>
+
         ))}
       </fieldset>
     );
