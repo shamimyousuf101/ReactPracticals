@@ -3,6 +3,8 @@ import PropsTypes from "prop-types";
 
 import InputBox from "../sub-components/InputBox";
 import CheckboxGroup from "../sub-components/CheckboxGroup";
+import ConfirmationBox from "../sub-components/ConfirmationBox";
+
 import { deviceLabels } from "../../../../domain/devices";
 import { ventureLabels } from "../../../../domain/ventures";
 import { VIEW } from "../../../../constants/constants";
@@ -20,7 +22,8 @@ class SavePromotion extends React.Component {
   };
 
   state = {
-    formData: this.initialFormData
+    formData: this.initialFormData,
+    showDialog: false
   };
 
   componentDidUpdate({ selectedPromotionId: prevSelectedPromotionId }) {
@@ -63,21 +66,18 @@ class SavePromotion extends React.Component {
     });
   };
 
-  //TODO: Later stage this will move to a separate react component
-  showAlertWithFormData = () => {
-    const { name, url, devices, ventures } = this.state.formData;
-    const savedData = `New Promotion Details:
-                    Name:\t ${name} 
-                    Url:\t ${url}
-                    Devices:\t ${devices}
-                    Ventures:\t ${ventures}`;
-    alert(savedData);
-    this.props.updateView(VIEW.SEARCH);
+  setShowDialog = display => {
+    this.setState({
+      showDialog: display
+    });
   };
 
-  Save = () => {
+  hideDialog = () => {
+    this.setShowDialog(false);
+  };
+
+  save = () => {
     this.props.savePromotion(this.state.formData);
-    this.showAlertWithFormData();
   };
 
   render() {
@@ -120,7 +120,7 @@ class SavePromotion extends React.Component {
               className="promotion-toolbar__button-save"
               type="button"
               value="Submit"
-              onClick={this.Save}
+              onClick={() => this.setShowDialog(true)}
             />
             <input
               className="promotion-toolbar__button-reset"
@@ -129,6 +129,16 @@ class SavePromotion extends React.Component {
               onClick={this.resetFormData}
             />
           </form>
+          <ConfirmationBox
+            name={name}
+            url={url}
+            devices={devices}
+            ventures={ventures}
+            display={this.state.showDialog}
+            updateView={this.props.updateView}
+            save={this.save}
+            hideDialog={this.hideDialog}
+          />
         </section>
       );
     }

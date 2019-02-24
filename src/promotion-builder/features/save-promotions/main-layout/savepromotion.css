@@ -26,7 +26,6 @@ label {
   padding-right: 10px;
 }
 
-
 .promotionDetailsForm {
   display: table;
 }
@@ -37,13 +36,12 @@ label {
   text-transform: capitalize;
 }
 
-
 .promotion-toolbar__button-save {
   background-color: rgb(129, 206, 129);
   height: 30px;
   border-radius: 10%;
   width: 100px;
-  margin-right:10px;
+  margin-right: 10px;
   font-size: 14px;
 }
 
@@ -53,4 +51,16 @@ label {
   border-radius: 10%;
   width: 100px;
   font-size: 14px;
+}
+
+.confirmationbox {
+  position: fixed;
+  width: 500px;
+  height: 300px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #7e92c7;
+  z-index: 2;
 }
