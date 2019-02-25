@@ -34,30 +34,18 @@ class CheckboxGroup extends React.Component {
       <fieldset>
         <legend>{legendText}</legend>
 
-        {displayItems.map(item =>
-          value.indexOf(item.toLowerCase()) > -1 ? (
-            <label key={item}>
-              <input
-                type="checkbox"
-                name={name}
-                checked
-                value={item}
-                onChange={handleInputData}
-              />
-              {item}
-            </label>
-          ) : (
-            <label key={item}>
-              <input
-                type="checkbox"
-                name={name}
-                value={item}
-                onChange={handleInputData}
-              />
-              {item}
-            </label>
-          )
-        )}
+        {displayItems.map(item => (
+          <label key={item}>
+            <input
+              type="checkbox"
+              name={name}
+              checked={value.includes(item)}
+              value={item}
+              onChange={handleInputData}
+            />
+            {item}
+          </label>
+        ))}
       </fieldset>
     );
   }
