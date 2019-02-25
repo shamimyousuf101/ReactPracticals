@@ -3,53 +3,43 @@ import PropTypes from "prop-types";
 
 import "./checkboxgroup.css";
 
-class CheckboxGroup extends React.Component {
-  render() {
-    const { legendText, displayItems, name, onFormChange, value } = this.props;
+const CheckboxGroup = ({
+  legendText,
+  displayItems,
+  name,
+  onFormChange,
+  value
+}) => {
+  const selectedCheckboxes = value;
 
-    const selectedDevices = value;
-    const selectedVentures = value;
+  const handleInputData = event => {
+    if (event.target.checked) {
+      selectedCheckboxes.push(event.target.value);
+    } else {
+      let index = value.indexOf(event.target.value);
+      selectedCheckboxes.splice(index, 1);
+    }
+    onFormChange(selectedCheckboxes, name);
+  };
 
-    const handleInputData = event => {
-      if (name === "devices") {
-        if (event.target.checked) {
-          selectedDevices.push(event.target.value);
-        } else {
-          let index = value.indexOf(event.target.value);
-          selectedDevices.splice(index, 1);
-        }
-        onFormChange(selectedDevices, name);
-      } else {
-        if (event.target.checked) {
-          selectedVentures.push(event.target.value);
-        } else {
-          let index = value.indexOf(event.target.value);
-          selectedVentures.splice(index, 1);
-        }
-        onFormChange(selectedVentures, name);
-      }
-    };
-
-    return (
-      <fieldset>
-        <legend>{legendText}</legend>
-
-        {displayItems.map(item => (
-          <label key={item}>
-            <input
-              type="checkbox"
-              name={name}
-              checked={value.includes(item)}
-              value={item}
-              onChange={handleInputData}
-            />
-            {item}
-          </label>
-        ))}
-      </fieldset>
-    );
-  }
-}
+  return (
+    <fieldset>
+      <legend>{legendText}</legend>
+      {displayItems.map(item => (
+        <label key={item}>
+          <input
+            type="checkbox"
+            name={name}
+            checked={value.includes(item)}
+            value={item}
+            onChange={handleInputData}
+          />
+          {item}
+        </label>
+      ))}
+    </fieldset>
+  );
+};
 
 CheckboxGroup.propTypes = {
   legendText: PropTypes.string.isRequired,
