@@ -12,13 +12,20 @@ class CheckboxGroup extends React.Component {
 
     const handleInputData = event => {
       if (name === "devices") {
-        if(event.target.checked){
+        if (event.target.checked) {
           selectedDevices.push(event.target.value);
+        } else {
+          let index = value.indexOf(event.target.value);
+          selectedDevices.splice(index, 1);
         }
-        
         onFormChange(selectedDevices, name);
       } else {
-        selectedVentures.push(event.target.value);
+        if (event.target.checked) {
+          selectedVentures.push(event.target.value);
+        } else {
+          let index = value.indexOf(event.target.value);
+          selectedVentures.splice(index, 1);
+        }
         onFormChange(selectedVentures, name);
       }
     };
@@ -27,31 +34,30 @@ class CheckboxGroup extends React.Component {
       <fieldset>
         <legend>{legendText}</legend>
 
-        {displayItems.map(item => (
-          
-          value.indexOf(item.toLowerCase()) > -1 ? 
-          <label key={item}>
-            <input
-              type="checkbox"
-              name={name}
-              checked
-              value={item}
-              onChange={handleInputData}
-            />
-            {item}
-          </label> :
-
-          <label key={item}>
-          <input
-            type="checkbox"
-            name={name}
-            value={item}
-            onChange={handleInputData}
-          />
-          {item}
-          </label>
-
-        ))}
+        {displayItems.map(item =>
+          value.indexOf(item.toLowerCase()) > -1 ? (
+            <label key={item}>
+              <input
+                type="checkbox"
+                name={name}
+                checked
+                value={item}
+                onChange={handleInputData}
+              />
+              {item}
+            </label>
+          ) : (
+            <label key={item}>
+              <input
+                type="checkbox"
+                name={name}
+                value={item}
+                onChange={handleInputData}
+              />
+              {item}
+            </label>
+          )
+        )}
       </fieldset>
     );
   }
