@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import PropsTypes from "prop-types";
 
 import SingleResult from "./SingleResult";
-import { searchPromotions } from "../../../../utils/search";
+import { searchPromotions } from "../../search";
 
 const SearchResultContainer = ({ editBtnClick, searchTerm, promotionData }) => {
   const getSearchItems = (searchTerm, promotionData) => {

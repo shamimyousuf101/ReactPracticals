@@ -10,7 +10,7 @@ import {
   DEVICE_LABELS,
   VENTURE_LABELS
 } from "../../../../constants/constants";
-import { searchPromotionsById } from "../../../../utils/search";
+import { searchPromotionsById } from "../../search";
 
 import "./savepromotion.css";
 
