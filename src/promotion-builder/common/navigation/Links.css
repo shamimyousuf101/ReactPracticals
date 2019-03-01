@@ -1,4 +1,4 @@
-#navigation__link {
+.navigation ul li {
   border-radius: 20%;
   border-right: solid white;
   border-top: solid white;
@@ -13,15 +13,15 @@ ul {
   list-style: none;
 }
 
-.search__link {
+.link__search {
   background-color: #60aade;
 }
 
-.upload__link {
+.link__asset {
   background-color: #e85441;
 }
 
-.config__link {
+.link__edit {
   background-color: #506bb1;
 }
 

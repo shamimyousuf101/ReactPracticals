@@ -1,14 +1,14 @@
 export const navigationData = [
   {
-    className: "search__link",
-    text: "Search"
+    text: "Search",
+    navId: "SEARCH"
   },
   {
-    className: "upload__link",
-    text: "Asset Manager"
+    text: "Asset Manager",
+    navId: "ASSET"
   },
   {
-    className: "config__link",
-    text: "Create / Edit"
+    text: "Create / Edit",
+    navId: "EDIT"
   }
 ];

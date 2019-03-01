@@ -9,17 +9,15 @@ import bem from "bem-cn";
 const b = bem("navigation");
 
 const Navigation = ({ menuData, updateView, resetPrommotionId }) => {
-  const onMenuClick = event => {
-    const selectedLink = event.currentTarget.className;
-
-    switch (selectedLink) {
-      case "search__link":
+  const onMenuClick = text => {
+    switch (text) {
+      case "SEARCH":
         updateView(VIEW.SEARCH);
         return;
-      case "upload__link":
+      case "ASSET":
         updateView(VIEW.ASSET_MANAGER);
         return;
-      case "config__link":
+      case "EDIT":
         resetPrommotionId();
         updateView(VIEW.SAVE_PROMOTION);
         return;
@@ -31,13 +29,11 @@ const Navigation = ({ menuData, updateView, resetPrommotionId }) => {
   return (
     <nav className={b()}>
       <ul>
-        {menuData.map(({ className, text }) => (
+        {menuData.map(({ navId, text }) => (
           <Links
-            href={"#"}
-            className={className}
-            key={text}
             text={text}
-            clickHandler={onMenuClick}
+            navId={navId}
+            clickHandler={() => onMenuClick(navId)}
           />
         ))}
       </ul>

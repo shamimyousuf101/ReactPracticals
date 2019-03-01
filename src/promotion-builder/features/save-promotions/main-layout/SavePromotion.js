@@ -5,9 +5,11 @@ import InputBox from "../sub-components/InputBox";
 import CheckboxGroup from "../sub-components/CheckboxGroup";
 import ConfirmationBox from "../sub-components/ConfirmationBox";
 
-import { deviceLabels } from "../../../../domain/devices";
-import { ventureLabels } from "../../../../domain/ventures";
-import { VIEW } from "../../../../constants/constants";
+import {
+  VIEW,
+  DEVICE_LABELS,
+  VENTURE_LABELS
+} from "../../../../constants/constants";
 import { searchPromotionsById } from "../../../../utils/search";
 
 import "./savepromotion.css";
@@ -93,14 +95,14 @@ class SavePromotion extends React.Component {
             <CheckboxGroup
               value={devices}
               name="devices"
-              displayItems={deviceLabels}
+              displayItems={DEVICE_LABELS}
               legendText="Devices:"
               onFormChange={this.onFormChange}
             />
             <CheckboxGroup
               value={ventures}
               name="ventures"
-              displayItems={ventureLabels}
+              displayItems={VENTURE_LABELS}
               legendText="Ventures:"
               onFormChange={this.onFormChange}
             />

@@ -6,7 +6,7 @@ import AssetManager from "../features/upload-assets/main-layout/AssetManager";
 import Search from "../features/search-promotions/main-layout/Search";
 import SavePromotion from "../features/save-promotions/main-layout/SavePromotion";
 import { navigationData } from "../common/navigation/navigationData";
-import { promotionData } from "../../domain/promotionData";
+import { promotionData } from "../../promotionData";
 import { VIEW } from "../../constants/constants";
 
 import "./app.css";
