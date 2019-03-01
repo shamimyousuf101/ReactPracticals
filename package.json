@@ -3,15 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bem-cn": "^3.0.1",
+    "lodash.isequal": "^4.5.0",
+    "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-scripts": "2.1.1"
+    "react-scripts": "^2.1.5",
+    "react-test-renderer": "^16.6.3",
+    "uuid4": "^1.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test:e2e": "cypress open",
+    "test:run": "cypress run --reporter mochawesome overwrite=false",
+    "test:record": "cypress run --record --key fca60649-9ce4-4cc3-b965-ce0aba6d47b3",
+    "cy:run": "node scripts/cypress.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -21,5 +30,15 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "cypress": "^3.1.5",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
+    "eslint-plugin-cypress": "^2.2.0",
+    "mocha": "^5.2.0",
+    "mochawesome": "^3.1.1",
+    "mochawesome-merge": "^1.0.5",
+    "mochawesome-report-generator": "^3.1.5"
+  }
 }

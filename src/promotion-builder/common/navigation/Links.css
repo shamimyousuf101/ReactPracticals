@@ -1,0 +1,32 @@
+.navigation ul li {
+  border-radius: 20%;
+  border-right: solid white;
+  border-top: solid white;
+  box-shadow: -10px 5px 5px silver;
+  cursor: pointer;
+  height: 45px;
+  margin-bottom: 7px;
+  width: 65px;
+}
+
+ul {
+  list-style: none;
+}
+
+.link__search {
+  background-color: #60aade;
+}
+
+.link__asset {
+  background-color: #e85441;
+}
+
+.link__edit {
+  background-color: #506bb1;
+}
+
+a {
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+}
