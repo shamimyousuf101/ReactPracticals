@@ -5,7 +5,7 @@ import Navigation from "../common/navigation/Navigation";
 import AssetManager from "../features/upload-assets/main-layout/AssetManager";
 import Search from "../features/search-promotions/main-layout/Search";
 import SavePromotion from "../features/save-promotions/main-layout/SavePromotion";
-import { navigationData } from "../common/navigation/navigationData";
+import { navigationData } from "../common/navigation/navigationData"; // remove nav will pull in the data from the constants
 import { promotionData } from "../../promotionData";
 import { VIEW } from "../../constants/constants";
 
@@ -45,6 +45,7 @@ class App extends Component {
     }));
   };
 
+  // may not need the outer brackets
   editBtnClick = id => {
     this.setState({
       selectedPromotionId: id,

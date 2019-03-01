@@ -1,15 +1,17 @@
 import React from "react";
 import PropsTypes from "prop-types";
-
-import Links from "./Links";
 import "./navigation.css";
+import bem from "bem-cn";
+
+import Links from "./Links"; //maybe calling this NavLinks
 import { VIEW } from "../../../constants/constants";
 
-import bem from "bem-cn";
+//dont think text is the right name for the parameter and prop
+
 const b = bem("navigation");
 
 const Navigation = ({ menuData, updateView, resetPrommotionId }) => {
-  const onMenuClick = text => {
+  const onMenuClick = text => { // maybe change the name of this parameter
     switch (text) {
       case "SEARCH":
         updateView(VIEW.SEARCH);

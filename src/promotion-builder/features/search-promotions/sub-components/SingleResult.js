@@ -8,7 +8,7 @@ import "./singleresult.css";
 
 import bem from "bem-cn";
 const b = bem("singlesearchresult");
-
+//use a spread operator {...props}
 const SingleResult = ({ result, id, editBtnClick }) => (
   <li className={b()}>
     <PromotionDetails result={result} />

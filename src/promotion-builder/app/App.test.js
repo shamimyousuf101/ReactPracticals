@@ -1,6 +1,8 @@
 import React from "react";
 import { shallow } from "enzyme";
 
+
+//TODO maybe snapshot test will be good here,
 import App from "./App";
 
 describe("<App>", () => {
@@ -14,15 +16,9 @@ describe("<App>", () => {
     expect(wrapper.hasClass("App")).toBe(true);
   });
 
-  it("renders Banner component", () => {
+  it("renders the necessary Components", () => {
     expect(wrapper.find("Banner")).toHaveLength(1);
-  });
-
-  it("renders Content component", () => {
     expect(wrapper.find("Content")).toHaveLength(1);
-  });
-
-  it("renders Navigation component", () => {
     expect(wrapper.find("Navigation")).toHaveLength(1);
   });
 });

@@ -18,7 +18,7 @@ const PromotionDetails = ({ result: { name, url, devices, ventures } }) => {
 };
 
 PromotionDetails.propTypes = {
-  result: PropsTypes.object.isRequired
+  result: PropsTypes.object.isRequired //FIXME :: use shape to describe
 };
 
 export default PromotionDetails;

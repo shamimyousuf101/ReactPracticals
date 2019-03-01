@@ -1,6 +1,7 @@
-import React from "react";
+import React, { Component }  from "react";
 import PropsTypes from "prop-types";
 
+import "./savepromotion.css";
 import InputBox from "../sub-components/InputBox";
 import CheckboxGroup from "../sub-components/CheckboxGroup";
 import ConfirmationBox from "../sub-components/ConfirmationBox";
@@ -12,21 +13,28 @@ import {
 } from "../../../../constants/constants";
 import { searchPromotionsById } from "../../search";
 
-import "./savepromotion.css";
 
-class SavePromotion extends React.Component {
-  initialFormData = {
-    devices: [],
-    ventures: [],
-    url: "",
-    name: "",
-    lastUpdatedTime: ""
-  };
+
+class SavePromotion extends Component {
 
   state = {
-    formData: this.initialFormData,
+    formData: {
+      devices: [],
+      ventures: [],
+      url: "",
+      name: "",
+      lastUpdatedTime: ""
+    },
     showDialog: false
   };
+
+  getDefaultFormState = () => ({
+    devices: [],
+      ventures: [],
+      url: "",
+      name: "",
+      lastUpdatedTime: ""
+  });
 
   componentDidUpdate({ selectedPromotionId: prevSelectedPromotionId }) {
     const { selectedPromotionId, promotionData } = this.props;
@@ -64,7 +72,7 @@ class SavePromotion extends React.Component {
 
   resetFormData = () => {
     this.setState({
-      formData: this.initialFormData
+      formData: this.getDefaultFormState()
     });
   };
 
@@ -83,9 +91,10 @@ class SavePromotion extends React.Component {
   };
 
   render() {
-    const { name, url, devices, ventures } = this.state.formData;
+    const { formData: {name, url, devices, ventures }, showDialog} = this.state;
+    const { view, updateView } = this.props;
 
-    if (this.props.view === VIEW.SAVE_PROMOTION) {
+    if (view === VIEW.SAVE_PROMOTION) {
       return (
         <section className="PromotionBuilder">
           <form className="promotionDetailsForm">
@@ -136,8 +145,8 @@ class SavePromotion extends React.Component {
             url={url}
             devices={devices}
             ventures={ventures}
-            display={this.state.showDialog}
-            updateView={this.props.updateView}
+            display={showDialog}
+            updateView={updateView}
             save={this.save}
             hideDialog={this.hideDialog}
           />

@@ -1,8 +1,8 @@
-import React from "react";
+import React, {Component}  from "react";
 
 import { VIEW } from "../../../../constants/constants";
 
-class ConfirmationBox extends React.Component {
+class ConfirmationBox extends Component {
   cancelSave = () => {
     this.props.updateView(VIEW.SAVE_PROMOTION);
     this.props.hideDialog();
@@ -15,7 +15,7 @@ class ConfirmationBox extends React.Component {
   };
 
   render() {
-    let { display, name, url, devices, ventures } = this.props;
+    const { display, name, url, devices, ventures } = this.props;
     if (display) {
       return (
         <dialog open className="confirmationbox">
@@ -47,5 +47,7 @@ class ConfirmationBox extends React.Component {
     return null;
   }
 }
+
+// what prop types?
 
 export default ConfirmationBox;

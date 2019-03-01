@@ -1,3 +1,5 @@
+//move to constants
+
 export const navigationData = [
   {
     text: "Search",

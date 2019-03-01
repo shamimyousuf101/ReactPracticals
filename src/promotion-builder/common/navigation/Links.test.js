@@ -2,6 +2,13 @@ import React from "react";
 import { shallow } from "enzyme";
 
 import Links from "./Links";
+//NO! Needs to be human readable
+// it renders correctly 
+// contain an li tag wrapping an anchor
+// Whan a user clicks blah blah
+
+
+
 
 describe("<Links>", () => {
   let wrapper;
