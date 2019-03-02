@@ -1,7 +1,7 @@
 import React from "react";
 
-import { VIEW } from "../../../../constants/constants";
 import "./assetmanager.css";
+import { VIEW } from "../../../../constants/constants";
 
 const AssetManager = ({ view }) => {
   // TODO - Would break this component down into smaller components

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import bem from "bem-cn";
 
+import "./app.css";
 import Banner from "../common/banner/Banner";
 import Navigation from "../common/navigation/Navigation";
 import AssetManager from "../features/upload-assets/main-layout/AssetManager";
@@ -8,14 +10,12 @@ import SavePromotion from "../features/save-promotions/main-layout/SavePromotion
 import { promotionData } from "../../promotionData";
 import { VIEW } from "../../constants/constants";
 
-import "./app.css";
 
-import bem from "bem-cn";
 const b = bem("promotion");
-
 const uuid4 = require("uuid4");
 
 class App extends Component {
+
   state = {
     view: VIEW.SEARCH,
     selectedPromotionId: null,
@@ -58,7 +58,6 @@ class App extends Component {
       <div className={b()}>
         <Banner subHeading={view} />
         <Navigation
-          
           updateView={this.updateView}
           clearSearchTerm={this.clearSearchTerm}
           resetPrommotionId={this.resetPrommotionId}

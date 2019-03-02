@@ -16,7 +16,7 @@ const NavLinks = ({ navId, label, clickHandler, url= '#' }) => (
 NavLinks.propTypes = {
   clickHandler: PropTypes.func,
   href: PropTypes.string,
-  label: PropTypes.string //maybe a better name
+  label: PropTypes.string
   //add in url
 };
 

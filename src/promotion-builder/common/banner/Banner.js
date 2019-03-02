@@ -1,8 +1,9 @@
 import React from "react";
 import PropsTypes from "prop-types";
+import block from "bem-cn";
 
 import "./banner.css";
-import block from "bem-cn";
+
 const b = block("banner");
 
 const Banner = ({ subHeading }) => (

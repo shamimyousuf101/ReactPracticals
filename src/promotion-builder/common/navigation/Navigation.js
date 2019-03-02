@@ -1,14 +1,16 @@
 import React from "react";
 import PropsTypes from "prop-types";
-import "./navigation.css";
 import bem from "bem-cn";
 
+import "./navigation.css";
 import NavLinks from "./NavLinks"; 
 import { VIEW , NAVIGATION_DATA } from "../../../constants/constants";
+
 
 const b = bem("navigation");
 
 const Navigation = ({ updateView, resetPrommotionId }) => {
+  
   const onMenuClick = navId => {
     switch (navId) {
       case "SEARCH":

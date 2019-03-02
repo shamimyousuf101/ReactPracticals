@@ -5,14 +5,12 @@ import "./savepromotion.css";
 import InputBox from "../sub-components/InputBox";
 import CheckboxGroup from "../sub-components/CheckboxGroup";
 import ConfirmationBox from "../sub-components/ConfirmationBox";
-
 import {
   VIEW,
   DEVICE_LABELS,
   VENTURE_LABELS
 } from "../../../../constants/constants";
 import { searchPromotionsById } from "../../search";
-
 
 
 class SavePromotion extends Component {
@@ -37,6 +35,7 @@ class SavePromotion extends Component {
   });
 
   componentDidUpdate({ selectedPromotionId: prevSelectedPromotionId }) {
+
     const { selectedPromotionId, promotionData } = this.props;
 
     if (selectedPromotionId !== prevSelectedPromotionId) {
