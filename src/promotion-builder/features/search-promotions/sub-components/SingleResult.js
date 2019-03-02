@@ -9,10 +9,10 @@ import "./singleresult.css";
 import bem from "bem-cn";
 const b = bem("singlesearchresult");
 //use a spread operator {...props}
-const SingleResult = ({ result, id, editBtnClick }) => (
+const SingleResult = ({ result, editBtnClick }) => (
   <li className={b()}>
     <PromotionDetails result={result} />
-    <EditButton id={id} editBtnClick={editBtnClick} result={result} />
+    <EditButton editBtnClick={editBtnClick} id={result.id} />
   </li>
 );
 

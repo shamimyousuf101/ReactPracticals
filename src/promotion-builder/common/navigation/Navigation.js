@@ -3,16 +3,14 @@ import PropsTypes from "prop-types";
 import "./navigation.css";
 import bem from "bem-cn";
 
-import Links from "./Links"; //maybe calling this NavLinks
-import { VIEW } from "../../../constants/constants";
-
-//dont think text is the right name for the parameter and prop
+import NavLinks from "./NavLinks"; 
+import { VIEW , NAVIGATION_DATA } from "../../../constants/constants";
 
 const b = bem("navigation");
 
-const Navigation = ({ menuData, updateView, resetPrommotionId }) => {
-  const onMenuClick = text => { // maybe change the name of this parameter
-    switch (text) {
+const Navigation = ({ updateView, resetPrommotionId }) => {
+  const onMenuClick = navId => {
+    switch (navId) {
       case "SEARCH":
         updateView(VIEW.SEARCH);
         return;
@@ -31,9 +29,9 @@ const Navigation = ({ menuData, updateView, resetPrommotionId }) => {
   return (
     <nav className={b()}>
       <ul>
-        {menuData.map(({ navId, text }) => (
-          <Links
-            text={text}
+        {NAVIGATION_DATA.map(({ navId, label }) => (
+          <NavLinks
+            label={label}
             navId={navId}
             clickHandler={() => onMenuClick(navId)}
           />
@@ -44,7 +42,6 @@ const Navigation = ({ menuData, updateView, resetPrommotionId }) => {
 };
 
 Navigation.propTypes = {
-  menuData: PropsTypes.array.isRequired,
   clickHandler: PropsTypes.func.isRequired
 };
 

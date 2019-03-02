@@ -5,7 +5,6 @@ import Navigation from "../common/navigation/Navigation";
 import AssetManager from "../features/upload-assets/main-layout/AssetManager";
 import Search from "../features/search-promotions/main-layout/Search";
 import SavePromotion from "../features/save-promotions/main-layout/SavePromotion";
-import { navigationData } from "../common/navigation/navigationData"; // remove nav will pull in the data from the constants
 import { promotionData } from "../../promotionData";
 import { VIEW } from "../../constants/constants";
 
@@ -45,13 +44,12 @@ class App extends Component {
     }));
   };
 
-  // may not need the outer brackets
-  editBtnClick = id => {
+  editBtnClick = id => 
     this.setState({
       selectedPromotionId: id,
       view: VIEW.SAVE_PROMOTION
     });
-  };
+  
 
   render() {
     const { view, promotionData, selectedPromotionId } = this.state;
@@ -60,7 +58,7 @@ class App extends Component {
       <div className={b()}>
         <Banner subHeading={view} />
         <Navigation
-          menuData={navigationData}
+          
           updateView={this.updateView}
           clearSearchTerm={this.clearSearchTerm}
           resetPrommotionId={this.resetPrommotionId}

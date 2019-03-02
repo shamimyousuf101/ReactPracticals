@@ -2,23 +2,22 @@ import React from "react";
 import PropTypes from "prop-types";
 import bem from "bem-cn";
 
-import "./Links.css";
+import "./NavLinks.css";
 
 
 const b = bem("link");
 
-const Links = ({ navId, text, clickHandler, url= '#' }) => (
+const NavLinks = ({ navId, label, clickHandler, url= '#' }) => (
   <li className={b(navId.toLowerCase())} onClick={clickHandler}>
-    <a href={url}>{text}</a>
+    <a href={url}>{label}</a>
   </li>
 );
 
-Links.propTypes = {
-  className: PropTypes.string, //change
+NavLinks.propTypes = {
   clickHandler: PropTypes.func,
   href: PropTypes.string,
-  text: PropTypes.string //maybe a better name
+  label: PropTypes.string //maybe a better name
   //add in url
 };
 
-export default Links;
+export default NavLinks;

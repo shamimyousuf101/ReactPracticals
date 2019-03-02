@@ -1,11 +1,11 @@
 import React from "react";
 import PropsTypes from "prop-types";
 
-const EditButton = ({ id, editBtnClick, result }) => (
+const EditButton = ({ id, editBtnClick }) => (
   <button
     className="edit__button"
     type="submit"
-    onClick={() => editBtnClick(id, result)}
+    onClick={() => editBtnClick(id)}
   >
     Edit
   </button>

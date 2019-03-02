@@ -13,7 +13,6 @@ const SearchResultContainer = ({ editBtnClick, searchTerm, promotionData }) => {
       return searchDisplay.map((item, index) => (
         <SingleResult
           key={index}
-          id={item.id}
           result={item}
           editBtnClick={editBtnClick}
         />

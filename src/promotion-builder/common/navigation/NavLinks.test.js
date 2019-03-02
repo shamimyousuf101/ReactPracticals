@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
 
-import Links from "./Links";
+import Links from "./NavLinks";
 //NO! Needs to be human readable
 // it renders correctly 
 // contain an li tag wrapping an anchor

@@ -12,3 +12,19 @@ export const VENTURE_LABELS = [
   "virgingames",
   "botemania"
 ];
+
+
+export const NAVIGATION_DATA = [
+  {
+    label: "Search",
+    navId: "SEARCH"
+  },
+  {
+    label: "Asset Manager",
+    navId: "ASSET"
+  },
+  {
+    label: "Create / Edit",
+    navId: "EDIT"
+  }
+];
