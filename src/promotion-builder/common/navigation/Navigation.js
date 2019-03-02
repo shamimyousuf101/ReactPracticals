@@ -35,6 +35,7 @@ const Navigation = ({ updateView, resetPrommotionId }) => {
           <NavLinks
             label={label}
             navId={navId}
+            key={navId}
             clickHandler={() => onMenuClick(navId)}
           />
         ))}

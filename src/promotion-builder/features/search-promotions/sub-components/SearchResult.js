@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import PropsTypes from "prop-types";
 
 import SingleResult from "./SingleResult";
 import { searchPromotions } from "../../search";
@@ -24,7 +23,7 @@ const SearchResultContainer = ({ editBtnClick, searchTerm, promotionData }) => {
 };
 
 SearchResultContainer.propTypes = {
-  editBtnClick: PropsTypes.func.isRequired,
+  editBtnClick: PropTypes.func.isRequired,
   searchTerm: PropTypes.string,
   // promotionData:
 };

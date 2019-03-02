@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import "./assetmanager.css";
 import { VIEW } from "../../../../constants/constants";
@@ -15,6 +16,10 @@ const AssetManager = ({ view }) => {
   }
 
   return null;
+};
+
+AssetManager.propTypes = {
+  view: PropTypes.string,
 };
 
 export default AssetManager;
