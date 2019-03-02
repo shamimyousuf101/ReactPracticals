@@ -1,5 +1,6 @@
 import React from "react";
-import PropsTypes from "prop-types";
+import PropTypes from "prop-types";
+
 import "./SearchForm.css";
 
 const SearchForm = ({ value, onChange }) => (
@@ -16,8 +17,8 @@ const SearchForm = ({ value, onChange }) => (
 );
 
 SearchForm.propTypes = {
-  value: PropsTypes.string,
-  onChange: PropsTypes.func.isRequired
+  value: PropTypes.string,
+  onChange: PropTypes.func.isRequired
 };
 
 export default SearchForm;

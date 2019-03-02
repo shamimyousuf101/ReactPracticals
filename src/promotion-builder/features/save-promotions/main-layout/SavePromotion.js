@@ -1,5 +1,5 @@
 import React, { Component }  from "react";
-import PropsTypes from "prop-types";
+import PropTypes from "prop-types";
 
 import "./savepromotion.css";
 import InputBox from "../sub-components/InputBox";
@@ -157,10 +157,13 @@ class SavePromotion extends Component {
 }
 
 SavePromotion.propTypes = {
-  formData: PropsTypes.object.isRequired,
-  onFormChange: PropsTypes.func.isRequired,
-  reset: PropsTypes.func.isRequired,
-  savePromotion: PropsTypes.func.isRequired
+  view: PropTypes.string.isRequired,
+  updateView: PropTypes.func.isRequired,
+  savePromotion: PropTypes.func.isRequired,
+  selectedPromotionId: PropTypes.string,
+  // promotionData
+
+  
 };
 
 export default SavePromotion;

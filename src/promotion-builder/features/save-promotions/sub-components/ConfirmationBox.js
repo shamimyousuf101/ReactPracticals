@@ -1,4 +1,5 @@
 import React, {Component}  from "react";
+import PropTypes from "prop-types";
 
 import { VIEW } from "../../../../constants/constants";
 
@@ -48,6 +49,16 @@ class ConfirmationBox extends Component {
   }
 }
 
-// what prop types?
+
+ConfirmationBox.propTypes = {
+  name: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  devices: PropTypes.string.isRequired,
+  ventures: PropTypes.string.isRequired,
+  display: PropTypes.string.isRequired,
+  updateView: PropTypes.func.isRequired,
+  save: PropTypes.func.isRequired,
+  hideDialog: PropTypes.func.isRequired,
+};
 
 export default ConfirmationBox;

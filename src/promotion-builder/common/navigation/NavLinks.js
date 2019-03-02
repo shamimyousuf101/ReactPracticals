@@ -14,10 +14,10 @@ const NavLinks = ({ navId, label, clickHandler, url= '#' }) => (
 );
 
 NavLinks.propTypes = {
+  navId: PropTypes.string, 
+  label: PropTypes.string,
   clickHandler: PropTypes.func,
-  href: PropTypes.string,
-  label: PropTypes.string
-  //add in url
+  url: PropTypes.string
 };
 
 export default NavLinks;

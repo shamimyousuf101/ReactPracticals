@@ -17,8 +17,7 @@ class Search extends React.Component {
     }
   }
 
-  handleInputChange = event => 
-    this.setState({ searchTerm: event.target.value });
+  handleInputChange = event => this.setState({ searchTerm: event.target.value });
 
   render() {
     const { promotionData, editBtnClick, view } = this.props;
@@ -41,8 +40,8 @@ class Search extends React.Component {
 }
 
 Search.propType = {
-  searchTerm: PropsTypes.string,
-  onInputChange: PropsTypes.func.isRequired,
+  view: PropsTypes.string,
+  // promotionData: ,
   editBtnClick: PropsTypes.func.isRequired
 };
 

@@ -18,7 +18,6 @@ const SingleResult = ({ result, editBtnClick }) => (
 
 SingleResult.propTypes = {
   result: PropsTypes.object,
-  id: PropsTypes.string,
   editBtnClick: PropsTypes.func.isRequired
 };
 

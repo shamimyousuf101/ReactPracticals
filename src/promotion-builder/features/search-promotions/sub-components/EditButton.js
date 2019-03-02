@@ -1,5 +1,5 @@
 import React from "react";
-import PropsTypes from "prop-types";
+import PropTypes from "prop-types";
 
 const EditButton = ({ id, editBtnClick }) => (
   <button
@@ -12,8 +12,8 @@ const EditButton = ({ id, editBtnClick }) => (
 );
 
 EditButton.propTypes = {
-  id: PropsTypes.string.isRequired,
-  editBtnClick: PropsTypes.func.isRequired
+  id: PropTypes.string.isRequired,
+  editBtnClick: PropTypes.func.isRequired
 };
 
 export default EditButton;

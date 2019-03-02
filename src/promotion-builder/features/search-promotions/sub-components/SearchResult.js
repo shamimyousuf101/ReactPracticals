@@ -25,7 +25,8 @@ const SearchResultContainer = ({ editBtnClick, searchTerm, promotionData }) => {
 
 SearchResultContainer.propTypes = {
   editBtnClick: PropsTypes.func.isRequired,
-  searchTerm: PropTypes.string
+  searchTerm: PropTypes.string,
+  // promotionData:
 };
 
 export default SearchResultContainer;

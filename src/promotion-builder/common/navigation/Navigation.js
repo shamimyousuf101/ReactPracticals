@@ -44,7 +44,8 @@ const Navigation = ({ updateView, resetPrommotionId }) => {
 };
 
 Navigation.propTypes = {
-  clickHandler: PropsTypes.func.isRequired
+  updateView: PropsTypes.func.isRequired,
+  resetPrommotionId: PropsTypes.func.isRequired
 };
 
 export default Navigation;
