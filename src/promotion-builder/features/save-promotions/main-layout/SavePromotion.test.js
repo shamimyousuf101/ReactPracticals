@@ -25,15 +25,9 @@ describe("<SavePromotion/>", () => {
     );
   });
 
-  it("should render FormTitle component one time", () => {
+  it("should renders correctly", () => {
     expect(wrapper.find("FormTitle")).toHaveLength(1);
-  });
-
-  it("should render PromotionForm component one time", () => {
     expect(wrapper.find("PromotionForm")).toHaveLength(1);
-  });
-
-  it("should render ToolBar component one time", () => {
     expect(wrapper.find("ToolBar")).toHaveLength(1);
   });
 

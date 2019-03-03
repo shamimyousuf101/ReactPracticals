@@ -18,11 +18,8 @@ describe("<SingleResult/>", () => {
     );
   });
 
-  it("should render PromotionDetails component one time", () => {
+  it("should render correctly", () => {
     expect(wrapper.find("PromotionDetails")).toHaveLength(1);
-  });
-
-  it("should render EditButton component one time", () => {
     expect(wrapper.find("EditButton")).toHaveLength(1);
   });
 

@@ -1,5 +1,5 @@
 import React from "react";
-import PropsTypes from "prop-types";
+import PropTypes from "prop-types";
 
 const PromotionDetails = ({ result: { name, url, devices, ventures } }) => {
   return (
@@ -18,7 +18,13 @@ const PromotionDetails = ({ result: { name, url, devices, ventures } }) => {
 };
 
 PromotionDetails.propTypes = {
-  result: PropsTypes.object.isRequired //FIXME :: use shape to describe
+  // result: React.PropTypes.shape({
+  //   devices: React.PropTypes.arrayOf(React.PropTypes.string.isRequired).isRequired,
+  //   id: React.PropTypes.string.isRequired,
+  //   name: React.PropTypes.string.isRequired,
+  //   url: React.PropTypes.string.isRequired,
+  //   ventures: React.PropTypes.arrayOf(React.PropTypes.string.isRequired).isRequired
+  // })
 };
 
 export default PromotionDetails;

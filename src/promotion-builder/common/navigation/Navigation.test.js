@@ -4,7 +4,7 @@ import { shallow } from "enzyme";
 import Navigation from "./Navigation";
 import Links from "./Links";
 
-describe("<Navigation>", () => {
+describe("Navigation component", () => {
   let wrapper;
   let clickHandlerMock;
 

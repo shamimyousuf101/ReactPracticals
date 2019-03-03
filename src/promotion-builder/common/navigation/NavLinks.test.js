@@ -10,7 +10,7 @@ import Links from "./NavLinks";
 
 
 
-describe("<Links>", () => {
+describe("NavLink component", () => {
   let wrapper;
   let clickHandlerMock;
 
@@ -26,25 +26,14 @@ describe("<Links>", () => {
     );
   });
 
-  it("renders with type", () => {
+  it("renders with correct type", () => {
     expect(wrapper.type()).toBe("li");
   });
 
-  describe("Props", () => {
-    it("renders with correct prop value for className", () => {
+  describe("renders with correct prop values", () => {
       expect(wrapper.prop("className")).toBe("devices");
-    });
-
-    it("renders with correct prop value for href", () => {
       expect(wrapper.children().prop("href")).toBe("hrefValue");
-    });
-
-    it("renders with correct prop value for text", () => {
       expect(wrapper.find("a").props().children).toBe("mobile");
-    });
-
-    it("renders with correct prop value for onclick", () => {
       expect(wrapper.prop("onClick")).toBe(clickHandlerMock);
-    });
   });
 });

@@ -23,18 +23,11 @@ describe("<InputBox>", () => {
     expect(wrapper.find("input")).toHaveLength(1);
   });
 
-  describe("Props", () => {
-    it("renders with correct prop value for children", () => {
-      expect(wrapper.find("label").props().children).toBe("testChildren");
-    });
-
-    it("renders with correct prop value for name", () => {
-      expect(wrapper.find("label").prop("htmlFor")).toBe("url");
-      expect(wrapper.find("input").prop("name")).toBe("url");
-    });
-
-    it("renders with correct prop value for value", () => {
-      expect(wrapper.find("input").prop("value")).toBe("urlValue");
-    });
+  it("renders with correct prop values", () => {
+    expect(wrapper.find("label").props().children).toBe("testChildren");
+    expect(wrapper.find("label").prop("htmlFor")).toBe("url");
+    expect(wrapper.find("input").prop("name")).toBe("url");
+    expect(wrapper.find("input").prop("value")).toBe("urlValue");
   });
+
 });

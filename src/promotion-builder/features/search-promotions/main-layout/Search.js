@@ -41,7 +41,14 @@ class Search extends React.Component {
 
 Search.propType = {
   view: PropsTypes.string,
-  // promotionData: ,
+  // promotionData: React.PropTypes.shape({
+  //   devices: React.PropTypes.arrayOf(React.PropTypes.string.isRequired).isRequired,
+  //   id: React.PropTypes.string.isRequired,
+  //   lastUpdatedTime: React.PropTypes.string.isRequired,
+  //   name: React.PropTypes.string.isRequired,
+  //   url: React.PropTypes.string.isRequired,
+  //   ventures: React.PropTypes.arrayOf(React.PropTypes.string.isRequired).isRequired
+  // }),
   editBtnClick: PropsTypes.func.isRequired
 };
 

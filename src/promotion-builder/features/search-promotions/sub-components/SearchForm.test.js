@@ -3,7 +3,7 @@ import { shallow } from "enzyme";
 
 import SearchForm from "./SearchForm";
 
-describe("<SearchForm/>", () => {
+describe("SearchForm component", () => {
   let wrapper;
   const onChangeMock = jest.fn("I am changed");
   const onSearchClickMock = jest.fn("I am clicked");
@@ -18,15 +18,12 @@ describe("<SearchForm/>", () => {
     );
   });
 
-  it("should render SearchInput component one time", () => {
+  it("should render correctly", () => {
     expect(wrapper.find("SearchInput")).toHaveLength(1);
-  });
-
-  it("should render SearchButton component one time", () => {
     expect(wrapper.find("SearchButton")).toHaveLength(1);
   });
 
-  it("should render correct class name", () => {
+  it("should render with correct class name", () => {
     expect(wrapper.hasClass("search__form")).toBe(true);
   });
 

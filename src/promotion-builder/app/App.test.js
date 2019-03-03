@@ -5,7 +5,7 @@ import { shallow } from "enzyme";
 //TODO maybe snapshot test will be good here,
 import App from "./App";
 
-describe("<App>", () => {
+describe("App component", () => {
   let wrapper;
 
   beforeEach(() => {
