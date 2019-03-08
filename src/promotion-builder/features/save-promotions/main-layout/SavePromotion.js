@@ -28,10 +28,10 @@ class SavePromotion extends Component {
 
   getDefaultFormState = () => ({
     devices: [],
-      ventures: [],
-      url: "",
-      name: "",
-      lastUpdatedTime: ""
+    ventures: [],
+    url: "",
+    name: "",
+    lastUpdatedTime: ""
   });
 
   componentDidUpdate({ selectedPromotionId: prevSelectedPromotionId }) {
@@ -57,7 +57,7 @@ class SavePromotion extends Component {
         });
       } else {
         this.setState({
-          formData: this.initialFormData
+          formData: this.getDefaultFormState()
         });
       }
     }
@@ -87,10 +87,14 @@ class SavePromotion extends Component {
 
   save = () => {
     this.props.savePromotion(this.state.formData);
+    this.resetFormData();
   };
 
   render() {
     const { formData: {name, url, devices, ventures }, showDialog} = this.state;
+
+   
+
     const { view, updateView } = this.props;
 
     if (view === VIEW.SAVE_PROMOTION) {
