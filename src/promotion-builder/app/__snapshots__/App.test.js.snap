@@ -1,0 +1,459 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component renders correctly 1`] = `
+<div
+  className="promotion"
+>
+  <header
+    className="banner"
+  >
+    <h1>
+      Promotion Manager
+    </h1>
+    <h3>
+      Search
+    </h3>
+  </header>
+  <nav
+    className="navigation"
+  >
+    <ul>
+      <li
+        className={
+          Object {
+            "has": [Function],
+            "is": [Function],
+            "mix": [Function],
+            "split": [Function],
+            "state": [Function],
+            "toString": [Function],
+          }
+        }
+        onClick={[Function]}
+      >
+        <a
+          href="#"
+        >
+          Search
+        </a>
+      </li>
+      <li
+        className={
+          Object {
+            "has": [Function],
+            "is": [Function],
+            "mix": [Function],
+            "split": [Function],
+            "state": [Function],
+            "toString": [Function],
+          }
+        }
+        onClick={[Function]}
+      >
+        <a
+          href="#"
+        >
+          Asset Manager
+        </a>
+      </li>
+      <li
+        className={
+          Object {
+            "has": [Function],
+            "is": [Function],
+            "mix": [Function],
+            "split": [Function],
+            "state": [Function],
+            "toString": [Function],
+          }
+        }
+        onClick={[Function]}
+      >
+        <a
+          href="#"
+        >
+          Create / Edit
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <main
+    className={
+      Object {
+        "has": [Function],
+        "is": [Function],
+        "mix": [Function],
+        "split": [Function],
+        "state": [Function],
+        "toString": [Function],
+      }
+    }
+  >
+    <section
+      className="searchContainer"
+    >
+      <form
+        className="search__form"
+      >
+        <img
+          alt="search"
+          className="button__search"
+          src="/search.png"
+        />
+        <input
+          className="search__input"
+          onChange={[Function]}
+          placeholder="Search"
+          type="text"
+          value=""
+        />
+      </form>
+      <ul>
+        <li
+          className="singlesearchresult"
+        >
+          <details
+            className="promotionDetails"
+          >
+            <summary>
+              welcome back
+            </summary>
+            <dl>
+              <dt>
+                Url:
+              </dt>
+              <dd>
+                welcome back url  January 2, 2019 9:31:53 AM
+              </dd>
+              <dt>
+                Devices:
+              </dt>
+              <dd>
+                mobile,tablet,desktop
+              </dd>
+              <dt>
+                Ventures:
+              </dt>
+              <dd>
+                jackpotjoy,botemania
+              </dd>
+            </dl>
+          </details>
+          <button
+            className="edit__button"
+            onClick={[Function]}
+            type="submit"
+          >
+            Edit
+          </button>
+        </li>
+        <li
+          className="singlesearchresult"
+        >
+          <details
+            className="promotionDetails"
+          >
+            <summary>
+              welcome
+            </summary>
+            <dl>
+              <dt>
+                Url:
+              </dt>
+              <dd>
+                welcome url January 2, 2019 7:31:53 AM
+              </dd>
+              <dt>
+                Devices:
+              </dt>
+              <dd>
+                mobile,tablet
+              </dd>
+              <dt>
+                Ventures:
+              </dt>
+              <dd>
+                jackpotjoy,starspins
+              </dd>
+            </dl>
+          </details>
+          <button
+            className="edit__button"
+            onClick={[Function]}
+            type="submit"
+          >
+            Edit
+          </button>
+        </li>
+        <li
+          className="singlesearchresult"
+        >
+          <details
+            className="promotionDetails"
+          >
+            <summary>
+              lapse
+            </summary>
+            <dl>
+              <dt>
+                Url:
+              </dt>
+              <dd>
+                lapse url January 2, 2019 6:31:53 AM
+              </dd>
+              <dt>
+                Devices:
+              </dt>
+              <dd>
+                mobile
+              </dd>
+              <dt>
+                Ventures:
+              </dt>
+              <dd>
+                starspins,heartbingo
+              </dd>
+            </dl>
+          </details>
+          <button
+            className="edit__button"
+            onClick={[Function]}
+            type="submit"
+          >
+            Edit
+          </button>
+        </li>
+      </ul>
+    </section>
+  </main>
+</div>
+`;
+
+exports[`App component renders the html correctly 1`] = `
+<div
+  className="promotion"
+>
+  <header
+    className="banner"
+  >
+    <h1>
+      Promotion Manager
+    </h1>
+    <h3>
+      Search
+    </h3>
+  </header>
+  <nav
+    className="navigation"
+  >
+    <ul>
+      <li
+        className={
+          Object {
+            "has": [Function],
+            "is": [Function],
+            "mix": [Function],
+            "split": [Function],
+            "state": [Function],
+            "toString": [Function],
+          }
+        }
+        onClick={[Function]}
+      >
+        <a
+          href="#"
+        >
+          Search
+        </a>
+      </li>
+      <li
+        className={
+          Object {
+            "has": [Function],
+            "is": [Function],
+            "mix": [Function],
+            "split": [Function],
+            "state": [Function],
+            "toString": [Function],
+          }
+        }
+        onClick={[Function]}
+      >
+        <a
+          href="#"
+        >
+          Asset Manager
+        </a>
+      </li>
+      <li
+        className={
+          Object {
+            "has": [Function],
+            "is": [Function],
+            "mix": [Function],
+            "split": [Function],
+            "state": [Function],
+            "toString": [Function],
+          }
+        }
+        onClick={[Function]}
+      >
+        <a
+          href="#"
+        >
+          Create / Edit
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <main
+    className={
+      Object {
+        "has": [Function],
+        "is": [Function],
+        "mix": [Function],
+        "split": [Function],
+        "state": [Function],
+        "toString": [Function],
+      }
+    }
+  >
+    <section
+      className="searchContainer"
+    >
+      <form
+        className="search__form"
+      >
+        <img
+          alt="search"
+          className="button__search"
+          src="/search.png"
+        />
+        <input
+          className="search__input"
+          onChange={[Function]}
+          placeholder="Search"
+          type="text"
+          value=""
+        />
+      </form>
+      <ul>
+        <li
+          className="singlesearchresult"
+        >
+          <details
+            className="promotionDetails"
+          >
+            <summary>
+              welcome back
+            </summary>
+            <dl>
+              <dt>
+                Url:
+              </dt>
+              <dd>
+                welcome back url  January 2, 2019 9:31:53 AM
+              </dd>
+              <dt>
+                Devices:
+              </dt>
+              <dd>
+                mobile,tablet,desktop
+              </dd>
+              <dt>
+                Ventures:
+              </dt>
+              <dd>
+                jackpotjoy,botemania
+              </dd>
+            </dl>
+          </details>
+          <button
+            className="edit__button"
+            onClick={[Function]}
+            type="submit"
+          >
+            Edit
+          </button>
+        </li>
+        <li
+          className="singlesearchresult"
+        >
+          <details
+            className="promotionDetails"
+          >
+            <summary>
+              welcome
+            </summary>
+            <dl>
+              <dt>
+                Url:
+              </dt>
+              <dd>
+                welcome url January 2, 2019 7:31:53 AM
+              </dd>
+              <dt>
+                Devices:
+              </dt>
+              <dd>
+                mobile,tablet
+              </dd>
+              <dt>
+                Ventures:
+              </dt>
+              <dd>
+                jackpotjoy,starspins
+              </dd>
+            </dl>
+          </details>
+          <button
+            className="edit__button"
+            onClick={[Function]}
+            type="submit"
+          >
+            Edit
+          </button>
+        </li>
+        <li
+          className="singlesearchresult"
+        >
+          <details
+            className="promotionDetails"
+          >
+            <summary>
+              lapse
+            </summary>
+            <dl>
+              <dt>
+                Url:
+              </dt>
+              <dd>
+                lapse url January 2, 2019 6:31:53 AM
+              </dd>
+              <dt>
+                Devices:
+              </dt>
+              <dd>
+                mobile
+              </dd>
+              <dt>
+                Ventures:
+              </dt>
+              <dd>
+                starspins,heartbingo
+              </dd>
+            </dl>
+          </details>
+          <button
+            className="edit__button"
+            onClick={[Function]}
+            type="submit"
+          >
+            Edit
+          </button>
+        </li>
+      </ul>
+    </section>
+  </main>
+</div>
+`;

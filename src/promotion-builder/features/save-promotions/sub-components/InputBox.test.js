@@ -3,7 +3,7 @@ import { shallow } from "enzyme";
 
 import InputBox from "./InputBox";
 
-describe("<InputBox>", () => {
+describe("InputBox component", () => {
   let wrapper;
   const onFormChangeMock = jest.fn();
 

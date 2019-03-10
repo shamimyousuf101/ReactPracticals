@@ -1,24 +1,25 @@
 import React from "react";
 import { shallow } from "enzyme";
+import renderer from 'react-test-renderer';
 
-
-//TODO maybe snapshot test will be good here,
 import App from "./App";
 
-describe("App component", () => {
-  let wrapper;
 
-  beforeEach(() => {
-    wrapper = shallow(<App />);
+describe("App component", () => { 
+  it('renders the html correctly', () => {
+    const tree = renderer
+      .create(<App/>)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
   });
 
-  it("renders with correct class name", () => {
-    expect(wrapper.hasClass("App")).toBe(true);
-  });
-
-  it("renders the necessary Components", () => {
-    expect(wrapper.find("Banner")).toHaveLength(1);
-    expect(wrapper.find("Content")).toHaveLength(1);
+  it("renders the necessary Components one time", () => {
+    const wrapper = shallow(<App />);
     expect(wrapper.find("Navigation")).toHaveLength(1);
+    expect(wrapper.find("Banner")).toHaveLength(1);
+    expect(wrapper.find("Search")).toHaveLength(1);
+    expect(wrapper.find("AssetManager")).toHaveLength(1);
+    expect(wrapper.find("SavePromotion")).toHaveLength(1);
   });
+
 });
