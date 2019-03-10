@@ -1,39 +1,35 @@
 import React from "react";
 import { shallow } from "enzyme";
+import renderer from 'react-test-renderer';
 
-import Links from "./NavLinks";
-//NO! Needs to be human readable
-// it renders correctly 
-// contain an li tag wrapping an anchor
-// Whan a user clicks blah blah
-
-
-
+import NavLinks from "./NavLinks";
 
 describe("NavLink component", () => {
-  let wrapper;
-  let clickHandlerMock;
+  
+  let clickHandlerMock=jest.fn();
 
-  beforeEach(() => {
-    clickHandlerMock = jest.fn();
-    wrapper = shallow(
-      <Links
-        className={"devices"}
+  it('renders correctly', () => {
+    const tree = renderer
+      .create(<NavLinks
+        label={"mobile"}
+        navId={"1"}
+        key={"1"}
         clickHandler={clickHandlerMock}
-        href={"hrefValue"}
-        text={"mobile"}
-      />
-    );
+      />)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
   });
 
-  it("renders with correct type", () => {
-    expect(wrapper.type()).toBe("li");
+  it('simulates click events', () => {
+    const wrapper = shallow(<NavLinks
+      label={"mobile"}
+      navId={"1"}
+      key={"1"}
+      clickHandler={clickHandlerMock}
+    />);
+    wrapper.find('li').simulate('click');
+    expect(clickHandlerMock).toHaveBeenCalledTimes(1)
   });
 
-  describe("renders with correct prop values", () => {
-      expect(wrapper.prop("className")).toBe("devices");
-      expect(wrapper.children().prop("href")).toBe("hrefValue");
-      expect(wrapper.find("a").props().children).toBe("mobile");
-      expect(wrapper.prop("onClick")).toBe(clickHandlerMock);
-  });
+
 });

@@ -3,15 +3,14 @@ import { shallow } from "enzyme";
 
 import SingleResult from "./SingleResult";
 
-describe("<SingleResult/>", () => {
+describe("SingleResult component", () => {
   let wrapper;
   const editBtnClickMock = jest.fn();
-  const testResult = {};
+  const testResult = {"id": "1"};
 
   beforeEach(() => {
     wrapper = shallow(
       <SingleResult
-        id="1"
         editBtnClick={editBtnClickMock}
         result={testResult}
       />
@@ -23,7 +22,4 @@ describe("<SingleResult/>", () => {
     expect(wrapper.find("EditButton")).toHaveLength(1);
   });
 
-  it("should render with correct class name", () => {
-    expect(wrapper.hasClass("SingleSearchResult")).toBe(true);
-  });
 });

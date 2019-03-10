@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Banner component renders correctly 1`] = `
+<header
+  className="banner"
+>
+  <h1>
+    Promotion Manager
+  </h1>
+  <h3>
+    Test
+  </h3>
+</header>
+`;
