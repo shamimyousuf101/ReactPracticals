@@ -1,20 +1,16 @@
 /*
-* action types
-*/
+ * action types
+ */
 
-export const ADD_SUBHEADING = 'ADD_SUBHEADING'
-
-/*
-* other constants
-*/
+export const ADD_SUBHEADING = "ADD_SUBHEADING";
 
 /*
-* action creators
-*/
+ * action creators
+ */
 
-export const addSubheading = (text) => {
-    return {
-        type: ADD_SUBHEADING,
-        payload: text
-    }
-}
+export const addSubheading = text => {
+  return {
+    type: ADD_SUBHEADING,
+    payload: text
+  };
+};

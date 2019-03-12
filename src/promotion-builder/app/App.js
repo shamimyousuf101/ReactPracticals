@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import bem from "bem-cn";
 
 import "./app.css";
-import Banner from "../common/banner/Banner";
+import Banner from "../common/banner/VisibleBanner";
 import Navigation from "../common/navigation/Navigation";
 import AssetManager from "../features/upload-assets/main-layout/AssetManager";
 import Search from "../features/search-promotions/main-layout/Search";
@@ -10,12 +10,10 @@ import SavePromotion from "../features/save-promotions/main-layout/SavePromotion
 import { promotionData } from "../../promotionData";
 import { VIEW } from "../../constants/constants";
 
-
 const b = bem("promotion");
 const uuid4 = require("uuid4");
 
 class App extends Component {
-
   state = {
     view: VIEW.SEARCH,
     selectedPromotionId: null,
@@ -44,12 +42,11 @@ class App extends Component {
     }));
   };
 
-  editBtnClick = id => 
+  editBtnClick = id =>
     this.setState({
       selectedPromotionId: id,
       view: VIEW.SAVE_PROMOTION
     });
-  
 
   render() {
     const { view, promotionData, selectedPromotionId } = this.state;
