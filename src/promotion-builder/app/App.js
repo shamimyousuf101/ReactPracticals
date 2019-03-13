@@ -3,7 +3,7 @@ import bem from "bem-cn";
 
 import "./app.css";
 import Banner from "../common/banner/VisibleBanner";
-import Navigation from "../common/navigation/Navigation";
+import Navigation from "../common/navigation/VisibleNavigation";
 import AssetManager from "../features/upload-assets/main-layout/AssetManager";
 import Search from "../features/search-promotions/main-layout/Search";
 import SavePromotion from "../features/save-promotions/main-layout/SavePromotion";
@@ -19,9 +19,6 @@ class App extends Component {
     selectedPromotionId: null,
     promotionData: promotionData
   };
-
-  updateView = view => this.setState({ view });
-  resetPrommotionId = () => this.setState({ selectedPromotionId: null });
 
   savePromotion = formData => {
     const { selectedPromotionId } = this.state;
@@ -53,12 +50,8 @@ class App extends Component {
 
     return (
       <div className={b()}>
-        <Banner subHeading={view} />
-        <Navigation
-          updateView={this.updateView}
-          clearSearchTerm={this.clearSearchTerm}
-          resetPrommotionId={this.resetPrommotionId}
-        />
+        <Banner />
+        <Navigation />
         <main className={b("dynamic__content")}>
           <Search
             promotionData={promotionData}
