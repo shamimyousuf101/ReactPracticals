@@ -4,9 +4,9 @@ import bem from "bem-cn";
 import "./app.css";
 import Banner from "../common/banner/VisibleBanner";
 import Navigation from "../common/navigation/VisibleNavigation";
-import AssetManager from "../features/upload-assets/main-layout/AssetManager";
-import Search from "../features/search-promotions/main-layout/Search";
-import SavePromotion from "../features/save-promotions/main-layout/SavePromotion";
+import AssetManager from "../features/upload-assets/main-layout/VisibleAssetManager";
+import Search from "../features/search-promotions/main-layout/VisibleSearch";
+import SavePromotion from "../features/save-promotions/main-layout/VisibleSavePromotion";
 import { promotionData } from "../../promotionData";
 import { VIEW } from "../../constants/constants";
 
@@ -58,7 +58,7 @@ class App extends Component {
             editBtnClick={this.editBtnClick}
             view={view}
           />
-          <AssetManager view={view} />
+          <AssetManager/>
           <SavePromotion
             reset={this.reset}
             savePromotion={this.savePromotion}

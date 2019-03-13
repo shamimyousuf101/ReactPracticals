@@ -12,6 +12,7 @@ const b = bem("navigation");
 const Navigation = ({ updateView, resetPrommotionId }) => {
   
   const onMenuClick = navId => {
+    
     switch (navId) {
       case "SEARCH":
         updateView(VIEW.SEARCH);
