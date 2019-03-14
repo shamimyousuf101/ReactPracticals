@@ -5,7 +5,6 @@ import {
 } from "../actions/index";
 
 export const handleSearchTerm = (state = "", action) => {
-  console.log(action.type);
   switch (action.type) {
     case SET_SEARCH_TERM:
       return action.payload;
