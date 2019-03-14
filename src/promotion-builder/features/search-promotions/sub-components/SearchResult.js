@@ -4,17 +4,13 @@ import PropTypes from "prop-types";
 import SingleResult from "./SingleResult";
 import { searchPromotions } from "../../search";
 
-const SearchResultContainer = ({ editBtnClick, searchTerm, promotionData }) => {
+const SearchResult = ({ searchTerm, promotionData }) => {
   const getSearchItems = (searchTerm, promotionData) => {
     const searchDisplay = searchPromotions(searchTerm, promotionData);
 
     if (searchDisplay.length > 0) {
       return searchDisplay.map((item, index) => (
-        <SingleResult
-          key={index}
-          result={item}
-          editBtnClick={editBtnClick}
-        />
+        <SingleResult key={index} result={item} />
       ));
     }
   };
@@ -22,10 +18,10 @@ const SearchResultContainer = ({ editBtnClick, searchTerm, promotionData }) => {
   return <ul>{getSearchItems(searchTerm, promotionData)}</ul>;
 };
 
-SearchResultContainer.propTypes = {
+SearchResult.propTypes = {
   editBtnClick: PropTypes.func.isRequired,
-  searchTerm: PropTypes.string,
+  searchTerm: PropTypes.string
   // promotionData:
 };
 
-export default SearchResultContainer;
+export default SearchResult;

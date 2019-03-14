@@ -56,7 +56,6 @@ class App extends Component {
           <Search
             promotionData={promotionData}
             editBtnClick={this.editBtnClick}
-            view={view}
           />
           <AssetManager/>
           <SavePromotion

@@ -2,8 +2,8 @@ import React from "react";
 import PropsTypes from "prop-types";
 
 import "./search.css";
-import SearchForm from "../sub-components/SearchForm";
-import SearchResult from "../sub-components/SearchResult";
+import SearchForm from "../sub-components/VisibleSearchForm";
+import SearchResult from "../sub-components/VisibleSearchResult";
 import { VIEW } from "../../../../constants/constants";
 
 class Search extends React.Component {
@@ -17,21 +17,17 @@ class Search extends React.Component {
     }
   }
 
-  handleInputChange = event => this.setState({ searchTerm: event.target.value });
+  handleInputChange = event =>
+    this.setState({ searchTerm: event.target.value });
 
   render() {
-    const { promotionData, editBtnClick, view } = this.props;
-    const { searchTerm } = this.state;
+    const { view } = this.props;
 
     if (view === VIEW.SEARCH) {
       return (
         <section className="searchContainer">
-          <SearchForm value={searchTerm} onChange={this.handleInputChange} />
-          <SearchResult
-            searchTerm={searchTerm}
-            promotionData={promotionData}
-            editBtnClick={editBtnClick}
-          />
+          <SearchForm />
+          <SearchResult />
         </section>
       );
     }
