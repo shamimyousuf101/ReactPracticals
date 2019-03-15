@@ -22,6 +22,13 @@ export const updateView = newView => {
   };
 };
 
+export const setPrommotionId = id => {
+  return {
+    type: SET_SELECTED_PROMO_ID,
+    payload: id
+  };
+};
+
 export const resetPrommotionId = () => {
   return {
     type: RESET_SELECTED_PROMO_ID,
@@ -33,20 +40,26 @@ export const setSearchTerm = term => {
   return {
     type: SET_SEARCH_TERM,
     payload: term
-  }
-}
+  };
+};
 
 export const triggerSearch = event => {
   return {
     type: SET_SEARCH_TERM,
     payload: event.target.value
-  }
-}
+  };
+};
 
 export const resetSearchTerm = () => {
   return {
     type: RESET_SEARCH_TERM,
     payload: ""
-  }
-}
+  };
+};
 
+export const setPrommotionIdAndView = (id, newView) => {
+  return dispatch => {
+    dispatch(setPrommotionId(id));
+    dispatch(updateView(newView));
+  };
+};

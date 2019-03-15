@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import SingleResult from "./SingleResult";
+import SingleResult from "./VisibleSingleResult";
 import { searchPromotions } from "../../search";
 
 const SearchResult = ({ searchTerm, promotionData }) => {

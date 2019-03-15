@@ -53,11 +53,8 @@ class App extends Component {
         <Banner />
         <Navigation />
         <main className={b("dynamic__content")}>
-          <Search
-            promotionData={promotionData}
-            editBtnClick={this.editBtnClick}
-          />
-          <AssetManager/>
+          <Search editBtnClick={this.editBtnClick} />
+          <AssetManager />
           <SavePromotion
             reset={this.reset}
             savePromotion={this.savePromotion}
