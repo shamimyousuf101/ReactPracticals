@@ -7,7 +7,8 @@ const initialState = VIEW.SEARCH;
 export const handleView = (state = initialState, action) => {
   switch (action.type) {
     case UPDATE_VIEW:
-      return action.payload;
+    console.log(action)
+      return state;
     default:
       return state;
   }

@@ -16,6 +16,7 @@ export const TRIGGER_SEARCH = "TRIGGER_SEARCH";
  */
 
 export const updateView = newView => {
+  console.log(newView)
   return {
     type: UPDATE_VIEW,
     payload: newView
@@ -57,9 +58,9 @@ export const resetSearchTerm = () => {
   };
 };
 
-export const setPrommotionIdAndView = (id, newView) => {
-  return dispatch => {
+export const setPrommotionIdAndView = dispatch => (id, newView) => {
+  console.log(id)
     dispatch(setPrommotionId(id));
     dispatch(updateView(newView));
-  };
-};
+  }
+

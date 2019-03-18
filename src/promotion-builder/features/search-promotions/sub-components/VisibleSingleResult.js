@@ -9,9 +9,9 @@ const mapStateToProps = state => {
   };
 };
 
-export const mapDispatchToProps = {
-  editBtnClick: setPrommotionIdAndView
-};
+export const mapDispatchToProps = (dispatch) => ({
+  editBtnClick: setPrommotionIdAndView(dispatch)
+});
 
 const VisibleSingleResult = connect(
   mapStateToProps,
