@@ -39,12 +39,6 @@ class App extends Component {
     }));
   };
 
-  editBtnClick = id =>
-    this.setState({
-      selectedPromotionId: id,
-      view: VIEW.SAVE_PROMOTION
-    });
-
   render() {
     const { view, promotionData, selectedPromotionId } = this.state;
 
@@ -53,7 +47,7 @@ class App extends Component {
         <Banner />
         <Navigation />
         <main className={b("dynamic__content")}>
-          <Search editBtnClick={this.editBtnClick} />
+          <Search />
           <AssetManager />
           <SavePromotion
             reset={this.reset}

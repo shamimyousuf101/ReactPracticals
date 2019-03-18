@@ -1,3 +1,5 @@
+import { VIEW } from "../constants/constants";
+
 /*
  * action types
  */
@@ -16,7 +18,6 @@ export const TRIGGER_SEARCH = "TRIGGER_SEARCH";
  */
 
 export const updateView = newView => {
-  console.log(newView)
   return {
     type: UPDATE_VIEW,
     payload: newView
@@ -58,9 +59,9 @@ export const resetSearchTerm = () => {
   };
 };
 
-export const setPrommotionIdAndView = dispatch => (id, newView) => {
+export const setPrommotionIdAndView = dispatch => (id) => {
   console.log(id)
     dispatch(setPrommotionId(id));
-    dispatch(updateView(newView));
+    dispatch(updateView(VIEW.SAVE_PROMOTION));
   }
 
