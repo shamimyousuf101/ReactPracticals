@@ -12,6 +12,8 @@ import {
 } from "../../../../constants/constants";
 import { searchPromotionsById } from "../../search";
 
+const uuid4 = require("uuid4");
+
 
 class SavePromotion extends Component {
 
@@ -85,8 +87,28 @@ class SavePromotion extends Component {
     this.setShowDialog(false);
   };
 
+  savePromotion = formData => {
+    const { selectedPromotionId } = this.props;
+    const id = selectedPromotionId || uuid4();
+    const { name, url, devices, ventures } = formData;
+    this.setState(prevState => ({
+      promotionData: {
+        ...prevState.promotionData,
+        [id]: {
+          id,
+          name,
+          url,
+          devices,
+          ventures,
+          lastUpdatedTime: Date.now()
+        }
+      }
+    }));
+  };
+
+
   save = () => {
-    this.props.savePromotion(this.state.formData);
+    this.savePromotion(this.state.formData);
     this.resetFormData();
   };
 

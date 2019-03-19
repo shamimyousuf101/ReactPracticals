@@ -14,49 +14,40 @@ const b = bem("promotion");
 const uuid4 = require("uuid4");
 
 class App extends Component {
-  state = {
-    view: VIEW.SEARCH,
-    selectedPromotionId: null,
-    promotionData: promotionData
-  };
+  // state = {
+  //   view: VIEW.SEARCH,
+  //   selectedPromotionId: null,
+  //   promotionData: promotionData
+  // };
 
-  savePromotion = formData => {
-    const { selectedPromotionId } = this.state;
-    const id = selectedPromotionId || uuid4();
-    const { name, url, devices, ventures } = formData;
-    this.setState(prevState => ({
-      promotionData: {
-        ...prevState.promotionData,
-        [id]: {
-          id,
-          name,
-          url,
-          devices,
-          ventures,
-          lastUpdatedTime: Date.now()
-        }
-      }
-    }));
-  };
+  // savePromotion = formData => {
+  //   const { selectedPromotionId } = this.state;
+  //   const id = selectedPromotionId || uuid4();
+  //   const { name, url, devices, ventures } = formData;
+  //   this.setState(prevState => ({
+  //     promotionData: {
+  //       ...prevState.promotionData,
+  //       [id]: {
+  //         id,
+  //         name,
+  //         url,
+  //         devices,
+  //         ventures,
+  //         lastUpdatedTime: Date.now()
+  //       }
+  //     }
+  //   }));
+  // };
 
   render() {
-    const { view, promotionData, selectedPromotionId } = this.state;
-
     return (
       <div className={b()}>
         <Banner />
         <Navigation />
         <main className={b("dynamic__content")}>
-          <Search />
-          <AssetManager />
-          <SavePromotion
-            reset={this.reset}
-            savePromotion={this.savePromotion}
-            promotionData={promotionData}
-            selectedPromotionId={selectedPromotionId}
-            view={view}
-            updateView={this.updateView}
-          />
+          <Search/>
+          <AssetManager/>
+          <SavePromotion/>
         </main>
       </div>
     );
