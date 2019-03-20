@@ -17,38 +17,33 @@ class ConfirmationBox extends Component {
 
   render() {
     const { display, name, url, devices, ventures } = this.props;
-    if (display) {
-      return (
-        <dialog open className="confirmationbox">
-          <label>
-            Promotion Details:
-            <dl>
-              <dt>Name:</dt>
-              <dd>{name}</dd>
-              <dt>Url:</dt>
-              <dd>{url}</dd>
-              <dt>Devices:</dt>
-              <dd>{devices.toString()}</dd>
-              <dt>Ventures:</dt>
-              <dd>{ventures.toString()}</dd>
-            </dl>
-          </label>
-          <menu>
-            <button value="cancel" onClick={this.cancelSave}>
-              Cancel
-            </button>
-            <button className="confirmBtn" onClick={this.confirmSave}>
-              Confirm
-            </button>
-          </menu>
-        </dialog>
-      );
-    }
-
-    return null;
+    return (
+      <dialog open={display} className="confirmationbox">
+        <label>
+          Promotion Details:
+          <dl>
+            <dt>Name:</dt>
+            <dd>{name}</dd>
+            <dt>Url:</dt>
+            <dd>{url}</dd>
+            <dt>Devices:</dt>
+            <dd>{devices.toString()}</dd>
+            <dt>Ventures:</dt>
+            <dd>{ventures.toString()}</dd>
+          </dl>
+        </label>
+        <menu>
+          <button value="cancel" onClick={this.cancelSave}>
+            Cancel
+          </button>
+          <button className="confirmBtn" onClick={this.confirmSave}>
+            Confirm
+          </button>
+        </menu>
+      </dialog>
+    );
   }
 }
-
 
 ConfirmationBox.propTypes = {
   name: PropTypes.string.isRequired,
@@ -58,7 +53,7 @@ ConfirmationBox.propTypes = {
   display: PropTypes.string.isRequired,
   updateView: PropTypes.func.isRequired,
   save: PropTypes.func.isRequired,
-  hideDialog: PropTypes.func.isRequired,
+  hideDialog: PropTypes.func.isRequired
 };
 
 export default ConfirmationBox;
