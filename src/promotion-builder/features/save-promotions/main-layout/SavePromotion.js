@@ -108,11 +108,17 @@ class SavePromotion extends Component {
 
 
   save = () => {
+    console.log("save me")
     this.savePromotion(this.state.formData);
     this.resetFormData();
   };
 
   render() {
+
+    if(this.props.selectedPromotionId)
+    {
+
+    }
     const { formData: {name, url, devices, ventures }, showDialog} = this.state;
     const { view} = this.props;
 

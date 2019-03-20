@@ -19,7 +19,6 @@ const SearchResult = ({ searchTerm, promotionData }) => {
 };
 
 SearchResult.propTypes = {
-  editBtnClick: PropTypes.func.isRequired,
   searchTerm: PropTypes.string
   // promotionData:
 };
