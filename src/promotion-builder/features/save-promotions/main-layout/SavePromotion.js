@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import "./savepromotion.css";
 import InputBox from "../sub-components/InputBox";
 import CheckboxGroup from "../sub-components/CheckboxGroup";
-import ConfirmationBox from "../sub-components/ConfirmationBox";
+import ConfirmationBox from "../sub-components/VisibleConfirmationBox";
 import {
   VIEW,
   DEVICE_LABELS,
@@ -114,10 +114,7 @@ class SavePromotion extends Component {
 
   render() {
     const { formData: {name, url, devices, ventures }, showDialog} = this.state;
-
-   
-
-    const { view, updateView } = this.props;
+    const { view} = this.props;
 
     if (view === VIEW.SAVE_PROMOTION) {
       return (
@@ -171,7 +168,6 @@ class SavePromotion extends Component {
             devices={devices}
             ventures={ventures}
             display={showDialog}
-            updateView={updateView}
             save={this.save}
             hideDialog={this.hideDialog}
           />
