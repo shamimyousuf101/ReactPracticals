@@ -186,12 +186,8 @@ class SavePromotion extends Component {
 
 SavePromotion.propTypes = {
   view: PropTypes.string.isRequired,
-  updateView: PropTypes.func.isRequired,
-  savePromotion: PropTypes.func.isRequired,
   selectedPromotionId: PropTypes.string,
   // promotionData
-
-  
 };
 
 export default SavePromotion;

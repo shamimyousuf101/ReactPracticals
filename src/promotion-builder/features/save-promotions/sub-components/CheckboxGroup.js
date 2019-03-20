@@ -45,8 +45,7 @@ CheckboxGroup.propTypes = {
   legendText: PropTypes.string.isRequired,
   displayItems: PropTypes.array.isRequired,
   onFormChange: PropTypes.func.isRequired,
-  name: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired
 };
 
 export default CheckboxGroup;

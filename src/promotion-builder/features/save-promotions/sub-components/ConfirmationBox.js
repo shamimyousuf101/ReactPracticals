@@ -48,9 +48,9 @@ class ConfirmationBox extends Component {
 ConfirmationBox.propTypes = {
   name: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
-  devices: PropTypes.string.isRequired,
-  ventures: PropTypes.string.isRequired,
-  display: PropTypes.string.isRequired,
+  devices: PropTypes.array.isRequired,
+  ventures: PropTypes.array.isRequired,
+  display: PropTypes.bool.isRequired,
   updateView: PropTypes.func.isRequired,
   save: PropTypes.func.isRequired,
   hideDialog: PropTypes.func.isRequired
