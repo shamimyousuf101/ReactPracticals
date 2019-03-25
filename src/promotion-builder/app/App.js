@@ -45,8 +45,8 @@ class App extends Component {
         <Banner />
         <Navigation />
         <main className={b("dynamic__content")}>
-          <Search/>
-          <AssetManager/>
+          {/* <Search/> */}
+          {/* <AssetManager/> */}
           <SavePromotion/>
         </main>
       </div>

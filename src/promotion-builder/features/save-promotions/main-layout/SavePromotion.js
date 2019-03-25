@@ -11,6 +11,8 @@ import {
   VENTURE_LABELS
 } from "../../../../constants/constants";
 import { searchPromotionsById } from "../../search";
+import bem from "bem-cn";
+const b = bem("promotion");
 
 const uuid4 = require("uuid4");
 
@@ -124,6 +126,7 @@ class SavePromotion extends Component {
 
     if (view === VIEW.SAVE_PROMOTION) {
       return (
+        <main className={b("dynamic__content")}>
         <section className="PromotionBuilder">
           <form className="promotionDetailsForm">
             <h2 className="NewPromotionTitle">
@@ -178,6 +181,7 @@ class SavePromotion extends Component {
             hideDialog={this.hideDialog}
           />
         </section>
+        </main>
       );
     }
     return null;
