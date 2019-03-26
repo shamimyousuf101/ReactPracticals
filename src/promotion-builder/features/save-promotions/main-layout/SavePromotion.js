@@ -25,7 +25,7 @@ class SavePromotion extends Component {
       name: "",
       lastUpdatedTime: ""
     },
-    showDialog: false
+    // showDialog: false
   };
 
   getDefaultFormState = () => ({
@@ -77,15 +77,15 @@ class SavePromotion extends Component {
     });
   };
 
-  setShowDialog = display => {
-    this.setState({
-      showDialog: display
-    });
-  };
+  // setShowDialog = display => {
+  //   this.setState({
+  //     showDialog: display
+  //   });
+  // };
 
-  hideDialog = () => {
-    this.setShowDialog(false);
-  };
+  // hideDialog = () => {
+  //   this.setShowDialog(false);
+  // };
 
   savePromotion = formData => {
     const { selectedPromotionId } = this.props;
@@ -155,7 +155,10 @@ class SavePromotion extends Component {
               className="promotion-toolbar__button-save"
               type="button"
               value="Submit"
-              onClick={() => this.setShowDialog(true)}
+              onClick={
+                // () => this.setShowDialog(true)
+                () => {console.log("submitted")}
+              }
             />
             <input
               className="promotion-toolbar__button-reset"
@@ -164,7 +167,7 @@ class SavePromotion extends Component {
               onClick={this.resetFormData}
             />
           </form>
-          <ConfirmationBox
+          {/* <ConfirmationBox
             name={name}
             url={url}
             devices={devices}
@@ -172,7 +175,7 @@ class SavePromotion extends Component {
             display={showDialog}
             save={this.save}
             hideDialog={this.hideDialog}
-          />
+          /> */}
         </section>
       );
     }
