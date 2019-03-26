@@ -84,37 +84,19 @@ class SavePromotion extends Component {
   //   this.setShowDialog(false);
   // };
 
-  savePromotion = formData => {
-    const { selectedPromotionId } = this.props;
-    const id = selectedPromotionId || uuid4();
-    const { name, url, devices, ventures } = formData;
-    this.setState(prevState => ({
-      promotionData: {
-        ...prevState.promotionData,
-        [id]: {
-          id,
-          name,
-          url,
-          devices,
-          ventures,
-          lastUpdatedTime: Date.now()
-        }
-      }
-    }));
-  };
-
-  save = () => {
-    console.log("save me");
-    this.savePromotion(this.state.formData);
-    this.resetFormData();
-  };
-
   addAndEditPromotion = () => {
     const { selectedPromotionId } = this.props;
     const id = selectedPromotionId || uuid4();
     const { name, url, devices, ventures } = this.state.formData;
-    const newPromotion = { id, name, url, devices, ventures, lastUpdatedTime: Date.now() };
-    
+    const newPromotion = {
+      id,
+      name,
+      url,
+      devices,
+      ventures,
+      lastUpdatedTime: Date.now()
+    };
+
     this.props.addPromotion(id, newPromotion);
   };
 
@@ -123,7 +105,7 @@ class SavePromotion extends Component {
       formData: { name, url, devices, ventures }
       // showDialog
     } = this.state;
-    const { view, addPromotion } = this.props;
+    const { view } = this.props;
 
     if (view === VIEW.SAVE_PROMOTION) {
       return (
