@@ -64,9 +64,9 @@ export const triggerSearch = event => {
  * action creators for adding promotion
  */
 
-export const addPromotion = formData => {
+export const addPromotion = ( id, promotion ) => {
   return {
     type: ADD_PROMOTION,
-    payload: formData
+    payload: {id, promotion}
   };
 };

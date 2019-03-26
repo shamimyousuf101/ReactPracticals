@@ -6,7 +6,9 @@ const initialState = promotionData;
 export const handlePromotionData = (state = initialState, action) => {
   switch (action.type) {
     case ADD_PROMOTION:
-      return action.payload;
+      const newState = { ...state };
+      newState[action.payload.id] = action.payload.promotion;
+      return newState;
     default:
       return state;
   }

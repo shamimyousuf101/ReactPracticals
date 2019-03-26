@@ -1,4 +1,4 @@
-import React, { Component }  from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 import "./savepromotion.css";
@@ -14,9 +14,7 @@ import { searchPromotionsById } from "../../search";
 
 const uuid4 = require("uuid4");
 
-
 class SavePromotion extends Component {
-
   state = {
     formData: {
       devices: [],
@@ -24,7 +22,7 @@ class SavePromotion extends Component {
       url: "",
       name: "",
       lastUpdatedTime: ""
-    },
+    }
     // showDialog: false
   };
 
@@ -37,7 +35,6 @@ class SavePromotion extends Component {
   });
 
   componentDidUpdate({ selectedPromotionId: prevSelectedPromotionId }) {
-
     const { selectedPromotionId, promotionData } = this.props;
 
     if (selectedPromotionId !== prevSelectedPromotionId) {
@@ -106,17 +103,27 @@ class SavePromotion extends Component {
     }));
   };
 
-
   save = () => {
-    console.log("save me")
+    console.log("save me");
     this.savePromotion(this.state.formData);
     this.resetFormData();
   };
 
-  render() {
+  addAndEditPromotion = () => {
+    const { selectedPromotionId } = this.props;
+    const id = selectedPromotionId || uuid4();
+    const { name, url, devices, ventures } = this.state.formData;
+    const newPromotion = { id, name, url, devices, ventures, lastUpdatedTime: Date.now() };
+    
+    this.props.addPromotion(id, newPromotion);
+  };
 
-    const { formData: {name, url, devices, ventures }, showDialog} = this.state;
-    const { view} = this.props;
+  render() {
+    const {
+      formData: { name, url, devices, ventures }
+      // showDialog
+    } = this.state;
+    const { view, addPromotion } = this.props;
 
     if (view === VIEW.SAVE_PROMOTION) {
       return (
@@ -157,7 +164,7 @@ class SavePromotion extends Component {
               value="Submit"
               onClick={
                 // () => this.setShowDialog(true)
-                () => {console.log("submitted")}
+                () => this.addAndEditPromotion()
               }
             />
             <input
@@ -185,7 +192,7 @@ class SavePromotion extends Component {
 
 SavePromotion.propTypes = {
   view: PropTypes.string.isRequired,
-  selectedPromotionId: PropTypes.string,
+  selectedPromotionId: PropTypes.string
   // promotionData
 };
 

@@ -1,4 +1,4 @@
-import { UPDATE_VIEW, SET_SELECTED_PROMO_ID } from "../actions";
+import { UPDATE_VIEW, SET_SELECTED_PROMO_ID, ADD_PROMOTION } from "../actions";
 
 import { VIEW } from "../constants/constants";
 
@@ -10,6 +10,8 @@ export const handleView = (state = initialState, action) => {
       return action.payload;
     case SET_SELECTED_PROMO_ID:
       return VIEW.SAVE_PROMOTION;
+    case ADD_PROMOTION:
+      return VIEW.SEARCH;
     default:
       return state;
   }

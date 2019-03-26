@@ -9,9 +9,12 @@ const mapStateToProps = state => {
 };
 
 export const mapDispatchToProps = {
-    updateView: updateView
-  };
+  updateView: updateView
+};
 
-const VisibleConfirmationBox = connect(mapStateToProps, mapDispatchToProps)(ConfirmationBox);
+const VisibleConfirmationBox = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ConfirmationBox);
 
 export default VisibleConfirmationBox;
