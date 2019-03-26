@@ -4,7 +4,7 @@ import { VIEW } from "../constants/constants";
 
 const initialState = VIEW.SEARCH;
 
-export const handleView = (state = initialState, action) => {
+export const viewReducer = (state = initialState, action) => {
   switch (action.type) {
     case UPDATE_VIEW:
       return action.payload;

@@ -3,7 +3,7 @@ import { promotionData } from "../promotionData";
 
 const initialState = promotionData;
 
-export const handlePromotionData = (state = initialState, action) => {
+export const promotionDataReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_PROMOTION:
       const newState = { ...state };

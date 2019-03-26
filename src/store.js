@@ -1,14 +1,14 @@
 import { createStore, combineReducers } from "redux";
-import { handleView } from "./reducers/view-reducer";
-import { handlePromoId } from "./reducers/selectedPromotionId-reducer";
-import { handleSearchTerm } from "./reducers/searchTerm-reducer";
-import { handlePromotionData } from "./reducers/promotionData-reducer";
+import { viewReducer } from "./reducers/view-reducer";
+import { selectedPromotionIdReducer } from "./reducers/selectedPromotionId-reducer";
+import { searchTermReducer } from "./reducers/searchTerm-reducer";
+import { promotionDataReducer } from "./reducers/promotionData-reducer";
 
 export const rootReducer = combineReducers({
-  view: handleView,
-  selectedPromotionId: handlePromoId,
-  searchTerm: handleSearchTerm,
-  promotionData: handlePromotionData
+  view: viewReducer,
+  selectedPromotionId: selectedPromotionIdReducer,
+  searchTerm: searchTermReducer,
+  promotionData: promotionDataReducer
 });
 
 export const store = createStore(

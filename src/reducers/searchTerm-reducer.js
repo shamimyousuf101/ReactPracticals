@@ -4,7 +4,7 @@ import {
   UPDATE_VIEW
 } from "../actions/index";
 
-export const handleSearchTerm = (state = "", action) => {
+export const searchTermReducer = (state = "", action) => {
   switch (action.type) {
     case SET_SEARCH_TERM:
       return action.payload;
