@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import SingleResult from "./SingleResult";
-import { setPrommotionIdAndView } from "../../../../actions/index";
+import { setPrommotionId } from "../../../../actions/index";
 
 const mapStateToProps = state => {
   return {
@@ -9,9 +9,9 @@ const mapStateToProps = state => {
   };
 };
 
-export const mapDispatchToProps = (dispatch) => ({
-  editBtnClick: setPrommotionIdAndView(dispatch)
-});
+export const mapDispatchToProps = {
+  editBtnClick: setPrommotionId
+};
 
 const VisibleSingleResult = connect(
   mapStateToProps,

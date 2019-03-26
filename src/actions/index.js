@@ -1,5 +1,3 @@
-import { VIEW } from "../constants/constants";
-
 /*
  * action types
  */
@@ -10,15 +8,13 @@ export const RESET_SELECTED_PROMO_ID = "RESET_SELECTED_PROMO_ID";
 export const SET_SELECTED_PROMO_ID = "SET_SELECTED_PROMO_ID";
 
 export const SET_SEARCH_TERM = "SET_SEARCH_TERM";
-export const RESET_SEARCH_TERM = "RESET_SEARCH_TERM";
-
-export const GET_PROMOTIONS = "GET_PROMOTIONS";
-export const ADD_PROMOTION = "ADD_PROMOTION";
-
 export const TRIGGER_SEARCH = "TRIGGER_SEARCH";
 
+export const ADD_PROMOTION = "ADD_PROMOTION";
+
+
 /*
- * action creators
+ * action creators for changing view
  */
 
 export const updateView = newView => {
@@ -27,6 +23,10 @@ export const updateView = newView => {
     payload: newView
   };
 };
+
+/*
+ * action creators for setting and resetting promotion id
+ */
 
 export const setPrommotionId = id => {
   return {
@@ -42,6 +42,10 @@ export const resetPrommotionId = () => {
   };
 };
 
+/*
+ * action creators for dealing with searchTerm
+ */
+
 export const setSearchTerm = term => {
   return {
     type: SET_SEARCH_TERM,
@@ -56,17 +60,9 @@ export const triggerSearch = event => {
   };
 };
 
-export const resetSearchTerm = () => {
-  return {
-    type: RESET_SEARCH_TERM,
-    payload: ""
-  };
-};
-
-export const setPrommotionIdAndView = dispatch => id => {
-  dispatch(setPrommotionId(id));
-  dispatch(updateView(VIEW.SAVE_PROMOTION));
-};
+/*
+ * action creators for adding promotion
+ */
 
 export const addPromotion = formData => {
   return {

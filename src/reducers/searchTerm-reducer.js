@@ -1,7 +1,7 @@
 import {
   SET_SEARCH_TERM,
-  RESET_SEARCH_TERM,
-  TRIGGER_SEARCH
+  TRIGGER_SEARCH,
+  UPDATE_VIEW
 } from "../actions/index";
 
 export const handleSearchTerm = (state = "", action) => {
@@ -10,8 +10,8 @@ export const handleSearchTerm = (state = "", action) => {
       return action.payload;
     case TRIGGER_SEARCH:
       return action.payload;
-    case RESET_SEARCH_TERM:
-      return action.payload;
+    case UPDATE_VIEW:
+      return "";
     default:
       return state;
   }

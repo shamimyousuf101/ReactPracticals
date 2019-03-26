@@ -41,7 +41,7 @@ class SavePromotion extends Component {
     const { selectedPromotionId, promotionData } = this.props;
 
     if (selectedPromotionId !== prevSelectedPromotionId) {
-      if (selectedPromotionId !== null) {
+      if (selectedPromotionId !== null && selectedPromotionId) {
         const searchDisplay = searchPromotionsById(
           selectedPromotionId,
           promotionData
@@ -115,10 +115,6 @@ class SavePromotion extends Component {
 
   render() {
 
-    if(this.props.selectedPromotionId)
-    {
-
-    }
     const { formData: {name, url, devices, ventures }, showDialog} = this.state;
     const { view} = this.props;
 
