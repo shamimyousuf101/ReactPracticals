@@ -107,6 +107,12 @@ class SavePromotion extends Component {
     } = this.state;
     const { view } = this.props;
 
+    let submitDisabled = false;
+    
+    if (name === "" || url === "" || devices === [] || ventures == []) {
+      submitDisabled = true;
+    }
+
     if (view === VIEW.SAVE_PROMOTION) {
       return (
         <section className="PromotionBuilder">
@@ -141,12 +147,11 @@ class SavePromotion extends Component {
               label={"Name:"}
             />
             <input
+              disabled={submitDisabled}
               className="promotion-toolbar__button-save"
               type="button"
               value="Submit"
-              onClick={
-                () => this.setShowDialog(true)
-              }
+              onClick={() => this.setShowDialog(true)}
             />
             <input
               className="promotion-toolbar__button-reset"
