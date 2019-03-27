@@ -20,7 +20,7 @@ class ConfirmationBox extends Component {
     return (
       <dialog open={display} className="confirmationbox">
         <label>
-          Promotion Details:
+          <h3>Promotion Details:</h3>
           <dl>
             <dt>Name:</dt>
             <dd>{name}</dd>
@@ -33,7 +33,7 @@ class ConfirmationBox extends Component {
           </dl>
         </label>
         <menu>
-          <button value="cancel" onClick={this.cancelSave}>
+          <button className="cancelBtn" value="cancel" onClick={this.cancelSave}>
             Cancel
           </button>
           <button className="confirmBtn" onClick={this.confirmSave}>

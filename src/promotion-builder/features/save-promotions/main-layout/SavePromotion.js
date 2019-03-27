@@ -22,8 +22,8 @@ class SavePromotion extends Component {
       url: "",
       name: "",
       lastUpdatedTime: ""
-    }
-    // showDialog: false
+    },
+    showDialog: false
   };
 
   getDefaultFormState = () => ({
@@ -74,15 +74,15 @@ class SavePromotion extends Component {
     });
   };
 
-  // setShowDialog = display => {
-  //   this.setState({
-  //     showDialog: display
-  //   });
-  // };
+  setShowDialog = display => {
+    this.setState({
+      showDialog: display
+    });
+  };
 
-  // hideDialog = () => {
-  //   this.setShowDialog(false);
-  // };
+  hideDialog = () => {
+    this.setShowDialog(false);
+  };
 
   addAndEditPromotion = () => {
     const { selectedPromotionId } = this.props;
@@ -102,8 +102,8 @@ class SavePromotion extends Component {
 
   render() {
     const {
-      formData: { name, url, devices, ventures }
-      // showDialog
+      formData: { name, url, devices, ventures },
+      showDialog
     } = this.state;
     const { view } = this.props;
 
@@ -145,8 +145,7 @@ class SavePromotion extends Component {
               type="button"
               value="Submit"
               onClick={
-                // () => this.setShowDialog(true)
-                () => this.addAndEditPromotion()
+                () => this.setShowDialog(true)
               }
             />
             <input
@@ -156,15 +155,15 @@ class SavePromotion extends Component {
               onClick={this.resetFormData}
             />
           </form>
-          {/* <ConfirmationBox
+          <ConfirmationBox
             name={name}
             url={url}
             devices={devices}
             ventures={ventures}
             display={showDialog}
-            save={this.save}
+            save={this.addAndEditPromotion}
             hideDialog={this.hideDialog}
-          /> */}
+          />
         </section>
       );
     }
