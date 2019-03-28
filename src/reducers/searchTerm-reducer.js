@@ -1,17 +1,19 @@
 import {
   SET_SEARCH_TERM,
   TRIGGER_SEARCH,
-  UPDATE_VIEW
+  UPDATE_VIEW,
 } from "../actions/index";
 
-export const searchTermReducer = (state = "", action) => {
+import { DEFAULT_SEARCHTERAM } from "../constants/constants"
+
+export const searchTermReducer = (state = DEFAULT_SEARCHTERAM, action) => {
   switch (action.type) {
     case SET_SEARCH_TERM:
       return action.payload;
     case TRIGGER_SEARCH:
       return action.payload;
     case UPDATE_VIEW:
-      return "";
+      return DEFAULT_SEARCHTERAM;
     default:
       return state;
   }

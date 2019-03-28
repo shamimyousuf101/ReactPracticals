@@ -1,6 +1,8 @@
 import { connect } from "react-redux";
+
 import SingleResult from "./SingleResult";
 import { setPrommotionId } from "../../../../actions/index";
+
 
 const mapStateToProps = state => {
   return {

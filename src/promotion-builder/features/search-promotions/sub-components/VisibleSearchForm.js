@@ -1,12 +1,12 @@
 import { connect } from "react-redux";
+
 import SearchForm from "./SearchForm";
 import { triggerSearch } from "../../../../actions/index";
 
-const mapStateToProps = state => {
-  return {
-    searchTerm: state.searchTerm
-  };
-};
+
+const mapStateToProps = state => ({
+  searchTerm: state.searchTerm
+});
 
 export const mapDispatchToProps = {
   onChange: triggerSearch

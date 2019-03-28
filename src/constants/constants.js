@@ -4,6 +4,8 @@ export const VIEW = {
   SAVE_PROMOTION: "SavePromotion"
 };
 
+export const DEFAULT_SEARCHTERAM = "";
+
 export const DEVICE_LABELS = ["mobile", "tablet", "desktop"];
 
 export const VENTURE_LABELS = [

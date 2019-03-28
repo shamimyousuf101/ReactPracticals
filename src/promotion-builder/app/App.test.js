@@ -13,7 +13,7 @@ describe("App component", () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it("renders the necessary Components one time", () => {
+  it("renders the necessary Components only once", () => {
     const wrapper = shallow(<App />);
     expect(wrapper.find("Navigation")).toHaveLength(1);
     expect(wrapper.find("Banner")).toHaveLength(1);

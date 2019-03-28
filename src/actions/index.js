@@ -17,56 +17,44 @@ export const ADD_PROMOTION = "ADD_PROMOTION";
  * action creators for changing view
  */
 
-export const updateView = newView => {
-  return {
-    type: UPDATE_VIEW,
-    payload: newView
-  };
-};
+export const updateView = newView => ({
+  type: UPDATE_VIEW,
+  payload: newView
+});
 
 /*
  * action creators for setting and resetting promotion id
  */
 
-export const setPrommotionId = id => {
-  return {
-    type: SET_SELECTED_PROMO_ID,
-    payload: id
-  };
-};
+export const setPrommotionId = id => ({
+  type: SET_SELECTED_PROMO_ID,
+  payload: id
+});
 
-export const resetPrommotionId = () => {
-  return {
-    type: RESET_SELECTED_PROMO_ID,
-    payload: ""
-  };
-};
+export const resetPrommotionId = () => ({
+  type: RESET_SELECTED_PROMO_ID,
+  payload: ""
+});
 
 /*
  * action creators for dealing with searchTerm
  */
 
-export const setSearchTerm = term => {
-  return {
-    type: SET_SEARCH_TERM,
-    payload: term
-  };
-};
+export const setSearchTerm = term => ({
+  type: SET_SEARCH_TERM,
+  payload: term
+});
 
-export const triggerSearch = event => {
-  return {
-    type: SET_SEARCH_TERM,
-    payload: event.target.value
-  };
-};
+export const triggerSearch = event => ({
+  type: SET_SEARCH_TERM,
+  payload: event.target.value
+});
 
 /*
  * action creators for adding promotion
  */
 
-export const addPromotion = ( id, promotion ) => {
-  return {
-    type: ADD_PROMOTION,
-    payload: {id, promotion}
-  };
-};
+export const addPromotion = ( id, promotion ) => ({
+  type: ADD_PROMOTION,
+  payload: {id, promotion}
+});

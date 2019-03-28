@@ -1,15 +1,14 @@
 import { connect } from "react-redux";
-import SavePromotion from "./SavePromotion";
 
+import SavePromotion from "./SavePromotion";
 import { addPromotion } from "../../../../actions/index";
 
-const mapStateToProps = state => {
-  return {
-    view: state.view,
-    selectedPromotionId: state.selectedPromotionId,
-    promotionData: state.promotionData
-  };
-};
+
+const mapStateToProps = state => ({
+  view: state.view,
+  selectedPromotionId: state.selectedPromotionId,
+  promotionData: state.promotionData
+});
 
 export const mapDispatchToProps = {
   addPromotion: addPromotion

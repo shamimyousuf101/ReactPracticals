@@ -1,13 +1,13 @@
 import { connect } from "react-redux";
+
 import Navigation from "./Navigation";
 import { updateView, resetPrommotionId } from "../../../actions";
 
-const mapStateToProps = state => {
-  return {
-    view: state.view,
-    selectedPromotionId: state.selectedPromotionId
-  };
-};
+
+const mapStateToProps = state => ({
+  view: state.view,
+  selectedPromotionId: state.selectedPromotionId
+});
 
 export const mapDispatchToProps = {
   updateView: updateView,

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component} from "react";
 import PropsTypes from "prop-types";
 
 import "./search.css";
@@ -6,7 +6,7 @@ import SearchForm from "../sub-components/VisibleSearchForm";
 import SearchResult from "../sub-components/VisibleSearchResult";
 import { VIEW } from "../../../../constants/constants";
 
-class Search extends React.Component {
+class Search extends Component {
   render() {
     const { view } = this.props;
 
