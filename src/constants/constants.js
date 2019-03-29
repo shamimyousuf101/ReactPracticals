@@ -12,9 +12,9 @@ export const VENTURE_LABELS = [
   "jackpotjoy",
   "starspins",
   "virgingames",
-  "botemania"
+  "botemania",
+  "heartbingo"
 ];
-
 
 export const NAVIGATION_DATA = [
   {

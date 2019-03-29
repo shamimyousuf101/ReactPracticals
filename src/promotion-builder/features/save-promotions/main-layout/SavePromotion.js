@@ -11,6 +11,7 @@ import {
   VENTURE_LABELS
 } from "../../../../constants/constants";
 import { searchPromotionsById } from "../../search";
+import { isSaveFormDataValid } from "../validations";
 
 const uuid4 = require("uuid4");
 
@@ -107,12 +108,6 @@ class SavePromotion extends Component {
     } = this.state;
     const { view } = this.props;
 
-    let submitDisabled = false;
-    
-    if (name === "" || url === "" || devices === [] || ventures == []) {
-      submitDisabled = true;
-    }
-
     if (view === VIEW.SAVE_PROMOTION) {
       return (
         <section className="PromotionBuilder">
@@ -147,7 +142,7 @@ class SavePromotion extends Component {
               label={"Name:"}
             />
             <input
-              disabled={submitDisabled}
+              disabled={isSaveFormDataValid(this.state.formData)}
               className="promotion-toolbar__button-save"
               type="button"
               value="Submit"
