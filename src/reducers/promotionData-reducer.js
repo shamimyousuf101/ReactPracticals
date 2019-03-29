@@ -6,8 +6,11 @@ const initialState = promotionData;
 export const promotionDataReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_PROMOTION:
+      const {
+        payload: { id, promotion }
+      } = action;
       const newState = { ...state };
-      newState[action.payload.id] = action.payload.promotion;
+      newState[id] = promotion;
       return newState;
     default:
       return state;
