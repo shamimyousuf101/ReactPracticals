@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 import { VIEW } from "../../../../constants/constants";
+import PromoDetails from "./PromoDetails";
 
 const { SEARCH, SAVE_PROMOTION } = VIEW;
 
@@ -23,16 +24,12 @@ class ConfirmationBox extends Component {
       <dialog open={display} className="confirmationbox">
         <label>
           <h3>Promotion Details:</h3>
-          <dl>
-            <dt>Name:</dt>
-            <dd>{name}</dd>
-            <dt>Url:</dt>
-            <dd>{url}</dd>
-            <dt>Devices:</dt>
-            <dd>{devices.toString()}</dd>
-            <dt>Ventures:</dt>
-            <dd>{ventures.toString()}</dd>
-          </dl>
+          <PromoDetails
+            name={name}
+            url={url}
+            devices={devices}
+            ventures={ventures}
+          />
         </label>
         <menu>
           <button
