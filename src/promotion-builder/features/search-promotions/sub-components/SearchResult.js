@@ -2,11 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import SingleResult from "./VisibleSingleResult";
-import { searchPromotions } from "../../search";
+import { searchAndSortPromotions } from "../../search";
 
 const SearchResult = ({ searchTerm, promotionData }) => {
   const getSearchItems = (searchTerm, promotionData) => {
-    const searchDisplay = searchPromotions(searchTerm, promotionData);
+    const searchDisplay = searchAndSortPromotions(searchTerm, promotionData);
 
     if (searchDisplay.length > 0) {
       return searchDisplay.map((item, index) => (

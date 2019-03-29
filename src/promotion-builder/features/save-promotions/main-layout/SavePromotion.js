@@ -10,7 +10,6 @@ import {
   DEVICE_LABELS,
   VENTURE_LABELS
 } from "../../../../constants/constants";
-import { searchPromotionsById } from "../../search";
 import { isSaveFormDataValid } from "../validations";
 
 const uuid4 = require("uuid4");
@@ -41,19 +40,13 @@ class SavePromotion extends Component {
 
     if (selectedPromotionId !== prevSelectedPromotionId) {
       if (selectedPromotionId !== null && selectedPromotionId) {
-        const searchDisplay = searchPromotionsById(
-          selectedPromotionId,
-          promotionData
-        );
-
-        const foundArray = searchDisplay[0];
-
+        const searchDisplay = promotionData[selectedPromotionId];
         this.setState({
           formData: {
-            name: foundArray.name,
-            url: foundArray.url,
-            devices: foundArray.devices,
-            ventures: foundArray.ventures
+            name: searchDisplay.name,
+            url: searchDisplay.url,
+            devices: searchDisplay.devices,
+            ventures: searchDisplay.ventures
           }
         });
       } else {
