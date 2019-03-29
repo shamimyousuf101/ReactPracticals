@@ -1,4 +1,4 @@
-import React, { Component} from "react";
+import React, { Component } from "react";
 import PropsTypes from "prop-types";
 
 import "./search.css";
@@ -6,11 +6,13 @@ import SearchForm from "../sub-components/VisibleSearchForm";
 import SearchResult from "../sub-components/VisibleSearchResult";
 import { VIEW } from "../../../../constants/constants";
 
+const { SEARCH } = VIEW;
+
 class Search extends Component {
   render() {
     const { view } = this.props;
 
-    if (view === VIEW.SEARCH) {
+    if (view === SEARCH) {
       return (
         <section className="searchContainer">
           <SearchForm />

@@ -14,6 +14,7 @@ import { searchPromotionsById } from "../../search";
 import { isSaveFormDataValid } from "../validations";
 
 const uuid4 = require("uuid4");
+const { SAVE_PROMOTION } = VIEW;
 
 class SavePromotion extends Component {
   state = {
@@ -108,7 +109,7 @@ class SavePromotion extends Component {
     } = this.state;
     const { view } = this.props;
 
-    if (view === VIEW.SAVE_PROMOTION) {
+    if (view === SAVE_PROMOTION) {
       return (
         <section className="PromotionBuilder">
           <form className="promotionDetailsForm">

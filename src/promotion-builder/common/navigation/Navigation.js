@@ -3,29 +3,27 @@ import PropsTypes from "prop-types";
 import bem from "bem-cn";
 
 import "./navigation.css";
-import NavLinks from "./NavLinks"; 
-import { VIEW , NAVIGATION_DATA } from "../../../constants/constants";
-
+import NavLinks from "./NavLinks";
+import { VIEW, NAVIGATION_DATA } from "../../../constants/constants";
 
 const b = bem("navigation");
+const { SEARCH, ASSET_MANAGER, SAVE_PROMOTION } = VIEW;
 
 const Navigation = ({ updateView, resetPrommotionId }) => {
-  
   const onMenuClick = navId => {
-    
     switch (navId) {
       case "SEARCH":
-        updateView(VIEW.SEARCH);
+        updateView(SEARCH);
         return;
       case "ASSET":
-        updateView(VIEW.ASSET_MANAGER);
+        updateView(ASSET_MANAGER);
         return;
       case "EDIT":
         resetPrommotionId();
-        updateView(VIEW.SAVE_PROMOTION);
+        updateView(SAVE_PROMOTION);
         return;
       default:
-        updateView(VIEW.SEARCH);
+        updateView(SEARCH);
     }
   };
 

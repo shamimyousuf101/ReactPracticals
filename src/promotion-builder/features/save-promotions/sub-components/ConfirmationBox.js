@@ -3,16 +3,18 @@ import PropTypes from "prop-types";
 
 import { VIEW } from "../../../../constants/constants";
 
+const { SEARCH, SAVE_PROMOTION } = VIEW;
+
 class ConfirmationBox extends Component {
   cancelSave = () => {
-    this.props.updateView(VIEW.SAVE_PROMOTION);
+    this.props.updateView(SAVE_PROMOTION);
     this.props.hideDialog();
   };
 
   confirmSave = () => {
     this.props.save();
     this.props.hideDialog();
-    this.props.updateView(VIEW.SEARCH);
+    this.props.updateView(SEARCH);
   };
 
   render() {
@@ -33,7 +35,11 @@ class ConfirmationBox extends Component {
           </dl>
         </label>
         <menu>
-          <button className="cancelBtn" value="cancel" onClick={this.cancelSave}>
+          <button
+            className="cancelBtn"
+            value="cancel"
+            onClick={this.cancelSave}
+          >
             Cancel
           </button>
           <button className="confirmBtn" onClick={this.confirmSave}>

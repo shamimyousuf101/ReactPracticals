@@ -3,7 +3,6 @@ import {
   TRIGGER_SEARCH,
   UPDATE_VIEW,
 } from "../actions/index";
-
 import { DEFAULT_SEARCHTERAM } from "../constants/constants"
 
 export const searchTermReducer = (state = DEFAULT_SEARCHTERAM, action) => {
