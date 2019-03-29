@@ -7,6 +7,7 @@ import Navigation from "../common/navigation/VisibleNavigation";
 import AssetManager from "../features/upload-assets/main-layout/VisibleAssetManager";
 import Search from "../features/search-promotions/main-layout/VisibleSearch";
 import SavePromotion from "../features/save-promotions/main-layout/VisibleSavePromotion";
+import Overlay from "../common/overlay/VisibleOverlay";
 
 const b = bem("promotion");
 
@@ -21,6 +22,7 @@ class App extends Component {
           <Search/>
           <AssetManager/>
           <SavePromotion/>
+          <Overlay/>
         </main>
       </div>
     );

@@ -12,6 +12,8 @@ export const TRIGGER_SEARCH = "TRIGGER_SEARCH";
 
 export const ADD_PROMOTION = "ADD_PROMOTION";
 
+export const SHOW_OVERLAY = "SHOW_OVERLAY";
+
 
 /*
  * action creators for changing view
@@ -58,3 +60,12 @@ export const addPromotion = ( id, promotion ) => ({
   type: ADD_PROMOTION,
   payload: {id, promotion}
 });
+
+/*
+ * action creators for showing overlay
+ */
+
+export const showOverlay = (show) => ({
+  type: SHOW_OVERLAY,
+  payload: show
+})

@@ -73,10 +73,12 @@ class SavePromotion extends Component {
     this.setState({
       showDialog: display
     });
+    this.props.showOverlay(true);
   };
 
   hideDialog = () => {
     this.setShowDialog(false);
+    this.props.showOverlay(false);
   };
 
   addAndEditPromotion = () => {
