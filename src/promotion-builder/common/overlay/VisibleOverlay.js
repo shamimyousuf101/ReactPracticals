@@ -1,11 +1,18 @@
 import { connect } from "react-redux";
 
 import Overlay from "./Overlay1";
+import { showOverlay } from "../../../actions/index";
 
 const mapStateToProps = state => ({
   overlay: state.overlay
 });
 
-const VisibleOverlay = connect(mapStateToProps)(Overlay);
+export const mapDispatchToProps = {
+  showOverlay: showOverlay
+};
+const VisibleOverlay = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Overlay);
 
 export default VisibleOverlay;

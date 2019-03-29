@@ -102,7 +102,7 @@ class SavePromotion extends Component {
       formData: { name, url, devices, ventures },
       showDialog
     } = this.state;
-    const { view } = this.props;
+    const { view, overlay } = this.props;
 
     if (view === SAVE_PROMOTION) {
       return (
@@ -156,7 +156,7 @@ class SavePromotion extends Component {
             url={url}
             devices={devices}
             ventures={ventures}
-            display={showDialog}
+            display={showDialog && overlay}
             save={this.addAndEditPromotion}
             hideDialog={this.hideDialog}
           />
