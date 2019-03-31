@@ -95,6 +95,7 @@ class SavePromotion extends Component {
     };
 
     this.props.addPromotion(id, newPromotion);
+    this.resetFormData();
   };
 
   render() {

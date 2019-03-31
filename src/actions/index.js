@@ -35,7 +35,7 @@ export const setPrommotionId = id => ({
 
 export const resetPrommotionId = () => ({
   type: RESET_SELECTED_PROMO_ID,
-  payload: ""
+  payload: null
 });
 
 /*
