@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 
 import NavLinks from "./NavLinks";
 
-describe("NavLink component", () => {
+describe("NavLink", () => {
   
   let clickHandlerMock=jest.fn();
 
@@ -20,16 +20,17 @@ describe("NavLink component", () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('simulates click events', () => {
-    const wrapper = shallow(<NavLinks
-      label={"mobile"}
-      navId={"1"}
-      key={"1"}
-      clickHandler={clickHandlerMock}
-    />);
-    wrapper.find('li').simulate('click');
-    expect(clickHandlerMock).toHaveBeenCalledTimes(1)
-  });
-
+  describe('on clicking the link', () => {
+    it('clickHandler is called once', () => {
+      const wrapper = shallow(<NavLinks
+        label={"mobile"}
+        navId={"1"}
+        key={"1"}
+        clickHandler={clickHandlerMock}
+      />);
+      wrapper.find('li').simulate('click');
+      expect(clickHandlerMock).toHaveBeenCalledTimes(1)
+    });
+  })
 
 });

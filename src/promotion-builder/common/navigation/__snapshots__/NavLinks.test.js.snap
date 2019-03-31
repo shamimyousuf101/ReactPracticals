@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NavLink component renders correctly 1`] = `
+exports[`NavLink renders correctly 1`] = `
 <li
   className={
     Object {

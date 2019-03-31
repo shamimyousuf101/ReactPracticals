@@ -3,7 +3,7 @@ import { shallow } from "enzyme";
 
 import SearchForm from "./SearchForm";
 
-describe("SearchForm component", () => {
+describe("SearchForm", () => {
   let wrapper;
   const onChangeMock = jest.fn("I am changed");
   const onSearchClickMock = jest.fn("I am clicked");

@@ -18,7 +18,6 @@ describe("Search component", () => {
       />
     );
     expect(wrapper.find("SearchForm")).toHaveLength(1);
-    // expect(wrapper.find("SearchResult")).toHaveLength(1); // dont know why this fails
   });
 
   it("should not render correctly when view is ASSET_MANAGER", () => {
