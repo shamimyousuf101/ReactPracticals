@@ -18,13 +18,12 @@ const PromotionDetails = ({ result: { name, url, devices, ventures } }) => {
 };
 
 PromotionDetails.propTypes = {
-  // result: React.PropTypes.shape({
-  //   devices: React.PropTypes.arrayOf(React.PropTypes.string.isRequired).isRequired,
-  //   id: React.PropTypes.string.isRequired,
-  //   name: React.PropTypes.string.isRequired,
-  //   url: React.PropTypes.string.isRequired,
-  //   ventures: React.PropTypes.arrayOf(React.PropTypes.string.isRequired).isRequired
-  // })
+  result: PropTypes.shape({
+    devices: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+    name: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+    ventures: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired
+  })
 };
 
 export default PromotionDetails;

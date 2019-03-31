@@ -169,8 +169,15 @@ class SavePromotion extends Component {
 
 SavePromotion.propTypes = {
   view: PropTypes.string.isRequired,
-  selectedPromotionId: PropTypes.string
-  // promotionData
+  selectedPromotionId: PropTypes.string,
+  promotionData: PropTypes.shape({
+    id: PropTypes.number,
+    devices: PropTypes.arrayOf(PropTypes.string.isRequired),
+    name: PropTypes.string,
+    url: PropTypes.string,
+    ventures: PropTypes.arrayOf(PropTypes.string.isRequired)
+
+  })
 };
 
 export default SavePromotion;
