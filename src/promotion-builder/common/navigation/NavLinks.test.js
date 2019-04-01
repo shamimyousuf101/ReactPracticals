@@ -4,6 +4,8 @@ import renderer from 'react-test-renderer';
 
 import NavLinks from "./NavLinks";
 
+//TODO: use toHaveBeenCalledOnce()
+// todo: make sure it is called, and it is called with the correct payload if there is one
 describe("NavLink", () => {
   
   let clickHandlerMock=jest.fn();

@@ -1,5 +1,6 @@
 describe('Save Promotion',() => {
 
+    //TODO: cypress selectors are not very flexible, which means small changes could be breaking your cypress 
     it('Submit button is disabled if not all values are not entered', () => {
         cy.visit('http://localhost:3000/');
         cy.get('.link__edit').click();

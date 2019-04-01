@@ -1,5 +1,6 @@
 import React from "react";
 
+  // TODO - Would break this component down into smaller components
 const PromoDetails = ({name, url, devices, ventures}) => (
   <dl>
     <dt>Name:</dt>
