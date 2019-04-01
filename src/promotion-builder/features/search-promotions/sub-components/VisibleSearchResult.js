@@ -2,13 +2,10 @@ import { connect } from "react-redux";
 
 import SearchResult from "./SearchResult";
 
-
-const mapStateToProps = state => {
-  return {
-    searchTerm: state.searchTerm,
-    promotionData: state.promotionData
-  };
-};
+const mapStateToProps = ({ searchTerm, promotionData }) => ({
+  searchTerm,
+  promotionData
+});
 
 const VisibleSearchResult = connect(mapStateToProps)(SearchResult);
 

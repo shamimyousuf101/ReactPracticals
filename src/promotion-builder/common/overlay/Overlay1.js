@@ -6,9 +6,9 @@ const Overlay = ({ overlay, showOverlay }) => {
   if (overlay) {
     return (
       <div className="overlay">
-        <a onClick={() => showOverlay(false)} className="close" href="#">
+        <button onClick={() => showOverlay(false)} className="close" href="#">
           x
-        </a>
+        </button>
       </div>
     );
   }

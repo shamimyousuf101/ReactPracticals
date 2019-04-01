@@ -3,15 +3,14 @@ import { connect } from "react-redux";
 import Navigation from "./Navigation";
 import { updateView, resetPrommotionId } from "../../../actions";
 
-
-const mapStateToProps = state => ({
-  view: state.view,
-  selectedPromotionId: state.selectedPromotionId
+const mapStateToProps = ({ view, selectedPromotionId }) => ({
+  view,
+  selectedPromotionId
 });
 
 export const mapDispatchToProps = {
-  updateView: updateView,
-  resetPrommotionId: resetPrommotionId
+  updateView,
+  resetPrommotionId
 };
 
 const VisibleNavigation = connect(

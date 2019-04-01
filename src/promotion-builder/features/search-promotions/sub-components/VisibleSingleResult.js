@@ -3,13 +3,10 @@ import { connect } from "react-redux";
 import SingleResult from "./SingleResult";
 import { setPrommotionId } from "../../../../actions/index";
 
-
-const mapStateToProps = state => {
-  return {
-    selectedPromotionId: state.selectedPromotionId,
-    view: state.view
-  };
-};
+const mapStateToProps = ({ selectedPromotionId, view }) => ({
+  selectedPromotionId,
+  view
+});
 
 export const mapDispatchToProps = {
   editBtnClick: setPrommotionId

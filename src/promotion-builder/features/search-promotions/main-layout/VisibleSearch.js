@@ -2,8 +2,8 @@ import { connect } from "react-redux";
 
 import Search from "./Search";
 
-const mapStateToProps = state => ({
-  view: state.view
+const mapStateToProps = ({ view }) => ({
+  view
 });
 
 const VisibleSearch = connect(mapStateToProps)(Search);

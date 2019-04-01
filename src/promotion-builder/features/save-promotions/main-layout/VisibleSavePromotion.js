@@ -3,16 +3,21 @@ import { connect } from "react-redux";
 import SavePromotion from "./SavePromotion";
 import { addPromotion, showOverlay } from "../../../../actions/index";
 
-const mapStateToProps = state => ({
-  view: state.view,
-  selectedPromotionId: state.selectedPromotionId,
-  promotionData: state.promotionData,
-  overlay: state.overlay
+const mapStateToProps = ({
+  view,
+  selectedPromotionId,
+  promotionData,
+  overlay
+}) => ({
+  view,
+  selectedPromotionId,
+  promotionData,
+  overlay
 });
 
 export const mapDispatchToProps = {
-  addPromotion: addPromotion,
-  showOverlay: showOverlay
+  addPromotion,
+  showOverlay
 };
 
 const VisibleSavePromotion = connect(

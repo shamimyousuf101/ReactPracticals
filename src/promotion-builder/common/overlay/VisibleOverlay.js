@@ -3,12 +3,12 @@ import { connect } from "react-redux";
 import Overlay from "./Overlay1";
 import { showOverlay } from "../../../actions/index";
 
-const mapStateToProps = state => ({
-  overlay: state.overlay
+const mapStateToProps = ({ overlay }) => ({
+  overlay
 });
 
 export const mapDispatchToProps = {
-  showOverlay: showOverlay
+  showOverlay
 };
 const VisibleOverlay = connect(
   mapStateToProps,

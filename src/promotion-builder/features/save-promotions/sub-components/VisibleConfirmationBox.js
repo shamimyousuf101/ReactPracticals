@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = {
-  updateView: updateView
+  updateView
 };
 
 const VisibleConfirmationBox = connect(

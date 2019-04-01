@@ -3,9 +3,8 @@ import { connect } from "react-redux";
 import SearchForm from "./SearchForm";
 import { triggerSearch } from "../../../../actions/index";
 
-
-const mapStateToProps = state => ({
-  searchTerm: state.searchTerm
+const mapStateToProps = ({ searchTerm }) => ({
+  searchTerm
 });
 
 export const mapDispatchToProps = {
