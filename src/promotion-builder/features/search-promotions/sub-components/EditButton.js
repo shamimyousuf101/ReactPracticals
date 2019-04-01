@@ -1,19 +1,19 @@
 import React from "react";
-import PropsTypes from "prop-types";
+import PropTypes from "prop-types";
 
-const EditButton = ({ id, editBtnClick, result }) => (
+const EditButton = ({ id, view, editBtnClick }) => (
   <button
     className="edit__button"
     type="submit"
-    onClick={() => editBtnClick(id, result)}
+    onClick={() => editBtnClick(id, view)}
   >
     Edit
   </button>
 );
 
 EditButton.propTypes = {
-  id: PropsTypes.string.isRequired,
-  editBtnClick: PropsTypes.func.isRequired
+  id: PropTypes.string.isRequired,
+  editBtnClick: PropTypes.func.isRequired
 };
 
 export default EditButton;

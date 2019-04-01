@@ -1,22 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
-import PropsTypes from "prop-types";
 
-import SingleResult from "./SingleResult";
-import { searchPromotions } from "../../search";
+import SingleResult from "./VisibleSingleResult";
+import { searchAndSortPromotions } from "../../search";
 
-const SearchResultContainer = ({ editBtnClick, searchTerm, promotionData }) => {
+const SearchResult = ({ searchTerm, promotionData }) => {
   const getSearchItems = (searchTerm, promotionData) => {
-    const searchDisplay = searchPromotions(searchTerm, promotionData);
+    const searchDisplay = searchAndSortPromotions(searchTerm, promotionData);
 
     if (searchDisplay.length > 0) {
       return searchDisplay.map((item, index) => (
-        <SingleResult
-          key={index}
-          id={item.id}
-          result={item}
-          editBtnClick={editBtnClick}
-        />
+        <SingleResult key={index} result={item} />
       ));
     }
   };
@@ -24,9 +18,9 @@ const SearchResultContainer = ({ editBtnClick, searchTerm, promotionData }) => {
   return <ul>{getSearchItems(searchTerm, promotionData)}</ul>;
 };
 
-SearchResultContainer.propTypes = {
-  editBtnClick: PropsTypes.func.isRequired,
+SearchResult.propTypes = {
   searchTerm: PropTypes.string
+  // promotionData:
 };
 
-export default SearchResultContainer;
+export default SearchResult;

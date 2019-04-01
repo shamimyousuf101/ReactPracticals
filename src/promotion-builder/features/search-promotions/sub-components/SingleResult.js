@@ -1,24 +1,22 @@
 import React from "react";
 import PropsTypes from "prop-types";
+import bem from "bem-cn";
 
+import "./singleresult.css";
 import PromotionDetails from "./PromotionDetails";
 import EditButton from "./EditButton";
 
-import "./singleresult.css";
-
-import bem from "bem-cn";
 const b = bem("singlesearchresult");
 
-const SingleResult = ({ result, id, editBtnClick }) => (
+const SingleResult = ({ result, editBtnClick, view }) => (
   <li className={b()}>
     <PromotionDetails result={result} />
-    <EditButton id={id} editBtnClick={editBtnClick} result={result} />
+    <EditButton editBtnClick={editBtnClick} id={result.id} view={view} />
   </li>
 );
 
 SingleResult.propTypes = {
   result: PropsTypes.object,
-  id: PropsTypes.string,
   editBtnClick: PropsTypes.func.isRequired
 };
 

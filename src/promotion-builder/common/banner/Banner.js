@@ -1,19 +1,20 @@
 import React from "react";
 import PropsTypes from "prop-types";
+import block from "bem-cn";
 
 import "./banner.css";
-import block from "bem-cn";
+
 const b = block("banner");
 
-const Banner = ({ subHeading }) => (
+const Banner = ({ view }) => (
   <header className={b()}>
     <h1>Promotion Manager</h1>
-    <h3>{subHeading}</h3>
+    <h3>{view}</h3>
   </header>
 );
 
 Banner.propTypes = {
-  subHeading: PropsTypes.string.isRequired
+  view: PropsTypes.string.isRequired
 };
 
 export default Banner;

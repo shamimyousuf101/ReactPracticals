@@ -1,27 +1,15 @@
 import React from "react";
-import { shallow } from "enzyme";
+import renderer from 'react-test-renderer';
 
 import Banner from "./Banner";
 
-describe("<Banner>", () => {
-  let wrapper;
-
-  beforeEach(() => {
-    wrapper = shallow(<Banner subHeading={"Test"} />);
+describe("Banner component", () => {
+  
+  it('renders correctly', () => {
+    const tree = renderer
+      .create(<Banner subHeading={"Test"} />)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
   });
 
-  it("renders with correct class name", () => {
-    expect(wrapper.hasClass("banner")).toBe(true);
-  });
-
-  describe("Props", () => {
-    it("renders with correct prop value", () => {
-      expect(
-        wrapper
-          .children()
-          .find("h3")
-          .props().children
-      ).toBe("Test");
-    });
-  });
 });

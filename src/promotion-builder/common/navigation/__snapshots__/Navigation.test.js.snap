@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+//TODO - somehting is wrong
+
+exports[`Navigation component renders correctly 1`] = `
+<nav
+  className="navigation"
+>
+  <ul>
+    <li
+      className={
+        Object {
+          "has": [Function],
+          "is": [Function],
+          "mix": [Function],
+          "split": [Function],
+          "state": [Function],
+          "toString": [Function],
+        }
+      }
+      onClick={[Function]}
+    >
+      <a
+        href="#"
+      >
+        Search
+      </a>
+    </li>
+    <li
+      className={
+        Object {
+          "has": [Function],
+          "is": [Function],
+          "mix": [Function],
+          "split": [Function],
+          "state": [Function],
+          "toString": [Function],
+        }
+      }
+      onClick={[Function]}
+    >
+      <a
+        href="#"
+      >
+        Asset Manager
+      </a>
+    </li>
+    <li
+      className={
+        Object {
+          "has": [Function],
+          "is": [Function],
+          "mix": [Function],
+          "split": [Function],
+          "state": [Function],
+          "toString": [Function],
+        }
+      }
+      onClick={[Function]}
+    >
+      <a
+        href="#"
+      >
+        Create / Edit
+      </a>
+    </li>
+  </ul>
+</nav>
+`;

@@ -1,16 +1,34 @@
 import React from "react";
 import { shallow } from "enzyme";
 
+import { VIEW } from "../../../../constants/constants";
 import Search from "./Search";
 
-describe("<Search/>", () => {
-  it("should render SearchForm component one time", () => {
-    const wrapper = shallow(<Search />);
+const { SEARCH, ASSET_MANAGER } = VIEW;
+
+describe("Search component", () => {
+  const editBtnClickMock = jest.fn();
+
+  it("should renders correctly when view is SEARCH", () => {
+    const wrapper = shallow(
+      <Search
+        promotionData={"test"}
+        editBtnClick={editBtnClickMock}
+        view={SEARCH}
+      />
+    );
     expect(wrapper.find("SearchForm")).toHaveLength(1);
   });
 
-  it("should render SearchForm component one time", () => {
-    const wrapper = shallow(<Search />);
-    expect(wrapper.find("SearchForm")).toHaveLength(1);
+  it("should not render correctly when view is ASSET_MANAGER", () => {
+    const wrapper = shallow(
+      <Search
+        promotionData={"test"}
+        editBtnClick={editBtnClickMock}
+        view={ASSET_MANAGER}
+      />
+    );
+    expect(wrapper.find("SearchForm")).toHaveLength(0);
+    expect(wrapper.find("SearchResult")).toHaveLength(0);
   });
 });

@@ -1,39 +1,22 @@
-import React from "react";
+import React, { Component } from "react";
 import PropsTypes from "prop-types";
 
-import SearchForm from "../sub-components/SearchForm";
-import SearchResult from "../sub-components/SearchResult";
+import "./search.css";
+import SearchForm from "../sub-components/VisibleSearchForm";
+import SearchResult from "../sub-components/VisibleSearchResult";
 import { VIEW } from "../../../../constants/constants";
 
-import "./search.css";
+const { SEARCH } = VIEW;
 
-class Search extends React.Component {
-  state = {
-    searchTerm: ""
-  };
-
-  componentDidUpdate({ view }) {
-    if (view !== this.props.view) {
-      this.setState({ searchTerm: "" });
-    }
-  }
-
-  handleInputChange = event =>
-    this.setState({ searchTerm: event.target.value });
-
+class Search extends Component {
   render() {
-    const { promotionData, editBtnClick } = this.props;
-    const { searchTerm } = this.state;
+    const { view } = this.props;
 
-    if (this.props.view === VIEW.SEARCH) {
+    if (view === SEARCH) {
       return (
         <section className="searchContainer">
-          <SearchForm value={searchTerm} onChange={this.handleInputChange} />
-          <SearchResult
-            searchTerm={searchTerm}
-            promotionData={promotionData}
-            editBtnClick={editBtnClick}
-          />
+          <SearchForm />
+          <SearchResult />
         </section>
       );
     }
@@ -42,9 +25,7 @@ class Search extends React.Component {
 }
 
 Search.propType = {
-  searchTerm: PropsTypes.string,
-  onInputChange: PropsTypes.func.isRequired,
-  editBtnClick: PropsTypes.func.isRequired
+  view: PropsTypes.string
 };
 
 export default Search;

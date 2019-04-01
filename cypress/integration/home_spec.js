@@ -23,18 +23,18 @@ describe('Home Page', () => {
 
     describe('Navigation', () => {
         it('should contain Search Navigation', () => {
-            cy.get('.search__link > a').should('be.visible');
-            cy.get('.search__link > a').should('have.text', "Search");
+            cy.get('.link__search > a').should('be.visible');
+            cy.get('.link__search > a').should('have.text', "Search");
         })
 
         it('should contain Asset Manager Navigation', () => {
-            cy.get('.upload__link > a').should('be.visible');
-            cy.get('.upload__link > a').should('have.text', "Asset Manager");
+            cy.get('.link__asset > a').should('be.visible');
+            cy.get('.link__asset > a').should('have.text', "Asset Manager");
         })
 
         it('should contain Creat / Edit Navigation', () => {
-            cy.get('.config__link > a').should('be.visible');
-            cy.get('.config__link > a').should('have.text', "Create / Edit");
+            cy.get('.link__edit > a').should('be.visible');
+            cy.get('.link__edit > a').should('have.text', "Create / Edit");
         })
     })
 })

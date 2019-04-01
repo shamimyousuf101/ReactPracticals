@@ -1,56 +1,57 @@
-import React from "react";
-import PropsTypes from "prop-types";
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 
+import "./savepromotion.css";
 import InputBox from "../sub-components/InputBox";
 import CheckboxGroup from "../sub-components/CheckboxGroup";
-import ConfirmationBox from "../sub-components/ConfirmationBox";
-
+import ConfirmationBox from "../sub-components/VisibleConfirmationBox";
 import {
   VIEW,
   DEVICE_LABELS,
   VENTURE_LABELS
 } from "../../../../constants/constants";
-import { searchPromotionsById } from "../../search";
+import { isSaveFormDataValid } from "../validations";
 
-import "./savepromotion.css";
+const uuid4 = require("uuid4");
+const { SAVE_PROMOTION } = VIEW;
 
-class SavePromotion extends React.Component {
-  initialFormData = {
+class SavePromotion extends Component {
+  state = {
+    formData: {
+      devices: [],
+      ventures: [],
+      url: "",
+      name: "",
+      lastUpdatedTime: ""
+    },
+    showDialog: false
+  };
+
+  getDefaultFormState = () => ({
     devices: [],
     ventures: [],
     url: "",
     name: "",
     lastUpdatedTime: ""
-  };
-
-  state = {
-    formData: this.initialFormData,
-    showDialog: false
-  };
+  });
 
   componentDidUpdate({ selectedPromotionId: prevSelectedPromotionId }) {
     const { selectedPromotionId, promotionData } = this.props;
 
     if (selectedPromotionId !== prevSelectedPromotionId) {
-      if (selectedPromotionId !== null) {
-        const searchDisplay = searchPromotionsById(
-          selectedPromotionId,
-          promotionData
-        );
-
-        const foundArray = searchDisplay[0];
-
+      if (selectedPromotionId !== null && selectedPromotionId) {
+        const searchDisplay = promotionData[selectedPromotionId];
         this.setState({
           formData: {
-            name: foundArray.name,
-            url: foundArray.url,
-            devices: foundArray.devices,
-            ventures: foundArray.ventures
+            name: searchDisplay.name,
+            url: searchDisplay.url,
+            devices: searchDisplay.devices,
+            ventures: searchDisplay.ventures
           }
         });
       } else {
         this.setState({
-          formData: this.initialFormData
+          formData: this.getDefaultFormState()
         });
       }
     }
@@ -64,7 +65,7 @@ class SavePromotion extends React.Component {
 
   resetFormData = () => {
     this.setState({
-      formData: this.initialFormData
+      formData: this.getDefaultFormState()
     });
   };
 
@@ -72,20 +73,39 @@ class SavePromotion extends React.Component {
     this.setState({
       showDialog: display
     });
+    this.props.showOverlay(true);
   };
 
   hideDialog = () => {
     this.setShowDialog(false);
+    this.props.showOverlay(false);
   };
 
-  save = () => {
-    this.props.savePromotion(this.state.formData);
+  addAndEditPromotion = () => {
+    const { selectedPromotionId } = this.props;
+    const id = selectedPromotionId || uuid4();
+    const { name, url, devices, ventures } = this.state.formData;
+    const newPromotion = {
+      id,
+      name,
+      url,
+      devices,
+      ventures,
+      lastUpdatedTime: Date.now()
+    };
+
+    this.props.addPromotion(id, newPromotion);
+    this.resetFormData();
   };
 
   render() {
-    const { name, url, devices, ventures } = this.state.formData;
+    const {
+      formData: { name, url, devices, ventures },
+      showDialog
+    } = this.state;
+    const { view, overlay } = this.props;
 
-    if (this.props.view === VIEW.SAVE_PROMOTION) {
+    if (view === SAVE_PROMOTION) {
       return (
         <section className="PromotionBuilder">
           <form className="promotionDetailsForm">
@@ -119,6 +139,7 @@ class SavePromotion extends React.Component {
               label={"Name:"}
             />
             <input
+              disabled={isSaveFormDataValid(this.state.formData)}
               className="promotion-toolbar__button-save"
               type="button"
               value="Submit"
@@ -136,9 +157,8 @@ class SavePromotion extends React.Component {
             url={url}
             devices={devices}
             ventures={ventures}
-            display={this.state.showDialog}
-            updateView={this.props.updateView}
-            save={this.save}
+            display={showDialog && overlay}
+            save={this.addAndEditPromotion}
             hideDialog={this.hideDialog}
           />
         </section>
@@ -149,10 +169,16 @@ class SavePromotion extends React.Component {
 }
 
 SavePromotion.propTypes = {
-  formData: PropsTypes.object.isRequired,
-  onFormChange: PropsTypes.func.isRequired,
-  reset: PropsTypes.func.isRequired,
-  savePromotion: PropsTypes.func.isRequired
+  view: PropTypes.string.isRequired,
+  selectedPromotionId: PropTypes.string,
+  promotionData: PropTypes.shape({
+    id: PropTypes.number,
+    devices: PropTypes.arrayOf(PropTypes.string.isRequired),
+    name: PropTypes.string,
+    url: PropTypes.string,
+    ventures: PropTypes.arrayOf(PropTypes.string.isRequired)
+
+  })
 };
 
 export default SavePromotion;
