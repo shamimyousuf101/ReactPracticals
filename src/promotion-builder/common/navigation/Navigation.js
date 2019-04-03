@@ -30,11 +30,12 @@ const Navigation = ({ updateView, resetPrommotionId }) => {
   return (
     <nav className={b()}>
       <ul>
-        {NAVIGATION_DATA.map(({ navId, label }) => (
+        {NAVIGATION_DATA.map(({ navId, label, url }) => (
           <NavLinks
             label={label}
             navId={navId}
             key={navId}
+            url={url}
             clickHandler={() => onMenuClick(navId)}
           />
         ))}

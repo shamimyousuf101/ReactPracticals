@@ -41,6 +41,7 @@
     "mochawesome-merge": "^1.0.5",
     "mochawesome-report-generator": "^3.1.5",
     "react-redux": "^6.0.1",
+    "react-router-dom": "^5.0.0",
     "redux": "^4.0.1"
   }
 }

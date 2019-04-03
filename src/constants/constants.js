@@ -19,14 +19,17 @@ export const VENTURE_LABELS = [
 export const NAVIGATION_DATA = [
   {
     label: "Search",
-    navId: "SEARCH"
+    navId: "SEARCH",
+    url: "/"
   },
   {
     label: "Asset Manager",
-    navId: "ASSET"
+    navId: "ASSET",
+    url: "/assetmanager"
   },
   {
     label: "Create / Edit",
-    navId: "EDIT"
+    navId: "EDIT",
+    url: "/savepromotion"
   }
 ];
