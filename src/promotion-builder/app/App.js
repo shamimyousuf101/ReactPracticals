@@ -9,6 +9,8 @@ import Search from "../features/search-promotions/main-layout/VisibleSearch";
 import SavePromotion from "../features/save-promotions/main-layout/VisibleSavePromotion";
 import { promotionData } from "../../promotionData";
 import { VIEW } from "../../constants/constants";
+import { BrowserRouter as Router, Route } from "react-router-dom"
+
 
 const b = bem("promotion");
 const uuid4 = require("uuid4");
@@ -41,15 +43,16 @@ class App extends Component {
 
   render() {
     return (
+      <Router>
       <div className={b()}>
         <Banner />
         <Navigation />
-        <main className={b("dynamic__content")}>
-          {/* <Search/> */}
-          {/* <AssetManager/> */}
-          <SavePromotion/>
-        </main>
+        <Route path="/" exact component={Search} />
+        <Route path="/assetmanager/" exact component={AssetManager} />
+        <Route path="/addpromotion/" exact component={SavePromotion} />
       </div>
+      </Router>
+
     );
   }
 }

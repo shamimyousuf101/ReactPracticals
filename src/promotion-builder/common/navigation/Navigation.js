@@ -36,8 +36,8 @@ const Navigation = ({ updateView, resetPrommotionId }) => {
   };
 
   return (
-    <Router>
-      <div>
+    
+
         <nav className={b()}>
           <ul>
             {NAVIGATION_DATA.map(({ navId, label, url }) => (
@@ -52,11 +52,7 @@ const Navigation = ({ updateView, resetPrommotionId }) => {
           </ul>
         </nav>
 
-        <Route path="/" exact component={Search} />
-        <Route path="/assetmanager/" exact component={AssetManager} />
-        <Route path="/addpromotion/" exact component={SavePromotion} />
-      </div>
-    </Router>
+
     
   );
 };
