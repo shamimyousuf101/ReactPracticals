@@ -15,7 +15,7 @@ const b = bem("promotion");
 class App extends Component {
   render() {
     return (
-      <Router>
+      <Router >
         <div className={b()}>
           <Banner />
           <Navigation />

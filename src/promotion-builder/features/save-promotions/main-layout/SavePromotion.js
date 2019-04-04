@@ -37,25 +37,34 @@ class SavePromotion extends Component {
     lastUpdatedTime: ""
   });
 
-  componentDidUpdate({ selectedPromotionId: prevSelectedPromotionId }) {
+  setFormDataState = () => {
     const { selectedPromotionId, promotionData } = this.props;
+    if (selectedPromotionId !== null && selectedPromotionId) {
+      const searchDisplay = promotionData[selectedPromotionId];
+      this.setState({
+        formData: {
+          name: searchDisplay.name,
+          url: searchDisplay.url,
+          devices: searchDisplay.devices,
+          ventures: searchDisplay.ventures
+        }
+      });
+    } else {
+      this.setState({
+        formData: this.getDefaultFormState()
+      });
+    }
+  };
 
+  //TODO: Look into Hooks and Context
+  componentDidMount() {
+    this.setFormDataState();
+  }
+
+  componentDidUpdate({ selectedPromotionId: prevSelectedPromotionId }) {
+    const { selectedPromotionId } = this.props;
     if (selectedPromotionId !== prevSelectedPromotionId) {
-      if (selectedPromotionId !== null && selectedPromotionId) {
-        const searchDisplay = promotionData[selectedPromotionId];
-        this.setState({
-          formData: {
-            name: searchDisplay.name,
-            url: searchDisplay.url,
-            devices: searchDisplay.devices,
-            ventures: searchDisplay.ventures
-          }
-        });
-      } else {
-        this.setState({
-          formData: this.getDefaultFormState()
-        });
-      }
+      this.setFormDataState();
     }
   }
 

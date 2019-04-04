@@ -1,14 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const EditButton = ({ id, view, editBtnClick }) => (
-  <button
-    className="edit__button"
-    type="submit"
-    onClick={() => editBtnClick(id, view)}
-  >
-    Edit
-  </button>
+  <Link to="/savepromotion">
+    <button
+      className="edit__button"
+      type="submit"
+      onClick={() => editBtnClick(id, view)}
+    >
+      Edit
+    </button>
+  </Link>
 );
 
 EditButton.propTypes = {
