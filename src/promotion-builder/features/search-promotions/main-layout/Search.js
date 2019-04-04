@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropsTypes from "prop-types";
+import bem from "bem-cn";
 
 import "./search.css";
 import SearchForm from "../sub-components/VisibleSearchForm";
@@ -7,6 +8,7 @@ import SearchResult from "../sub-components/VisibleSearchResult";
 import { VIEW } from "../../../../constants/constants";
 
 const { SEARCH } = VIEW;
+const b = bem("promotion");
 
 class Search extends Component {
   render() {
@@ -14,10 +16,12 @@ class Search extends Component {
 
     if (view === SEARCH) {
       return (
-        <section className="searchContainer">
-          <SearchForm />
-          <SearchResult />
-        </section>
+        <main className={b("dynamic__content")}>
+          <section className="searchContainer">
+            <SearchForm />
+            <SearchResult />
+          </section>
+        </main>
       );
     }
     return null;

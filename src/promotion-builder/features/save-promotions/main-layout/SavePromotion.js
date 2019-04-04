@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import bem from "bem-cn";
 
 import "./savepromotion.css";
 import InputBox from "../sub-components/InputBox";
@@ -14,6 +15,7 @@ import { isSaveFormDataValid } from "../validations";
 
 const uuid4 = require("uuid4");
 const { SAVE_PROMOTION } = VIEW;
+const b = bem("promotion");
 
 class SavePromotion extends Component {
   state = {
@@ -107,61 +109,63 @@ class SavePromotion extends Component {
 
     if (view === SAVE_PROMOTION) {
       return (
-        <section className="PromotionBuilder">
-          <form className="promotionDetailsForm">
-            <h2 className="NewPromotionTitle">
-              {name ? name : "new promotion"}
-            </h2>
-            <CheckboxGroup
-              value={devices}
-              name="devices"
-              displayItems={DEVICE_LABELS}
-              legendText="Devices:"
-              onFormChange={this.onFormChange}
+        <main className={b("dynamic__content")}>
+          <section className="PromotionBuilder">
+            <form className="promotionDetailsForm">
+              <h2 className="NewPromotionTitle">
+                {name ? name : "new promotion"}
+              </h2>
+              <CheckboxGroup
+                value={devices}
+                name="devices"
+                displayItems={DEVICE_LABELS}
+                legendText="Devices:"
+                onFormChange={this.onFormChange}
+              />
+              <CheckboxGroup
+                value={ventures}
+                name="ventures"
+                displayItems={VENTURE_LABELS}
+                legendText="Ventures:"
+                onFormChange={this.onFormChange}
+              />
+              <InputBox
+                value={url}
+                name="url"
+                onFormChange={this.onFormChange}
+                label={"URL:"}
+              />
+              <InputBox
+                value={name}
+                name="name"
+                onFormChange={this.onFormChange}
+                label={"Name:"}
+              />
+              <input
+                disabled={isSaveFormDataValid(this.state.formData)}
+                className="promotion-toolbar__button-save"
+                type="button"
+                value="Submit"
+                onClick={() => this.setShowDialog(true)}
+              />
+              <input
+                className="promotion-toolbar__button-reset"
+                type="button"
+                value="Reset"
+                onClick={this.resetFormData}
+              />
+            </form>
+            <ConfirmationBox
+              name={name}
+              url={url}
+              devices={devices}
+              ventures={ventures}
+              display={showDialog && overlay}
+              save={this.addAndEditPromotion}
+              hideDialog={this.hideDialog}
             />
-            <CheckboxGroup
-              value={ventures}
-              name="ventures"
-              displayItems={VENTURE_LABELS}
-              legendText="Ventures:"
-              onFormChange={this.onFormChange}
-            />
-            <InputBox
-              value={url}
-              name="url"
-              onFormChange={this.onFormChange}
-              label={"URL:"}
-            />
-            <InputBox
-              value={name}
-              name="name"
-              onFormChange={this.onFormChange}
-              label={"Name:"}
-            />
-            <input
-              disabled={isSaveFormDataValid(this.state.formData)}
-              className="promotion-toolbar__button-save"
-              type="button"
-              value="Submit"
-              onClick={() => this.setShowDialog(true)}
-            />
-            <input
-              className="promotion-toolbar__button-reset"
-              type="button"
-              value="Reset"
-              onClick={this.resetFormData}
-            />
-          </form>
-          <ConfirmationBox
-            name={name}
-            url={url}
-            devices={devices}
-            ventures={ventures}
-            display={showDialog && overlay}
-            save={this.addAndEditPromotion}
-            hideDialog={this.hideDialog}
-          />
-        </section>
+          </section>
+        </main>
       );
     }
     return null;
@@ -177,7 +181,6 @@ SavePromotion.propTypes = {
     name: PropTypes.string,
     url: PropTypes.string,
     ventures: PropTypes.arrayOf(PropTypes.string.isRequired)
-
   })
 };
 

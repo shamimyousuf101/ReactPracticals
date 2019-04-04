@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import bem from "bem-cn";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import "./app.css";
 import Banner from "../common/banner/VisibleBanner";
@@ -12,19 +13,18 @@ import Overlay from "../common/overlay/VisibleOverlay";
 const b = bem("promotion");
 
 class App extends Component {
-
   render() {
     return (
-      <div className={b()}>
-        <Banner />
-        <Navigation />
-        <main className={b("dynamic__content")}>
-          <Search/>
-          <AssetManager/>
-          <SavePromotion/>
-          <Overlay/>
-        </main>
-      </div>
+      <Router>
+        <div className={b()}>
+          <Banner />
+          <Navigation />
+          <Route path="/" exact component={Search} />
+          <Route path="/assetmanager/" exact component={AssetManager} />
+          <Route path="/savepromotion/" exact component={SavePromotion} />
+          <Overlay />
+        </div>
+      </Router>
     );
   }
 }
