@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 import { VIEW } from "../../../../constants/constants";
 import PromoDetails from "./PromoDetails";
@@ -39,9 +40,11 @@ class ConfirmationBox extends Component {
           >
             Cancel
           </button>
-          <button className="confirmBtn" onClick={this.confirmSave}>
-            Confirm
-          </button>
+          <Link to="/">
+            <button className="confirmBtn" onClick={this.confirmSave}>
+              Confirm
+            </button>
+          </Link>
         </menu>
       </dialog>
     );
