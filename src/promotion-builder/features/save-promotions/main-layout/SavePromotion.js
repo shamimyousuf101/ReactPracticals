@@ -7,14 +7,12 @@ import InputBox from "../sub-components/InputBox";
 import CheckboxGroup from "../sub-components/CheckboxGroup";
 import ConfirmationBox from "../sub-components/VisibleConfirmationBox";
 import {
-  VIEW,
   DEVICE_LABELS,
   VENTURE_LABELS
 } from "../../../../constants/constants";
 import { isFormDataValid } from "../validations";
 
 const uuid4 = require("uuid4");
-const { SAVE_PROMOTION } = VIEW;
 const b = bem("promotion");
 
 class SavePromotion extends Component {
@@ -114,9 +112,8 @@ class SavePromotion extends Component {
       formData: { name, url, devices, ventures },
       showDialog
     } = this.state;
-    const { view, overlay } = this.props;
+    const { overlay } = this.props;
 
-    if (view === SAVE_PROMOTION) {
       return (
         <main className={b("dynamic__content")}>
           <section className="PromotionBuilder">
@@ -177,8 +174,6 @@ class SavePromotion extends Component {
         </main>
       );
     }
-    return null;
-  }
 }
 
 SavePromotion.propTypes = {

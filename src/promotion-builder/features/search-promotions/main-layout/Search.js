@@ -5,16 +5,11 @@ import bem from "bem-cn";
 import "./search.css";
 import SearchForm from "../sub-components/VisibleSearchForm";
 import SearchResult from "../sub-components/VisibleSearchResult";
-import { VIEW } from "../../../../constants/constants";
 
-const { SEARCH } = VIEW;
 const b = bem("promotion");
 
 class Search extends Component {
   render() {
-    const { view } = this.props;
-
-    if (view === SEARCH) {
       return (
         <main className={b("dynamic__content")}>
           <section className="searchContainer">
@@ -23,8 +18,6 @@ class Search extends Component {
           </section>
         </main>
       );
-    }
-    return null;
   }
 }
 
