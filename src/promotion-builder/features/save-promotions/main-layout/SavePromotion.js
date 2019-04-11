@@ -11,7 +11,7 @@ import {
   DEVICE_LABELS,
   VENTURE_LABELS
 } from "../../../../constants/constants";
-import { isSaveFormDataValid } from "../validations";
+import { isFormDataValid } from "../validations";
 
 const uuid4 = require("uuid4");
 const { SAVE_PROMOTION } = VIEW;
@@ -39,7 +39,7 @@ class SavePromotion extends Component {
 
   setFormDataState = () => {
     const { selectedPromotionId, promotionData } = this.props;
-    if (selectedPromotionId !== null && selectedPromotionId) {
+    if (selectedPromotionId) {
       const searchDisplay = promotionData[selectedPromotionId];
       this.setState({
         formData: {
@@ -151,7 +151,7 @@ class SavePromotion extends Component {
                 label={"Name:"}
               />
               <input
-                disabled={isSaveFormDataValid(this.state.formData)}
+                disabled={isFormDataValid(this.state.formData)}
                 className="promotion-toolbar__button-save"
                 type="button"
                 value="Submit"

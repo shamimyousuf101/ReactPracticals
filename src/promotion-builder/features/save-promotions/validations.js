@@ -1,4 +1,4 @@
-export const isSaveFormDataValid = formData => {
+export const isFormDataValid = formData => {
   const { name, url, devices, ventures } = formData;
   let isFormDataEmpty = true;
   if (
