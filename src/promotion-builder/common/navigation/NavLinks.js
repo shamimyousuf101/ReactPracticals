@@ -9,9 +9,11 @@ import "./NavLinks.css";
 const b = bem("link");
 
 const NavLinks = ({ navId, label, clickHandler, url= '#' }) => (
-  <li className={b(navId.toLowerCase())} onClick={clickHandler}>
-    <Link to={url}>{label}</Link>
-  </li>
+  <Link to={url}>
+    <li className={b(navId.toLowerCase())} onClick={clickHandler}>
+      {label}
+    </li>
+  </Link>
 );
 
 NavLinks.propTypes = {

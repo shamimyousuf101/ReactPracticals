@@ -28,7 +28,7 @@ export const NAVIGATION_DATA = [
     url: "/assetmanager"
   },
   {
-    label: "Create / Edit",
+    label: "Create",
     navId: "EDIT",
     url: "/savepromotion"
   }
