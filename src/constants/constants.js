@@ -1,7 +1,8 @@
 export const VIEW = {
   SEARCH: "Search",
   ASSET_MANAGER: "AssetManager",
-  SAVE_PROMOTION: "SavePromotion"
+  SAVE_PROMOTION: "SavePromotion",
+  PREVIEW: "Preview"
 };
 
 export const DEFAULT_SEARCHTERAM = "";
@@ -29,7 +30,12 @@ export const NAVIGATION_DATA = [
   },
   {
     label: "Create",
-    navId: "EDIT",
+    navId: "CREATE",
     url: "/savepromotion"
+  },
+  {
+    label: "Preview",
+    navId: "PREVIEW",
+    url: "/preview"
   }
 ];

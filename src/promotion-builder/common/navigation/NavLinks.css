@@ -21,8 +21,12 @@ ul {
   background-color: #e85441;
 }
 
-.link__edit {
+.link__create {
   background-color: #506bb1;
+}
+
+.link__preview {
+  background-color: orange;
 }
 
 a {

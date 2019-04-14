@@ -11,3 +11,7 @@ export const search = (searchInput, itemArray = []) => {
   );
 };
 
+export const sortPromotions = ( promotionData ) => {
+  const promotionArray = Object.keys(promotionData).map(key => promotionData[key]);
+  return promotionArray.sort((a, b) => b.lastUpdatedTime - a.lastUpdatedTime);
+}

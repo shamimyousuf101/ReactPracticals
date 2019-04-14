@@ -9,7 +9,7 @@ describe('Navigation',() => {
     })
 
     it('Create/Edit should take us to Save Promotion page', () => {
-        cy.get('.link__edit').click();
+        cy.get('.link__create').click();
         cy.get('.banner > h3').should('contain', 'SavePromotion')
     })
 

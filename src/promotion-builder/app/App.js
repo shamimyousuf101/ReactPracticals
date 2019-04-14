@@ -8,6 +8,7 @@ import Navigation from "../common/navigation/VisibleNavigation";
 import AssetManager from "../features/upload-assets/main-layout/VisibleAssetManager";
 import Search from "../features/search-promotions/main-layout/VisibleSearch";
 import SavePromotion from "../features/save-promotions/main-layout/VisibleSavePromotion";
+import Preview from "../features/preview/main-layout/Preview";
 import Overlay from "../common/overlay/VisibleOverlay";
 
 const b = bem("promotion");
@@ -22,6 +23,7 @@ class App extends Component {
           <Route path="/" exact component={Search} />
           <Route path="/assetmanager/" exact component={AssetManager} />
           <Route path="/savepromotion/" exact component={SavePromotion} />
+          <Route path="/preview/" exact component={Preview} />
           <Overlay />
         </div>
       </Router>

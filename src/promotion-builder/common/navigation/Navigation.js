@@ -7,7 +7,7 @@ import NavLinks from "./NavLinks";
 import { VIEW, NAVIGATION_DATA } from "../../../constants/constants";
 
 const b = bem("navigation");
-const { SEARCH, ASSET_MANAGER, SAVE_PROMOTION } = VIEW;
+const { SEARCH, ASSET_MANAGER, SAVE_PROMOTION , PREVIEW} = VIEW;
 
 const Navigation = ({ updateView, resetPrommotionId }) => {
   const onMenuClick = navId => {
@@ -18,9 +18,13 @@ const Navigation = ({ updateView, resetPrommotionId }) => {
       case "ASSET":
         updateView(ASSET_MANAGER);
         return;
-      case "EDIT":
+      case "CREATE":
         resetPrommotionId();
         updateView(SAVE_PROMOTION);
+        return;
+      case "PREVIEW":
+        resetPrommotionId();
+        updateView(PREVIEW);
         return;
       default:
         updateView(SEARCH);

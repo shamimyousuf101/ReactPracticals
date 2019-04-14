@@ -33,8 +33,8 @@ describe('Home Page', () => {
         })
 
         it('should contain Creat / Edit Navigation', () => {
-            cy.get('.link__edit > a').should('be.visible');
-            cy.get('.link__edit > a').should('have.text', "Create / Edit");
+            cy.get('.link__create > a').should('be.visible');
+            cy.get('.link__create > a').should('have.text', "Create / Edit");
         })
     })
 })
